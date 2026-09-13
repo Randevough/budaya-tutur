@@ -1,0 +1,74 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\CultureItem;
+use App\Models\Province;
+use App\Models\Regency;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
+
+class GalleryController extends Controller
+{
+    public function index(Request $request): View
+    {
+        $query = CultureItem::published()->with(['regency.province']);
+
+        // Search filter
+        if ($request->filled('q')) {
+            $search = trim($request->input('q'));
+            $query->where(function ($q) use ($search) {
+                $q->where('title', 'like', "%{$search}%")
+                    ->orWhere('excerpt', 'like', "%{$search}%")
+                    ->orWhere('description', 'like', "%{$search}%")
+                    ->orWhereHas('regency', function ($rq) use ($search) {
+                        $rq->where('name', 'like', "%{$search}%");
+                    });
+            });
+        }
+
+        // Province filter
+        if ($request->filled('province')) {
+            $provinceSlug = $request->input('province');
+            $query->whereHas('regency.province', function ($pq) use ($provinceSlug) {
+                $pq->where('slug', $provinceSlug);
+            });
+        }
+
+        // Category filter
+        if ($request->filled('category')) {
+            $category = $request->input('category');
+            $query->where('category', $category);
+        }
+
+        $items = $query->latest()->paginate(12)->withQueryString();
+
+        // Filters data
+        $provinces = Province::whereHas('regencies.cultureItems', fn ($q) => $q->where('is_published', true))->get();
+        $categories = CultureItem::published()->whereNotNull('category')->distinct()->pluck('category');
+
+        return view('galleries.index', compact('items', 'provinces', 'categories'));
+    }
+
+    public function show(string $slug): View
+    {
+        $item = CultureItem::published()
+            ->where('slug', $slug)
+            ->with(['regency.province'])
+            ->firstOrFail();
+
+        // Related items from the same regency or province
+        $relatedItems = CultureItem::published()
+            ->where('id', '!=', $item->id)
+            ->where(function ($q) use ($item) {
+                $q->where('regency_id', $item->regency_id)
+                    ->orWhereHas('regency', function ($rq) use ($item) {
+                        $rq->where('province_id', $item->regency->province_id);
+                    });
+            })
+            ->take(3)
+            ->get();
+
+        return view('galleries.show', compact('item', 'relatedItems'));
+    }
+}
