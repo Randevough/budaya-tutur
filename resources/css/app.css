@@ -44,3 +44,10 @@
   margin: 14px 18px !important;
   line-height: 1.5;
 }
+
+@media (max-width: 640px) {
+  .leaflet-popup-content {
+    margin: 12px 14px !important;
+    max-width: 220px;
+  }
+}

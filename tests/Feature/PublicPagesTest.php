@@ -118,4 +118,25 @@ class PublicPagesTest extends TestCase
             'name' => 'Spambot',
         ]);
     }
+
+    public function test_invalid_culture_item_slug_renders_editorial_404_page(): void
+    {
+        $response = $this->get('/galleries/invalid-non-existent-slug');
+
+        $response->assertStatus(404);
+        $response->assertSee('Suara yang Dicari Telah Senyap');
+        $response->assertSee('Galat 404');
+    }
+
+    public function test_galleries_catalog_filters_by_province(): void
+    {
+        $response = $this->get('/galleries?province=nusa-tenggara-timur');
+
+        $response->assertStatus(200);
+        $response->assertSee('Tutur Lisan Lego-Lego');
+
+        $responseEmpty = $this->get('/galleries?province=non-existent-province');
+        $responseEmpty->assertStatus(200);
+        $responseEmpty->assertSee('Tidak ada rekaman yang sesuai');
+    }
 }

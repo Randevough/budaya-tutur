@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 
     <!-- Vite Compiled Assets -->
-    @vite(['resources/css/app.css'])
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('styles')
 </head>
 <body class="bg-obsidian-900 text-ink-100 font-sans antialiased min-h-screen flex flex-col selection:bg-ink-100 selection:text-obsidian-950">
@@ -75,7 +75,7 @@
             </div>
 
             <!-- Mobile Menu Button -->
-            <button id="mobile-menu-toggle" type="button" class="md:hidden text-ink-300 hover:text-ink-100 p-2 focus:outline-none" aria-label="Buka Menu Navigasi">
+            <button id="mobile-menu-toggle" type="button" class="md:hidden text-ink-300 hover:text-ink-100 p-2.5 focus:outline-none focus:ring-1 focus:ring-ink-100" aria-label="Buka Menu Navigasi" aria-expanded="false">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path id="menu-icon-open" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
                     <path id="menu-icon-close" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path>
@@ -171,16 +171,41 @@
             const iconClose = document.getElementById('menu-icon-close');
 
             if (toggle && panel) {
-                toggle.addEventListener('click', () => {
+                const closeMenu = () => {
+                    panel.classList.add('hidden');
+                    iconOpen.classList.remove('hidden');
+                    iconClose.classList.add('hidden');
+                    toggle.setAttribute('aria-expanded', 'false');
+                };
+
+                const openMenu = () => {
+                    panel.classList.remove('hidden');
+                    iconOpen.classList.add('hidden');
+                    iconClose.classList.remove('hidden');
+                    toggle.setAttribute('aria-expanded', 'true');
+                };
+
+                toggle.addEventListener('click', (e) => {
+                    e.stopPropagation();
                     const isOpen = !panel.classList.contains('hidden');
                     if (isOpen) {
-                        panel.classList.add('hidden');
-                        iconOpen.classList.remove('hidden');
-                        iconClose.classList.add('hidden');
+                        closeMenu();
                     } else {
-                        panel.classList.remove('hidden');
-                        iconOpen.classList.add('hidden');
-                        iconClose.classList.remove('hidden');
+                        openMenu();
+                    }
+                });
+
+                // Dismiss on Escape key
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && !panel.classList.contains('hidden')) {
+                        closeMenu();
+                    }
+                });
+
+                // Dismiss on click outside
+                document.addEventListener('click', (e) => {
+                    if (!panel.classList.contains('hidden') && !panel.contains(e.target) && !toggle.contains(e.target)) {
+                        closeMenu();
                     }
                 });
             }
