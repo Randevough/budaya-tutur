@@ -174,6 +174,16 @@
             <div class="border border-obsidian-700 bg-obsidian-950 relative overflow-hidden shadow-2xl">
                 <div id="culture-map" class="w-full h-[540px] z-10"></div>
                 
+                <!-- Map Controls Overlay -->
+                <div class="absolute top-4 right-4 z-20">
+                    <button id="reset-map-btn" type="button" class="bg-obsidian-950/90 backdrop-blur-md border border-obsidian-700 px-3 py-2 text-[10px] tracking-widest text-ink-300 hover:text-ink-100 hover:border-ink-200 uppercase transition-all flex items-center space-x-2 focus:outline-none shadow-md">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                        </svg>
+                        <span>Pusatkan Peta</span>
+                    </button>
+                </div>
+
                 <!-- Map Legend Overlay -->
                 <div class="absolute bottom-4 left-4 z-20 bg-obsidian-950/90 backdrop-blur-md border border-obsidian-700 px-4 py-3 text-[11px] tracking-wider text-ink-200 uppercase">
                     <div class="flex items-center space-x-2.5">
@@ -219,10 +229,9 @@ document.addEventListener('DOMContentLoaded', function () {
         scrollWheelZoom: false
     });
 
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; <a href="https://carto.com/">CARTO</a>, OpenStreetMap contributors',
-        subdomains: 'abcd',
-        maxZoom: 19
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+        attribution: '&copy; <a href="https://www.esri.com/">Esri</a> &mdash; Esri, DeLorme, NAVTEQ',
+        maxZoom: 16
     }).addTo(map);
 
     const monoIcon = L.divIcon({
@@ -263,6 +272,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 </li>
             `;
         });
+
+        if (regency.province && regency.province.slug) {
+            const provinceUrl = "{{ url('/galleries') }}?province=" + regency.province.slug;
+            itemsHtml += `
+                <li style="margin-top: 10px; padding-top: 6px; border-top: 1px dashed #423c37; text-align: right;">
+                    <a href="${provinceUrl}" style="color: #c4b5a0; text-decoration: none; font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600;">
+                        Lihat Seluruh ${regency.province.name} &rarr;
+                    </a>
+                </li>
+            `;
+        }
+
         itemsHtml += '</ul>';
 
         const popupContent = `
@@ -287,6 +308,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (bounds.length > 0) {
         map.fitBounds(bounds, { padding: [50, 50], maxZoom: 7 });
+    }
+
+    const resetBtn = document.getElementById('reset-map-btn');
+    if (resetBtn) {
+        resetBtn.addEventListener('click', function () {
+            if (bounds.length > 0) {
+                map.fitBounds(bounds, { padding: [50, 50], maxZoom: 7 });
+            } else {
+                map.setView([-2.5, 118.0], 5);
+            }
+        });
     }
 });
 </script>

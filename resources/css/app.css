@@ -29,9 +29,9 @@
   background: #423c37;
 }
 
-/* Warm Monochromatic Map Tiles */
+/* Native Dark Map Tiles */
 .leaflet-tile-pane {
-  filter: grayscale(100%) invert(92%) contrast(108%) sepia(8%) hue-rotate(180deg);
+  filter: contrast(105%) brightness(95%);
 }
 .leaflet-popup-content-wrapper, .leaflet-popup-tip {
   background-color: #161413 !important;
