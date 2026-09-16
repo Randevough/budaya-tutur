@@ -18,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 // Homepage (Dark Hero, Curated Voices, Interactive Centroid Map)
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+// About Page (Mission, Vision, Emblem Philosophy & Ethics)
+Route::view('/tentang', 'about')->name('about');
+
 // Archive Listing (Filterable Directory)
 Route::get('/arsip', [GalleryController::class, 'index'])->name('galleries.index');
 Route::get('/galleries', [GalleryController::class, 'index']);

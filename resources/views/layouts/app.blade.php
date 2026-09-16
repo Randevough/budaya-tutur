@@ -62,7 +62,7 @@
                 <a href="{{ route('home') }}" class="text-ink-300 hover:text-ink-100 transition-colors {{ request()->routeIs('home') ? 'text-ink-100 font-medium border-b border-ink-100 pb-1' : '' }}">
                     Beranda
                 </a>
-                <a href="{{ route('home') }}#tentang" class="text-ink-300 hover:text-ink-100 transition-colors">
+                <a href="{{ route('about') }}" class="text-ink-300 hover:text-ink-100 transition-colors {{ request()->routeIs('about') ? 'text-ink-100 font-medium border-b border-ink-100 pb-1' : '' }}">
                     Tentang
                 </a>
                 <a href="{{ route('galleries.index') }}" class="text-ink-300 hover:text-ink-100 transition-colors {{ request()->routeIs('galleries.*') ? 'text-ink-100 font-medium border-b border-ink-100 pb-1' : '' }}">
@@ -89,7 +89,7 @@
         <!-- Mobile Nav Menu Panel -->
         <div id="mobile-menu-panel" class="hidden md:hidden border-b border-obsidian-700 bg-obsidian-950 px-6 py-8 space-y-5">
             <a href="{{ route('home') }}" class="block text-sm uppercase tracking-[0.2em] text-ink-200 hover:text-ink-100">Beranda</a>
-            <a href="{{ route('home') }}#tentang" class="block text-sm uppercase tracking-[0.2em] text-ink-200 hover:text-ink-100">Tentang</a>
+            <a href="{{ route('about') }}" class="block text-sm uppercase tracking-[0.2em] {{ request()->routeIs('about') ? 'text-ink-100 font-medium' : 'text-ink-200' }} hover:text-ink-100">Tentang</a>
             <a href="{{ route('galleries.index') }}" class="block text-sm uppercase tracking-[0.2em] text-ink-200 hover:text-ink-100">Arsip Suara</a>
             <div class="pt-4 border-t border-obsidian-700">
                 <a href="{{ route('contact') }}" class="block text-center py-3 bg-ink-100 text-obsidian-950 text-xs uppercase tracking-[0.2em] font-semibold">
@@ -142,7 +142,7 @@
                     </h4>
                     <ul class="space-y-2.5 text-xs uppercase tracking-[0.18em] text-ink-400">
                         <li><a href="{{ route('home') }}" class="hover:text-ink-100 transition-colors inline-block hover:translate-x-0.5 duration-200">Beranda</a></li>
-                        <li><a href="{{ route('home') }}#tentang" class="hover:text-ink-100 transition-colors inline-block hover:translate-x-0.5 duration-200">Tentang</a></li>
+                        <li><a href="{{ route('about') }}" class="hover:text-ink-100 transition-colors inline-block hover:translate-x-0.5 duration-200 {{ request()->routeIs('about') ? 'text-ink-100 font-medium' : '' }}">Tentang</a></li>
                         <li><a href="{{ route('galleries.index') }}" class="hover:text-ink-100 transition-colors inline-block hover:translate-x-0.5 duration-200">Arsip Suara</a></li>
                         <li><a href="{{ route('home') }}#peta" class="hover:text-ink-100 transition-colors inline-block hover:translate-x-0.5 duration-200">Peta Sebaran</a></li>
                         <li><a href="{{ route('contact') }}" class="hover:text-ink-100 transition-colors inline-block hover:translate-x-0.5 duration-200">Contact</a></li>
