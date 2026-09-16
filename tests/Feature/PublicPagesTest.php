@@ -139,4 +139,23 @@ class PublicPagesTest extends TestCase
         $responseEmpty->assertStatus(200);
         $responseEmpty->assertSee('Tidak ada rekaman yang sesuai');
     }
+
+    public function test_pages_render_seo_social_meta_and_json_ld_schema(): void
+    {
+        // 1. Home page checks
+        $home = $this->get('/');
+        $home->assertStatus(200);
+        $home->assertSee('<link rel="canonical"', false);
+        $home->assertSee('Budaya Tutur Voices', false);
+        $home->assertSee('"@type": "Organization"', false);
+
+        // 2. Detail page checks
+        $detail = $this->get('/galleries/' . $this->cultureItem->slug);
+        $detail->assertStatus(200);
+        $detail->assertSee('twitter:card', false);
+        $detail->assertSee('og:title', false);
+        $detail->assertSee('"@type": "AudioObject"', false);
+        $detail->assertSee($this->cultureItem->title, false);
+    }
 }
+

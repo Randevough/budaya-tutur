@@ -7,6 +7,8 @@
 
     <title>@yield('title', 'Budaya Tutur Voices — Arsip Suara & Cerita Lisan Nusantara')</title>
     <meta name="description" content="@yield('meta_description', 'Arsip digital budaya tutur, suara, dan cerita lisan nusantara. Menjaga yang terucap sebelum senyap.')">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{ url()->current() }}">
 
     <!-- OpenGraph / Social Metadata -->
     <meta property="og:site_name" content="Budaya Tutur Voices">
@@ -15,6 +17,24 @@
     <meta property="og:type" content="@yield('og_type', 'website')">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:image" content="@yield('og_image', asset('images/og-default.jpg'))">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="@yield('og_title', 'Budaya Tutur Voices — Arsip Suara & Cerita Lisan Nusantara')">
+    <meta name="twitter:description" content="@yield('og_description', 'Arsip digital budaya tutur, suara, dan cerita lisan nusantara.')">
+    <meta name="twitter:image" content="@yield('og_image', asset('images/og-default.jpg'))">
+
+    <!-- Structured Data (JSON-LD Organization) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Budaya Tutur Voices",
+        "url": "{{ url('/') }}",
+        "description": "Inisiatif pengarsipan digital mandiri untuk merekam, merawat, dan mempublikasikan suara dan sastra tutur lisan nusantara."
+    }
+    </script>
+    @stack('schema')
 
     <!-- Primary Editorial Fonts: Mencken Std Head & Aktiv Grotesk Condensed (Local @font-face in app.css) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

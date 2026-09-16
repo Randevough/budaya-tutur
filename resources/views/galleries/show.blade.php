@@ -6,6 +6,26 @@
 @section('og_description', Str::limit(strip_tags($item->excerpt ?? $item->description), 160))
 @section('og_image', $item->thumbnail_url)
 
+@push('schema')
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "AudioObject",
+    "name": "{{ addslashes($item->title) }}",
+    "description": "{{ addslashes(Str::limit(strip_tags($item->excerpt ?? $item->description), 200)) }}",
+    "contentUrl": "https://www.youtube.com/watch?v={{ $item->youtube_id }}",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/{{ $item->youtube_id }}",
+    "thumbnailUrl": "{{ $item->thumbnail_url }}",
+    "uploadDate": "{{ $item->created_at ? $item->created_at->toIso8601String() : now()->toIso8601String() }}",
+    "inLanguage": "id",
+    "contentLocation": {
+        "@type": "Place",
+        "name": "{{ addslashes($item->regency->name) }}, {{ addslashes($item->regency->province->name) }}"
+    }
+}
+</script>
+@endpush
+
 @section('content')
     <!-- 1. FULL VIEWPORT THEATER HERO [DARK: Exactly 100vh / 100dvh Proportional Layout] -->
     <header class="h-[calc(100vh-5rem)] sm:h-[calc(100dvh-5rem)] max-h-[calc(100vh-5rem)] flex flex-col pt-6 sm:pt-8 pb-6 sm:pb-8 bg-obsidian-900 text-ink-100 border-b border-obsidian-700 relative overflow-hidden">
