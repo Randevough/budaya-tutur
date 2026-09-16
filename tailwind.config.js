@@ -38,8 +38,8 @@ export default {
         }
       },
       fontFamily: {
-        serif: ['"Cinzel"', '"Playfair Display"', 'Georgia', 'Cambria', 'serif'],
-        sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+        serif: ['"Mencken Std Head"', '"Cinzel"', '"Playfair Display"', 'Georgia', 'serif'],
+        sans: ['"Aktiv Grotesk Condensed"', '"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
       },
     },
   },

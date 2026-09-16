@@ -22,8 +22,6 @@ class CultureItemsTable
                     ->searchable(),
                 TextColumn::make('slug')
                     ->searchable(),
-                TextColumn::make('category')
-                    ->searchable(),
                 TextColumn::make('youtube_id')
                     ->searchable(),
                 ImageColumn::make('cover_image_path'),

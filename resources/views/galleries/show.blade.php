@@ -7,102 +7,85 @@
 @section('og_image', $item->thumbnail_url)
 
 @section('content')
-    <!-- Breadcrumb & Top Bar [DARK: Obsidian #121110] -->
-    <div class="border-b border-obsidian-700 bg-obsidian-900 py-4 px-4 sm:px-8">
-        <div class="max-w-6xl mx-auto flex items-center space-x-2 text-xs uppercase tracking-[0.2em] text-ink-400">
-            <a href="{{ route('home') }}" class="hover:text-ink-100 transition-colors">Beranda</a>
-            <span>/</span>
-            <a href="{{ route('galleries.index') }}" class="hover:text-ink-100 transition-colors">Arsip</a>
-            <span>/</span>
-            <a href="{{ route('galleries.index', ['province' => $item->regency->province->slug]) }}" class="hover:text-ink-100 transition-colors">
-                {{ $item->regency->province->name }}
-            </a>
-            <span>/</span>
-            <span class="text-ink-200 truncate max-w-xs sm:max-w-md">{{ $item->title }}</span>
-        </div>
-    </div>
+    <!-- 1. FULL VIEWPORT THEATER HERO [DARK: Exactly 100vh / 100dvh Proportional Layout] -->
+    <header class="h-[calc(100vh-5rem)] sm:h-[calc(100dvh-5rem)] max-h-[calc(100vh-5rem)] flex flex-col pt-6 sm:pt-8 pb-6 sm:pb-8 bg-obsidian-900 text-ink-100 border-b border-obsidian-700 relative overflow-hidden">
+        <!-- Top Utility Bar: Back to Archive & Region (Restored) -->
+        <div class="max-w-5xl mx-auto px-4 sm:px-8 w-full flex-shrink-0">
+            <div class="flex items-center justify-between text-xs uppercase tracking-[0.2em] text-ink-400">
+                <a href="{{ route('galleries.index') }}" class="inline-flex items-center space-x-2 text-[11px] uppercase tracking-[0.2em] text-ink-400 hover:text-ink-100 transition-colors group">
+                    <span class="transition-transform duration-200 group-hover:-translate-x-1">&larr;</span>
+                    <span>Kembali ke Katalog</span>
+                </a>
 
-    <!-- Header & Media Theater Hero [DARK: Obsidian #121110] -->
-    <header class="py-12 sm:py-16 bg-obsidian-900 text-ink-100 border-b border-obsidian-700">
-        <div class="max-w-6xl mx-auto px-4 sm:px-8">
-            <!-- Region & Category Badges -->
-            <div class="flex flex-wrap items-center gap-3 mb-6">
-                @if($item->category)
-                    <span class="border border-obsidian-700 bg-obsidian-850 px-3 py-1 text-[11px] uppercase tracking-[0.2em] text-ink-200 font-medium">
-                        {{ $item->category }}
-                    </span>
-                @endif
-                <span class="text-xs uppercase tracking-[0.2em] text-ink-400 font-medium">
-                    {{ $item->regency->name }}, {{ $item->regency->province->name }}
-                </span>
+                <div class="text-[11px] uppercase tracking-[0.22em] text-ink-400 font-medium">
+                    {{ $item->regency->name }} &bull; {{ $item->regency->province->name }}
+                </div>
             </div>
+        </div>
 
-            <!-- Monumental Title -->
-            <h1 class="font-serif text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-ink-100 leading-[1.15] mb-8">
-                {{ $item->title }}
-            </h1>
+        <!-- Center Stage: Title + Media Player unified as ONE vertically centered composite unit -->
+        <div class="flex-1 min-h-0 flex flex-col items-center justify-center max-w-5xl mx-auto px-4 sm:px-8 w-full">
+            <div class="w-full flex flex-col items-center my-auto">
+                <!-- Proportional Editorial Title in Mencken Std Head, snug directly above player -->
+                <h1 class="font-serif text-lg sm:text-2xl md:text-3xl font-bold tracking-[0.03em] uppercase text-ink-100 text-center leading-snug max-w-3xl mx-auto mb-4 sm:mb-5 flex-shrink-0" style="font-family: 'Mencken Std Head', 'Cinzel', Georgia, serif;">
+                    {{ $item->title }}
+                </h1>
 
-            <!-- Lead Excerpt -->
-            @if($item->excerpt)
-                <p class="text-ink-200 text-base sm:text-xl font-light leading-relaxed max-w-3xl mb-12 border-l-2 border-obsidian-600 pl-6 italic">
-                    {{ $item->excerpt }}
-                </p>
-            @endif
+                <!-- YouTube Lite Media Theater Container (Snug to Title) -->
+                <div class="w-full aspect-video max-w-xl sm:max-w-2xl lg:max-w-3xl max-h-[290px] sm:max-h-[330px] md:max-h-[350px] mx-auto border border-obsidian-700 bg-black overflow-hidden shadow-2xl relative flex items-center justify-center">
+                    <div id="lite-player-container" 
+                         class="relative w-full h-full bg-obsidian-950 flex items-center justify-center cursor-pointer group"
+                         data-youtube-id="{{ $item->youtube_id }}">
+                        
+                        <!-- Static Grayscale Thumbnail -->
+                        <img id="lite-player-thumb"
+                             src="{{ $item->thumbnail_url }}" 
+                             alt="{{ $item->title }}"
+                             class="w-full h-full object-cover grayscale contrast-110 group-hover:scale-105 transition-all duration-700 ease-out"
+                             onerror="this.src='https://img.youtube.com/vi/{{ $item->youtube_id }}/hqdefault.jpg'">
+                        
+                        <!-- Dark Gradient Vignette -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/35 group-hover:opacity-80 transition-opacity"></div>
 
-            <!-- 5. LITE-EMBED YOUTUBE MEDIA CONTAINER -->
-            <div class="border border-obsidian-700 bg-black overflow-hidden shadow-2xl">
-                <div id="lite-player-container" 
-                     class="relative w-full aspect-video bg-obsidian-950 flex items-center justify-center cursor-pointer group"
-                     data-youtube-id="{{ $item->youtube_id }}">
-                    
-                    <!-- Static Grayscale Thumbnail -->
-                    <img id="lite-player-thumb"
-                         src="{{ $item->thumbnail_url }}" 
-                         alt="{{ $item->title }}"
-                         class="w-full h-full object-cover grayscale contrast-110 group-hover:scale-105 transition-all duration-700 ease-out"
-                         onerror="this.src='https://img.youtube.com/vi/{{ $item->youtube_id }}/hqdefault.jpg'">
-                    
-                    <!-- Dark Gradient Vignette -->
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/35 group-hover:opacity-80 transition-opacity"></div>
-
-                    <!-- Custom Play Button Overlay -->
-                    <div id="lite-player-button" class="absolute z-10 flex flex-col items-center justify-center space-y-3">
-                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full border border-ink-100/40 bg-ink-100/15 backdrop-blur-md flex items-center justify-center text-ink-100 group-hover:scale-110 group-hover:bg-ink-100 group-hover:text-obsidian-950 transition-all duration-300 shadow-2xl">
-                            <svg class="w-6 h-6 sm:w-8 sm:h-8 translate-x-0.5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M8 5v14l11-7z"/>
-                            </svg>
+                        <!-- Custom Play Button Overlay -->
+                        <div id="lite-player-button" class="absolute z-10 flex flex-col items-center justify-center space-y-2">
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border border-ink-100/40 bg-ink-100/15 backdrop-blur-md flex items-center justify-center text-ink-100 group-hover:scale-110 group-hover:bg-ink-100 group-hover:text-obsidian-950 transition-all duration-300 shadow-2xl">
+                                <svg class="w-5 h-5 translate-x-0.5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </div>
+                            <span class="text-[10px] sm:text-[11px] uppercase tracking-[0.25em] text-ink-200 group-hover:text-ink-100 font-medium">
+                                Dengarkan Tuturan
+                            </span>
                         </div>
-                        <span class="text-[11px] uppercase tracking-[0.25em] text-ink-200 group-hover:text-ink-100 font-medium">
-                            Dengarkan Tuturan
-                        </span>
-                    </div>
 
-                    <!-- Notice Bar Inside Player -->
-                    <div class="absolute bottom-3 left-4 text-[10px] uppercase tracking-widest text-ink-300 bg-obsidian-950/80 px-2.5 py-1 backdrop-blur-sm border border-obsidian-700/80">
-                        Rekaman Audio & Visual Lapangan
+                        <!-- Notice Badge Inside Player -->
+                        <div class="absolute bottom-3 left-4 text-[10px] uppercase tracking-widest text-ink-300 bg-obsidian-950/80 px-2.5 py-1 backdrop-blur-sm border border-obsidian-700/80">
+                            Rekaman Audio & Visual Lapangan
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Narrative & Transcription [LIGHT: Unbleached Linen #F8F5F0] -->
-    <article class="py-16 sm:py-24 bg-linen-100 text-ink-900">
+    <!-- 2. NARRATIVE & SIDEBAR SECTION [LIGHT: Unbleached Linen #F8F5F0 with Sticky Metadata] -->
+    <article id="narasi-section" class="py-12 sm:py-16 bg-linen-100 text-ink-900">
         <div class="max-w-6xl mx-auto px-4 sm:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 sm:gap-16">
-                <!-- Main Narrative & Transcription -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
+                <!-- Main Narrative & Transcription (8 cols) -->
                 <div class="lg:col-span-8 space-y-8">
                     <h2 class="font-serif text-xl sm:text-2xl font-bold uppercase tracking-tight text-ink-900 border-b border-linen-300 pb-4">
                         Konteks Kultural & Narasi Tuturan
                     </h2>
 
-                    <!-- Editorial Body Text (Ink on Linen: Superb Reading Ergonomics) -->
+                    <!-- Editorial Body Text -->
                     <div class="text-ink-700 text-sm sm:text-base leading-relaxed space-y-6 font-light">
                         {!! nl2br(e($item->description)) !!}
                     </div>
 
                     <!-- Archival Notice Box -->
-                    <div class="p-6 border border-linen-300 bg-linen-200/80 text-xs text-ink-600 space-y-2 mt-12">
+                    <div class="p-6 border border-linen-300 bg-linen-200/80 text-xs text-ink-600 space-y-2 mt-10">
                         <span class="font-serif text-ink-900 uppercase tracking-widest block font-semibold">
                             Catatan Perlindungan Tradisi
                         </span>
@@ -112,84 +95,81 @@
                     </div>
                 </div>
 
-                <!-- Sidebar Metadata -->
-                <aside class="lg:col-span-4 space-y-8">
-                    <div class="border border-linen-300 bg-linen-50 p-6 sm:p-8 space-y-6 shadow-sm">
-                        <h3 class="font-serif text-xs uppercase tracking-[0.25em] text-ink-900 font-bold border-b border-linen-300 pb-3">
-                            Informasi Arsip
-                        </h3>
+                <!-- Sidebar Metadata: Confined Sticky Informasi Arsip (4 cols) -->
+                <aside class="lg:col-span-4">
+                    <div class="lg:sticky lg:top-28 space-y-6">
+                        <!-- Informasi Arsip Card -->
+                        <div class="border border-linen-300 bg-linen-50 p-6 sm:p-7 space-y-5 shadow-sm">
+                            <h3 class="font-serif text-xs uppercase tracking-[0.25em] text-ink-900 font-bold border-b border-linen-300 pb-3">
+                                Informasi Arsip
+                            </h3>
 
-                        <!-- Region -->
-                        <div>
-                            <span class="text-[10px] uppercase tracking-widest text-ink-500 block mb-1 font-medium">
-                                Wilayah Administratif
-                            </span>
-                            <span class="text-xs text-ink-900 font-medium">
-                                {{ $item->regency->name }}
-                            </span>
-                        </div>
-
-                        <!-- Province -->
-                        <div>
-                            <span class="text-[10px] uppercase tracking-widest text-ink-500 block mb-1 font-medium">
-                                Provinsi
-                            </span>
-                            <span class="text-xs text-ink-900 font-medium">
-                                {{ $item->regency->province->name }}
-                            </span>
-                        </div>
-
-                        <!-- Centroid Coordinates -->
-                        <div>
-                            <span class="text-[10px] uppercase tracking-widest text-ink-500 block mb-1 font-medium">
-                                Koordinat Wilayah (Centroid)
-                            </span>
-                            <span class="text-xs font-mono text-ink-700">
-                                {{ number_format($item->regency->latitude, 4) }}&deg;, {{ number_format($item->regency->longitude, 4) }}&deg;
-                            </span>
-                        </div>
-
-                        <!-- Category -->
-                        @if($item->category)
+                            <!-- Region -->
                             <div>
                                 <span class="text-[10px] uppercase tracking-widest text-ink-500 block mb-1 font-medium">
-                                    Ragam Seni / Kategori
+                                    Wilayah Administratif
                                 </span>
                                 <span class="text-xs text-ink-900 font-medium">
-                                    {{ $item->category }}
+                                    {{ $item->regency->name }}
                                 </span>
                             </div>
-                        @endif
 
-                        <!-- Media ID -->
-                        <div>
-                            <span class="text-[10px] uppercase tracking-widest text-ink-500 block mb-1 font-medium">
-                                Kode Referensi Media
-                            </span>
-                            <span class="text-xs font-mono text-ink-700">
-                                YT-{{ $item->youtube_id }}
-                            </span>
-                        </div>
-                    </div>
+                            <!-- Province -->
+                            <div>
+                                <span class="text-[10px] uppercase tracking-widest text-ink-500 block mb-1 font-medium">
+                                    Provinsi
+                                </span>
+                                <span class="text-xs text-ink-900 font-medium">
+                                    {{ $item->regency->province->name }}
+                                </span>
+                            </div>
 
-                    <!-- Share Action -->
-                    <div class="border border-linen-300 bg-linen-50 p-6 space-y-3 text-center shadow-sm">
-                        <span class="text-[10px] uppercase tracking-[0.2em] text-ink-500 block font-medium">
-                            Bagikan Ingatan Ini
-                        </span>
-                        <div class="flex items-center justify-center space-x-3 text-xs">
-                            <a href="https://api.whatsapp.com/send?text={{ urlencode($item->title . ' — ' . url()->current()) }}" 
-                               target="_blank" 
-                               rel="noopener noreferrer" 
-                               class="px-4 py-2 border border-linen-300 hover:border-ink-900 text-ink-700 hover:text-ink-900 uppercase tracking-wider text-[11px] transition-colors font-medium">
-                                WhatsApp
-                            </a>
-                            <a href="https://twitter.com/intent/tweet?text={{ urlencode($item->title . ' ' . url()->current()) }}" 
-                               target="_blank" 
-                               rel="noopener noreferrer" 
-                               class="px-4 py-2 border border-linen-300 hover:border-ink-900 text-ink-700 hover:text-ink-900 uppercase tracking-wider text-[11px] transition-colors font-medium">
-                                X / Twitter
-                            </a>
+                            <!-- Integrated Share Action Row: Bagikan, Salin Link, WhatsApp -->
+                            <div class="pt-5 border-t border-linen-300">
+                                <span class="text-[10px] uppercase tracking-[0.2em] text-ink-500 block mb-3 font-semibold">
+                                    Bagikan Ingatan Ini
+                                </span>
+                                
+                                <div class="flex flex-wrap items-center gap-2">
+                                    <!-- 1. Native OS Web Share API Button -->
+                                    <button type="button" 
+                                            id="share-trigger-btn"
+                                            class="inline-flex items-center space-x-1.5 px-3 py-2 bg-obsidian-950 hover:bg-obsidian-800 text-white rounded text-xs font-sans font-medium transition-colors cursor-pointer shadow-sm">
+                                        <svg class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <circle cx="18" cy="5" r="3"></circle>
+                                            <circle cx="6" cy="12" r="3"></circle>
+                                            <circle cx="18" cy="19" r="3"></circle>
+                                            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                                            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                                        </svg>
+                                        <span>Bagikan</span>
+                                    </button>
+
+                                    <!-- 2. Quick Copy Link Button -->
+                                    <button type="button" 
+                                            id="copy-link-btn"
+                                            data-url="{{ url()->current() }}"
+                                            class="inline-flex items-center space-x-1.5 px-3 py-2 border border-linen-300 hover:border-ink-900 bg-white hover:bg-linen-100 text-ink-800 rounded text-xs font-sans font-medium transition-colors cursor-pointer shadow-sm"
+                                            title="Salin tautan ke clipboard">
+                                        <svg class="w-3.5 h-3.5 text-ink-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                        </svg>
+                                        <span id="copy-text">Salin Link</span>
+                                    </button>
+
+                                    <!-- 3. Quick WhatsApp Share Button -->
+                                    <a href="https://api.whatsapp.com/send?text={{ urlencode($item->title . ' — ' . url()->current()) }}" 
+                                       target="_blank" 
+                                       rel="noopener noreferrer" 
+                                       class="inline-flex items-center space-x-1.5 px-3 py-2 border border-linen-300 hover:border-ink-900 bg-white hover:bg-linen-100 text-ink-800 rounded text-xs font-sans font-medium transition-colors shadow-sm"
+                                       title="Bagikan ke WhatsApp">
+                                        <svg class="w-3.5 h-3.5 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.586 1.761.88 2.79.88 3.18 0 5.767-2.587 5.767-5.766.001-3.181-2.585-5.766-5.766-5.766zm9.969 5.766c0 5.503-4.469 9.969-9.969 9.969-1.745 0-3.385-.453-4.82-1.246l-5.211 1.339 1.362-4.973c-.908-1.508-1.428-3.266-1.428-5.089 0-5.502 4.469-9.969 9.969-9.969 5.503 0 9.969 4.467 9.969 9.969z"/>
+                                        </svg>
+                                        <span>WhatsApp</span>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </aside>
@@ -197,33 +177,70 @@
         </div>
     </article>
 
-    <!-- Related Archives Section [LIGHT: Warm Linen #F2ECE2] -->
+    <!-- 3. UPGRADED RELATED ARCHIVES SECTION [Proximity Ordering + Image Cards + Elevation Micro-interactions] -->
     @if($relatedItems->count() > 0)
-        <section class="py-20 bg-linen-200 text-ink-900 border-t border-linen-300">
+        <section class="py-16 sm:py-20 bg-linen-200 text-ink-900 border-t border-linen-300">
             <div class="max-w-6xl mx-auto px-4 sm:px-8">
-                <h3 class="font-serif text-xl sm:text-2xl font-bold uppercase tracking-tight text-ink-900 mb-8">
-                    Tuturan Terkait di Wilayah Ini
-                </h3>
+                <div class="flex items-center justify-between mb-8">
+                    <div>
+                        <span class="text-[10px] uppercase tracking-[0.25em] text-ink-500 block mb-1 font-medium">
+                            Koleksi Senada
+                        </span>
+                        <h3 class="font-serif text-xl sm:text-2xl font-bold uppercase tracking-tight text-ink-900">
+                            Tuturan Terkait di Wilayah Ini
+                        </h3>
+                    </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <a href="{{ route('galleries.index', ['province' => $item->regency->province->slug]) }}" class="hidden sm:inline-flex items-center space-x-1.5 text-xs uppercase tracking-[0.18em] text-ink-600 hover:text-ink-950 font-medium transition-colors">
+                        <span>Lihat Wilayah Ini</span>
+                        <span>&rarr;</span>
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
                     @foreach($relatedItems as $related)
-                        <article class="group border border-linen-300 bg-linen-50 p-6 flex flex-col justify-between shadow-sm">
-                            <div>
-                                <span class="text-[10px] uppercase tracking-widest text-ink-500 block mb-2 font-medium">
+                        <article class="group border border-linen-300 bg-linen-50 hover:border-ink-800 transition-all duration-300 flex flex-col shadow-sm hover:shadow-md hover:-translate-y-1.5">
+                            <!-- Thumbnail Preview with Grayscale-to-Color Transition -->
+                            <a href="{{ route('galleries.show', $related->slug) }}" class="relative block aspect-[16/10] overflow-hidden bg-linen-200">
+                                @if($related->thumbnail_url)
+                                    <img src="{{ $related->thumbnail_url }}" 
+                                         alt="{{ $related->title }}"
+                                         class="w-full h-full object-cover grayscale contrast-110 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700 ease-out"
+                                         loading="lazy">
+                                @else
+                                    <div class="w-full h-full flex items-center justify-center bg-linen-200 text-ink-500 text-xs uppercase tracking-widest">
+                                        Rekaman Terkait
+                                    </div>
+                                @endif
+                                <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950/70 via-transparent to-transparent"></div>
+
+                                <!-- Proximity Badge -->
+                                <div class="absolute top-3 left-3 text-[9px] uppercase tracking-wider px-2 py-0.5 font-medium {{ $related->regency_id === $item->regency_id ? 'bg-ink-100 text-obsidian-950' : 'bg-obsidian-950/80 text-ink-200 border border-obsidian-700' }}">
+                                    {{ $related->regency_id === $item->regency_id ? 'Wilayah Sama' : 'Provinsi Terkait' }}
+                                </div>
+                            </a>
+
+                            <!-- Details -->
+                            <div class="p-5 sm:p-6 flex flex-col flex-grow">
+                                <span class="text-[10px] uppercase tracking-widest text-ink-500 block mb-1.5 font-medium">
                                     {{ $related->regency->name }}
                                 </span>
-                                <h4 class="font-serif text-base font-bold text-ink-900 mb-2 group-hover:text-ink-700 transition-colors">
+
+                                <h4 class="font-serif text-base font-bold text-ink-900 mb-2 group-hover:text-ink-700 transition-colors leading-snug">
                                     <a href="{{ route('galleries.show', $related->slug) }}">
                                         {{ $related->title }}
                                     </a>
                                 </h4>
-                                <p class="text-xs text-ink-600 font-light line-clamp-2 mb-4">
+
+                                <p class="text-xs text-ink-600 font-light line-clamp-2 mb-4 leading-relaxed">
                                     {{ $related->excerpt ?? Str::limit(strip_tags($related->description), 90) }}
                                 </p>
+
+                                <div class="mt-auto pt-3 border-t border-linen-300 flex items-center justify-between text-[11px] uppercase tracking-wider text-ink-700 group-hover:text-ink-900 font-medium">
+                                    <span>Buka Rekaman</span>
+                                    <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+                                </div>
                             </div>
-                            <a href="{{ route('galleries.show', $related->slug) }}" class="text-[11px] uppercase tracking-wider text-ink-700 group-hover:text-ink-900 inline-flex items-center transition-colors font-medium">
-                                Buka Rekaman &rarr;
-                            </a>
                         </article>
                     @endforeach
                 </div>
@@ -235,24 +252,70 @@
 @push('scripts')
 <script>
 document.addEventListener('DOMContentLoaded', function () {
+    // YouTube Lite Player Loader
     const container = document.getElementById('lite-player-container');
-    if (!container) return;
+    if (container) {
+        container.addEventListener('click', function () {
+            const youtubeId = this.getAttribute('data-youtube-id');
+            if (!youtubeId) return;
 
-    container.addEventListener('click', function () {
-        const youtubeId = this.getAttribute('data-youtube-id');
-        if (!youtubeId) return;
+            const iframe = document.createElement('iframe');
+            iframe.setAttribute('src', `https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3`);
+            iframe.setAttribute('frameborder', '0');
+            iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+            iframe.setAttribute('allowfullscreen', 'true');
+            iframe.className = 'w-full h-full absolute inset-0';
 
-        const iframe = document.createElement('iframe');
-        iframe.setAttribute('src', `https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3`);
-        iframe.setAttribute('frameborder', '0');
-        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
-        iframe.setAttribute('allowfullscreen', 'true');
-        iframe.className = 'w-full h-full absolute inset-0';
+            this.innerHTML = '';
+            this.appendChild(iframe);
+            this.classList.remove('cursor-pointer');
+        });
+    }
 
-        this.innerHTML = '';
-        this.appendChild(iframe);
-        this.classList.remove('cursor-pointer');
-    });
+    // Native Web Share API + Quick Copy Action
+    const shareTrigger = document.getElementById('share-trigger-btn');
+    const copyBtn = document.getElementById('copy-link-btn');
+    const copyText = document.getElementById('copy-text');
+
+    if (shareTrigger) {
+        shareTrigger.addEventListener('click', function (e) {
+            e.preventDefault();
+            const shareData = {
+                title: @json($item->title . ' — Budaya Tutur Voices'),
+                text: @json(Str::limit(strip_tags($item->excerpt ?? $item->description), 120)),
+                url: window.location.href
+            };
+
+            if (navigator.share) {
+                navigator.share(shareData).catch((err) => {
+                    if (err.name !== 'AbortError') {
+                        console.error('Share error:', err);
+                    }
+                });
+            } else if (copyBtn) {
+                copyBtn.click();
+            }
+        });
+    }
+
+    // Copy Link Action with Feedback State
+    if (copyBtn && copyText) {
+        copyBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            const url = this.getAttribute('data-url') || window.location.href;
+            navigator.clipboard.writeText(url).then(() => {
+                const original = copyText.textContent;
+                copyText.textContent = 'Tersalin!';
+                copyBtn.classList.add('border-ink-900', 'bg-linen-200');
+                setTimeout(() => {
+                    copyText.textContent = original;
+                    copyBtn.classList.remove('border-ink-900', 'bg-linen-200');
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy URL:', err);
+            });
+        });
+    }
 });
 </script>
 @endpush

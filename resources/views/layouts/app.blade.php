@@ -16,7 +16,7 @@
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:image" content="@yield('og_image', asset('images/og-default.jpg'))">
 
-    <!-- Fonts: Cinzel (Serif Editorial) & Plus Jakarta Sans (Body) -->
+    <!-- Primary Editorial Fonts: Mencken Std Head & Aktiv Grotesk Condensed (Local @font-face in app.css) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -30,22 +30,31 @@
 </head>
 <body class="bg-obsidian-900 text-ink-100 font-sans antialiased min-h-screen flex flex-col selection:bg-ink-100 selection:text-obsidian-950">
 
-    <!-- Top Notice / Archive Header Bar -->
-    <div class="border-b border-obsidian-700/60 bg-obsidian-950/80 py-2 px-4 sm:px-8 text-[11px] uppercase tracking-[0.25em] text-ink-400 text-center">
-        Arsip Suara Digital Nusantara &mdash; Terbuka untuk Pengetahuan & Ingatan Bersama
-    </div>
 
     <!-- Main Navigation Bar -->
     <header class="sticky top-0 z-50 backdrop-blur-md bg-obsidian-900/95 border-b border-obsidian-700/80 transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between">
             <!-- Brand Mark -->
-            <a href="{{ route('home') }}" class="group flex flex-col justify-center focus:outline-none">
-                <span class="font-serif text-xl sm:text-2xl font-bold tracking-[0.18em] text-ink-100 uppercase group-hover:text-ink-200 transition-colors">
-                    Budaya Tutur
-                </span>
-                <span class="text-[10px] tracking-[0.3em] uppercase text-ink-400 group-hover:text-ink-300 transition-colors">
-                    Voices of Nusantara
-                </span>
+            <a href="{{ route('home') }}" class="group flex items-center space-x-3.5 focus:outline-none">
+                <!-- Authentic Archival Emblem Placeholder -->
+                <div class="w-10 h-10 rounded-full border border-obsidian-700 bg-obsidian-850/90 flex items-center justify-center text-ink-100 group-hover:border-ink-200 group-hover:bg-obsidian-800 transition-all duration-300 shadow-sm">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10" stroke-dasharray="2 3" stroke-opacity="0.5" />
+                        <path d="M12 7v10" />
+                        <path d="M8 9.5v5" />
+                        <path d="M16 9.5v5" />
+                        <path d="M4 11v2" />
+                        <path d="M20 11v2" />
+                    </svg>
+                </div>
+                <div class="flex flex-col justify-center">
+                    <span class="font-serif text-lg sm:text-xl font-bold tracking-[0.18em] text-ink-100 uppercase group-hover:text-ink-200 transition-colors">
+                        Budaya Tutur
+                    </span>
+                    <span class="text-[9px] sm:text-[10px] tracking-[0.28em] uppercase text-ink-400 group-hover:text-ink-300 transition-colors">
+                        Voices of Nusantara
+                    </span>
+                </div>
             </a>
 
             <!-- Desktop Nav Items -->
@@ -53,24 +62,18 @@
                 <a href="{{ route('home') }}" class="text-ink-300 hover:text-ink-100 transition-colors {{ request()->routeIs('home') ? 'text-ink-100 font-medium border-b border-ink-100 pb-1' : '' }}">
                     Beranda
                 </a>
-                <a href="{{ route('galleries.index') }}" class="text-ink-300 hover:text-ink-100 transition-colors {{ request()->routeIs('galleries.*') ? 'text-ink-100 font-medium border-b border-ink-100 pb-1' : '' }}">
-                    Arsip Suara
-                </a>
-                <a href="{{ route('home') }}#peta" class="text-ink-300 hover:text-ink-100 transition-colors">
-                    Peta Wilayah
-                </a>
                 <a href="{{ route('home') }}#tentang" class="text-ink-300 hover:text-ink-100 transition-colors">
                     Tentang
                 </a>
-                <a href="{{ route('contact') }}" class="text-ink-300 hover:text-ink-100 transition-colors {{ request()->routeIs('contact') ? 'text-ink-100 font-medium border-b border-ink-100 pb-1' : '' }}">
-                    Kontak
+                <a href="{{ route('galleries.index') }}" class="text-ink-300 hover:text-ink-100 transition-colors {{ request()->routeIs('galleries.*') ? 'text-ink-100 font-medium border-b border-ink-100 pb-1' : '' }}">
+                    Arsip Suara
                 </a>
             </nav>
 
-            <!-- CTA -->
+            <!-- CTA: Contact -->
             <div class="hidden md:flex items-center space-x-4">
-                <a href="{{ route('galleries.index') }}" class="px-5 py-2.5 border border-obsidian-600 hover:border-ink-100 text-xs tracking-[0.18em] uppercase text-ink-100 hover:bg-ink-100 hover:text-obsidian-950 transition-all duration-300 font-medium">
-                    Buka Arsip
+                <a href="{{ route('contact') }}" class="px-5 py-2.5 border border-obsidian-600 hover:border-ink-100 text-xs tracking-[0.18em] uppercase text-ink-100 hover:bg-ink-100 hover:text-obsidian-950 transition-all duration-300 font-medium {{ request()->routeIs('contact') ? 'border-ink-100 bg-obsidian-800' : '' }}">
+                    Contact
                 </a>
             </div>
 
@@ -86,13 +89,11 @@
         <!-- Mobile Nav Menu Panel -->
         <div id="mobile-menu-panel" class="hidden md:hidden border-b border-obsidian-700 bg-obsidian-950 px-6 py-8 space-y-5">
             <a href="{{ route('home') }}" class="block text-sm uppercase tracking-[0.2em] text-ink-200 hover:text-ink-100">Beranda</a>
-            <a href="{{ route('galleries.index') }}" class="block text-sm uppercase tracking-[0.2em] text-ink-200 hover:text-ink-100">Arsip Suara</a>
-            <a href="{{ route('home') }}#peta" class="block text-sm uppercase tracking-[0.2em] text-ink-200 hover:text-ink-100">Peta Wilayah</a>
             <a href="{{ route('home') }}#tentang" class="block text-sm uppercase tracking-[0.2em] text-ink-200 hover:text-ink-100">Tentang</a>
-            <a href="{{ route('contact') }}" class="block text-sm uppercase tracking-[0.2em] text-ink-200 hover:text-ink-100">Kontak</a>
+            <a href="{{ route('galleries.index') }}" class="block text-sm uppercase tracking-[0.2em] text-ink-200 hover:text-ink-100">Arsip Suara</a>
             <div class="pt-4 border-t border-obsidian-700">
-                <a href="{{ route('galleries.index') }}" class="block text-center py-3 bg-ink-100 text-obsidian-950 text-xs uppercase tracking-[0.2em] font-semibold">
-                    Jelajahi Semua Arsip
+                <a href="{{ route('contact') }}" class="block text-center py-3 bg-ink-100 text-obsidian-950 text-xs uppercase tracking-[0.2em] font-semibold">
+                    Contact / Hubungi Kami
                 </a>
             </div>
         </div>
@@ -103,58 +104,80 @@
         @yield('content')
     </main>
 
-    <!-- Editorial Footer (Grounded Nocturnal Dark) -->
-    <footer class="border-t border-obsidian-700 bg-obsidian-950 text-ink-400 py-16 px-4 sm:px-8">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 text-sm">
-            <!-- Col 1: Brand & Manifesto -->
-            <div class="md:col-span-2 space-y-4">
-                <span class="font-serif text-2xl font-bold tracking-[0.15em] text-ink-100 uppercase block">
-                    Budaya Tutur
-                </span>
-                <p class="text-ink-400 text-xs sm:text-sm leading-relaxed max-w-lg font-light">
-                    Inisiatif pengarsipan digital mandiri untuk merekam, merawat, dan mempublikasikan suara, tuturan lisan, nyanyian ritual, dan kidung adat dari berbagai pelosok nusantara. Menjaga yang terucap sebelum senyap.
-                </p>
-                <div class="pt-2 text-xs text-ink-500 tracking-wider">
-                    Domain terdaftar: <span class="text-ink-300">budayatutur.id</span>
+    <!-- Editorial Footer (Grounded Nocturnal Velvet) -->
+    <footer class="relative border-t border-obsidian-800/80 bg-obsidian-950 text-ink-400 py-16 sm:py-20 px-4 sm:px-8 overflow-hidden">
+        <!-- Subtle Velvet ambient atmospheric lighting -->
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_90%_70%_at_50%_0%,_#1d1a17_0%,_#131110_40%,_#0a0908_100%)] pointer-events-none"></div>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] sm:w-[900px] h-[220px] bg-[radial-gradient(ellipse_at_top,_rgba(244,240,234,0.06)_0%,_transparent_70%)] blur-[60px] pointer-events-none"></div>
+
+        <div class="relative max-w-7xl mx-auto">
+            <!-- Main 3-Column Asymmetric Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-16 text-sm mb-16">
+                <!-- Col 1 (5 cols): Brand & Mission -->
+                <div class="md:col-span-5 space-y-4">
+                    <div class="flex items-center space-x-3.5">
+                        <div class="w-9 h-9 rounded-full border border-obsidian-700 bg-obsidian-850 flex items-center justify-center text-ink-100 shrink-0">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10" stroke-dasharray="2 3" stroke-opacity="0.5" />
+                                <path d="M12 7v10" />
+                                <path d="M8 9.5v5" />
+                                <path d="M16 9.5v5" />
+                                <path d="M4 11v2" />
+                                <path d="M20 11v2" />
+                            </svg>
+                        </div>
+                        <span class="font-serif text-2xl font-bold tracking-[0.15em] text-ink-100 uppercase block">
+                            Budaya Tutur
+                        </span>
+                    </div>
+                    <p class="text-ink-400 text-xs sm:text-sm leading-relaxed max-w-md font-light">
+                        Inisiatif pengarsipan digital mandiri untuk merekam, merawat, dan mempublikasikan suara, tuturan lisan, nyanyian ritual, dan kidung adat dari berbagai pelosok kepulauan nusantara.
+                    </p>
+                </div>
+
+                <!-- Col 2 (3 cols): Navigasi -->
+                <div class="md:col-span-3 space-y-4">
+                    <h4 class="font-serif text-xs uppercase tracking-[0.25em] text-ink-100 font-semibold">
+                        Navigasi
+                    </h4>
+                    <ul class="space-y-2.5 text-xs uppercase tracking-[0.18em] text-ink-400">
+                        <li><a href="{{ route('home') }}" class="hover:text-ink-100 transition-colors inline-block hover:translate-x-0.5 duration-200">Beranda</a></li>
+                        <li><a href="{{ route('home') }}#tentang" class="hover:text-ink-100 transition-colors inline-block hover:translate-x-0.5 duration-200">Tentang</a></li>
+                        <li><a href="{{ route('galleries.index') }}" class="hover:text-ink-100 transition-colors inline-block hover:translate-x-0.5 duration-200">Arsip Suara</a></li>
+                        <li><a href="{{ route('home') }}#peta" class="hover:text-ink-100 transition-colors inline-block hover:translate-x-0.5 duration-200">Peta Sebaran</a></li>
+                        <li><a href="{{ route('contact') }}" class="hover:text-ink-100 transition-colors inline-block hover:translate-x-0.5 duration-200">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 (4 cols): Etika & Pengarsipan -->
+                <div class="md:col-span-4 space-y-4">
+                    <h4 class="font-serif text-xs uppercase tracking-[0.25em] text-ink-100 font-semibold">
+                        Etika Pengarsipan
+                    </h4>
+                    <p class="text-xs text-ink-500 leading-relaxed font-light">
+                        Setiap rekaman didokumentasikan bersama tetua dan masyarakat penutur. Hak kepemilikan adat atas sastra lisan tetap melekat pada komunitas adat aslinya.
+                    </p>
+                    <div class="pt-2 flex flex-col sm:flex-row gap-3">
+                        <a href="{{ route('contact') }}" class="inline-block px-4 py-2 border border-obsidian-700 hover:border-ink-100 text-[11px] uppercase tracking-[0.15em] text-ink-300 hover:text-ink-100 transition-colors text-center">
+                            Usulkan Rekaman
+                        </a>
+                        <a href="{{ url('/admin') }}" class="inline-block px-4 py-2 border border-transparent hover:border-obsidian-800 text-[11px] uppercase tracking-[0.15em] text-ink-500 hover:text-ink-300 transition-colors text-center">
+                            Portal Pengelola &rarr;
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Col 2: Navigasi Arsip -->
-            <div class="space-y-3">
-                <h4 class="font-serif text-xs uppercase tracking-[0.25em] text-ink-100 font-semibold">
-                    Navigasi
-                </h4>
-                <ul class="space-y-2 text-xs uppercase tracking-[0.15em] text-ink-400">
-                    <li><a href="{{ route('home') }}" class="hover:text-ink-100 transition-colors">Beranda</a></li>
-                    <li><a href="{{ route('galleries.index') }}" class="hover:text-ink-100 transition-colors">Katalog Arsip</a></li>
-                    <li><a href="{{ route('home') }}#peta" class="hover:text-ink-100 transition-colors">Peta Sebaran</a></li>
-                    <li><a href="{{ route('contact') }}" class="hover:text-ink-100 transition-colors">Kirim Rekaman / Kontak</a></li>
-                </ul>
-            </div>
-
-            <!-- Col 3: Arsip & Kontribusi -->
-            <div class="space-y-3">
-                <h4 class="font-serif text-xs uppercase tracking-[0.25em] text-ink-100 font-semibold">
-                    Pengarsipan
-                </h4>
-                <p class="text-xs text-ink-500 leading-relaxed font-light">
-                    Setiap data dan rekaman dikurasi bersama komunitas penutur lokal dan praktisi tradisi lisan daerah.
-                </p>
-                <div class="pt-2">
-                    <a href="{{ url('/admin') }}" class="text-[11px] tracking-[0.2em] uppercase text-ink-400 hover:text-ink-100 transition-colors">
-                        &rarr; Portal Pengelola (Admin)
-                    </a>
+            <!-- Bottom Strip -->
+            <div class="pt-8 border-t border-obsidian-800/60 flex flex-col sm:flex-row items-center justify-between text-[11px] text-ink-500 tracking-widest uppercase font-light gap-4">
+                <div>
+                    &copy; <span id="copyright-year">{{ date('Y') }}</span> Budaya Tutur Voices. Dirawat untuk pengetahuan bersama.
                 </div>
-            </div>
-        </div>
-
-        <!-- Bottom Copyright -->
-        <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-obsidian-700/60 flex flex-col sm:flex-row items-center justify-between text-[11px] text-ink-500 tracking-widest uppercase font-light">
-            <div>
-                &copy; {{ date('Y') }} Budaya Tutur Voices. Seluruh hak cipta terlindungi.
-            </div>
-            <div class="mt-4 sm:mt-0">
-                Arsip Terbuka Budaya Lisan Nusantara
+                <div class="flex items-center space-x-4 text-[10px] text-ink-500 tracking-[0.2em]">
+                    <span>Non-komersial</span>
+                    <span>&bull;</span>
+                    <span>Bebas Akses</span>
+                </div>
             </div>
         </div>
     </footer>
@@ -208,6 +231,12 @@
                         closeMenu();
                     }
                 });
+            }
+
+            // Dynamic Copyright Year Hydration
+            const yearEl = document.getElementById('copyright-year');
+            if (yearEl) {
+                yearEl.textContent = new Date().getFullYear();
             }
         });
     </script>

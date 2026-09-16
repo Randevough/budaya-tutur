@@ -14,7 +14,7 @@ class GalleryController extends Controller
     {
         $query = CultureItem::published()->with(['regency.province']);
 
-        // Search filter
+        // Search filter: simultaneous match on title, excerpt, description, regency, and province
         if ($request->filled('q')) {
             $search = trim($request->input('q'));
             $query->where(function ($q) use ($search) {
@@ -22,7 +22,10 @@ class GalleryController extends Controller
                     ->orWhere('excerpt', 'like', "%{$search}%")
                     ->orWhere('description', 'like', "%{$search}%")
                     ->orWhereHas('regency', function ($rq) use ($search) {
-                        $rq->where('name', 'like', "%{$search}%");
+                        $rq->where('name', 'like', "%{$search}%")
+                            ->orWhereHas('province', function ($pq) use ($search) {
+                                $pq->where('name', 'like', "%{$search}%");
+                            });
                     });
             });
         }
@@ -35,19 +38,12 @@ class GalleryController extends Controller
             });
         }
 
-        // Category filter
-        if ($request->filled('category')) {
-            $category = $request->input('category');
-            $query->where('category', $category);
-        }
-
         $items = $query->latest()->paginate(12)->withQueryString();
 
         // Filters data
         $provinces = Province::whereHas('regencies.cultureItems', fn ($q) => $q->where('is_published', true))->get();
-        $categories = CultureItem::published()->whereNotNull('category')->distinct()->pluck('category');
 
-        return view('galleries.index', compact('items', 'provinces', 'categories'));
+        return view('galleries.index', compact('items', 'provinces'));
     }
 
     public function show(string $slug): View
@@ -57,7 +53,7 @@ class GalleryController extends Controller
             ->with(['regency.province'])
             ->firstOrFail();
 
-        // Related items from the same regency or province
+        // Related items: Prioritize nearest proximity (exact regency first, then province)
         $relatedItems = CultureItem::published()
             ->where('id', '!=', $item->id)
             ->where(function ($q) use ($item) {
@@ -66,6 +62,8 @@ class GalleryController extends Controller
                         $rq->where('province_id', $item->regency->province_id);
                     });
             })
+            ->orderByRaw("CASE WHEN regency_id = ? THEN 0 ELSE 1 END", [$item->regency_id])
+            ->latest()
             ->take(3)
             ->get();
 

@@ -19,7 +19,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // Archive Listing (Filterable Directory)
-Route::get('/galleries', [GalleryController::class, 'index'])->name('galleries.index');
+Route::get('/arsip', [GalleryController::class, 'index'])->name('galleries.index');
+Route::get('/galleries', [GalleryController::class, 'index']);
 
 // Culture Item Detail (Lite YouTube Embed, Story & Transcription)
 Route::get('/galleries/{slug}', [GalleryController::class, 'show'])->name('galleries.show');

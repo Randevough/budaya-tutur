@@ -29,9 +29,6 @@ class CultureItemForm
                 TextInput::make('slug')
                     ->required()
                     ->unique(\App\Models\CultureItem::class, 'slug', ignoreRecord: true),
-                TextInput::make('category')
-                    ->label('Kategori / Ragam Tutur')
-                    ->placeholder('Contoh: Tradisi Lisan, Kidung, Nyanyian Panen, Mantra Adat'),
                 Textarea::make('excerpt')
                     ->label('Ringkasan Singkat')
                     ->rows(3)
