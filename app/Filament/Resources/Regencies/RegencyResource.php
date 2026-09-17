@@ -31,7 +31,7 @@ class RegencyResource extends Resource
 
     public static function getNavigationBadge(): ?string
     {
-        return (string) Regency::count();
+        return \Illuminate\Support\Facades\Cache::remember('regencies_count', 86400, fn () => (string) Regency::count());
     }
 
     public static function form(Schema $schema): Schema

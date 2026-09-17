@@ -31,7 +31,7 @@ class ProvinceResource extends Resource
 
     public static function getNavigationBadge(): ?string
     {
-        return (string) Province::count();
+        return \Illuminate\Support\Facades\Cache::remember('provinces_count', 86400, fn () => (string) Province::count());
     }
 
     public static function form(Schema $schema): Schema

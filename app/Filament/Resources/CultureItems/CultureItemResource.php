@@ -31,7 +31,7 @@ class CultureItemResource extends Resource
 
     public static function getNavigationBadge(): ?string
     {
-        return (string) CultureItem::count();
+        return \Illuminate\Support\Facades\Cache::remember('culture_items_count', 60, fn () => (string) CultureItem::count());
     }
 
     public static function form(Schema $schema): Schema

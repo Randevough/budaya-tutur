@@ -36,18 +36,22 @@ class ContactMessageResource extends Resource
 
     public static function getNavigationBadge(): ?string
     {
-        $unsent = ContactMessage::where('is_sent_via_smtp', false)->count();
-        if ($unsent > 0) {
-            return "{$unsent} DB";
-        }
+        return \Illuminate\Support\Facades\Cache::remember('contact_messages_nav_badge', 60, function () {
+            $unsent = ContactMessage::where('is_sent_via_smtp', false)->count();
+            if ($unsent > 0) {
+                return "{$unsent} DB";
+            }
 
-        $total = ContactMessage::count();
-        return $total > 0 ? (string) $total : null;
+            $total = ContactMessage::count();
+            return $total > 0 ? (string) $total : null;
+        });
     }
 
     public static function getNavigationBadgeColor(): ?string
     {
-        return ContactMessage::where('is_sent_via_smtp', false)->exists() ? 'warning' : 'gray';
+        return \Illuminate\Support\Facades\Cache::remember('contact_messages_nav_color', 60, function () {
+            return ContactMessage::where('is_sent_via_smtp', false)->exists() ? 'warning' : 'gray';
+        });
     }
 
     public static function form(Schema $schema): Schema

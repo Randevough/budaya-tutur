@@ -29,6 +29,7 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login(\App\Filament\Pages\Auth\Login::class)
             ->darkMode(false)
+            ->spa(hasPrefetching: true)
             ->brandName('Budaya Tutur Voices')
             ->favicon(asset('favicon.ico'))
             ->sidebarCollapsibleOnDesktop()
