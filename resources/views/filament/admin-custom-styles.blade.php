@@ -223,20 +223,33 @@
         background-color: #f7f5f2 !important;
     }
 
-    .fi-section.fi-contained,
-    .fi-section:not(.fi-wi-stats-overview .fi-section):not(.fi-section:not(.fi-contained)) {
+    /* Standard Contained Form Section Cards */
+    .fi-section:not(.fi-section-not-contained):not(.fi-wi-stats-overview .fi-section) {
         background-color: #ffffff !important;
         border: 1px solid #e5e0d8 !important;
         border-radius: 0.875rem !important;
-        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 4px 14px 0 rgba(0, 0, 0, 0.02) !important;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03), 0 4px 12px 0 rgba(0, 0, 0, 0.015) !important;
     }
 
+    /* Uncontained Widgets / Overview Section */
     .fi-wi-stats-overview,
     .fi-wi-stats-overview .fi-section,
-    .fi-section:not(.fi-contained) {
+    .fi-section-not-contained {
         background-color: transparent !important;
         border: none !important;
         box-shadow: none !important;
+    }
+
+    /* Pure Deep Obsidian Black Toggle Switch */
+    .fi-toggle.fi-toggle-on,
+    button.fi-toggle[aria-checked="true"],
+    .fi-toggle-btn[aria-checked="true"] {
+        background-color: #121110 !important;
+    }
+
+    .fi-toggle.fi-toggle-on:hover,
+    button.fi-toggle[aria-checked="true"]:hover {
+        background-color: #000000 !important;
     }
 
     .fi-wi-stats-overview-stat {
