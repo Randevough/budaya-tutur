@@ -10,8 +10,8 @@
         <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_65%_at_50%_35%,_#221e1a_0%,_#171513_38%,_#121110_72%,_#080807_100%)] pointer-events-none"></div>
         <div class="absolute top-[35%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] sm:w-[950px] h-[340px] bg-[radial-gradient(ellipse_at_center,_rgba(244,240,234,0.06)_0%,_rgba(180,165,150,0.03)_45%,_transparent_70%)] blur-[70px] pointer-events-none"></div>
 
-        <div class="relative max-w-5xl mx-auto px-4 sm:px-8">
-            <span class="text-[11px] uppercase tracking-[0.3em] text-ink-400 block mb-3 font-medium">
+        <div class="relative max-w-6xl mx-auto px-4 sm:px-8">
+            <span class="text-xs uppercase tracking-[0.25em] text-ink-400 block mb-3 font-medium">
                 Dukungan & Donasi
             </span>
             <h1 class="font-serif text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-ink-100 leading-[1.15] uppercase mb-6">
@@ -28,7 +28,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-8">
             <!-- Header -->
             <div class="max-w-3xl mb-10 sm:mb-14">
-                <span class="text-[11px] uppercase tracking-[0.3em] text-ink-500 block mb-2 font-medium">
+                <span class="text-xs uppercase tracking-[0.25em] text-ink-600 block mb-2 font-medium">
                     Kanal Resmi
                 </span>
                 <h2 class="font-serif text-2xl sm:text-4xl font-bold uppercase tracking-tight text-ink-950 mb-3">
@@ -57,7 +57,7 @@
 
                         <div class="space-y-6 pt-1">
                             <div>
-                                <span class="text-[11px] uppercase tracking-[0.2em] text-ink-500 block mb-1">Nama Bank</span>
+                                <span class="text-xs uppercase tracking-[0.2em] text-ink-600 block mb-1">Nama Bank</span>
                                 <p class="font-serif text-xl sm:text-2xl font-bold text-ink-950 tracking-wide">
                                     {{ $settings->bank_name ?? 'Bank Central Asia (BCA)' }}
                                 </p>
@@ -65,7 +65,7 @@
 
                             <div class="p-4 sm:p-5 bg-linen-200/60 border border-linen-300 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                                 <div>
-                                    <span class="text-[10px] uppercase tracking-[0.2em] text-ink-500 block mb-1">Nomor Rekening</span>
+                                    <span class="text-xs uppercase tracking-[0.2em] text-ink-600 block mb-1">Nomor Rekening</span>
                                     <span id="account-number" class="font-mono text-xl sm:text-2xl font-semibold tracking-wider text-ink-950">
                                         {{ $settings->bank_account_number ?? '123-456-7890' }}
                                     </span>
@@ -86,7 +86,7 @@
                             </div>
 
                             <div>
-                                <span class="text-[11px] uppercase tracking-[0.2em] text-ink-500 block mb-1">Atas Nama Rekening</span>
+                                <span class="text-xs uppercase tracking-[0.2em] text-ink-600 block mb-1">Atas Nama Rekening</span>
                                 <p class="text-sm sm:text-base font-medium text-ink-800">
                                     {{ $settings->bank_account_name ?? 'Yayasan Budaya Tutur Nusantara' }}
                                 </p>
@@ -94,7 +94,7 @@
                         </div>
                     </div>
 
-                    <div class="pt-6 mt-6 border-t border-linen-300 text-[11px] text-ink-500 font-light leading-relaxed">
+                    <div class="pt-6 mt-6 border-t border-linen-300 text-xs text-ink-600 font-light leading-relaxed">
                         Terima kasih atas kepedulian Anda terhadap kelestarian sastra tutur nusantara.
                     </div>
                 </div>
@@ -130,8 +130,8 @@
                                     <svg class="w-16 h-16 text-obsidian-800 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"></path>
                                     </svg>
-                                    <span class="font-serif text-[11px] uppercase tracking-widest font-bold text-obsidian-900">QRIS Tersedia</span>
-                                    <span class="text-[9px] uppercase tracking-wider text-ink-600 mt-0.5">Semua Bank & Dompet Digital</span>
+                                    <span class="font-serif text-xs uppercase tracking-widest font-bold text-obsidian-900">QRIS Tersedia</span>
+                                    <span class="text-xs uppercase tracking-wider text-ink-600 mt-0.5">Semua Bank & Dompet Digital</span>
                                 </div>
                             @endif
                         </div>
@@ -160,7 +160,7 @@
             <div class="pt-12 sm:pt-16 border-t border-linen-300">
                 <div class="max-w-2xl mx-auto text-center space-y-6">
                     <div class="space-y-2.5">
-                        <span class="text-[11px] uppercase tracking-[0.28em] text-ink-500 block font-medium">
+                        <span class="text-xs uppercase tracking-[0.25em] text-ink-600 block font-medium">
                             Hubungi Pengelola
                         </span>
                         <h3 class="font-serif text-2xl sm:text-3xl font-bold uppercase tracking-tight text-ink-950">
@@ -190,7 +190,7 @@
                         </a>
                     </div>
 
-                    <div class="pt-6 border-t border-linen-300 text-[11px] text-ink-500 font-light leading-relaxed max-w-lg mx-auto">
+                    <div class="pt-6 border-t border-linen-300 text-xs text-ink-600 font-light leading-relaxed max-w-lg mx-auto">
                         Budaya Tutur beroperasi secara nirlaba. Seluruh rekaman suara tetap menjadi milik moral para penutur dan komunitas asalnya.
                     </div>
                 </div>

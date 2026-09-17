@@ -71,7 +71,7 @@
                     <span class="font-serif text-lg sm:text-xl font-bold tracking-[0.18em] text-ink-100 uppercase group-hover:text-ink-200 transition-colors">
                         Budaya Tutur
                     </span>
-                    <span class="text-[9px] sm:text-[10px] tracking-[0.28em] uppercase text-ink-400 group-hover:text-ink-300 transition-colors">
+                    <span class="text-xs tracking-[0.22em] uppercase text-ink-400 group-hover:text-ink-300 transition-colors">
                         Voices of Nusantara
                     </span>
                 </div>
@@ -225,7 +225,7 @@
                         </li>
                     </ul>
                     <div class="pt-2">
-                        <a href="{{ url('/admin') }}" class="inline-block text-[11px] uppercase tracking-[0.15em] text-ink-500 hover:text-ink-300 transition-colors">
+                        <a href="{{ url('/admin') }}" class="inline-block text-xs uppercase tracking-[0.18em] text-ink-400 hover:text-ink-200 transition-colors">
                             Portal Pengelola &rarr;
                         </a>
                     </div>
@@ -233,7 +233,7 @@
             </div>
 
             <!-- Bottom Strip -->
-            <div class="pt-8 border-t border-obsidian-800/60 flex flex-col sm:flex-row items-center justify-between text-[11px] text-ink-500 tracking-widest uppercase font-light gap-4">
+            <div class="pt-8 border-t border-obsidian-800/60 flex flex-col sm:flex-row items-center justify-between text-xs text-ink-400 tracking-wider uppercase font-light gap-4">
                 <div>
                     &copy; <span id="copyright-year">{{ date('Y') }}</span> Budaya Tutur Voices. Dirawat untuk pengetahuan bersama.
                 </div>

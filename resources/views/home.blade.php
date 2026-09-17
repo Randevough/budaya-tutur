@@ -37,7 +37,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-8">
             <!-- Section Header -->
             <div class="max-w-3xl mb-12">
-                <span class="text-[11px] uppercase tracking-[0.3em] text-ink-500 block mb-2 font-medium">
+                <span class="text-xs uppercase tracking-[0.25em] text-ink-600 block mb-2 font-medium">
                     Kartografi Suara
                 </span>
                 <h2 class="font-serif text-2xl sm:text-4xl font-bold uppercase tracking-tight text-ink-900 mb-4">
@@ -54,7 +54,7 @@
                 
                 <!-- Map Controls Overlay -->
                 <div class="absolute top-4 right-4 z-20">
-                    <button id="reset-map-btn" type="button" class="bg-linen-50/95 backdrop-blur-md border border-linen-300 px-3 py-2 text-[10px] tracking-widest text-ink-700 hover:text-ink-950 hover:border-ink-600 uppercase transition-all flex items-center space-x-2 focus:outline-none shadow-md">
+                    <button id="reset-map-btn" type="button" class="bg-linen-50/95 backdrop-blur-md border border-linen-300 px-3 py-2 text-xs tracking-wider text-ink-700 hover:text-ink-950 hover:border-ink-600 uppercase transition-all flex items-center space-x-2 focus:outline-none shadow-md">
                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                         </svg>
@@ -63,7 +63,7 @@
                 </div>
 
                 <!-- Map Legend Overlay -->
-                <div class="absolute bottom-4 left-4 z-20 bg-linen-50/95 backdrop-blur-md border border-linen-300 px-4 py-3 text-[11px] tracking-wider text-ink-800 uppercase shadow-md">
+                <div class="absolute bottom-4 left-4 z-20 bg-linen-50/95 backdrop-blur-md border border-linen-300 px-4 py-3 text-xs tracking-wider text-ink-800 uppercase shadow-md">
                     <div class="flex items-center space-x-2.5">
                         <span class="w-3 h-3 rounded-full bg-ink-900 border-2 border-linen-100 inline-block shadow-sm"></span>
                         <span>Titik Pusat Kabupaten Berkoleksi</span>
@@ -79,7 +79,7 @@
             <!-- Section Header -->
             <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-16 pb-6 border-b border-obsidian-700 gap-6">
                 <div>
-                    <span class="text-[11px] uppercase tracking-[0.3em] text-ink-400 block mb-2 font-medium">
+                    <span class="text-xs uppercase tracking-[0.25em] text-ink-400 block mb-2 font-medium">
                         Pilihan Kuratorial
                     </span>
                     <h2 class="font-serif text-2xl sm:text-4xl font-bold uppercase tracking-tight text-ink-100">
@@ -121,7 +121,7 @@
                         <!-- Card Body -->
                         <div class="p-6 sm:p-8 flex flex-col flex-grow">
                             <!-- Location pill -->
-                            <div class="text-[11px] uppercase tracking-[0.2em] text-ink-400 mb-2 font-medium">
+                            <div class="text-xs uppercase tracking-[0.2em] text-ink-400 mb-2 font-medium">
                                 {{ $item->regency->name }}, {{ $item->regency->province->name }}
                             </div>
 
@@ -136,7 +136,7 @@
                             </p>
 
                             <!-- Footer link -->
-                            <div class="mt-auto pt-4 border-t border-obsidian-700 flex items-center justify-between text-[11px] uppercase tracking-[0.2em] text-ink-300 font-medium">
+                            <div class="mt-auto pt-4 border-t border-obsidian-700 flex items-center justify-between text-xs uppercase tracking-[0.2em] text-ink-300 font-medium">
                                 <span class="group-hover:text-ink-100 transition-colors">Buka Rekaman</span>
                                 <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
                             </div>
@@ -154,7 +154,7 @@
     <!-- 4. EDITORIAL MANIFESTO [LIGHT: Warm Linen #F2ECE2] -->
     <section id="tentang" class="py-28 sm:py-36 bg-linen-200 text-ink-900 border-b border-linen-300">
         <div class="max-w-4xl mx-auto px-4 sm:px-8 text-center space-y-8">
-            <span class="text-[11px] uppercase tracking-[0.3em] text-ink-500 block font-medium">
+            <span class="text-xs uppercase tracking-[0.25em] text-ink-600 block font-medium">
                 Catatan Pengarsipan
             </span>
             <blockquote class="font-serif text-2xl sm:text-3xl md:text-4xl text-ink-900 font-medium italic leading-relaxed">

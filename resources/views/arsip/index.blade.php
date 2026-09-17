@@ -11,7 +11,7 @@
         <div class="absolute top-[35%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] sm:w-[950px] h-[340px] bg-[radial-gradient(ellipse_at_center,_rgba(244,240,234,0.06)_0%,_rgba(180,165,150,0.03)_45%,_transparent_70%)] blur-[70px] pointer-events-none"></div>
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-8">
-            <span class="text-[11px] uppercase tracking-[0.3em] text-ink-400 block mb-3 font-medium">
+            <span class="text-xs uppercase tracking-[0.25em] text-ink-400 block mb-3 font-medium">
                 Katalog Digital
             </span>
             <h1 class="font-serif text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-ink-100 uppercase mb-4 leading-[1.15]">
@@ -139,7 +139,7 @@
                     @if(request('province')) &bull; {{ $provinces->firstWhere('slug', request('province'))->name ?? request('province') }} @endif
                 </div>
 
-                <div id="search-spinner" class="hidden items-center space-x-2 text-[11px] uppercase tracking-widest text-ink-500">
+                <div id="search-spinner" class="hidden items-center space-x-2 text-xs uppercase tracking-widest text-ink-500">
                     <svg class="animate-spin h-3.5 w-3.5 text-ink-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
@@ -177,7 +177,7 @@
 
                             <!-- Card Details -->
                             <div class="p-6 sm:p-8 flex flex-col flex-grow">
-                                <div class="text-[11px] uppercase tracking-[0.2em] text-ink-500 mb-2 font-medium">
+                                <div class="text-xs uppercase tracking-[0.2em] text-ink-600 mb-2 font-medium">
                                     {{ $item->regency->name }}, {{ $item->regency->province->name }}
                                 </div>
 
@@ -189,7 +189,7 @@
                                     {{ $item->excerpt ?? Str::limit(strip_tags($item->description), 140) }}
                                 </p>
 
-                                <div class="mt-auto pt-4 border-t border-linen-300 flex items-center justify-between text-[11px] uppercase tracking-[0.2em] text-ink-700 font-medium">
+                                <div class="mt-auto pt-4 border-t border-linen-300 flex items-center justify-between text-xs uppercase tracking-[0.2em] text-ink-700 font-medium">
                                     <span class="group-hover:text-ink-900 transition-colors">Dengar Rekaman</span>
                                     <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
                                 </div>

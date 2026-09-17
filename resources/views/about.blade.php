@@ -4,31 +4,31 @@
 
 @section('content')
     <!-- 1. EDITORIAL HERO SECTION [DARK: Obsidian #121110 Velvet] -->
-    <section class="relative bg-obsidian-900 border-b border-obsidian-700 py-20 sm:py-28 overflow-hidden">
+    <section class="relative bg-obsidian-900 border-b border-obsidian-700 py-16 sm:py-24 overflow-hidden">
         <!-- Subtle Gallery Ambient Spotlight -->
         <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_65%_at_50%_35%,_#221e1a_0%,_#171513_38%,_#121110_72%,_#080807_100%)] pointer-events-none"></div>
         <div class="absolute top-[35%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] sm:w-[950px] h-[340px] bg-[radial-gradient(ellipse_at_center,_rgba(244,240,234,0.06)_0%,_rgba(180,165,150,0.03)_45%,_transparent_70%)] blur-[70px] pointer-events-none"></div>
 
-        <div class="relative max-w-5xl mx-auto px-4 sm:px-8">
-            <span class="text-[11px] uppercase tracking-[0.3em] text-ink-400 block mb-4 font-medium">
+        <div class="relative max-w-6xl mx-auto px-4 sm:px-8">
+            <span class="text-xs uppercase tracking-[0.25em] text-ink-400 block mb-3 font-medium">
                 Manifesto & Identitas
             </span>
-            <h1 class="font-serif text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-ink-100 leading-[1.15] uppercase mb-8">
+            <h1 class="font-serif text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-ink-100 leading-[1.15] uppercase mb-4 sm:mb-6">
                 Menjaga Tutur,<br class="hidden sm:inline"> Merawat Ingatan Kolektif.
             </h1>
-            <p class="text-ink-300 text-sm sm:text-base md:text-lg max-w-3xl font-light leading-relaxed">
+            <p class="text-ink-300 text-sm sm:text-base md:text-lg max-w-2xl font-light leading-relaxed">
                 Budaya Tutur Voices adalah inisiatif pengarsipan digital mandiri yang didedikasikan untuk merekam, menyelamatkan, dan membuka akses terhadap sastra lisan, kidung ritual, mitos asal-usul, dan suara penutur asli dari berbagai pelosok kepulauan nusantara.
             </p>
         </div>
     </section>
 
     <!-- 2. PROFIL & LATAR BELAKANG [LIGHT: Unbleached Linen #F8F5F0] -->
-    <section class="py-20 sm:py-28 bg-linen-100 text-ink-900 border-b border-linen-300">
+    <section class="py-16 sm:py-24 bg-linen-100 text-ink-900 border-b border-linen-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
                 <!-- Left Column: Section Marker -->
                 <div class="lg:col-span-4 space-y-4">
-                    <span class="text-[11px] uppercase tracking-[0.3em] text-ink-500 block font-medium">
+                    <span class="text-xs uppercase tracking-[0.25em] text-ink-600 block font-medium">
                         Latar Belakang
                     </span>
                     <h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold uppercase tracking-tight text-ink-900">
@@ -57,7 +57,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-8">
             <!-- Header -->
             <div class="max-w-3xl mb-8 sm:mb-10">
-                <span class="text-[11px] uppercase tracking-[0.3em] text-ink-400 block mb-2 font-medium">
+                <span class="text-xs uppercase tracking-[0.25em] text-ink-400 block mb-2 font-medium">
                     Arah & Komitmen
                 </span>
                 <h2 class="font-serif text-2xl sm:text-4xl font-bold uppercase tracking-tight text-ink-100">
@@ -74,7 +74,7 @@
                 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[220px] bg-[radial-gradient(ellipse_at_center,_rgba(244,240,234,0.04)_0%,_transparent_70%)] blur-[50px] pointer-events-none"></div>
 
                 <div class="relative z-10">
-                    <span class="text-[10px] sm:text-[11px] uppercase tracking-[0.3em] text-ink-400 block mb-4 font-medium">
+                    <span class="text-xs uppercase tracking-[0.25em] text-ink-400 block mb-4 font-medium">
                         Visi Utama
                     </span>
 
@@ -82,7 +82,7 @@
                         "Menjadi rumah arsip digital terbuka paling tepercaya dan bermartabat bagi suara, sastra tutur, dan bahasa lisan nusantara untuk generasi mendatang."
                     </p>
 
-                    <div class="pt-5 border-t border-obsidian-800 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-[10px] uppercase tracking-[0.25em] text-ink-400 font-light">
+                    <div class="pt-5 border-t border-obsidian-800 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs uppercase tracking-[0.2em] text-ink-400 font-light">
                         <span>Pilar Pengarsipan Nusantara</span>
                         <span>Nirlaba &bull; Bebas Akses &bull; Hak Adat Terlindungi</span>
                     </div>
@@ -91,7 +91,7 @@
 
             <!-- Archival Index Register (2x2 Grid) -->
             <div class="mb-2">
-                <span class="text-[10px] uppercase tracking-[0.3em] text-ink-400 block mb-5 font-medium">
+                <span class="text-xs uppercase tracking-[0.25em] text-ink-400 block mb-5 font-medium">
                     Pilar Kerja Pengarsipan
                 </span>
                 
@@ -104,7 +104,7 @@
                                     <span class="w-8 h-8 rounded border border-obsidian-600 bg-obsidian-850 flex items-center justify-center font-serif text-xs font-bold text-ink-200">
                                         I
                                     </span>
-                                    <span class="text-[11px] uppercase tracking-[0.2em] text-ink-400 font-medium">
+                                    <span class="text-xs uppercase tracking-[0.2em] text-ink-400 font-medium">
                                         Metode & Akustik
                                     </span>
                                 </div>
@@ -129,7 +129,7 @@
                                     <span class="w-8 h-8 rounded border border-obsidian-600 bg-obsidian-850 flex items-center justify-center font-serif text-xs font-bold text-ink-200">
                                         II
                                     </span>
-                                    <span class="text-[11px] uppercase tracking-[0.2em] text-ink-400 font-medium">
+                                    <span class="text-xs uppercase tracking-[0.2em] text-ink-400 font-medium">
                                         Etika & Hak Adat
                                     </span>
                                 </div>
@@ -154,7 +154,7 @@
                                     <span class="w-8 h-8 rounded border border-obsidian-600 bg-obsidian-850 flex items-center justify-center font-serif text-xs font-bold text-ink-200">
                                         III
                                     </span>
-                                    <span class="text-[11px] uppercase tracking-[0.2em] text-ink-400 font-medium">
+                                    <span class="text-xs uppercase tracking-[0.2em] text-ink-400 font-medium">
                                         Akses & Riset
                                     </span>
                                 </div>
@@ -180,7 +180,7 @@
                                     <span class="w-8 h-8 rounded border border-obsidian-600 bg-obsidian-850 flex items-center justify-center font-serif text-xs font-bold text-ink-200">
                                         IV
                                     </span>
-                                    <span class="text-[11px] uppercase tracking-[0.2em] text-ink-400 font-medium">
+                                    <span class="text-xs uppercase tracking-[0.2em] text-ink-400 font-medium">
                                         Regenerasi & Edukasi
                                     </span>
                                 </div>
@@ -206,7 +206,7 @@
     <!-- 4. AJAKAN KOLABORASI & CTA -->
     <section class="py-14 sm:py-20 bg-linen-200 text-ink-900 border-b border-linen-300">
         <div class="max-w-3xl mx-auto px-4 sm:px-8 text-center">
-            <span class="text-[11px] uppercase tracking-[0.3em] text-ink-600 block mb-3 font-semibold">
+            <span class="text-xs uppercase tracking-[0.25em] text-ink-600 block mb-3 font-semibold">
                 Keterlibatan Bersama
             </span>
             

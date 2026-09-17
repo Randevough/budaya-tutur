@@ -32,12 +32,12 @@
         <!-- Top Utility Bar: Back to Archive & Region (Restored) -->
         <div class="max-w-5xl mx-auto px-4 sm:px-8 w-full flex-shrink-0">
             <div class="flex items-center justify-between text-xs uppercase tracking-[0.2em] text-ink-400">
-                <a href="{{ route('arsip.index') }}" class="inline-flex items-center space-x-2 text-[11px] uppercase tracking-[0.2em] text-ink-400 hover:text-ink-100 transition-colors group">
+                <a href="{{ route('arsip.index') }}" class="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.2em] text-ink-400 hover:text-ink-100 transition-colors group">
                     <span class="transition-transform duration-200 group-hover:-translate-x-1">&larr;</span>
                     <span>Kembali ke Katalog</span>
                 </a>
 
-                <div class="text-[11px] uppercase tracking-[0.22em] text-ink-400 font-medium">
+                <div class="text-xs uppercase tracking-[0.2em] text-ink-400 font-medium">
                     {{ $item->regency->name }} &bull; {{ $item->regency->province->name }}
                 </div>
             </div>
@@ -74,13 +74,13 @@
                                     <path d="M8 5v14l11-7z"/>
                                 </svg>
                             </div>
-                            <span class="text-[10px] sm:text-[11px] uppercase tracking-[0.25em] text-ink-200 group-hover:text-ink-100 font-medium">
+                            <span class="text-xs uppercase tracking-[0.2em] text-ink-200 group-hover:text-ink-100 font-medium">
                                 Dengarkan Tuturan
                             </span>
                         </div>
 
                         <!-- Notice Badge Inside Player -->
-                        <div class="absolute bottom-3 left-4 text-[10px] uppercase tracking-widest text-ink-300 bg-obsidian-950/80 px-2.5 py-1 backdrop-blur-sm border border-obsidian-700/80">
+                        <div class="absolute bottom-3 left-4 text-xs uppercase tracking-wider text-ink-300 bg-obsidian-950/80 px-2.5 py-1 backdrop-blur-sm border border-obsidian-700/80">
                             Rekaman Audio & Visual Lapangan
                         </div>
                     </div>
@@ -126,27 +126,27 @@
 
                             <!-- Region -->
                             <div>
-                                <span class="text-[10px] uppercase tracking-widest text-ink-500 block mb-1 font-medium">
+                                <span class="text-xs uppercase tracking-wider text-ink-600 block mb-1 font-medium">
                                     Wilayah Administratif
                                 </span>
-                                <span class="text-xs text-ink-900 font-medium">
+                                <span class="text-xs sm:text-sm text-ink-900 font-medium">
                                     {{ $item->regency->name }}
                                 </span>
                             </div>
 
                             <!-- Province -->
                             <div>
-                                <span class="text-[10px] uppercase tracking-widest text-ink-500 block mb-1 font-medium">
+                                <span class="text-xs uppercase tracking-wider text-ink-600 block mb-1 font-medium">
                                     Provinsi
                                 </span>
-                                <span class="text-xs text-ink-900 font-medium">
+                                <span class="text-xs sm:text-sm text-ink-900 font-medium">
                                     {{ $item->regency->province->name }}
                                 </span>
                             </div>
 
                             <!-- Integrated Share Action Row: Bagikan, Salin Link, WhatsApp -->
                             <div class="pt-5 border-t border-linen-300">
-                                <span class="text-[10px] uppercase tracking-[0.2em] text-ink-500 block mb-3 font-semibold">
+                                <span class="text-xs uppercase tracking-[0.2em] text-ink-600 block mb-3 font-semibold">
                                     Bagikan Ingatan Ini
                                 </span>
                                 
@@ -203,7 +203,7 @@
             <div class="max-w-6xl mx-auto px-4 sm:px-8">
                 <div class="flex items-center justify-between mb-8">
                     <div>
-                        <span class="text-[10px] uppercase tracking-[0.25em] text-ink-500 block mb-1 font-medium">
+                        <span class="text-xs uppercase tracking-[0.25em] text-ink-600 block mb-1 font-medium">
                             Koleksi Senada
                         </span>
                         <h3 class="font-serif text-xl sm:text-2xl font-bold uppercase tracking-tight text-ink-900">
@@ -235,14 +235,14 @@
                                 <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950/70 via-transparent to-transparent"></div>
 
                                 <!-- Proximity Badge -->
-                                <div class="absolute top-3 left-3 text-[9px] uppercase tracking-wider px-2 py-0.5 font-medium {{ $related->regency_id === $item->regency_id ? 'bg-ink-100 text-obsidian-950' : 'bg-obsidian-950/80 text-ink-200 border border-obsidian-700' }}">
+                                <div class="absolute top-3 left-3 text-xs uppercase tracking-wider px-2.5 py-1 font-medium {{ $related->regency_id === $item->regency_id ? 'bg-ink-100 text-obsidian-950' : 'bg-obsidian-950/80 text-ink-200 border border-obsidian-700' }}">
                                     {{ $related->regency_id === $item->regency_id ? 'Wilayah Sama' : 'Provinsi Terkait' }}
                                 </div>
                             </a>
 
                             <!-- Details -->
                             <div class="p-5 sm:p-6 flex flex-col flex-grow">
-                                <span class="text-[10px] uppercase tracking-widest text-ink-500 block mb-1.5 font-medium">
+                                <span class="text-xs uppercase tracking-wider text-ink-600 block mb-1.5 font-medium">
                                     {{ $related->regency->name }}
                                 </span>
 
@@ -256,7 +256,7 @@
                                     {{ $related->excerpt ?? Str::limit(strip_tags($related->description), 90) }}
                                 </p>
 
-                                <div class="mt-auto pt-3 border-t border-linen-300 flex items-center justify-between text-[11px] uppercase tracking-wider text-ink-700 group-hover:text-ink-900 font-medium">
+                                <div class="mt-auto pt-3 border-t border-linen-300 flex items-center justify-between text-xs uppercase tracking-wider text-ink-700 group-hover:text-ink-900 font-medium">
                                     <span>Buka Rekaman</span>
                                     <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
                                 </div>
