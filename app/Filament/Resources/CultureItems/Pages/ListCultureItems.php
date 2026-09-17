@@ -6,6 +6,7 @@ use App\Filament\Resources\CultureItems\CultureItemResource;
 use App\Models\CultureItem;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
+use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Tabs\Tab;
 use Filament\Support\Icons\Heroicon;
 use Illuminate\Database\Eloquent\Builder;
@@ -19,6 +20,11 @@ class ListCultureItems extends ListRecords
         return [];
     }
 
+    public function getSubheading(): ?string
+    {
+        return 'Kelola dan kurasi seluruh dokumentasi tuturan lisan nusantara.';
+    }
+
     protected function getHeaderActions(): array
     {
         return [
@@ -26,6 +32,12 @@ class ListCultureItems extends ListRecords
                 ->label('Catat Tuturan Baru')
                 ->icon(Heroicon::OutlinedPlus),
         ];
+    }
+
+    public function getTabsContentComponent(): Component
+    {
+        return parent::getTabsContentComponent()
+            ->extraAttributes(['class' => 'bt-table-tabs']);
     }
 
     public function getTabs(): array
