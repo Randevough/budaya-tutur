@@ -50,12 +50,12 @@ class CultureItemForm
     {
         return $schema
             ->components([
-                Grid::make(['default' => 1, 'lg' => 3])
+                Grid::make(['default' => 1, 'lg' => 2])
                     ->schema([
-                        // Main narrative column (Left 2 cols: Identitas + Naskah Tuturan)
+                        // Left Column: Identitas, Wilayah & Media
                         Group::make([
-                            Section::make('Identitas Budaya Tutur')
-                                ->description('Judul karya tutur dan tautan unik arsip')
+                            Section::make('Identitas & Asal Wilayah')
+                                ->description('Informasi judul tuturan dan asal wilayah geografis nusantara')
                                 ->icon(Heroicon::OutlinedDocumentText)
                                 ->schema([
                                     TextInput::make('title')
@@ -80,50 +80,13 @@ class CultureItemForm
                                                 ->icon(Heroicon::OutlinedArrowPath)
                                                 ->tooltip('Hasilkan ulang dari judul')
                                                 ->action(function (callable $get, callable $set) {
-                                                $title = $get('title');
-                                                if (filled($title)) {
-                                                    $set('slug', Str::slug($title));
-                                                }
-                                            })
+                                                    $title = $get('title');
+                                                    if (filled($title)) {
+                                                        $set('slug', Str::slug($title));
+                                                    }
+                                                })
                                         ),
-                                ]),
 
-                            Section::make('Naskah & Narasi Tuturan')
-                                ->description('Transkripsi tuturan lisan, konteks kultural, dan kutipan kurasi')
-                                ->icon(Heroicon::OutlinedBookOpen)
-                                ->schema([
-                                    Textarea::make('excerpt')
-                                        ->label('Ringkasan Singkat (Kutipan Kurasi)')
-                                        ->rows(3)
-                                        ->placeholder('Tulis 1–2 kalimat intisari atau kutipan puitis untuk pratinjau kartu...')
-                                        ->helperText('Ditampilkan pada kartu katalog arsip, beranda, dan cuplikan media sosial.')
-                                        ->columnSpanFull(),
-
-                                    Textarea::make('description')
-                                        ->label('Transkripsi & Naskah Tutur Lengkap')
-                                        ->rows(12)
-                                        ->placeholder("Tuliskan naskah lisan, bait-bait tuturan, atau transkripsi lengkap di sini...\n\nGunakan baris baru untuk memisahkan bait syair, nyanyian adat, mantra, atau catatan makna filosofis.")
-                                        ->required()
-                                        ->helperText('Format naskah mendukung baris baru untuk bait syair, nyanyian adat, mantra, atau catatan kontekstual.')
-                                        ->columnSpanFull(),
-                                ]),
-                        ])->columnSpan(['default' => 1, 'lg' => 2]),
-
-                        // Sidebar column (Right 1 col: Status + Wilayah + Media & Sampul)
-                        Group::make([
-                            Section::make('Status Publikasi')
-                                ->icon(Heroicon::OutlinedGlobeAlt)
-                                ->schema([
-                                    Toggle::make('is_published')
-                                        ->label('Terbitkan ke Publik')
-                                        ->helperText('Jika aktif, arsip langsung tampil di katalog publik, peta interaktif, dan beranda.')
-                                        ->default(true),
-                                ]),
-
-                            Section::make('Wilayah Asal')
-                                ->description('Penetapan titik geografis pada peta')
-                                ->icon(Heroicon::OutlinedMapPin)
-                                ->schema([
                                     Select::make('regency_id')
                                         ->label('Kabupaten / Kota Asal')
                                         ->relationship('regency', 'name')
@@ -131,11 +94,12 @@ class CultureItemForm
                                         ->searchable()
                                         ->preload()
                                         ->required()
-                                        ->helperText('Pilih kabupaten/kota tempat tuturan ini berasal untuk penempatan titik peta.'),
+                                        ->helperText('Pilih kabupaten/kota tempat tuturan ini berasal untuk penempatan titik peta.')
+                                        ->columnSpanFull(),
                                 ]),
 
                             Section::make('Media Audio / Video & Sampul')
-                                ->description('Pengaturan embed rekaman YouTube & foto kurasi')
+                                ->description('Pengaturan rekaman YouTube & foto sampul kurasi')
                                 ->icon(Heroicon::OutlinedPlayCircle)
                                 ->schema([
                                     TextInput::make('youtube_id')
@@ -182,7 +146,7 @@ class CultureItemForm
                                                         </div>
                                                     </div>
                                                     <div class="flex items-center justify-between border-t border-stone-800 bg-stone-900 px-3 py-1.5 text-[11px] text-stone-300">
-                                                        <span class="font-medium text-stone-300">Thumbnail otomatis aktif</span>
+                                                        <span class="font-medium text-stone-300">Thumbnail YouTube aktif</span>
                                                         <a href="https://youtu.be/' . e($id) . '" target="_blank" rel="noopener noreferrer" class="font-medium text-stone-100 underline hover:text-white">Uji Tautan &nearr;</a>
                                                     </div>
                                                 </div>
@@ -197,7 +161,40 @@ class CultureItemForm
                                         ->helperText('Biarkan kosong untuk otomatis memakai thumbnail resolusi tinggi YouTube di atas.')
                                         ->columnSpanFull(),
                                 ]),
-                        ])->columnSpan(['default' => 1, 'lg' => 1]),
+                        ])->columnSpan(1),
+
+                        // Right Column: Status & Naskah Narasi
+                        Group::make([
+                            Section::make('Status Publikasi')
+                                ->description('Visibilitas karya tutur di katalog publik dan peta')
+                                ->icon(Heroicon::OutlinedGlobeAlt)
+                                ->schema([
+                                    Toggle::make('is_published')
+                                        ->label('Terbitkan ke Publik')
+                                        ->helperText('Jika aktif, tuturan langsung dapat diakses di beranda, peta, dan katalog pencarian.')
+                                        ->default(true),
+                                ]),
+
+                            Section::make('Naskah & Narasi Tuturan')
+                                ->description('Transkripsi tuturan lisan, konteks kultural, dan kutipan kurasi')
+                                ->icon(Heroicon::OutlinedBookOpen)
+                                ->schema([
+                                    Textarea::make('excerpt')
+                                        ->label('Ringkasan Singkat (Kutipan Kurasi)')
+                                        ->rows(3)
+                                        ->placeholder('Tulis 1–2 kalimat intisari atau kutipan puitis untuk pratinjau kartu...')
+                                        ->helperText('Ditampilkan pada kartu katalog arsip, beranda, dan cuplikan media sosial.')
+                                        ->columnSpanFull(),
+
+                                    Textarea::make('description')
+                                        ->label('Transkripsi & Naskah Tutur Lengkap')
+                                        ->rows(12)
+                                        ->placeholder("Tuliskan naskah lisan, bait-bait tuturan, atau transkripsi lengkap di sini...\n\nGunakan baris baru untuk memisahkan bait syair, nyanyian adat, mantra, atau catatan makna filosofis.")
+                                        ->required()
+                                        ->helperText('Format naskah mendukung baris baru untuk bait syair, nyanyian adat, mantra, atau catatan kontekstual.')
+                                        ->columnSpanFull(),
+                                ]),
+                        ])->columnSpan(1),
                     ]),
             ]);
     }

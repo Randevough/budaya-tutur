@@ -81,7 +81,7 @@ class AdminPanelTest extends TestCase
 
         $response = $this->actingAs($admin)->get('/admin/culture-items/create');
         $response->assertStatus(200);
-        $response->assertSee('Identitas Budaya Tutur');
+        $response->assertSee('Identitas &amp; Asal Wilayah', false);
         $response->assertSee('Naskah &amp; Narasi Tuturan', false);
         $response->assertSee('Status Publikasi');
     }
