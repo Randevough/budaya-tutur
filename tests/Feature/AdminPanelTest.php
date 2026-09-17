@@ -99,16 +99,15 @@ class AdminPanelTest extends TestCase
         $this->assertNull(\App\Filament\Resources\CultureItems\Schemas\CultureItemForm::extractYoutubeId(''));
     }
 
-    public function test_welcome_banner_widget_can_toggle_donation(): void
+    public function test_dashboard_header_action_can_toggle_donation(): void
     {
         $admin = User::factory()->create();
         \App\Models\SiteSetting::current(); // Ensure initial setting
 
         \Livewire\Livewire::actingAs($admin)
-            ->test(\App\Filament\Widgets\WelcomeBannerWidget::class)
-            ->assertSee('Donasi:')
-            ->call('toggleDonation')
-            ->assertSet('isDonationActive', false);
+            ->test(\App\Filament\Pages\Dashboard::class)
+            ->assertSee('Donasi: Aktif')
+            ->callAction('toggle_donation');
 
         $this->assertFalse(\App\Models\SiteSetting::find(1)->is_donation_active);
     }
