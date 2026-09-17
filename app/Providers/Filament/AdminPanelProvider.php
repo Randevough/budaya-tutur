@@ -30,7 +30,9 @@ class AdminPanelProvider extends PanelProvider
             ->login(\App\Filament\Pages\Auth\Login::class)
             ->darkMode(false)
             ->spa(hasPrefetching: true)
-            ->brandName('Budaya Tutur Voices')
+            ->brandName('Budaya Tutur')
+            ->brandLogo(fn () => view('filament.brand-logo'))
+            ->brandLogoHeight('1.75rem')
             ->favicon(asset('favicon.ico'))
             ->sidebarCollapsibleOnDesktop()
             ->navigationGroups([

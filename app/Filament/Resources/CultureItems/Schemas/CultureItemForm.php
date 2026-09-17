@@ -54,7 +54,6 @@ class CultureItemForm
                 // Left Column: Identitas, Wilayah & Media
                 Group::make([
                     Section::make('Identitas & Asal Wilayah')
-                        ->description('Informasi judul tuturan dan asal wilayah geografis nusantara')
                         ->icon(Heroicon::OutlinedDocumentText)
                         ->schema([
                             TextInput::make('title')
@@ -71,7 +70,6 @@ class CultureItemForm
                             TextInput::make('slug')
                                 ->label('Slug URL Publik')
                                 ->prefix('/arsip/')
-                                ->helperText('Tautan publik unik untuk arsip ini. Otomatis terisi saat judul diketik.')
                                 ->required()
                                 ->unique(CultureItem::class, 'slug', ignoreRecord: true)
                                 ->suffixAction(
@@ -93,18 +91,16 @@ class CultureItemForm
                                 ->searchable()
                                 ->preload()
                                 ->required()
-                                ->helperText('Pilih kabupaten/kota tempat tuturan ini berasal untuk penempatan titik peta.')
                                 ->columnSpanFull(),
                         ]),
 
                     Section::make('Media Audio / Video & Sampul')
-                        ->description('Pengaturan rekaman YouTube & foto sampul kurasi')
                         ->icon(Heroicon::OutlinedPlayCircle)
                         ->schema([
                             TextInput::make('youtube_id')
                                 ->label('YouTube Video ID atau Tautan')
                                 ->placeholder('Tempel tautan atau ID (misal: https://youtu.be/dQw4w9WgXcQ)')
-                                ->helperText('Dapat berupa tautan lengkap YouTube, Shorts, atau 11 karakter ID video.')
+                                ->helperText('Tautan YouTube, Shorts, atau 11 karakter ID video.')
                                 ->required()
                                 ->live(onBlur: true)
                                 ->afterStateUpdated(function (?string $state, callable $set) {
@@ -124,12 +120,7 @@ class CultureItemForm
                                     $id = CultureItemForm::extractYoutubeId($raw);
 
                                     if (blank($id)) {
-                                        return new HtmlString('
-                                            <div class="rounded-lg border border-dashed border-stone-300/80 bg-stone-50/60 p-3.5 text-center text-xs text-stone-500">
-                                                <p class="font-medium text-stone-600">Pratinjau Rekaman YouTube</p>
-                                                <p class="mt-0.5 text-[11px] text-stone-400">Tempel tautan atau ID YouTube di atas untuk melihat thumbnail rekaman otomatis.</p>
-                                            </div>
-                                        ');
+                                        return null;
                                     }
 
                                     $thumbnailUrl = "https://img.youtube.com/vi/{$id}/mqdefault.jpg";
@@ -157,7 +148,7 @@ class CultureItemForm
                                 ->directory('covers')
                                 ->image()
                                 ->imageCropAspectRatio('16:9')
-                                ->helperText('Biarkan kosong untuk otomatis memakai thumbnail resolusi tinggi YouTube di atas.')
+                                ->helperText('Opsional. Kosongkan untuk memakai thumbnail YouTube.')
                                 ->columnSpanFull(),
                         ]),
                 ])->columnSpan(1),
@@ -165,24 +156,22 @@ class CultureItemForm
                 // Right Column: Status & Naskah Narasi
                 Group::make([
                     Section::make('Status Publikasi')
-                        ->description('Visibilitas karya tutur di katalog publik dan peta')
                         ->icon(Heroicon::OutlinedGlobeAlt)
                         ->schema([
                             Toggle::make('is_published')
                                 ->label('Terbitkan ke Publik')
-                                ->helperText('Jika aktif, tuturan langsung dapat diakses di beranda, peta, dan katalog pencarian.')
+                                ->helperText('Tampilkan langsung di katalog publik dan peta.')
                                 ->default(true),
                         ]),
 
                     Section::make('Naskah & Narasi Tuturan')
-                        ->description('Transkripsi tuturan lisan, konteks kultural, dan kutipan kurasi')
                         ->icon(Heroicon::OutlinedBookOpen)
                         ->schema([
                             Textarea::make('excerpt')
                                 ->label('Ringkasan Singkat (Kutipan Kurasi)')
                                 ->rows(3)
                                 ->placeholder('Tulis 1–2 kalimat intisari atau kutipan puitis untuk pratinjau kartu...')
-                                ->helperText('Ditampilkan pada kartu katalog arsip, beranda, dan cuplikan media sosial.')
+                                ->helperText('Maks. 2 kalimat untuk intisari pratinjau kartu.')
                                 ->columnSpanFull(),
 
                             Textarea::make('description')
@@ -190,7 +179,6 @@ class CultureItemForm
                                 ->rows(12)
                                 ->placeholder("Tuliskan naskah lisan, bait-bait tuturan, atau transkripsi lengkap di sini...\n\nGunakan baris baru untuk memisahkan bait syair, nyanyian adat, mantra, atau catatan makna filosofis.")
                                 ->required()
-                                ->helperText('Format naskah mendukung baris baru untuk bait syair, nyanyian adat, mantra, atau catatan kontekstual.')
                                 ->columnSpanFull(),
                         ]),
                 ])->columnSpan(1),

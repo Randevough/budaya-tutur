@@ -276,4 +276,157 @@
         margin-bottom: 0 !important;
         padding-bottom: 0 !important;
     }
+
+    /* 1. Topbar & Sidebar Boundary */
+    .fi-topbar {
+        background-color: #ffffff !important;
+        border-bottom: 1px solid #e7e3dc !important;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.02) !important;
+    }
+
+    .fi-sidebar {
+        background-color: #ffffff !important;
+        border-right: 1px solid #e7e3dc !important;
+    }
+
+    /* 2. Smooth Sidebar Transitions */
+    @media (min-width: 1024px) {
+        .fi-sidebar {
+            transition: width 240ms cubic-bezier(0.4, 0, 0.2, 1), transform 240ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+            will-change: width;
+        }
+
+        .fi-main-ctn {
+            transition: margin 240ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+        }
+
+        .fi-sidebar-nav {
+            transition: width 240ms cubic-bezier(0.4, 0, 0.2, 1), padding 240ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+        }
+
+        .fi-sidebar-item-label,
+        .fi-sidebar-group-label {
+            transition: opacity 180ms ease, transform 180ms ease !important;
+        }
+
+        .fi-sidebar-item-btn {
+            transition: background-color 150ms ease, color 150ms ease, padding 200ms ease !important;
+        }
+    }
+
+    /* 3. Contrast & Layering Architecture */
+    .fi-body,
+    .fi-main-ctn,
+    .fi-main {
+        background-color: #f7f5f2 !important;
+    }
+
+    .fi-section {
+        background-color: #ffffff !important;
+        border: 1px solid #e5e0d8 !important;
+        border-radius: 0.875rem !important;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 4px 14px 0 rgba(0, 0, 0, 0.02) !important;
+    }
+
+    /* Form Input Fields Contrast & Focus */
+    .fi-input-wrapper {
+        background-color: #ffffff !important;
+        border: 1px solid #d8d2c7 !important;
+        border-radius: 0.5rem !important;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.02) !important;
+        transition: border-color 0.15s ease, box-shadow 0.15s ease !important;
+    }
+
+    .fi-input-wrapper:hover {
+        border-color: #a89f91 !important;
+    }
+
+    .fi-input-wrapper:focus-within {
+        border-color: #1a1816 !important;
+        box-shadow: 0 0 0 1.5px #1a1816, 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+    }
+
+    .fi-input-wrapper input,
+    .fi-input-wrapper select,
+    .fi-input-wrapper textarea {
+        font-size: 0.875rem !important;
+        color: #1a1816 !important;
+    }
+
+    .fi-input-wrapper input::placeholder,
+    .fi-input-wrapper textarea::placeholder {
+        color: #9c9589 !important;
+    }
+
+    .fi-fo-field-wrp-label label {
+        font-size: 0.8125rem !important;
+        font-weight: 600 !important;
+        color: #2e2a27 !important;
+        letter-spacing: -0.005em !important;
+    }
+
+    .fi-fo-field-wrp-helper-text {
+        font-size: 0.75rem !important;
+        color: #797166 !important;
+        margin-top: 0.375rem !important;
+    }
+
+    /* FileUpload Aesthetic */
+    .fi-fo-file-upload .filepond--panel-root {
+        background-color: #fbfaf8 !important;
+        border: 1px dashed #d5cec3 !important;
+        border-radius: 0.625rem !important;
+        transition: all 0.2s ease !important;
+    }
+
+    .fi-fo-file-upload:hover .filepond--panel-root {
+        background-color: #f8f6f3 !important;
+        border-color: #a89f91 !important;
+    }
+
+    /* 4. Section Header Icon Badge & Balance */
+    .fi-section-header {
+        display: flex !important;
+        align-items: center !important;
+        gap: 0.875rem !important;
+        padding-bottom: 0.875rem !important;
+        border-bottom: 1px solid #f2ede6 !important;
+        margin-bottom: 1.25rem !important;
+    }
+
+    .fi-section-header > .fi-icon {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 2.25rem !important;
+        height: 2.25rem !important;
+        padding: 0.45rem !important;
+        border-radius: 0.5rem !important;
+        background-color: #f6f3ee !important;
+        border: 1px solid #e4ded4 !important;
+        color: #2b2723 !important;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03) !important;
+        margin-top: 0 !important;
+        flex-shrink: 0 !important;
+    }
+
+    .fi-section-header-text-ctn {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.15rem !important;
+    }
+
+    .fi-section-header-heading {
+        font-size: 0.9375rem !important;
+        font-weight: 600 !important;
+        color: #171513 !important;
+        letter-spacing: -0.01em !important;
+        line-height: 1.3 !important;
+    }
+
+    .fi-section-header-description {
+        font-size: 0.78125rem !important;
+        color: #797166 !important;
+        line-height: 1.35 !important;
+    }
 </style>
