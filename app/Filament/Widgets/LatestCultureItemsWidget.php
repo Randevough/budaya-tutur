@@ -24,6 +24,7 @@ class LatestCultureItemsWidget extends BaseWidget
         return $table
             ->query(CultureItem::query()->latest()->limit(5))
             ->paginated(false)
+            ->searchPlaceholder('Cari tuturan...')
             ->columns([
                 TextColumn::make('title')
                     ->label('Judul Budaya Tutur')
@@ -37,9 +38,11 @@ class LatestCultureItemsWidget extends BaseWidget
 
                 TextColumn::make('is_published')
                     ->label('Status')
-                    ->formatStateUsing(fn (bool $state): string => $state ? 'Terbit' : 'Draf')
-                    ->badge()
-                    ->color(fn (bool $state): string => $state ? 'success' : 'gray'),
+                    ->html()
+                    ->formatStateUsing(fn (bool $state): string => $state
+                        ? '<span class="bt-status-pill published"><span class="bt-dot"></span>Terbit</span>'
+                        : '<span class="bt-status-pill draft"><span class="bt-dot"></span>Draf</span>'
+                    ),
 
                 TextColumn::make('created_at')
                     ->label('Waktu Ditambahkan')
@@ -55,7 +58,7 @@ class LatestCultureItemsWidget extends BaseWidget
                     ->openUrlInNewTab(),
 
                 EditAction::make()
-                    ->label('Kelola')
+                    ->label('Edit')
                     ->url(fn (CultureItem $record): string => CultureItemResource::getUrl('edit', ['record' => $record])),
             ]);
     }

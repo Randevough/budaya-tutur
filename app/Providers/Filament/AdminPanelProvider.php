@@ -38,7 +38,7 @@ class AdminPanelProvider extends PanelProvider
                 \Filament\Navigation\NavigationGroup::make('Komunikasi'),
             ])
             ->navigationItems([
-                \Filament\Navigation\NavigationItem::make('Lihat Website Publik')
+                \Filament\Navigation\NavigationItem::make('Lihat Website')
                     ->url('/', shouldOpenInNewTab: true)
                     ->icon(\Filament\Support\Icons\Heroicon::OutlinedArrowTopRightOnSquare)
                     ->sort(99),
@@ -59,19 +59,35 @@ class AdminPanelProvider extends PanelProvider
                     950 => '#000000',
                 ],
                 'gray' => Color::Stone,
-                'success' => Color::Emerald,
+                'success' => [
+                    50 => '#f4f7f5',
+                    100 => '#e5ede7',
+                    200 => '#cddcd1',
+                    300 => '#a7c2af',
+                    400 => '#7ba286',
+                    500 => '#568463',
+                    600 => '#43694e',
+                    700 => '#36533f',
+                    800 => '#2d4334',
+                    900 => '#26382c',
+                    950 => '#131e17',
+                ],
                 'warning' => Color::Amber,
                 'danger' => Color::Rose,
-                'info' => Color::Sky,
+                'info' => Color::Slate,
             ])
+            ->renderHook(
+                \Filament\View\PanelsRenderHook::HEAD_END,
+                fn (): string => \Illuminate\Support\Facades\Blade::render('@include("filament.admin-custom-styles")'),
+            )
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')
             ->pages([
-                Dashboard::class,
+                \App\Filament\Pages\Dashboard::class,
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
             ->widgets([
-                AccountWidget::class,
+                \App\Filament\Widgets\WelcomeBannerWidget::class,
                 \App\Filament\Widgets\StatsOverview::class,
                 \App\Filament\Widgets\LatestCultureItemsWidget::class,
             ])

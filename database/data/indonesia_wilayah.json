@@ -1,0 +1,4308 @@
+{
+    "provinces": [
+        {
+            "code": "11",
+            "name": "Aceh",
+            "slug": "aceh"
+        },
+        {
+            "code": "12",
+            "name": "Sumatera Utara",
+            "slug": "sumatera-utara"
+        },
+        {
+            "code": "13",
+            "name": "Sumatera Barat",
+            "slug": "sumatera-barat"
+        },
+        {
+            "code": "14",
+            "name": "Riau",
+            "slug": "riau"
+        },
+        {
+            "code": "15",
+            "name": "Jambi",
+            "slug": "jambi"
+        },
+        {
+            "code": "16",
+            "name": "Sumatera Selatan",
+            "slug": "sumatera-selatan"
+        },
+        {
+            "code": "17",
+            "name": "Bengkulu",
+            "slug": "bengkulu"
+        },
+        {
+            "code": "18",
+            "name": "Lampung",
+            "slug": "lampung"
+        },
+        {
+            "code": "19",
+            "name": "Kepulauan Bangka Belitung",
+            "slug": "kepulauan-bangka-belitung"
+        },
+        {
+            "code": "21",
+            "name": "Kepulauan Riau",
+            "slug": "kepulauan-riau"
+        },
+        {
+            "code": "31",
+            "name": "DKI Jakarta",
+            "slug": "dki-jakarta"
+        },
+        {
+            "code": "32",
+            "name": "Jawa Barat",
+            "slug": "jawa-barat"
+        },
+        {
+            "code": "33",
+            "name": "Jawa Tengah",
+            "slug": "jawa-tengah"
+        },
+        {
+            "code": "34",
+            "name": "DI Yogyakarta",
+            "slug": "di-yogyakarta"
+        },
+        {
+            "code": "35",
+            "name": "Jawa Timur",
+            "slug": "jawa-timur"
+        },
+        {
+            "code": "36",
+            "name": "Banten",
+            "slug": "banten"
+        },
+        {
+            "code": "51",
+            "name": "Bali",
+            "slug": "bali"
+        },
+        {
+            "code": "52",
+            "name": "Nusa Tenggara Barat",
+            "slug": "nusa-tenggara-barat"
+        },
+        {
+            "code": "53",
+            "name": "Nusa Tenggara Timur",
+            "slug": "nusa-tenggara-timur"
+        },
+        {
+            "code": "61",
+            "name": "Kalimantan Barat",
+            "slug": "kalimantan-barat"
+        },
+        {
+            "code": "62",
+            "name": "Kalimantan Tengah",
+            "slug": "kalimantan-tengah"
+        },
+        {
+            "code": "63",
+            "name": "Kalimantan Selatan",
+            "slug": "kalimantan-selatan"
+        },
+        {
+            "code": "64",
+            "name": "Kalimantan Timur",
+            "slug": "kalimantan-timur"
+        },
+        {
+            "code": "65",
+            "name": "Kalimantan Utara",
+            "slug": "kalimantan-utara"
+        },
+        {
+            "code": "71",
+            "name": "Sulawesi Utara",
+            "slug": "sulawesi-utara"
+        },
+        {
+            "code": "72",
+            "name": "Sulawesi Tengah",
+            "slug": "sulawesi-tengah"
+        },
+        {
+            "code": "73",
+            "name": "Sulawesi Selatan",
+            "slug": "sulawesi-selatan"
+        },
+        {
+            "code": "74",
+            "name": "Sulawesi Tenggara",
+            "slug": "sulawesi-tenggara"
+        },
+        {
+            "code": "75",
+            "name": "Gorontalo",
+            "slug": "gorontalo"
+        },
+        {
+            "code": "76",
+            "name": "Sulawesi Barat",
+            "slug": "sulawesi-barat"
+        },
+        {
+            "code": "81",
+            "name": "Maluku",
+            "slug": "maluku"
+        },
+        {
+            "code": "82",
+            "name": "Maluku Utara",
+            "slug": "maluku-utara"
+        },
+        {
+            "code": "91",
+            "name": "Papua Barat",
+            "slug": "papua-barat"
+        },
+        {
+            "code": "94",
+            "name": "Papua",
+            "slug": "papua"
+        },
+        {
+            "code": 92,
+            "name": "Papua Barat Daya",
+            "slug": "papua-barat-daya"
+        },
+        {
+            "code": 93,
+            "name": "Papua Selatan",
+            "slug": "papua-selatan"
+        },
+        {
+            "code": 95,
+            "name": "Papua Tengah",
+            "slug": "papua-tengah"
+        },
+        {
+            "code": 96,
+            "name": "Papua Pegunungan",
+            "slug": "papua-pegunungan"
+        }
+    ],
+    "regencies": [
+        {
+            "code": "11.01",
+            "name": "Kabupaten Aceh Selatan",
+            "slug": "kabupaten-aceh-selatan",
+            "province_code": "11",
+            "latitude": 3.067979,
+            "longitude": 97.4687715
+        },
+        {
+            "code": "11.02",
+            "name": "Kabupaten Aceh Tenggara",
+            "slug": "kabupaten-aceh-tenggara",
+            "province_code": "11",
+            "latitude": 3.338797,
+            "longitude": 97.7456424
+        },
+        {
+            "code": "11.03",
+            "name": "Kabupaten Aceh Timur",
+            "slug": "kabupaten-aceh-timur",
+            "province_code": "11",
+            "latitude": 4.701663,
+            "longitude": 97.645039
+        },
+        {
+            "code": "11.04",
+            "name": "Kabupaten Aceh Tengah",
+            "slug": "kabupaten-aceh-tengah",
+            "province_code": "11",
+            "latitude": 4.564267,
+            "longitude": 96.9618926
+        },
+        {
+            "code": "11.05",
+            "name": "Kabupaten Aceh Barat",
+            "slug": "kabupaten-aceh-barat",
+            "province_code": "11",
+            "latitude": 4.4422521,
+            "longitude": 96.192983
+        },
+        {
+            "code": "11.06",
+            "name": "Kabupaten Aceh Besar",
+            "slug": "kabupaten-aceh-besar",
+            "province_code": "11",
+            "latitude": 5.3542491,
+            "longitude": 95.4961508
+        },
+        {
+            "code": "11.07",
+            "name": "Kabupaten Pidie",
+            "slug": "kabupaten-pidie",
+            "province_code": "11",
+            "latitude": 5.1143002,
+            "longitude": 95.9412834
+        },
+        {
+            "code": "11.08",
+            "name": "Kabupaten Aceh Utara",
+            "slug": "kabupaten-aceh-utara",
+            "province_code": "11",
+            "latitude": 4.9911941,
+            "longitude": 97.1587368
+        },
+        {
+            "code": "11.09",
+            "name": "Kabupaten Simeulue",
+            "slug": "kabupaten-simeulue",
+            "province_code": "11",
+            "latitude": 2.6290312,
+            "longitude": 96.0220779
+        },
+        {
+            "code": "11.1",
+            "name": "Kabupaten Aceh Singkil",
+            "slug": "kabupaten-aceh-singkil",
+            "province_code": "11",
+            "latitude": 2.3758794,
+            "longitude": 97.9244295
+        },
+        {
+            "code": "11.11",
+            "name": "Kabupaten Bireuen",
+            "slug": "kabupaten-bireuen",
+            "province_code": "11",
+            "latitude": 5.0827404,
+            "longitude": 96.5921212
+        },
+        {
+            "code": "11.12",
+            "name": "Kabupaten Aceh Barat Daya",
+            "slug": "kabupaten-aceh-barat-daya",
+            "province_code": "11",
+            "latitude": 3.8335897,
+            "longitude": 96.8516154
+        },
+        {
+            "code": "11.13",
+            "name": "Kabupaten Gayo Lues",
+            "slug": "kabupaten-gayo-lues",
+            "province_code": "11",
+            "latitude": 3.9775993,
+            "longitude": 97.3320677
+        },
+        {
+            "code": "11.14",
+            "name": "Kabupaten Aceh Jaya",
+            "slug": "kabupaten-aceh-jaya",
+            "province_code": "11",
+            "latitude": 4.8114844,
+            "longitude": 95.7001915
+        },
+        {
+            "code": "11.15",
+            "name": "Kabupaten Nagan Raya",
+            "slug": "kabupaten-nagan-raya",
+            "province_code": "11",
+            "latitude": 4.181243,
+            "longitude": 96.5257726
+        },
+        {
+            "code": "11.16",
+            "name": "Kabupaten Aceh Tamiang",
+            "slug": "kabupaten-aceh-tamiang",
+            "province_code": "11",
+            "latitude": 4.2122625,
+            "longitude": 97.9147111
+        },
+        {
+            "code": "11.17",
+            "name": "Kabupaten Bener Meriah",
+            "slug": "kabupaten-bener-meriah",
+            "province_code": "11",
+            "latitude": 4.7738799,
+            "longitude": 96.9780036
+        },
+        {
+            "code": "11.18",
+            "name": "Kabupaten Pidie Jaya",
+            "slug": "kabupaten-pidie-jaya",
+            "province_code": "11",
+            "latitude": 5.104771,
+            "longitude": 96.2116676
+        },
+        {
+            "code": "11.71",
+            "name": "Kota Banda Aceh",
+            "slug": "kota-banda-aceh",
+            "province_code": "11",
+            "latitude": 5.5549269,
+            "longitude": 95.3566141
+        },
+        {
+            "code": "11.72",
+            "name": "Kota Sabang",
+            "slug": "kota-sabang",
+            "province_code": "11",
+            "latitude": 5.8318838,
+            "longitude": 95.3635309
+        },
+        {
+            "code": "11.73",
+            "name": "Kota Lhokseumawe",
+            "slug": "kota-lhokseumawe",
+            "province_code": "11",
+            "latitude": 5.2023643,
+            "longitude": 97.0423925
+        },
+        {
+            "code": "11.74",
+            "name": "Kota Langsa",
+            "slug": "kota-langsa",
+            "province_code": "11",
+            "latitude": 4.4686827,
+            "longitude": 97.8986495
+        },
+        {
+            "code": "11.75",
+            "name": "Kota Subulussalam",
+            "slug": "kota-subulussalam",
+            "province_code": "11",
+            "latitude": 2.581939,
+            "longitude": 97.9074273
+        },
+        {
+            "code": "12.01",
+            "name": "Kabupaten Tapanuli Tengah",
+            "slug": "kabupaten-tapanuli-tengah",
+            "province_code": "12",
+            "latitude": 1.8231285,
+            "longitude": 98.2797677
+        },
+        {
+            "code": "12.02",
+            "name": "Kabupaten Tapanuli Utara",
+            "slug": "kabupaten-tapanuli-utara",
+            "province_code": "12",
+            "latitude": 1.9980604,
+            "longitude": 99.0647659
+        },
+        {
+            "code": "12.03",
+            "name": "Kabupaten Tapanuli Selatan",
+            "slug": "kabupaten-tapanuli-selatan",
+            "province_code": "12",
+            "latitude": 1.5510869,
+            "longitude": 99.2117571
+        },
+        {
+            "code": "12.04",
+            "name": "Kabupaten Nias",
+            "slug": "kabupaten-nias",
+            "province_code": "12",
+            "latitude": 1.1666792,
+            "longitude": 97.9692923
+        },
+        {
+            "code": "12.05",
+            "name": "Kabupaten Langkat",
+            "slug": "kabupaten-langkat",
+            "province_code": "12",
+            "latitude": 3.8293858,
+            "longitude": 98.2483495
+        },
+        {
+            "code": "12.06",
+            "name": "Kabupaten Karo",
+            "slug": "kabupaten-karo",
+            "province_code": "12",
+            "latitude": 3.0998751,
+            "longitude": 98.3369706
+        },
+        {
+            "code": "12.07",
+            "name": "Kabupaten Deli Serdang",
+            "slug": "kabupaten-deli-serdang",
+            "province_code": "12",
+            "latitude": 3.6952434,
+            "longitude": 98.8310745
+        },
+        {
+            "code": "12.08",
+            "name": "Kabupaten Simalungun",
+            "slug": "kabupaten-simalungun",
+            "province_code": "12",
+            "latitude": 2.9505161,
+            "longitude": 98.7835306
+        },
+        {
+            "code": "12.09",
+            "name": "Kabupaten Asahan",
+            "slug": "kabupaten-asahan",
+            "province_code": "12",
+            "latitude": 3.1127636,
+            "longitude": 99.9416922
+        },
+        {
+            "code": "12.1",
+            "name": "Kabupaten Labuhanbatu",
+            "slug": "kabupaten-labuhanbatu",
+            "province_code": "12",
+            "latitude": 2.5808179,
+            "longitude": 100.2104527
+        },
+        {
+            "code": "12.11",
+            "name": "Kabupaten Dairi",
+            "slug": "kabupaten-dairi",
+            "province_code": "12",
+            "latitude": 2.8353211,
+            "longitude": 98.2845016
+        },
+        {
+            "code": "12.12",
+            "name": "Kabupaten Toba",
+            "slug": "kabupaten-toba",
+            "province_code": "12",
+            "latitude": 2.3854595,
+            "longitude": 99.3314648
+        },
+        {
+            "code": "12.13",
+            "name": "Kabupaten Mandailing Natal",
+            "slug": "kabupaten-mandailing-natal",
+            "province_code": "12",
+            "latitude": 0.7456755,
+            "longitude": 99.2188579
+        },
+        {
+            "code": "12.14",
+            "name": "Kabupaten Nias Selatan",
+            "slug": "kabupaten-nias-selatan",
+            "province_code": "12",
+            "latitude": 0.0680552,
+            "longitude": 98.2622389
+        },
+        {
+            "code": "12.15",
+            "name": "Kabupaten Pakpak Bharat",
+            "slug": "kabupaten-pakpak-bharat",
+            "province_code": "12",
+            "latitude": 2.5298817,
+            "longitude": 98.2678583
+        },
+        {
+            "code": "12.16",
+            "name": "Kabupaten Humbang Hasundutan",
+            "slug": "kabupaten-humbang-hasundutan",
+            "province_code": "12",
+            "latitude": 2.247581,
+            "longitude": 98.6010199
+        },
+        {
+            "code": "12.17",
+            "name": "Kabupaten Samosir",
+            "slug": "kabupaten-samosir",
+            "province_code": "12",
+            "latitude": 2.5446954,
+            "longitude": 98.5719138
+        },
+        {
+            "code": "12.18",
+            "name": "Kabupaten Serdang Bedagai",
+            "slug": "kabupaten-serdang-bedagai",
+            "province_code": "12",
+            "latitude": 3.5931148,
+            "longitude": 99.1583309
+        },
+        {
+            "code": "12.19",
+            "name": "Kabupaten Batu Bara",
+            "slug": "kabupaten-batu-bara",
+            "province_code": "12",
+            "latitude": 3.5723293,
+            "longitude": 99.6353445
+        },
+        {
+            "code": "12.2",
+            "name": "Kabupaten Padang Lawas Utara",
+            "slug": "kabupaten-padang-lawas-utara",
+            "province_code": "12",
+            "latitude": 1.6364047,
+            "longitude": 99.6910375
+        },
+        {
+            "code": "12.21",
+            "name": "Kabupaten Padang Lawas",
+            "slug": "kabupaten-padang-lawas",
+            "province_code": "12",
+            "latitude": 1.1527632,
+            "longitude": 99.8154769
+        },
+        {
+            "code": "12.22",
+            "name": "Kabupaten Labuhanbatu Selatan",
+            "slug": "kabupaten-labuhanbatu-selatan",
+            "province_code": "12",
+            "latitude": 1.8336529,
+            "longitude": 100.0683723
+        },
+        {
+            "code": "12.23",
+            "name": "Kabupaten Labuhanbatu Utara",
+            "slug": "kabupaten-labuhanbatu-utara",
+            "province_code": "12",
+            "latitude": 2.4634731,
+            "longitude": 99.7228758
+        },
+        {
+            "code": "12.24",
+            "name": "Kabupaten Nias Utara",
+            "slug": "kabupaten-nias-utara",
+            "province_code": "12",
+            "latitude": 1.3747561,
+            "longitude": 97.1445693
+        },
+        {
+            "code": "12.25",
+            "name": "Kabupaten Nias Barat",
+            "slug": "kabupaten-nias-barat",
+            "province_code": "12",
+            "latitude": 0.8964868,
+            "longitude": 97.3433268
+        },
+        {
+            "code": "12.71",
+            "name": "Kota Medan",
+            "slug": "kota-medan",
+            "province_code": "12",
+            "latitude": 3.5387452,
+            "longitude": 98.6350998
+        },
+        {
+            "code": "12.72",
+            "name": "Kota Pematangsiantar",
+            "slug": "kota-pematangsiantar",
+            "province_code": "12",
+            "latitude": 2.9354796,
+            "longitude": 99.0637047
+        },
+        {
+            "code": "12.73",
+            "name": "Kota Sibolga",
+            "slug": "kota-sibolga",
+            "province_code": "12",
+            "latitude": 1.7310899,
+            "longitude": 98.7891826
+        },
+        {
+            "code": "12.74",
+            "name": "Kota Tanjung Balai",
+            "slug": "kota-tanjung-balai",
+            "province_code": "12",
+            "latitude": 2.9462103,
+            "longitude": 99.8198699
+        },
+        {
+            "code": "12.75",
+            "name": "Kota Binjai",
+            "slug": "kota-binjai",
+            "province_code": "12",
+            "latitude": 3.60036,
+            "longitude": 98.4925747
+        },
+        {
+            "code": "12.76",
+            "name": "Kota Tebing Tinggi",
+            "slug": "kota-tebing-tinggi",
+            "province_code": "12",
+            "latitude": 3.3289473,
+            "longitude": 99.1651714
+        },
+        {
+            "code": "12.77",
+            "name": "Kota Padangsidimpuan",
+            "slug": "kota-padangsidimpuan",
+            "province_code": "12",
+            "latitude": 1.4598931,
+            "longitude": 99.2540299
+        },
+        {
+            "code": "12.78",
+            "name": "Kota Gunungsitoli",
+            "slug": "kota-gunungsitoli",
+            "province_code": "12",
+            "latitude": 1.2169769,
+            "longitude": 97.5782448
+        },
+        {
+            "code": "13.01",
+            "name": "Kabupaten Pesisir Selatan",
+            "slug": "kabupaten-pesisir-selatan",
+            "province_code": "13",
+            "latitude": -1.7185794,
+            "longitude": 100.9270249
+        },
+        {
+            "code": "13.02",
+            "name": "Kabupaten Solok",
+            "slug": "kabupaten-solok",
+            "province_code": "13",
+            "latitude": -0.9310301,
+            "longitude": 100.804328
+        },
+        {
+            "code": "13.03",
+            "name": "Kabupaten Sijunjung",
+            "slug": "kabupaten-sijunjung",
+            "province_code": "13",
+            "latitude": -0.6964425,
+            "longitude": 100.9936303
+        },
+        {
+            "code": "13.04",
+            "name": "Kabupaten Tanah Datar",
+            "slug": "kabupaten-tanah-datar",
+            "province_code": "13",
+            "latitude": -0.468996,
+            "longitude": 100.6361603
+        },
+        {
+            "code": "13.05",
+            "name": "Kabupaten Padang Pariaman",
+            "slug": "kabupaten-padang-pariaman",
+            "province_code": "13",
+            "latitude": -0.5690918,
+            "longitude": 100.2770262
+        },
+        {
+            "code": "13.06",
+            "name": "Kabupaten Agam",
+            "slug": "kabupaten-agam",
+            "province_code": "13",
+            "latitude": -0.2547205,
+            "longitude": 100.1700311
+        },
+        {
+            "code": "13.07",
+            "name": "Kabupaten Lima Puluh Kota",
+            "slug": "kabupaten-lima-puluh-kota",
+            "province_code": "13",
+            "latitude": 0.027855,
+            "longitude": 100.5913082
+        },
+        {
+            "code": "13.08",
+            "name": "Kabupaten Pasaman",
+            "slug": "kabupaten-pasaman",
+            "province_code": "13",
+            "latitude": 0.3974048,
+            "longitude": 100.0249789
+        },
+        {
+            "code": "13.09",
+            "name": "Kabupaten Kepulauan Mentawai",
+            "slug": "kabupaten-kepulauan-mentawai",
+            "province_code": "13",
+            "latitude": -1.3587816,
+            "longitude": 98.8950051
+        },
+        {
+            "code": "13.1",
+            "name": "Kabupaten Dharmasraya",
+            "slug": "kabupaten-dharmasraya",
+            "province_code": "13",
+            "latitude": -1.25863,
+            "longitude": 101.5799056
+        },
+        {
+            "code": "13.11",
+            "name": "Kabupaten Solok Selatan",
+            "slug": "kabupaten-solok-selatan",
+            "province_code": "13",
+            "latitude": -1.5573292,
+            "longitude": 101.239478
+        },
+        {
+            "code": "13.12",
+            "name": "Kabupaten Pasaman Barat",
+            "slug": "kabupaten-pasaman-barat",
+            "province_code": "13",
+            "latitude": 0.1875382,
+            "longitude": 99.6935157
+        },
+        {
+            "code": "13.71",
+            "name": "Kota Padang",
+            "slug": "kota-padang",
+            "province_code": "13",
+            "latitude": -0.8458846,
+            "longitude": 100.321138
+        },
+        {
+            "code": "13.72",
+            "name": "Kota Solok",
+            "slug": "kota-solok",
+            "province_code": "13",
+            "latitude": -0.7547368,
+            "longitude": 100.6565108
+        },
+        {
+            "code": "13.73",
+            "name": "Kota Sawahlunto",
+            "slug": "kota-sawahlunto",
+            "province_code": "13",
+            "latitude": -0.6383045,
+            "longitude": 100.7836853
+        },
+        {
+            "code": "13.74",
+            "name": "Kota Padang Panjang",
+            "slug": "kota-padang-panjang",
+            "province_code": "13",
+            "latitude": -0.4660583,
+            "longitude": 100.4037108
+        },
+        {
+            "code": "13.75",
+            "name": "Kota Bukittinggi",
+            "slug": "kota-bukittinggi",
+            "province_code": "13",
+            "latitude": -0.308029,
+            "longitude": 100.3963206
+        },
+        {
+            "code": "13.76",
+            "name": "Kota Payakumbuh",
+            "slug": "kota-payakumbuh",
+            "province_code": "13",
+            "latitude": -0.2477519,
+            "longitude": 100.6349314
+        },
+        {
+            "code": "13.77",
+            "name": "Kota Pariaman",
+            "slug": "kota-pariaman",
+            "province_code": "13",
+            "latitude": -0.6088491,
+            "longitude": 100.1584576
+        },
+        {
+            "code": "14.01",
+            "name": "Kabupaten Kampar",
+            "slug": "kabupaten-kampar",
+            "province_code": "14",
+            "latitude": 0.3199733,
+            "longitude": 101.0617123
+        },
+        {
+            "code": "14.02",
+            "name": "Kabupaten Indragiri Hulu",
+            "slug": "kabupaten-indragiri-hulu",
+            "province_code": "14",
+            "latitude": -0.4978979,
+            "longitude": 102.3008136
+        },
+        {
+            "code": "14.03",
+            "name": "Kabupaten Bengkalis",
+            "slug": "kabupaten-bengkalis",
+            "province_code": "14",
+            "latitude": 1.7697227,
+            "longitude": 101.9124384
+        },
+        {
+            "code": "14.04",
+            "name": "Kabupaten Indragiri Hilir",
+            "slug": "kabupaten-indragiri-hilir",
+            "province_code": "14",
+            "latitude": -0.2708851,
+            "longitude": 103.3284566
+        },
+        {
+            "code": "14.05",
+            "name": "Kabupaten Pelalawan",
+            "slug": "kabupaten-pelalawan",
+            "province_code": "14",
+            "latitude": 0.2384009,
+            "longitude": 102.254913
+        },
+        {
+            "code": "14.06",
+            "name": "Kabupaten Rokan Hulu",
+            "slug": "kabupaten-rokan-hulu",
+            "province_code": "14",
+            "latitude": 0.8919457,
+            "longitude": 100.4665156
+        },
+        {
+            "code": "14.07",
+            "name": "Kabupaten Rokan Hilir",
+            "slug": "kabupaten-rokan-hilir",
+            "province_code": "14",
+            "latitude": 2.1590571,
+            "longitude": 100.6873775
+        },
+        {
+            "code": "14.08",
+            "name": "Kabupaten Siak",
+            "slug": "kabupaten-siak",
+            "province_code": "14",
+            "latitude": 0.8275337,
+            "longitude": 101.8461936
+        },
+        {
+            "code": "14.09",
+            "name": "Kabupaten Kuantan Singingi",
+            "slug": "kabupaten-kuantan-singingi",
+            "province_code": "14",
+            "latitude": -0.4937967,
+            "longitude": 101.4897357
+        },
+        {
+            "code": "14.1",
+            "name": "Kabupaten Kepulauan Meranti",
+            "slug": "kabupaten-kepulauan-meranti",
+            "province_code": "14",
+            "latitude": 1.0613049,
+            "longitude": 102.7018822
+        },
+        {
+            "code": "14.71",
+            "name": "Kota Pekanbaru",
+            "slug": "kota-pekanbaru",
+            "province_code": "14",
+            "latitude": 0.6644969,
+            "longitude": 101.5255672
+        },
+        {
+            "code": "14.72",
+            "name": "Kota Dumai",
+            "slug": "kota-dumai",
+            "province_code": "14",
+            "latitude": 1.6475716,
+            "longitude": 101.4383443
+        },
+        {
+            "code": "15.01",
+            "name": "Kabupaten Kerinci",
+            "slug": "kabupaten-kerinci",
+            "province_code": "15",
+            "latitude": -2.0633382,
+            "longitude": 101.6004944
+        },
+        {
+            "code": "15.02",
+            "name": "Kabupaten Merangin",
+            "slug": "kabupaten-merangin",
+            "province_code": "15",
+            "latitude": -2.2084473,
+            "longitude": 102.1171064
+        },
+        {
+            "code": "15.03",
+            "name": "Kabupaten Sarolangun",
+            "slug": "kabupaten-sarolangun",
+            "province_code": "15",
+            "latitude": -2.3312458,
+            "longitude": 102.6275329
+        },
+        {
+            "code": "15.04",
+            "name": "Kabupaten Batanghari",
+            "slug": "kabupaten-batanghari",
+            "province_code": "15",
+            "latitude": -1.8592388,
+            "longitude": 103.0075002
+        },
+        {
+            "code": "15.05",
+            "name": "Kabupaten Muaro Jambi",
+            "slug": "kabupaten-muaro-jambi",
+            "province_code": "15",
+            "latitude": -1.7076544,
+            "longitude": 103.7860802
+        },
+        {
+            "code": "15.06",
+            "name": "Kabupaten Tanjung Jabung Barat",
+            "slug": "kabupaten-tanjung-jabung-barat",
+            "province_code": "15",
+            "latitude": -0.983104,
+            "longitude": 103.2692473
+        },
+        {
+            "code": "15.07",
+            "name": "Kabupaten Tanjung Jabung Timur",
+            "slug": "kabupaten-tanjung-jabung-timur",
+            "province_code": "15",
+            "latitude": -1.1772887,
+            "longitude": 104.2284818
+        },
+        {
+            "code": "15.08",
+            "name": "Kabupaten Bungo",
+            "slug": "kabupaten-bungo",
+            "province_code": "15",
+            "latitude": -1.5151876,
+            "longitude": 101.9989365
+        },
+        {
+            "code": "15.09",
+            "name": "Kabupaten Tebo",
+            "slug": "kabupaten-tebo",
+            "province_code": "15",
+            "latitude": -1.3884531,
+            "longitude": 102.4405899
+        },
+        {
+            "code": "15.71",
+            "name": "Kota Jambi",
+            "slug": "kota-jambi",
+            "province_code": "15",
+            "latitude": -1.6354171,
+            "longitude": 103.6343691
+        },
+        {
+            "code": "15.72",
+            "name": "Kota Sungai Penuh",
+            "slug": "kota-sungai-penuh",
+            "province_code": "15",
+            "latitude": -2.0491192,
+            "longitude": 101.3491345
+        },
+        {
+            "code": "16.01",
+            "name": "Kabupaten Ogan Komering Ulu",
+            "slug": "kabupaten-ogan-komering-ulu",
+            "province_code": "16",
+            "latitude": -4.1101012,
+            "longitude": 104.0082838
+        },
+        {
+            "code": "16.02",
+            "name": "Kabupaten Ogan Komering Ilir",
+            "slug": "kabupaten-ogan-komering-ilir",
+            "province_code": "16",
+            "latitude": -3.3288539,
+            "longitude": 105.3997866
+        },
+        {
+            "code": "16.03",
+            "name": "Kabupaten Muara Enim",
+            "slug": "kabupaten-muara-enim",
+            "province_code": "16",
+            "latitude": -3.8467068,
+            "longitude": 103.9615719
+        },
+        {
+            "code": "16.04",
+            "name": "Kabupaten Lahat",
+            "slug": "kabupaten-lahat",
+            "province_code": "16",
+            "latitude": -3.8793458,
+            "longitude": 103.4140863
+        },
+        {
+            "code": "16.05",
+            "name": "Kabupaten Musi Rawas",
+            "slug": "kabupaten-musi-rawas",
+            "province_code": "16",
+            "latitude": -3.175756,
+            "longitude": 103.2500109
+        },
+        {
+            "code": "16.06",
+            "name": "Kabupaten Musi Banyuasin",
+            "slug": "kabupaten-musi-banyuasin",
+            "province_code": "16",
+            "latitude": -2.4909341,
+            "longitude": 103.7048186
+        },
+        {
+            "code": "16.07",
+            "name": "Kabupaten Banyuasin",
+            "slug": "kabupaten-banyuasin",
+            "province_code": "16",
+            "latitude": -2.3938936,
+            "longitude": 104.7548031
+        },
+        {
+            "code": "16.08",
+            "name": "Kabupaten Ogan Komering Ulu Timur",
+            "slug": "kabupaten-ogan-komering-ulu-timur",
+            "province_code": "16",
+            "latitude": -4.1160093,
+            "longitude": 104.5584811
+        },
+        {
+            "code": "16.09",
+            "name": "Kabupaten Ogan Komering Ulu Selatan",
+            "slug": "kabupaten-ogan-komering-ulu-selatan",
+            "province_code": "16",
+            "latitude": -4.5702304,
+            "longitude": 103.9249537
+        },
+        {
+            "code": "16.1",
+            "name": "Kabupaten Ogan Ilir",
+            "slug": "kabupaten-ogan-ilir",
+            "province_code": "16",
+            "latitude": -3.3981695,
+            "longitude": 104.6524998
+        },
+        {
+            "code": "16.11",
+            "name": "Kabupaten Empat Lawang",
+            "slug": "kabupaten-empat-lawang",
+            "province_code": "16",
+            "latitude": -3.7154833,
+            "longitude": 102.9324724
+        },
+        {
+            "code": "16.12",
+            "name": "Kabupaten Penukal Abab Lematang Ilir",
+            "slug": "kabupaten-penukal-abab-lematang-ilir",
+            "province_code": "16",
+            "latitude": -3.2139951,
+            "longitude": 104.0076941
+        },
+        {
+            "code": "16.13",
+            "name": "Kabupaten Musi Rawas Utara",
+            "slug": "kabupaten-musi-rawas-utara",
+            "province_code": "16",
+            "latitude": -2.7351502,
+            "longitude": 102.9014652
+        },
+        {
+            "code": "16.71",
+            "name": "Kota Palembang",
+            "slug": "kota-palembang",
+            "province_code": "16",
+            "latitude": -2.9643561,
+            "longitude": 104.7741931
+        },
+        {
+            "code": "16.72",
+            "name": "Kota Pagar Alam",
+            "slug": "kota-pagar-alam",
+            "province_code": "16",
+            "latitude": -4.1427648,
+            "longitude": 103.2224556
+        },
+        {
+            "code": "16.73",
+            "name": "Kota Lubuk Linggau",
+            "slug": "kota-lubuk-linggau",
+            "province_code": "16",
+            "latitude": -3.2799274,
+            "longitude": 102.8591092
+        },
+        {
+            "code": "16.74",
+            "name": "Kota Prabumulih",
+            "slug": "kota-prabumulih",
+            "province_code": "16",
+            "latitude": -3.516702,
+            "longitude": 104.2070875
+        },
+        {
+            "code": "17.01",
+            "name": "Kabupaten Bengkulu Selatan",
+            "slug": "kabupaten-bengkulu-selatan",
+            "province_code": "17",
+            "latitude": -4.3589877,
+            "longitude": 103.0020389
+        },
+        {
+            "code": "17.02",
+            "name": "Kabupaten Rejang Lebong",
+            "slug": "kabupaten-rejang-lebong",
+            "province_code": "17",
+            "latitude": -3.4389041,
+            "longitude": 102.6984853
+        },
+        {
+            "code": "17.03",
+            "name": "Kabupaten Bengkulu Utara",
+            "slug": "kabupaten-bengkulu-utara",
+            "province_code": "17",
+            "latitude": -3.1891333,
+            "longitude": 101.8576418
+        },
+        {
+            "code": "17.04",
+            "name": "Kabupaten Kaur",
+            "slug": "kabupaten-kaur",
+            "province_code": "17",
+            "latitude": -4.5905275,
+            "longitude": 103.3652613
+        },
+        {
+            "code": "17.05",
+            "name": "Kabupaten Seluma",
+            "slug": "kabupaten-seluma",
+            "province_code": "17",
+            "latitude": -4.0768265,
+            "longitude": 102.6717867
+        },
+        {
+            "code": "17.06",
+            "name": "Kabupaten Muko Muko",
+            "slug": "kabupaten-muko-muko",
+            "province_code": "17",
+            "latitude": -2.4024415,
+            "longitude": 101.1535535
+        },
+        {
+            "code": "17.07",
+            "name": "Kabupaten Lebong",
+            "slug": "kabupaten-lebong",
+            "province_code": "17",
+            "latitude": -3.0534766,
+            "longitude": 102.2089937
+        },
+        {
+            "code": "17.08",
+            "name": "Kabupaten Kepahiang",
+            "slug": "kabupaten-kepahiang",
+            "province_code": "17",
+            "latitude": -3.6479364,
+            "longitude": 102.6661393
+        },
+        {
+            "code": "17.09",
+            "name": "Kabupaten Bengkulu Tengah",
+            "slug": "kabupaten-bengkulu-tengah",
+            "province_code": "17",
+            "latitude": -3.6712273,
+            "longitude": 102.3875619
+        },
+        {
+            "code": "17.71",
+            "name": "Kota Bengkulu",
+            "slug": "kota-bengkulu",
+            "province_code": "17",
+            "latitude": -3.8216294,
+            "longitude": 102.3038336
+        },
+        {
+            "code": "18.01",
+            "name": "Kabupaten Lampung Selatan",
+            "slug": "kabupaten-lampung-selatan",
+            "province_code": "18",
+            "latitude": -5.5414887,
+            "longitude": 105.5110009
+        },
+        {
+            "code": "18.02",
+            "name": "Kabupaten Lampung Tengah",
+            "slug": "kabupaten-lampung-tengah",
+            "province_code": "18",
+            "latitude": -4.8728473,
+            "longitude": 105.3260129
+        },
+        {
+            "code": "18.03",
+            "name": "Kabupaten Lampung Utara",
+            "slug": "kabupaten-lampung-utara",
+            "province_code": "18",
+            "latitude": -4.8086085,
+            "longitude": 104.8628815
+        },
+        {
+            "code": "18.04",
+            "name": "Kabupaten Lampung Barat",
+            "slug": "kabupaten-lampung-barat",
+            "province_code": "18",
+            "latitude": -5.111704,
+            "longitude": 104.3057867
+        },
+        {
+            "code": "18.05",
+            "name": "Kabupaten Tulang Bawang",
+            "slug": "kabupaten-tulang-bawang",
+            "province_code": "18",
+            "latitude": -4.390363,
+            "longitude": 105.5504405
+        },
+        {
+            "code": "18.06",
+            "name": "Kabupaten Tanggamus",
+            "slug": "kabupaten-tanggamus",
+            "province_code": "18",
+            "latitude": -5.5140538,
+            "longitude": 104.7771435
+        },
+        {
+            "code": "18.07",
+            "name": "Kabupaten Lampung Timur",
+            "slug": "kabupaten-lampung-timur",
+            "province_code": "18",
+            "latitude": -5.1197117,
+            "longitude": 105.5951515
+        },
+        {
+            "code": "18.08",
+            "name": "Kabupaten Way Kanan",
+            "slug": "kabupaten-way-kanan",
+            "province_code": "18",
+            "latitude": -4.5669404,
+            "longitude": 104.5161602
+        },
+        {
+            "code": "18.09",
+            "name": "Kabupaten Pesawaran",
+            "slug": "kabupaten-pesawaran",
+            "province_code": "18",
+            "latitude": -5.4559573,
+            "longitude": 105.084691
+        },
+        {
+            "code": "18.1",
+            "name": "Kabupaten Pringsewu",
+            "slug": "kabupaten-pringsewu",
+            "province_code": "18",
+            "latitude": -5.3666893,
+            "longitude": 104.9722121
+        },
+        {
+            "code": "18.11",
+            "name": "Kabupaten Mesuji",
+            "slug": "kabupaten-mesuji",
+            "province_code": "18",
+            "latitude": -3.9754191,
+            "longitude": 105.3749436
+        },
+        {
+            "code": "18.12",
+            "name": "Kabupaten Tulang Bawang Barat",
+            "slug": "kabupaten-tulang-bawang-barat",
+            "province_code": "18",
+            "latitude": -4.4324256,
+            "longitude": 105.1682643
+        },
+        {
+            "code": "18.13",
+            "name": "Kabupaten Pesisir Barat",
+            "slug": "kabupaten-pesisir-barat",
+            "province_code": "18",
+            "latitude": -5.3669443,
+            "longitude": 104.1866417
+        },
+        {
+            "code": "18.71",
+            "name": "Kota Bandar Lampung",
+            "slug": "kota-bandar-lampung",
+            "province_code": "18",
+            "latitude": -5.4479201,
+            "longitude": 105.2698421
+        },
+        {
+            "code": "18.72",
+            "name": "Kota Metro",
+            "slug": "kota-metro",
+            "province_code": "18",
+            "latitude": -5.1503327,
+            "longitude": 105.3015936
+        },
+        {
+            "code": "19.01",
+            "name": "Kabupaten Bangka",
+            "slug": "kabupaten-bangka",
+            "province_code": "19",
+            "latitude": -2.3081245,
+            "longitude": 106.0281521
+        },
+        {
+            "code": "19.02",
+            "name": "Kabupaten Belitung",
+            "slug": "kabupaten-belitung",
+            "province_code": "19",
+            "latitude": -2.8842813,
+            "longitude": 107.6631596
+        },
+        {
+            "code": "19.03",
+            "name": "Kabupaten Bangka Selatan",
+            "slug": "kabupaten-bangka-selatan",
+            "province_code": "19",
+            "latitude": -2.7768976,
+            "longitude": 106.2939584
+        },
+        {
+            "code": "19.04",
+            "name": "Kabupaten Bangka Tengah",
+            "slug": "kabupaten-bangka-tengah",
+            "province_code": "19",
+            "latitude": -2.4305156,
+            "longitude": 106.1001553
+        },
+        {
+            "code": "19.05",
+            "name": "Kabupaten Bangka Barat",
+            "slug": "kabupaten-bangka-barat",
+            "province_code": "19",
+            "latitude": -1.8412375,
+            "longitude": 105.5518712
+        },
+        {
+            "code": "19.06",
+            "name": "Kabupaten Belitung Timur",
+            "slug": "kabupaten-belitung-timur",
+            "province_code": "19",
+            "latitude": -2.9164574,
+            "longitude": 108.0037218
+        },
+        {
+            "code": "19.71",
+            "name": "Kota Pangkal Pinang",
+            "slug": "kota-pangkal-pinang",
+            "province_code": "19",
+            "latitude": -2.1375655,
+            "longitude": 106.1242259
+        },
+        {
+            "code": "21.01",
+            "name": "Kabupaten Bintan",
+            "slug": "kabupaten-bintan",
+            "province_code": "21",
+            "latitude": 1.0196577,
+            "longitude": 104.5698189
+        },
+        {
+            "code": "21.02",
+            "name": "Kabupaten Karimun",
+            "slug": "kabupaten-karimun",
+            "province_code": "21",
+            "latitude": 0.7653871,
+            "longitude": 103.4287445
+        },
+        {
+            "code": "21.03",
+            "name": "Kabupaten Natuna",
+            "slug": "kabupaten-natuna",
+            "province_code": "21",
+            "latitude": 3.9305166,
+            "longitude": 108.1901503
+        },
+        {
+            "code": "21.04",
+            "name": "Kabupaten Lingga",
+            "slug": "kabupaten-lingga",
+            "province_code": "21",
+            "latitude": -0.5094966,
+            "longitude": 104.4141614
+        },
+        {
+            "code": "21.05",
+            "name": "Kabupaten Kepulauan Anambas",
+            "slug": "kabupaten-kepulauan-anambas",
+            "province_code": "21",
+            "latitude": 2.9389011,
+            "longitude": 105.760258
+        },
+        {
+            "code": "21.71",
+            "name": "Kota Batam",
+            "slug": "kota-batam",
+            "province_code": "21",
+            "latitude": 1.0507341,
+            "longitude": 103.9607238
+        },
+        {
+            "code": "21.72",
+            "name": "Kota Tanjung Pinang",
+            "slug": "kota-tanjung-pinang",
+            "province_code": "21",
+            "latitude": 0.9260012,
+            "longitude": 104.4625054
+        },
+        {
+            "code": "31.01",
+            "name": "Kabupaten Kepulauan Seribu",
+            "slug": "kabupaten-kepulauan-seribu",
+            "province_code": "31",
+            "latitude": -5.635047,
+            "longitude": 106.5803541
+        },
+        {
+            "code": "31.71",
+            "name": "Kota Jakarta Pusat",
+            "slug": "kota-jakarta-pusat",
+            "province_code": "31",
+            "latitude": -6.18234,
+            "longitude": 106.8428715
+        },
+        {
+            "code": "31.72",
+            "name": "Kota Jakarta Utara",
+            "slug": "kota-jakarta-utara",
+            "province_code": "31",
+            "latitude": -6.136197,
+            "longitude": 106.9006902
+        },
+        {
+            "code": "31.73",
+            "name": "Kota Jakarta Barat",
+            "slug": "kota-jakarta-barat",
+            "province_code": "31",
+            "latitude": -6.1368624,
+            "longitude": 106.8150708
+        },
+        {
+            "code": "31.74",
+            "name": "Kota Jakarta Selatan",
+            "slug": "kota-jakarta-selatan",
+            "province_code": "31",
+            "latitude": -6.2838182,
+            "longitude": 106.8048633
+        },
+        {
+            "code": "31.75",
+            "name": "Kota Jakarta Timur",
+            "slug": "kota-jakarta-timur",
+            "province_code": "31",
+            "latitude": -6.2628909,
+            "longitude": 106.8822289
+        },
+        {
+            "code": "32.01",
+            "name": "Kabupaten Bogor",
+            "slug": "kabupaten-bogor",
+            "province_code": "32",
+            "latitude": -6.5962986,
+            "longitude": 106.7972421
+        },
+        {
+            "code": "32.02",
+            "name": "Kabupaten Sukabumi",
+            "slug": "kabupaten-sukabumi",
+            "province_code": "32",
+            "latitude": -6.9199289,
+            "longitude": 106.9265095
+        },
+        {
+            "code": "32.03",
+            "name": "Kabupaten Cianjur",
+            "slug": "kabupaten-cianjur",
+            "province_code": "32",
+            "latitude": -7.0542441,
+            "longitude": 107.0691428
+        },
+        {
+            "code": "32.04",
+            "name": "Kabupaten Bandung",
+            "slug": "kabupaten-bandung",
+            "province_code": "32",
+            "latitude": -6.9215529,
+            "longitude": 107.6110212
+        },
+        {
+            "code": "32.05",
+            "name": "Kabupaten Garut",
+            "slug": "kabupaten-garut",
+            "province_code": "32",
+            "latitude": -7.2162543,
+            "longitude": 107.9014912
+        },
+        {
+            "code": "32.06",
+            "name": "Kabupaten Tasikmalaya",
+            "slug": "kabupaten-tasikmalaya",
+            "province_code": "32",
+            "latitude": -7.3262484,
+            "longitude": 108.2201154
+        },
+        {
+            "code": "32.07",
+            "name": "Kabupaten Ciamis",
+            "slug": "kabupaten-ciamis",
+            "province_code": "32",
+            "latitude": -7.3131593,
+            "longitude": 108.4048938
+        },
+        {
+            "code": "32.08",
+            "name": "Kabupaten Kuningan",
+            "slug": "kabupaten-kuningan",
+            "province_code": "32",
+            "latitude": -6.9869841,
+            "longitude": 108.5538158
+        },
+        {
+            "code": "32.09",
+            "name": "Kabupaten Cirebon",
+            "slug": "kabupaten-cirebon",
+            "province_code": "32",
+            "latitude": -6.7137044,
+            "longitude": 108.5608483
+        },
+        {
+            "code": "32.1",
+            "name": "Kabupaten Majalengka",
+            "slug": "kabupaten-majalengka",
+            "province_code": "32",
+            "latitude": -6.8073627,
+            "longitude": 108.278786
+        },
+        {
+            "code": "32.11",
+            "name": "Kabupaten Sumedang",
+            "slug": "kabupaten-sumedang",
+            "province_code": "32",
+            "latitude": -6.8098714,
+            "longitude": 107.9817732
+        },
+        {
+            "code": "32.12",
+            "name": "Kabupaten Indramayu",
+            "slug": "kabupaten-indramayu",
+            "province_code": "32",
+            "latitude": -6.4418537,
+            "longitude": 108.1765472
+        },
+        {
+            "code": "32.13",
+            "name": "Kabupaten Subang",
+            "slug": "kabupaten-subang",
+            "province_code": "32",
+            "latitude": -6.4983888,
+            "longitude": 107.739546
+        },
+        {
+            "code": "32.14",
+            "name": "Kabupaten Purwakarta",
+            "slug": "kabupaten-purwakarta",
+            "province_code": "32",
+            "latitude": -6.5527796,
+            "longitude": 107.4465323
+        },
+        {
+            "code": "32.15",
+            "name": "Kabupaten Karawang",
+            "slug": "kabupaten-karawang",
+            "province_code": "32",
+            "latitude": -6.3021906,
+            "longitude": 107.3046116
+        },
+        {
+            "code": "32.16",
+            "name": "Kabupaten Bekasi",
+            "slug": "kabupaten-bekasi",
+            "province_code": "32",
+            "latitude": -6.2349858,
+            "longitude": 106.9945444
+        },
+        {
+            "code": "32.17",
+            "name": "Kabupaten Bandung Barat",
+            "slug": "kabupaten-bandung-barat",
+            "province_code": "32",
+            "latitude": -6.8977541,
+            "longitude": 107.4124294
+        },
+        {
+            "code": "32.18",
+            "name": "Kabupaten Pangandaran",
+            "slug": "kabupaten-pangandaran",
+            "province_code": "32",
+            "latitude": -7.6407968,
+            "longitude": 108.5567288
+        },
+        {
+            "code": "32.71",
+            "name": "Kota Bogor",
+            "slug": "kota-bogor",
+            "province_code": "32",
+            "latitude": -6.5483796,
+            "longitude": 106.7761612
+        },
+        {
+            "code": "32.72",
+            "name": "Kota Sukabumi",
+            "slug": "kota-sukabumi",
+            "province_code": "32",
+            "latitude": -6.9457677,
+            "longitude": 106.939597
+        },
+        {
+            "code": "32.73",
+            "name": "Kota Bandung",
+            "slug": "kota-bandung",
+            "province_code": "32",
+            "latitude": -6.9009001,
+            "longitude": 107.684106
+        },
+        {
+            "code": "32.74",
+            "name": "Kota Cirebon",
+            "slug": "kota-cirebon",
+            "province_code": "32",
+            "latitude": -6.73994,
+            "longitude": 108.5281465
+        },
+        {
+            "code": "32.75",
+            "name": "Kota Bekasi",
+            "slug": "kota-bekasi",
+            "province_code": "32",
+            "latitude": -6.3283115,
+            "longitude": 106.9280113
+        },
+        {
+            "code": "32.76",
+            "name": "Kota Depok",
+            "slug": "kota-depok",
+            "province_code": "32",
+            "latitude": -6.4297769,
+            "longitude": 106.7426895
+        },
+        {
+            "code": "32.77",
+            "name": "Kota Cimahi",
+            "slug": "kota-cimahi",
+            "province_code": "32",
+            "latitude": -6.8512673,
+            "longitude": 107.5404043
+        },
+        {
+            "code": "32.78",
+            "name": "Kota Tasikmalaya",
+            "slug": "kota-tasikmalaya",
+            "province_code": "32",
+            "latitude": -7.3380854,
+            "longitude": 108.2886658
+        },
+        {
+            "code": "32.79",
+            "name": "Kota Banjar",
+            "slug": "kota-banjar",
+            "province_code": "32",
+            "latitude": -7.3917264,
+            "longitude": 108.6150119
+        },
+        {
+            "code": "33.01",
+            "name": "Kabupaten Cilacap",
+            "slug": "kabupaten-cilacap",
+            "province_code": "33",
+            "latitude": -7.4616711,
+            "longitude": 108.8046146
+        },
+        {
+            "code": "33.02",
+            "name": "Kabupaten Banyumas",
+            "slug": "kabupaten-banyumas",
+            "province_code": "33",
+            "latitude": -7.4550717,
+            "longitude": 109.1167465
+        },
+        {
+            "code": "33.03",
+            "name": "Kabupaten Purbalingga",
+            "slug": "kabupaten-purbalingga",
+            "province_code": "33",
+            "latitude": -7.3273301,
+            "longitude": 109.3998987
+        },
+        {
+            "code": "33.04",
+            "name": "Kabupaten Banjarnegara",
+            "slug": "kabupaten-banjarnegara",
+            "province_code": "33",
+            "latitude": -7.3558733,
+            "longitude": 109.6600728
+        },
+        {
+            "code": "33.05",
+            "name": "Kabupaten Kebumen",
+            "slug": "kabupaten-kebumen",
+            "province_code": "33",
+            "latitude": -7.6686894,
+            "longitude": 109.6519465
+        },
+        {
+            "code": "33.06",
+            "name": "Kabupaten Purworejo",
+            "slug": "kabupaten-purworejo",
+            "province_code": "33",
+            "latitude": -7.7130761,
+            "longitude": 110.0090605
+        },
+        {
+            "code": "33.07",
+            "name": "Kabupaten Wonosobo",
+            "slug": "kabupaten-wonosobo",
+            "province_code": "33",
+            "latitude": -7.3998,
+            "longitude": 109.9209645
+        },
+        {
+            "code": "33.08",
+            "name": "Kabupaten Magelang",
+            "slug": "kabupaten-magelang",
+            "province_code": "33",
+            "latitude": -7.4770747,
+            "longitude": 110.2182164
+        },
+        {
+            "code": "33.09",
+            "name": "Kabupaten Boyolali",
+            "slug": "kabupaten-boyolali",
+            "province_code": "33",
+            "latitude": -7.3872118,
+            "longitude": 110.7038691
+        },
+        {
+            "code": "33.1",
+            "name": "Kabupaten Klaten",
+            "slug": "kabupaten-klaten",
+            "province_code": "33",
+            "latitude": -7.6732223,
+            "longitude": 110.6285188
+        },
+        {
+            "code": "33.11",
+            "name": "Kabupaten Sukoharjo",
+            "slug": "kabupaten-sukoharjo",
+            "province_code": "33",
+            "latitude": -7.6815215,
+            "longitude": 110.8677425
+        },
+        {
+            "code": "33.12",
+            "name": "Kabupaten Wonogiri",
+            "slug": "kabupaten-wonogiri",
+            "province_code": "33",
+            "latitude": -7.9620507,
+            "longitude": 110.9575733
+        },
+        {
+            "code": "33.13",
+            "name": "Kabupaten Karanganyar",
+            "slug": "kabupaten-karanganyar",
+            "province_code": "33",
+            "latitude": -7.6196965,
+            "longitude": 111.0698003
+        },
+        {
+            "code": "33.14",
+            "name": "Kabupaten Sragen",
+            "slug": "kabupaten-sragen",
+            "province_code": "33",
+            "latitude": -7.3924563,
+            "longitude": 110.9530232
+        },
+        {
+            "code": "33.15",
+            "name": "Kabupaten Grobogan",
+            "slug": "kabupaten-grobogan",
+            "province_code": "33",
+            "latitude": -7.0980947,
+            "longitude": 110.8966767
+        },
+        {
+            "code": "33.16",
+            "name": "Kabupaten Blora",
+            "slug": "kabupaten-blora",
+            "province_code": "33",
+            "latitude": -6.9691528,
+            "longitude": 111.4130521
+        },
+        {
+            "code": "33.17",
+            "name": "Kabupaten Rembang",
+            "slug": "kabupaten-rembang",
+            "province_code": "33",
+            "latitude": -6.7698636,
+            "longitude": 111.4556709
+        },
+        {
+            "code": "33.18",
+            "name": "Kabupaten Pati",
+            "slug": "kabupaten-pati",
+            "province_code": "33",
+            "latitude": -6.7070925,
+            "longitude": 111.0870076
+        },
+        {
+            "code": "33.19",
+            "name": "Kabupaten Kudus",
+            "slug": "kabupaten-kudus",
+            "province_code": "33",
+            "latitude": -6.8078233,
+            "longitude": 110.8416866
+        },
+        {
+            "code": "33.2",
+            "name": "Kabupaten Jepara",
+            "slug": "kabupaten-jepara",
+            "province_code": "33",
+            "latitude": -6.5899148,
+            "longitude": 110.6672987
+        },
+        {
+            "code": "33.21",
+            "name": "Kabupaten Demak",
+            "slug": "kabupaten-demak",
+            "province_code": "33",
+            "latitude": -6.9229075,
+            "longitude": 110.6350973
+        },
+        {
+            "code": "33.22",
+            "name": "Kabupaten Semarang",
+            "slug": "kabupaten-semarang",
+            "province_code": "33",
+            "latitude": -6.9903988,
+            "longitude": 110.4229104
+        },
+        {
+            "code": "33.23",
+            "name": "Kabupaten Temanggung",
+            "slug": "kabupaten-temanggung",
+            "province_code": "33",
+            "latitude": -7.2397576,
+            "longitude": 110.1216648
+        },
+        {
+            "code": "33.24",
+            "name": "Kabupaten Kendal",
+            "slug": "kabupaten-kendal",
+            "province_code": "33",
+            "latitude": -7.0190966,
+            "longitude": 110.1374757
+        },
+        {
+            "code": "33.25",
+            "name": "Kabupaten Batang",
+            "slug": "kabupaten-batang",
+            "province_code": "33",
+            "latitude": -7.0323547,
+            "longitude": 109.867953
+        },
+        {
+            "code": "33.26",
+            "name": "Kabupaten Pekalongan",
+            "slug": "kabupaten-pekalongan",
+            "province_code": "33",
+            "latitude": -6.8905065,
+            "longitude": 109.6761489
+        },
+        {
+            "code": "33.27",
+            "name": "Kabupaten Pemalang",
+            "slug": "kabupaten-pemalang",
+            "province_code": "33",
+            "latitude": -7.0110802,
+            "longitude": 109.3914037
+        },
+        {
+            "code": "33.28",
+            "name": "Kabupaten Tegal",
+            "slug": "kabupaten-tegal",
+            "province_code": "33",
+            "latitude": -6.8698115,
+            "longitude": 109.1150646
+        },
+        {
+            "code": "33.29",
+            "name": "Kabupaten Brebes",
+            "slug": "kabupaten-brebes",
+            "province_code": "33",
+            "latitude": -7.0520712,
+            "longitude": 108.888136
+        },
+        {
+            "code": "33.71",
+            "name": "Kota Magelang",
+            "slug": "kota-magelang",
+            "province_code": "33",
+            "latitude": -7.4763958,
+            "longitude": 110.2264663
+        },
+        {
+            "code": "33.72",
+            "name": "Kota Surakarta",
+            "slug": "kota-surakarta",
+            "province_code": "33",
+            "latitude": -7.5472335,
+            "longitude": 110.8175534
+        },
+        {
+            "code": "33.73",
+            "name": "Kota Salatiga",
+            "slug": "kota-salatiga",
+            "province_code": "33",
+            "latitude": -7.3310709,
+            "longitude": 110.5017158
+        },
+        {
+            "code": "33.74",
+            "name": "Kota Semarang",
+            "slug": "kota-semarang",
+            "province_code": "33",
+            "latitude": -6.9670571,
+            "longitude": 110.3037589
+        },
+        {
+            "code": "33.75",
+            "name": "Kota Pekalongan",
+            "slug": "kota-pekalongan",
+            "province_code": "33",
+            "latitude": -6.9238944,
+            "longitude": 109.6865005
+        },
+        {
+            "code": "33.76",
+            "name": "Kota Tegal",
+            "slug": "kota-tegal",
+            "province_code": "33",
+            "latitude": -6.8659572,
+            "longitude": 109.1120335
+        },
+        {
+            "code": "34.01",
+            "name": "Kabupaten Kulon Progo",
+            "slug": "kabupaten-kulon-progo",
+            "province_code": "34",
+            "latitude": -7.8123076,
+            "longitude": 110.1479828
+        },
+        {
+            "code": "34.02",
+            "name": "Kabupaten Bantul",
+            "slug": "kabupaten-bantul",
+            "province_code": "34",
+            "latitude": -7.8877454,
+            "longitude": 110.3274139
+        },
+        {
+            "code": "34.03",
+            "name": "Kabupaten Gunungkidul",
+            "slug": "kabupaten-gunungkidul",
+            "province_code": "34",
+            "latitude": -7.9930377,
+            "longitude": 110.5579309
+        },
+        {
+            "code": "34.04",
+            "name": "Kabupaten Sleman",
+            "slug": "kabupaten-sleman",
+            "province_code": "34",
+            "latitude": -7.6902467,
+            "longitude": 110.3419864
+        },
+        {
+            "code": "34.71",
+            "name": "Kota Yogyakarta",
+            "slug": "kota-yogyakarta",
+            "province_code": "34",
+            "latitude": -7.8261393,
+            "longitude": 110.4021258
+        },
+        {
+            "code": "35.01",
+            "name": "Kabupaten Pacitan",
+            "slug": "kabupaten-pacitan",
+            "province_code": "35",
+            "latitude": -8.1017184,
+            "longitude": 111.1446711
+        },
+        {
+            "code": "35.02",
+            "name": "Kabupaten Ponorogo",
+            "slug": "kabupaten-ponorogo",
+            "province_code": "35",
+            "latitude": -7.9712267,
+            "longitude": 111.4988929
+        },
+        {
+            "code": "35.03",
+            "name": "Kabupaten Trenggalek",
+            "slug": "kabupaten-trenggalek",
+            "province_code": "35",
+            "latitude": -8.1359348,
+            "longitude": 111.6401983
+        },
+        {
+            "code": "35.04",
+            "name": "Kabupaten Tulungagung",
+            "slug": "kabupaten-tulungagung",
+            "province_code": "35",
+            "latitude": -8.0729036,
+            "longitude": 111.8996408
+        },
+        {
+            "code": "35.05",
+            "name": "Kabupaten Blitar",
+            "slug": "kabupaten-blitar",
+            "province_code": "35",
+            "latitude": -8.1311983,
+            "longitude": 112.3115572
+        },
+        {
+            "code": "35.06",
+            "name": "Kabupaten Kediri",
+            "slug": "kabupaten-kediri",
+            "province_code": "35",
+            "latitude": -7.8111057,
+            "longitude": 112.0046051
+        },
+        {
+            "code": "35.07",
+            "name": "Kabupaten Malang",
+            "slug": "kabupaten-malang",
+            "province_code": "35",
+            "latitude": -7.9771308,
+            "longitude": 112.6340265
+        },
+        {
+            "code": "35.08",
+            "name": "Kabupaten Lumajang",
+            "slug": "kabupaten-lumajang",
+            "province_code": "35",
+            "latitude": -8.135205,
+            "longitude": 113.2244162
+        },
+        {
+            "code": "35.09",
+            "name": "Kabupaten Jember",
+            "slug": "kabupaten-jember",
+            "province_code": "35",
+            "latitude": -8.1688563,
+            "longitude": 113.7021772
+        },
+        {
+            "code": "35.1",
+            "name": "Kabupaten Banyuwangi",
+            "slug": "kabupaten-banyuwangi",
+            "province_code": "35",
+            "latitude": -8.3325711,
+            "longitude": 114.141579
+        },
+        {
+            "code": "35.11",
+            "name": "Kabupaten Bondowoso",
+            "slug": "kabupaten-bondowoso",
+            "province_code": "35",
+            "latitude": -7.9451279,
+            "longitude": 113.882059
+        },
+        {
+            "code": "35.12",
+            "name": "Kabupaten Situbondo",
+            "slug": "kabupaten-situbondo",
+            "province_code": "35",
+            "latitude": -7.7067843,
+            "longitude": 114.0054142
+        },
+        {
+            "code": "35.13",
+            "name": "Kabupaten Probolinggo",
+            "slug": "kabupaten-probolinggo",
+            "province_code": "35",
+            "latitude": -7.7441461,
+            "longitude": 113.2158401
+        },
+        {
+            "code": "35.14",
+            "name": "Kabupaten Pasuruan",
+            "slug": "kabupaten-pasuruan",
+            "province_code": "35",
+            "latitude": -7.7508114,
+            "longitude": 112.818483
+        },
+        {
+            "code": "35.15",
+            "name": "Kabupaten Sidoarjo",
+            "slug": "kabupaten-sidoarjo",
+            "province_code": "35",
+            "latitude": -7.4559741,
+            "longitude": 112.6608877
+        },
+        {
+            "code": "35.16",
+            "name": "Kabupaten Mojokerto",
+            "slug": "kabupaten-mojokerto",
+            "province_code": "35",
+            "latitude": -7.5413378,
+            "longitude": 112.5094975
+        },
+        {
+            "code": "35.17",
+            "name": "Kabupaten Jombang",
+            "slug": "kabupaten-jombang",
+            "province_code": "35",
+            "latitude": -7.561464,
+            "longitude": 112.2413044
+        },
+        {
+            "code": "35.18",
+            "name": "Kabupaten Nganjuk",
+            "slug": "kabupaten-nganjuk",
+            "province_code": "35",
+            "latitude": -7.6150162,
+            "longitude": 111.9465075
+        },
+        {
+            "code": "35.19",
+            "name": "Kabupaten Madiun",
+            "slug": "kabupaten-madiun",
+            "province_code": "35",
+            "latitude": -7.6290837,
+            "longitude": 111.5168819
+        },
+        {
+            "code": "35.2",
+            "name": "Kabupaten Magetan",
+            "slug": "kabupaten-magetan",
+            "province_code": "35",
+            "latitude": -7.6542489,
+            "longitude": 111.3360565
+        },
+        {
+            "code": "35.21",
+            "name": "Kabupaten Ngawi",
+            "slug": "kabupaten-ngawi",
+            "province_code": "35",
+            "latitude": -7.402722,
+            "longitude": 111.4443448
+        },
+        {
+            "code": "35.22",
+            "name": "Kabupaten Bojonegoro",
+            "slug": "kabupaten-bojonegoro",
+            "province_code": "35",
+            "latitude": -7.2278715,
+            "longitude": 111.81462
+        },
+        {
+            "code": "35.23",
+            "name": "Kabupaten Tuban",
+            "slug": "kabupaten-tuban",
+            "province_code": "35",
+            "latitude": -6.8962656,
+            "longitude": 112.0650714
+        },
+        {
+            "code": "35.24",
+            "name": "Kabupaten Lamongan",
+            "slug": "kabupaten-lamongan",
+            "province_code": "35",
+            "latitude": -7.1229319,
+            "longitude": 112.3281935
+        },
+        {
+            "code": "35.25",
+            "name": "Kabupaten Gresik",
+            "slug": "kabupaten-gresik",
+            "province_code": "35",
+            "latitude": -5.7933466,
+            "longitude": 112.6598223
+        },
+        {
+            "code": "35.26",
+            "name": "Kabupaten Bangkalan",
+            "slug": "kabupaten-bangkalan",
+            "province_code": "35",
+            "latitude": -7.0463725,
+            "longitude": 112.8962503
+        },
+        {
+            "code": "35.27",
+            "name": "Kabupaten Sampang",
+            "slug": "kabupaten-sampang",
+            "province_code": "35",
+            "latitude": -7.0578158,
+            "longitude": 113.2540541
+        },
+        {
+            "code": "35.28",
+            "name": "Kabupaten Pamekasan",
+            "slug": "kabupaten-pamekasan",
+            "province_code": "35",
+            "latitude": -7.1605439,
+            "longitude": 113.4826273
+        },
+        {
+            "code": "35.29",
+            "name": "Kabupaten Sumenep",
+            "slug": "kabupaten-sumenep",
+            "province_code": "35",
+            "latitude": -7.006745,
+            "longitude": 113.8598666
+        },
+        {
+            "code": "35.71",
+            "name": "Kota Kediri",
+            "slug": "kota-kediri",
+            "province_code": "35",
+            "latitude": -7.8227027,
+            "longitude": 112.0365673
+        },
+        {
+            "code": "35.72",
+            "name": "Kota Blitar",
+            "slug": "kota-blitar",
+            "province_code": "35",
+            "latitude": -8.0879928,
+            "longitude": 112.1820797
+        },
+        {
+            "code": "35.73",
+            "name": "Kota Malang",
+            "slug": "kota-malang",
+            "province_code": "35",
+            "latitude": -7.9210249,
+            "longitude": 112.6286142
+        },
+        {
+            "code": "35.74",
+            "name": "Kota Probolinggo",
+            "slug": "kota-probolinggo",
+            "province_code": "35",
+            "latitude": -7.7807415,
+            "longitude": 113.2128059
+        },
+        {
+            "code": "35.75",
+            "name": "Kota Pasuruan",
+            "slug": "kota-pasuruan",
+            "province_code": "35",
+            "latitude": -7.634979,
+            "longitude": 112.9253645
+        },
+        {
+            "code": "35.76",
+            "name": "Kota Mojokerto",
+            "slug": "kota-mojokerto",
+            "province_code": "35",
+            "latitude": -7.4647114,
+            "longitude": 112.4367947
+        },
+        {
+            "code": "35.77",
+            "name": "Kota Madiun",
+            "slug": "kota-madiun",
+            "province_code": "35",
+            "latitude": -7.6411647,
+            "longitude": 111.5254108
+        },
+        {
+            "code": "35.78",
+            "name": "Kota Surabaya",
+            "slug": "kota-surabaya",
+            "province_code": "35",
+            "latitude": -7.2805535,
+            "longitude": 112.6690103
+        },
+        {
+            "code": "35.79",
+            "name": "Kota Batu",
+            "slug": "kota-batu",
+            "province_code": "35",
+            "latitude": -7.8873335,
+            "longitude": 112.5611724
+        },
+        {
+            "code": "36.01",
+            "name": "Kabupaten Pandeglang",
+            "slug": "kabupaten-pandeglang",
+            "province_code": "36",
+            "latitude": -6.5473766,
+            "longitude": 105.7994879
+        },
+        {
+            "code": "36.02",
+            "name": "Kabupaten Lebak",
+            "slug": "kabupaten-lebak",
+            "province_code": "36",
+            "latitude": -6.6432601,
+            "longitude": 106.1872718
+        },
+        {
+            "code": "36.03",
+            "name": "Kabupaten Tangerang",
+            "slug": "kabupaten-tangerang",
+            "province_code": "36",
+            "latitude": -6.1761924,
+            "longitude": 106.6382161
+        },
+        {
+            "code": "36.04",
+            "name": "Kabupaten Serang",
+            "slug": "kabupaten-serang",
+            "province_code": "36",
+            "latitude": -6.1169662,
+            "longitude": 106.1518079
+        },
+        {
+            "code": "36.71",
+            "name": "Kota Tangerang",
+            "slug": "kota-tangerang",
+            "province_code": "36",
+            "latitude": -6.2412607,
+            "longitude": 106.7441124
+        },
+        {
+            "code": "36.72",
+            "name": "Kota Cilegon",
+            "slug": "kota-cilegon",
+            "province_code": "36",
+            "latitude": -6.0163386,
+            "longitude": 106.0363414
+        },
+        {
+            "code": "36.73",
+            "name": "Kota Serang",
+            "slug": "kota-serang",
+            "province_code": "36",
+            "latitude": -6.0845615,
+            "longitude": 106.123733
+        },
+        {
+            "code": "36.74",
+            "name": "Kota Tangerang Selatan",
+            "slug": "kota-tangerang-selatan",
+            "province_code": "36",
+            "latitude": -6.355867,
+            "longitude": 106.7134463
+        },
+        {
+            "code": "51.01",
+            "name": "Kabupaten Jembrana",
+            "slug": "kabupaten-jembrana",
+            "province_code": "51",
+            "latitude": -8.3955784,
+            "longitude": 114.7054611
+        },
+        {
+            "code": "51.02",
+            "name": "Kabupaten Tabanan",
+            "slug": "kabupaten-tabanan",
+            "province_code": "51",
+            "latitude": -8.5566523,
+            "longitude": 115.0013121
+        },
+        {
+            "code": "51.03",
+            "name": "Kabupaten Badung",
+            "slug": "kabupaten-badung",
+            "province_code": "51",
+            "latitude": -8.6448725,
+            "longitude": 115.1359046
+        },
+        {
+            "code": "51.04",
+            "name": "Kabupaten Gianyar",
+            "slug": "kabupaten-gianyar",
+            "province_code": "51",
+            "latitude": -8.7045118,
+            "longitude": 115.3523218
+        },
+        {
+            "code": "51.05",
+            "name": "Kabupaten Klungkung",
+            "slug": "kabupaten-klungkung",
+            "province_code": "51",
+            "latitude": -8.7446027,
+            "longitude": 115.5575442
+        },
+        {
+            "code": "51.06",
+            "name": "Kabupaten Bangli",
+            "slug": "kabupaten-bangli",
+            "province_code": "51",
+            "latitude": -8.3333362,
+            "longitude": 115.3682812
+        },
+        {
+            "code": "51.07",
+            "name": "Kabupaten Karangasem",
+            "slug": "kabupaten-karangasem",
+            "province_code": "51",
+            "latitude": -8.3355617,
+            "longitude": 115.617073
+        },
+        {
+            "code": "51.08",
+            "name": "Kabupaten Buleleng",
+            "slug": "kabupaten-buleleng",
+            "province_code": "51",
+            "latitude": -7.8428262,
+            "longitude": 115.1970295
+        },
+        {
+            "code": "51.71",
+            "name": "Kota Denpasar",
+            "slug": "kota-denpasar",
+            "province_code": "51",
+            "latitude": -8.6145892,
+            "longitude": 115.2266991
+        },
+        {
+            "code": "52.01",
+            "name": "Kabupaten Lombok Barat",
+            "slug": "kabupaten-lombok-barat",
+            "province_code": "52",
+            "latitude": -8.6718889,
+            "longitude": 116.122048
+        },
+        {
+            "code": "52.02",
+            "name": "Kabupaten Lombok Tengah",
+            "slug": "kabupaten-lombok-tengah",
+            "province_code": "52",
+            "latitude": -8.703071,
+            "longitude": 116.2899373
+        },
+        {
+            "code": "52.03",
+            "name": "Kabupaten Lombok Timur",
+            "slug": "kabupaten-lombok-timur",
+            "province_code": "52",
+            "latitude": -8.6330934,
+            "longitude": 116.5587704
+        },
+        {
+            "code": "52.04",
+            "name": "Kabupaten Sumbawa",
+            "slug": "kabupaten-sumbawa",
+            "province_code": "52",
+            "latitude": -8.5949025,
+            "longitude": 117.2716068
+        },
+        {
+            "code": "52.05",
+            "name": "Kabupaten Dompu",
+            "slug": "kabupaten-dompu",
+            "province_code": "52",
+            "latitude": -8.5164771,
+            "longitude": 118.3312161
+        },
+        {
+            "code": "52.06",
+            "name": "Kabupaten Bima",
+            "slug": "kabupaten-bima",
+            "province_code": "52",
+            "latitude": -8.5647631,
+            "longitude": 118.762474
+        },
+        {
+            "code": "52.07",
+            "name": "Kabupaten Sumbawa Barat",
+            "slug": "kabupaten-sumbawa-barat",
+            "province_code": "52",
+            "latitude": -8.658515,
+            "longitude": 116.9161845
+        },
+        {
+            "code": "52.08",
+            "name": "Kabupaten Lombok Utara",
+            "slug": "kabupaten-lombok-utara",
+            "province_code": "52",
+            "latitude": -8.3572425,
+            "longitude": 116.1609208
+        },
+        {
+            "code": "52.71",
+            "name": "Kota Mataram",
+            "slug": "kota-mataram",
+            "province_code": "52",
+            "latitude": -8.599383,
+            "longitude": 116.1555961
+        },
+        {
+            "code": "52.72",
+            "name": "Kota Bima",
+            "slug": "kota-bima",
+            "province_code": "52",
+            "latitude": -8.4491472,
+            "longitude": 118.7650241
+        },
+        {
+            "code": "53.01",
+            "name": "Kabupaten Kupang",
+            "slug": "kabupaten-kupang",
+            "province_code": "53",
+            "latitude": -10.1632209,
+            "longitude": 123.6017755
+        },
+        {
+            "code": "53.02",
+            "name": "Kabupaten Timor Tengah Selatan",
+            "slug": "kabupaten-timor-tengah-selatan",
+            "province_code": "53",
+            "latitude": -9.8230513,
+            "longitude": 124.4355953
+        },
+        {
+            "code": "53.03",
+            "name": "Kabupaten Timor Tengah Utara",
+            "slug": "kabupaten-timor-tengah-utara",
+            "province_code": "53",
+            "latitude": -9.340513,
+            "longitude": 124.6106661
+        },
+        {
+            "code": "53.04",
+            "name": "Kabupaten Belu",
+            "slug": "kabupaten-belu",
+            "province_code": "53",
+            "latitude": -9.175972,
+            "longitude": 124.9163537
+        },
+        {
+            "code": "53.05",
+            "name": "Kabupaten Alor",
+            "slug": "kabupaten-alor",
+            "province_code": "53",
+            "latitude": -8.2911449,
+            "longitude": 124.7777164
+        },
+        {
+            "code": "53.06",
+            "name": "Kabupaten Flores Timur",
+            "slug": "kabupaten-flores-timur",
+            "province_code": "53",
+            "latitude": -8.318462,
+            "longitude": 123.1657963
+        },
+        {
+            "code": "53.07",
+            "name": "Kabupaten Sikka",
+            "slug": "kabupaten-sikka",
+            "province_code": "53",
+            "latitude": -8.5946841,
+            "longitude": 122.0926352
+        },
+        {
+            "code": "53.08",
+            "name": "Kabupaten Ende",
+            "slug": "kabupaten-ende",
+            "province_code": "53",
+            "latitude": -8.6728675,
+            "longitude": 121.6929173
+        },
+        {
+            "code": "53.09",
+            "name": "Kabupaten Ngada",
+            "slug": "kabupaten-ngada",
+            "province_code": "53",
+            "latitude": -8.6499482,
+            "longitude": 120.986707
+        },
+        {
+            "code": "53.1",
+            "name": "Kabupaten Manggarai",
+            "slug": "kabupaten-manggarai",
+            "province_code": "53",
+            "latitude": -8.5480146,
+            "longitude": 120.4389862
+        },
+        {
+            "code": "53.11",
+            "name": "Kabupaten Sumba Timur",
+            "slug": "kabupaten-sumba-timur",
+            "province_code": "53",
+            "latitude": -9.8342576,
+            "longitude": 120.2094194
+        },
+        {
+            "code": "53.12",
+            "name": "Kabupaten Sumba Barat",
+            "slug": "kabupaten-sumba-barat",
+            "province_code": "53",
+            "latitude": -9.5857092,
+            "longitude": 119.4439426
+        },
+        {
+            "code": "53.13",
+            "name": "Kabupaten Lembata",
+            "slug": "kabupaten-lembata",
+            "province_code": "53",
+            "latitude": -8.3781444,
+            "longitude": 123.5446266
+        },
+        {
+            "code": "53.14",
+            "name": "Kabupaten Rote Ndao",
+            "slug": "kabupaten-rote-ndao",
+            "province_code": "53",
+            "latitude": -10.6870292,
+            "longitude": 123.208435
+        },
+        {
+            "code": "53.15",
+            "name": "Kabupaten Manggarai Barat",
+            "slug": "kabupaten-manggarai-barat",
+            "province_code": "53",
+            "latitude": -8.5741281,
+            "longitude": 120.0611252
+        },
+        {
+            "code": "53.16",
+            "name": "Kabupaten Nagekeo",
+            "slug": "kabupaten-nagekeo",
+            "province_code": "53",
+            "latitude": -8.675887,
+            "longitude": 121.2708027
+        },
+        {
+            "code": "53.17",
+            "name": "Kabupaten Sumba Tengah",
+            "slug": "kabupaten-sumba-tengah",
+            "province_code": "53",
+            "latitude": -9.5935839,
+            "longitude": 119.6662771
+        },
+        {
+            "code": "53.18",
+            "name": "Kabupaten Sumba Barat Daya",
+            "slug": "kabupaten-sumba-barat-daya",
+            "province_code": "53",
+            "latitude": -9.537821,
+            "longitude": 119.1623019
+        },
+        {
+            "code": "53.19",
+            "name": "Kabupaten Manggarai Timur",
+            "slug": "kabupaten-manggarai-timur",
+            "province_code": "53",
+            "latitude": -8.5738274,
+            "longitude": 120.6863591
+        },
+        {
+            "code": "53.2",
+            "name": "Kabupaten Sabu Raijua",
+            "slug": "kabupaten-sabu-raijua",
+            "province_code": "53",
+            "latitude": -10.5222315,
+            "longitude": 121.8884584
+        },
+        {
+            "code": "53.21",
+            "name": "Kabupaten Malaka",
+            "slug": "kabupaten-malaka",
+            "province_code": "53",
+            "latitude": -9.5460167,
+            "longitude": 124.8763532
+        },
+        {
+            "code": "53.71",
+            "name": "Kota Kupang",
+            "slug": "kota-kupang",
+            "province_code": "53",
+            "latitude": -10.1575638,
+            "longitude": 123.6017355
+        },
+        {
+            "code": "61.01",
+            "name": "Kabupaten Sambas",
+            "slug": "kabupaten-sambas",
+            "province_code": "61",
+            "latitude": 1.52191,
+            "longitude": 109.413809
+        },
+        {
+            "code": "61.02",
+            "name": "Kabupaten Mempawah",
+            "slug": "kabupaten-mempawah",
+            "province_code": "61",
+            "latitude": 0.3440181,
+            "longitude": 109.1019761
+        },
+        {
+            "code": "61.03",
+            "name": "Kabupaten Sanggau",
+            "slug": "kabupaten-sanggau",
+            "province_code": "61",
+            "latitude": 0.3502299,
+            "longitude": 110.5470424
+        },
+        {
+            "code": "61.04",
+            "name": "Kabupaten Ketapang",
+            "slug": "kabupaten-ketapang",
+            "province_code": "61",
+            "latitude": -1.6814967,
+            "longitude": 110.4647607
+        },
+        {
+            "code": "61.05",
+            "name": "Kabupaten Sintang",
+            "slug": "kabupaten-sintang",
+            "province_code": "61",
+            "latitude": 0.1927001,
+            "longitude": 111.5598118
+        },
+        {
+            "code": "61.06",
+            "name": "Kabupaten Kapuas Hulu",
+            "slug": "kabupaten-kapuas-hulu",
+            "province_code": "61",
+            "latitude": 0.827426,
+            "longitude": 112.7965412
+        },
+        {
+            "code": "61.07",
+            "name": "Kabupaten Bengkayang",
+            "slug": "kabupaten-bengkayang",
+            "province_code": "61",
+            "latitude": 1.0157755,
+            "longitude": 109.7080333
+        },
+        {
+            "code": "61.08",
+            "name": "Kabupaten Landak",
+            "slug": "kabupaten-landak",
+            "province_code": "61",
+            "latitude": 0.504635,
+            "longitude": 109.7070383
+        },
+        {
+            "code": "61.09",
+            "name": "Kabupaten Sekadau",
+            "slug": "kabupaten-sekadau",
+            "province_code": "61",
+            "latitude": 0.0171923,
+            "longitude": 110.9290042
+        },
+        {
+            "code": "61.1",
+            "name": "Kabupaten Melawi",
+            "slug": "kabupaten-melawi",
+            "province_code": "61",
+            "latitude": -0.723936,
+            "longitude": 111.6559533
+        },
+        {
+            "code": "61.11",
+            "name": "Kabupaten Kayong Utara",
+            "slug": "kabupaten-kayong-utara",
+            "province_code": "61",
+            "latitude": -1.0435067,
+            "longitude": 110.0589495
+        },
+        {
+            "code": "61.12",
+            "name": "Kabupaten Kubu Raya",
+            "slug": "kabupaten-kubu-raya",
+            "province_code": "61",
+            "latitude": -0.3694842,
+            "longitude": 109.5123558
+        },
+        {
+            "code": "61.71",
+            "name": "Kota Pontianak",
+            "slug": "kota-pontianak",
+            "province_code": "61",
+            "latitude": -0.0829029,
+            "longitude": 109.351822
+        },
+        {
+            "code": "61.72",
+            "name": "Kota Singkawang",
+            "slug": "kota-singkawang",
+            "province_code": "61",
+            "latitude": 0.7932751,
+            "longitude": 108.9862864
+        },
+        {
+            "code": "62.01",
+            "name": "Kabupaten Kotawaringin Barat",
+            "slug": "kabupaten-kotawaringin-barat",
+            "province_code": "62",
+            "latitude": -2.504212,
+            "longitude": 111.6468097
+        },
+        {
+            "code": "62.02",
+            "name": "Kabupaten Kotawaringin Timur",
+            "slug": "kabupaten-kotawaringin-timur",
+            "province_code": "62",
+            "latitude": -2.251473,
+            "longitude": 112.7854649
+        },
+        {
+            "code": "62.03",
+            "name": "Kabupaten Kapuas",
+            "slug": "kabupaten-kapuas",
+            "province_code": "62",
+            "latitude": -1.9228793,
+            "longitude": 114.3363619
+        },
+        {
+            "code": "62.04",
+            "name": "Kabupaten Barito Selatan",
+            "slug": "kabupaten-barito-selatan",
+            "province_code": "62",
+            "latitude": -1.9228793,
+            "longitude": 114.7888904
+        },
+        {
+            "code": "62.05",
+            "name": "Kabupaten Barito Utara",
+            "slug": "kabupaten-barito-utara",
+            "province_code": "62",
+            "latitude": -0.7542111,
+            "longitude": 115.0451447
+        },
+        {
+            "code": "62.06",
+            "name": "Kabupaten Katingan",
+            "slug": "kabupaten-katingan",
+            "province_code": "62",
+            "latitude": -1.8595579,
+            "longitude": 113.3369051
+        },
+        {
+            "code": "62.07",
+            "name": "Kabupaten Seruyan",
+            "slug": "kabupaten-seruyan",
+            "province_code": "62",
+            "latitude": -2.1201766,
+            "longitude": 112.1650251
+        },
+        {
+            "code": "62.08",
+            "name": "Kabupaten Sukamara",
+            "slug": "kabupaten-sukamara",
+            "province_code": "62",
+            "latitude": -2.5602491,
+            "longitude": 111.1837719
+        },
+        {
+            "code": "62.09",
+            "name": "Kabupaten Lamandau",
+            "slug": "kabupaten-lamandau",
+            "province_code": "62",
+            "latitude": -1.7788745,
+            "longitude": 111.4173165
+        },
+        {
+            "code": "62.1",
+            "name": "Kabupaten Gunung Mas",
+            "slug": "kabupaten-gunung-mas",
+            "province_code": "62",
+            "latitude": -0.9677895,
+            "longitude": 113.5357137
+        },
+        {
+            "code": "62.11",
+            "name": "Kabupaten Pulang Pisau",
+            "slug": "kabupaten-pulang-pisau",
+            "province_code": "62",
+            "latitude": -2.746171,
+            "longitude": 114.2622421
+        },
+        {
+            "code": "62.12",
+            "name": "Kabupaten Murung Raya",
+            "slug": "kabupaten-murung-raya",
+            "province_code": "62",
+            "latitude": -0.0684509,
+            "longitude": 114.1731819
+        },
+        {
+            "code": "62.13",
+            "name": "Kabupaten Barito Timur",
+            "slug": "kabupaten-barito-timur",
+            "province_code": "62",
+            "latitude": -1.9819109,
+            "longitude": 115.1803876
+        },
+        {
+            "code": "62.71",
+            "name": "Kota Palangkaraya",
+            "slug": "kota-palangkaraya",
+            "province_code": "62",
+            "latitude": -1.70189,
+            "longitude": 113.6024762
+        },
+        {
+            "code": "63.01",
+            "name": "Kabupaten Tanah Laut",
+            "slug": "kabupaten-tanah-laut",
+            "province_code": "63",
+            "latitude": -3.8440385,
+            "longitude": 114.9888593
+        },
+        {
+            "code": "63.02",
+            "name": "Kabupaten Kotabaru",
+            "slug": "kabupaten-kotabaru",
+            "province_code": "63",
+            "latitude": -2.7951097,
+            "longitude": 115.9712548
+        },
+        {
+            "code": "63.03",
+            "name": "Kabupaten Banjar",
+            "slug": "kabupaten-banjar",
+            "province_code": "63",
+            "latitude": -3.3187496,
+            "longitude": 114.5925828
+        },
+        {
+            "code": "63.04",
+            "name": "Kabupaten Barito Kuala",
+            "slug": "kabupaten-barito-kuala",
+            "province_code": "63",
+            "latitude": -3.0192964,
+            "longitude": 114.6779323
+        },
+        {
+            "code": "63.05",
+            "name": "Kabupaten Tapin",
+            "slug": "kabupaten-tapin",
+            "province_code": "63",
+            "latitude": -2.862273,
+            "longitude": 115.010964
+        },
+        {
+            "code": "63.06",
+            "name": "Kabupaten Hulu Sungai Selatan",
+            "slug": "kabupaten-hulu-sungai-selatan",
+            "province_code": "63",
+            "latitude": -2.7125809,
+            "longitude": 115.1587771
+        },
+        {
+            "code": "63.07",
+            "name": "Kabupaten Hulu Sungai Tengah",
+            "slug": "kabupaten-hulu-sungai-tengah",
+            "province_code": "63",
+            "latitude": -2.6187577,
+            "longitude": 115.4292997
+        },
+        {
+            "code": "63.08",
+            "name": "Kabupaten Hulu Sungai Utara",
+            "slug": "kabupaten-hulu-sungai-utara",
+            "province_code": "63",
+            "latitude": -2.4242449,
+            "longitude": 115.1597061
+        },
+        {
+            "code": "63.09",
+            "name": "Kabupaten Tabalong",
+            "slug": "kabupaten-tabalong",
+            "province_code": "63",
+            "latitude": -1.8363209,
+            "longitude": 115.5155337
+        },
+        {
+            "code": "63.1",
+            "name": "Kabupaten Tanah Bumbu",
+            "slug": "kabupaten-tanah-bumbu",
+            "province_code": "63",
+            "latitude": -3.4473329,
+            "longitude": 115.7063933
+        },
+        {
+            "code": "63.11",
+            "name": "Kabupaten Balangan",
+            "slug": "kabupaten-balangan",
+            "province_code": "63",
+            "latitude": -2.2878973,
+            "longitude": 115.6205477
+        },
+        {
+            "code": "63.71",
+            "name": "Kota Banjarmasin",
+            "slug": "kota-banjarmasin",
+            "province_code": "63",
+            "latitude": -3.3301277,
+            "longitude": 114.5975715
+        },
+        {
+            "code": "63.72",
+            "name": "Kota Banjarbaru",
+            "slug": "kota-banjarbaru",
+            "province_code": "63",
+            "latitude": -3.4873584,
+            "longitude": 114.7026752
+        },
+        {
+            "code": "64.01",
+            "name": "Kabupaten Paser",
+            "slug": "kabupaten-paser",
+            "province_code": "64",
+            "latitude": -1.6896674,
+            "longitude": 116.0158218
+        },
+        {
+            "code": "64.02",
+            "name": "Kabupaten Kutai Kartanegara",
+            "slug": "kabupaten-kutai-kartanegara",
+            "province_code": "64",
+            "latitude": 0.1956331,
+            "longitude": 116.2004167
+        },
+        {
+            "code": "64.03",
+            "name": "Kabupaten Berau",
+            "slug": "kabupaten-berau",
+            "province_code": "64",
+            "latitude": 1.7767536,
+            "longitude": 117.2691764
+        },
+        {
+            "code": "64.07",
+            "name": "Kabupaten Kutai Barat",
+            "slug": "kabupaten-kutai-barat",
+            "province_code": "64",
+            "latitude": -0.4209153,
+            "longitude": 115.7680451
+        },
+        {
+            "code": "64.08",
+            "name": "Kabupaten Kutai Timur",
+            "slug": "kabupaten-kutai-timur",
+            "province_code": "64",
+            "latitude": 0.9453607,
+            "longitude": 117.0110884
+        },
+        {
+            "code": "64.09",
+            "name": "Kabupaten Penajam Paser Utara",
+            "slug": "kabupaten-penajam-paser-utara",
+            "province_code": "64",
+            "latitude": -1.1973862,
+            "longitude": 116.5673033
+        },
+        {
+            "code": "64.11",
+            "name": "Kabupaten Mahakam Ulu",
+            "slug": "kabupaten-mahakam-ulu",
+            "province_code": "64",
+            "latitude": 0.622602,
+            "longitude": 115.3131454
+        },
+        {
+            "code": "64.71",
+            "name": "Kota Balikpapan",
+            "slug": "kota-balikpapan",
+            "province_code": "64",
+            "latitude": -1.2677839,
+            "longitude": 116.8537412
+        },
+        {
+            "code": "64.72",
+            "name": "Kota Samarinda",
+            "slug": "kota-samarinda",
+            "province_code": "64",
+            "latitude": -0.5303525,
+            "longitude": 117.1365042
+        },
+        {
+            "code": "64.74",
+            "name": "Kota Bontang",
+            "slug": "kota-bontang",
+            "province_code": "64",
+            "latitude": 0.129923,
+            "longitude": 117.4506509
+        },
+        {
+            "code": "65.01",
+            "name": "Kabupaten Bulungan",
+            "slug": "kabupaten-bulungan",
+            "province_code": "65",
+            "latitude": 2.7620341,
+            "longitude": 117.0743468
+        },
+        {
+            "code": "65.02",
+            "name": "Kabupaten Malinau",
+            "slug": "kabupaten-malinau",
+            "province_code": "65",
+            "latitude": 2.6185545,
+            "longitude": 115.690497
+        },
+        {
+            "code": "65.03",
+            "name": "Kabupaten Nunukan",
+            "slug": "kabupaten-nunukan",
+            "province_code": "65",
+            "latitude": 3.9074565,
+            "longitude": 117.0423506
+        },
+        {
+            "code": "65.04",
+            "name": "Kabupaten Tana Tidung",
+            "slug": "kabupaten-tana-tidung",
+            "province_code": "65",
+            "latitude": 3.5553285,
+            "longitude": 117.0446603
+        },
+        {
+            "code": "65.71",
+            "name": "Kota Tarakan",
+            "slug": "kota-tarakan",
+            "province_code": "65",
+            "latitude": 3.3725793,
+            "longitude": 117.5719777
+        },
+        {
+            "code": "71.01",
+            "name": "Kabupaten Bolaang Mongondow",
+            "slug": "kabupaten-bolaang-mongondow",
+            "province_code": "71",
+            "latitude": 0.7207701,
+            "longitude": 123.9870367
+        },
+        {
+            "code": "71.02",
+            "name": "Kabupaten Minahasa",
+            "slug": "kabupaten-minahasa",
+            "province_code": "71",
+            "latitude": 1.2151679,
+            "longitude": 124.7978881
+        },
+        {
+            "code": "71.03",
+            "name": "Kabupaten Kepulauan Sangihe",
+            "slug": "kabupaten-kepulauan-sangihe",
+            "province_code": "71",
+            "latitude": 3.5527079,
+            "longitude": 125.5465645
+        },
+        {
+            "code": "71.04",
+            "name": "Kabupaten Kepulauan Talaud",
+            "slug": "kabupaten-kepulauan-talaud",
+            "province_code": "71",
+            "latitude": 4.2694929,
+            "longitude": 126.8135499
+        },
+        {
+            "code": "71.05",
+            "name": "Kabupaten Minahasa Selatan",
+            "slug": "kabupaten-minahasa-selatan",
+            "province_code": "71",
+            "latitude": 1.07031,
+            "longitude": 124.4361622
+        },
+        {
+            "code": "71.06",
+            "name": "Kabupaten Minahasa Utara",
+            "slug": "kabupaten-minahasa-utara",
+            "province_code": "71",
+            "latitude": 1.5183648,
+            "longitude": 125.0004264
+        },
+        {
+            "code": "71.07",
+            "name": "Kabupaten Minahasa Tenggara",
+            "slug": "kabupaten-minahasa-tenggara",
+            "province_code": "71",
+            "latitude": 0.9882673,
+            "longitude": 124.7306506
+        },
+        {
+            "code": "71.08",
+            "name": "Kabupaten Bolaang Mongondow Utara",
+            "slug": "kabupaten-bolaang-mongondow-utara",
+            "province_code": "71",
+            "latitude": 0.7599112,
+            "longitude": 123.4849375
+        },
+        {
+            "code": "71.09",
+            "name": "Kabupaten Kepulauan Siau Tagulandang Biaro (Sitaro)",
+            "slug": "kabupaten-kepulauan-siau-tagulandang-biaro-sitaro",
+            "province_code": "71",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "code": "71.1",
+            "name": "Kabupaten Bolaang Mongondow Timur",
+            "slug": "kabupaten-bolaang-mongondow-timur",
+            "province_code": "71",
+            "latitude": 0.7115652,
+            "longitude": 124.4895208
+        },
+        {
+            "code": "71.11",
+            "name": "Kabupaten Bolaang Mongondow Selatan",
+            "slug": "kabupaten-bolaang-mongondow-selatan",
+            "province_code": "71",
+            "latitude": 0.453336,
+            "longitude": 124.17963
+        },
+        {
+            "code": "71.71",
+            "name": "Kota Manado",
+            "slug": "kota-manado",
+            "province_code": "71",
+            "latitude": 1.4874581,
+            "longitude": 124.8562545
+        },
+        {
+            "code": "71.72",
+            "name": "Kota Bitung",
+            "slug": "kota-bitung",
+            "province_code": "71",
+            "latitude": 1.4625993,
+            "longitude": 125.2429191
+        },
+        {
+            "code": "71.73",
+            "name": "Kota Tomohon",
+            "slug": "kota-tomohon",
+            "province_code": "71",
+            "latitude": 1.3471696,
+            "longitude": 124.8836556
+        },
+        {
+            "code": "71.74",
+            "name": "Kota Kotamobagu",
+            "slug": "kota-kotamobagu",
+            "province_code": "71",
+            "latitude": 0.7336569,
+            "longitude": 124.2750773
+        },
+        {
+            "code": "72.01",
+            "name": "Kabupaten Banggai",
+            "slug": "kabupaten-banggai",
+            "province_code": "72",
+            "latitude": -0.9210461,
+            "longitude": 122.6975066
+        },
+        {
+            "code": "72.02",
+            "name": "Kabupaten Poso",
+            "slug": "kabupaten-poso",
+            "province_code": "72",
+            "latitude": -1.6568513,
+            "longitude": 120.5421575
+        },
+        {
+            "code": "72.03",
+            "name": "Kabupaten Donggala",
+            "slug": "kabupaten-donggala",
+            "province_code": "72",
+            "latitude": -1.0478202,
+            "longitude": 119.6758465
+        },
+        {
+            "code": "72.04",
+            "name": "Kabupaten Toli Toli",
+            "slug": "kabupaten-toli-toli",
+            "province_code": "72",
+            "latitude": 0.9702508,
+            "longitude": 120.880323
+        },
+        {
+            "code": "72.05",
+            "name": "Kabupaten Buol",
+            "slug": "kabupaten-buol",
+            "province_code": "72",
+            "latitude": 1.0123735,
+            "longitude": 121.3120524
+        },
+        {
+            "code": "72.06",
+            "name": "Kabupaten Morowali",
+            "slug": "kabupaten-morowali",
+            "province_code": "72",
+            "latitude": -2.7151484,
+            "longitude": 121.8824104
+        },
+        {
+            "code": "72.07",
+            "name": "Kabupaten Banggai Kepulauan",
+            "slug": "kabupaten-banggai-kepulauan",
+            "province_code": "72",
+            "latitude": -1.3518454,
+            "longitude": 123.1808567
+        },
+        {
+            "code": "72.08",
+            "name": "Kabupaten Parigi Moutong",
+            "slug": "kabupaten-parigi-moutong",
+            "province_code": "72",
+            "latitude": -0.2383606,
+            "longitude": 119.9599311
+        },
+        {
+            "code": "72.09",
+            "name": "Kabupaten Tojo Una Una",
+            "slug": "kabupaten-tojo-una-una",
+            "province_code": "72",
+            "latitude": -1.2131379,
+            "longitude": 121.6196075
+        },
+        {
+            "code": "72.1",
+            "name": "Kabupaten Sigi",
+            "slug": "kabupaten-sigi",
+            "province_code": "72",
+            "latitude": -1.3211588,
+            "longitude": 119.9987265
+        },
+        {
+            "code": "72.11",
+            "name": "Kabupaten Banggai Laut",
+            "slug": "kabupaten-banggai-laut",
+            "province_code": "72",
+            "latitude": -1.8427943,
+            "longitude": 123.1026076
+        },
+        {
+            "code": "72.12",
+            "name": "Kabupaten Morowali Utara",
+            "slug": "kabupaten-morowali-utara",
+            "province_code": "72",
+            "latitude": -1.8418842,
+            "longitude": 121.0771696
+        },
+        {
+            "code": "72.71",
+            "name": "Kota Palu",
+            "slug": "kota-palu",
+            "province_code": "72",
+            "latitude": -0.8818095,
+            "longitude": 119.886074
+        },
+        {
+            "code": "73.01",
+            "name": "Kabupaten Kepulauan Selayar",
+            "slug": "kabupaten-kepulauan-selayar",
+            "province_code": "73",
+            "latitude": -7.2958182,
+            "longitude": 120.9504989
+        },
+        {
+            "code": "73.02",
+            "name": "Kabupaten Bulukumba",
+            "slug": "kabupaten-bulukumba",
+            "province_code": "73",
+            "latitude": -5.4546148,
+            "longitude": 120.2452185
+        },
+        {
+            "code": "73.03",
+            "name": "Kabupaten Bantaeng",
+            "slug": "kabupaten-bantaeng",
+            "province_code": "73",
+            "latitude": -5.4709449,
+            "longitude": 119.9871679
+        },
+        {
+            "code": "73.04",
+            "name": "Kabupaten Jeneponto",
+            "slug": "kabupaten-jeneponto",
+            "province_code": "73",
+            "latitude": -5.5444892,
+            "longitude": 119.6119732
+        },
+        {
+            "code": "73.05",
+            "name": "Kabupaten Takalar",
+            "slug": "kabupaten-takalar",
+            "province_code": "73",
+            "latitude": -5.4066541,
+            "longitude": 119.5375417
+        },
+        {
+            "code": "73.06",
+            "name": "Kabupaten Gowa",
+            "slug": "kabupaten-gowa",
+            "province_code": "73",
+            "latitude": -5.3290868,
+            "longitude": 119.7660277
+        },
+        {
+            "code": "73.07",
+            "name": "Kabupaten Sinjai",
+            "slug": "kabupaten-sinjai",
+            "province_code": "73",
+            "latitude": -5.2006665,
+            "longitude": 120.1441865
+        },
+        {
+            "code": "73.08",
+            "name": "Kabupaten Bone",
+            "slug": "kabupaten-bone",
+            "province_code": "73",
+            "latitude": -4.6801018,
+            "longitude": 120.0946735
+        },
+        {
+            "code": "73.09",
+            "name": "Kabupaten Maros",
+            "slug": "kabupaten-maros",
+            "province_code": "73",
+            "latitude": -4.9655024,
+            "longitude": 119.6928434
+        },
+        {
+            "code": "73.1",
+            "name": "Kabupaten Pangkajene Kepulauan",
+            "slug": "kabupaten-pangkajene-kepulauan",
+            "province_code": "73",
+            "latitude": -4.7544496,
+            "longitude": 119.5893105
+        },
+        {
+            "code": "73.11",
+            "name": "Kabupaten Barru",
+            "slug": "kabupaten-barru",
+            "province_code": "73",
+            "latitude": -4.4337339,
+            "longitude": 119.6778273
+        },
+        {
+            "code": "73.12",
+            "name": "Kabupaten Soppeng",
+            "slug": "kabupaten-soppeng",
+            "province_code": "73",
+            "latitude": -4.3188696,
+            "longitude": 119.9185062
+        },
+        {
+            "code": "73.13",
+            "name": "Kabupaten Wajo",
+            "slug": "kabupaten-wajo",
+            "province_code": "73",
+            "latitude": -3.9655768,
+            "longitude": 120.1279377
+        },
+        {
+            "code": "73.14",
+            "name": "Kabupaten Sidenreng Rappang",
+            "slug": "kabupaten-sidenreng-rappang",
+            "province_code": "73",
+            "latitude": -3.8078619,
+            "longitude": 120.0450189
+        },
+        {
+            "code": "73.15",
+            "name": "Kabupaten Pinrang",
+            "slug": "kabupaten-pinrang",
+            "province_code": "73",
+            "latitude": -3.7932568,
+            "longitude": 119.6528692
+        },
+        {
+            "code": "73.16",
+            "name": "Kabupaten Enrekang",
+            "slug": "kabupaten-enrekang",
+            "province_code": "73",
+            "latitude": -3.5657184,
+            "longitude": 119.7724109
+        },
+        {
+            "code": "73.17",
+            "name": "Kabupaten Luwu",
+            "slug": "kabupaten-luwu",
+            "province_code": "73",
+            "latitude": -3.347955,
+            "longitude": 120.2214481
+        },
+        {
+            "code": "73.18",
+            "name": "Kabupaten Tana Toraja",
+            "slug": "kabupaten-tana-toraja",
+            "province_code": "73",
+            "latitude": -3.1169403,
+            "longitude": 119.6937644
+        },
+        {
+            "code": "73.22",
+            "name": "Kabupaten Luwu Utara",
+            "slug": "kabupaten-luwu-utara",
+            "province_code": "73",
+            "latitude": -2.4037885,
+            "longitude": 120.1301347
+        },
+        {
+            "code": "73.24",
+            "name": "Kabupaten Luwu Timur",
+            "slug": "kabupaten-luwu-timur",
+            "province_code": "73",
+            "latitude": -2.5304831,
+            "longitude": 121.1224205
+        },
+        {
+            "code": "73.26",
+            "name": "Kabupaten Toraja Utara",
+            "slug": "kabupaten-toraja-utara",
+            "province_code": "73",
+            "latitude": -2.861242,
+            "longitude": 119.8420118
+        },
+        {
+            "code": "73.71",
+            "name": "Kota Makassar",
+            "slug": "kota-makassar",
+            "province_code": "73",
+            "latitude": -5.1486381,
+            "longitude": 119.2647054
+        },
+        {
+            "code": "73.72",
+            "name": "Kota Pare Pare",
+            "slug": "kota-pare-pare",
+            "province_code": "73",
+            "latitude": -4.0306606,
+            "longitude": 119.6410803
+        },
+        {
+            "code": "73.73",
+            "name": "Kota Palopo",
+            "slug": "kota-palopo",
+            "province_code": "73",
+            "latitude": -2.9338961,
+            "longitude": 120.1771317
+        },
+        {
+            "code": "74.01",
+            "name": "Kabupaten Kolaka",
+            "slug": "kabupaten-kolaka",
+            "province_code": "74",
+            "latitude": -4.1213511,
+            "longitude": 121.6929444
+        },
+        {
+            "code": "74.02",
+            "name": "Kabupaten Konawe",
+            "slug": "kabupaten-konawe",
+            "province_code": "74",
+            "latitude": -3.5116689,
+            "longitude": 121.6523287
+        },
+        {
+            "code": "74.03",
+            "name": "Kabupaten Muna",
+            "slug": "kabupaten-muna",
+            "province_code": "74",
+            "latitude": -5.0258688,
+            "longitude": 122.5325761
+        },
+        {
+            "code": "74.04",
+            "name": "Kabupaten Buton",
+            "slug": "kabupaten-buton",
+            "province_code": "74",
+            "latitude": -5.0346585,
+            "longitude": 122.8854417
+        },
+        {
+            "code": "74.05",
+            "name": "Kabupaten Konawe Selatan",
+            "slug": "kabupaten-konawe-selatan",
+            "province_code": "74",
+            "latitude": -4.2599185,
+            "longitude": 122.4498522
+        },
+        {
+            "code": "74.06",
+            "name": "Kabupaten Bombana",
+            "slug": "kabupaten-bombana",
+            "province_code": "74",
+            "latitude": -4.6392558,
+            "longitude": 121.757211
+        },
+        {
+            "code": "74.07",
+            "name": "Kabupaten Wakatobi",
+            "slug": "kabupaten-wakatobi",
+            "province_code": "74",
+            "latitude": -5.3156704,
+            "longitude": 123.5850437
+        },
+        {
+            "code": "74.08",
+            "name": "Kabupaten Kolaka Utara",
+            "slug": "kabupaten-kolaka-utara",
+            "province_code": "74",
+            "latitude": -3.2605039,
+            "longitude": 121.0933984
+        },
+        {
+            "code": "74.09",
+            "name": "Kabupaten Konawe Utara",
+            "slug": "kabupaten-konawe-utara",
+            "province_code": "74",
+            "latitude": -3.4549579,
+            "longitude": 121.976257
+        },
+        {
+            "code": "74.1",
+            "name": "Kabupaten Buton Utara",
+            "slug": "kabupaten-buton-utara",
+            "province_code": "74",
+            "latitude": -4.7565043,
+            "longitude": 122.948916
+        },
+        {
+            "code": "74.11",
+            "name": "Kabupaten Kolaka Timur",
+            "slug": "kabupaten-kolaka-timur",
+            "province_code": "74",
+            "latitude": -3.8207324,
+            "longitude": 121.7541986
+        },
+        {
+            "code": "74.12",
+            "name": "Kabupaten Konawe Kepulauan",
+            "slug": "kabupaten-konawe-kepulauan",
+            "province_code": "74",
+            "latitude": -4.1194809,
+            "longitude": 123.0985639
+        },
+        {
+            "code": "74.13",
+            "name": "Kabupaten Muna Barat",
+            "slug": "kabupaten-muna-barat",
+            "province_code": "74",
+            "latitude": -4.8036713,
+            "longitude": 122.4514545
+        },
+        {
+            "code": "74.14",
+            "name": "Kabupaten Buton Tengah",
+            "slug": "kabupaten-buton-tengah",
+            "province_code": "74",
+            "latitude": -5.2918081,
+            "longitude": 122.3882776
+        },
+        {
+            "code": "74.15",
+            "name": "Kabupaten Buton Selatan",
+            "slug": "kabupaten-buton-selatan",
+            "province_code": "74",
+            "latitude": -5.5913914,
+            "longitude": 122.7018948
+        },
+        {
+            "code": "74.71",
+            "name": "Kota Kendari",
+            "slug": "kota-kendari",
+            "province_code": "74",
+            "latitude": -4.0034359,
+            "longitude": 122.5156089
+        },
+        {
+            "code": "74.72",
+            "name": "Kota Bau Bau",
+            "slug": "kota-bau-bau",
+            "province_code": "74",
+            "latitude": -5.4580367,
+            "longitude": 122.6019803
+        },
+        {
+            "code": "75.01",
+            "name": "Kabupaten Gorontalo",
+            "slug": "kabupaten-gorontalo",
+            "province_code": "75",
+            "latitude": 0.5384433,
+            "longitude": 123.0594971
+        },
+        {
+            "code": "75.02",
+            "name": "Kabupaten Boalemo",
+            "slug": "kabupaten-boalemo",
+            "province_code": "75",
+            "latitude": 0.6876202,
+            "longitude": 122.3356833
+        },
+        {
+            "code": "75.03",
+            "name": "Kabupaten Bone Bolango",
+            "slug": "kabupaten-bone-bolango",
+            "province_code": "75",
+            "latitude": 0.5564031,
+            "longitude": 123.3099705
+        },
+        {
+            "code": "75.04",
+            "name": "Kabupaten Pahuwato",
+            "slug": "kabupaten-pahuwato",
+            "province_code": "75",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "code": "75.05",
+            "name": "Kabupaten Gorontalo Utara",
+            "slug": "kabupaten-gorontalo-utara",
+            "province_code": "75",
+            "latitude": 0.8661976,
+            "longitude": 123.0495286
+        },
+        {
+            "code": "75.71",
+            "name": "Kota Gorontalo",
+            "slug": "kota-gorontalo",
+            "province_code": "75",
+            "latitude": 0.5278634,
+            "longitude": 123.0544026
+        },
+        {
+            "code": "76.01",
+            "name": "Kabupaten Pasangkayu (Mamuju Utara)",
+            "slug": "kabupaten-pasangkayu-mamuju-utara",
+            "province_code": "76",
+            "latitude": -1.1807281,
+            "longitude": 119.3673413
+        },
+        {
+            "code": "76.02",
+            "name": "Kabupaten Mamuju",
+            "slug": "kabupaten-mamuju",
+            "province_code": "76",
+            "latitude": -2.6756302,
+            "longitude": 118.8847947
+        },
+        {
+            "code": "76.03",
+            "name": "Kabupaten Mamasa",
+            "slug": "kabupaten-mamasa",
+            "province_code": "76",
+            "latitude": -3.0003659,
+            "longitude": 119.3209087
+        },
+        {
+            "code": "76.04",
+            "name": "Kabupaten Polewali Mandar",
+            "slug": "kabupaten-polewali-mandar",
+            "province_code": "76",
+            "latitude": -3.3031896,
+            "longitude": 119.1450522
+        },
+        {
+            "code": "76.05",
+            "name": "Kabupaten Majene",
+            "slug": "kabupaten-majene",
+            "province_code": "76",
+            "latitude": -3.5459286,
+            "longitude": 118.9607438
+        },
+        {
+            "code": "76.06",
+            "name": "Kabupaten Mamuju Tengah",
+            "slug": "kabupaten-mamuju-tengah",
+            "province_code": "76",
+            "latitude": -2.0214418,
+            "longitude": 119.5405447
+        },
+        {
+            "code": "81.01",
+            "name": "Kabupaten Maluku Tengah",
+            "slug": "kabupaten-maluku-tengah",
+            "province_code": "81",
+            "latitude": -3.1214456,
+            "longitude": 129.4599922
+        },
+        {
+            "code": "81.02",
+            "name": "Kabupaten Maluku Tenggara",
+            "slug": "kabupaten-maluku-tenggara",
+            "province_code": "81",
+            "latitude": -5.7714884,
+            "longitude": 132.73776
+        },
+        {
+            "code": "81.03",
+            "name": "Kabupaten Kepulauan Tanimbar (Maluku Tenggara Barat)",
+            "slug": "kabupaten-kepulauan-tanimbar-maluku-tenggara-barat",
+            "province_code": "81",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "code": "81.04",
+            "name": "Kabupaten Buru",
+            "slug": "kabupaten-buru",
+            "province_code": "81",
+            "latitude": -3.3539095,
+            "longitude": 126.6489184
+        },
+        {
+            "code": "81.05",
+            "name": "Kabupaten Seram Bagian Timur",
+            "slug": "kabupaten-seram-bagian-timur",
+            "province_code": "81",
+            "latitude": -3.4231587,
+            "longitude": 130.3910924
+        },
+        {
+            "code": "81.06",
+            "name": "Kabupaten Seram Bagian Barat",
+            "slug": "kabupaten-seram-bagian-barat",
+            "province_code": "81",
+            "latitude": -3.1642057,
+            "longitude": 128.4836558
+        },
+        {
+            "code": "81.07",
+            "name": "Kabupaten Kepulauan Aru",
+            "slug": "kabupaten-kepulauan-aru",
+            "province_code": "81",
+            "latitude": -6.2281475,
+            "longitude": 134.4979657
+        },
+        {
+            "code": "81.08",
+            "name": "Kabupaten Maluku Barat Daya",
+            "slug": "kabupaten-maluku-barat-daya",
+            "province_code": "81",
+            "latitude": -7.7867206,
+            "longitude": 126.2427827
+        },
+        {
+            "code": "81.09",
+            "name": "Kabupaten Buru Selatan",
+            "slug": "kabupaten-buru-selatan",
+            "province_code": "81",
+            "latitude": -3.4866756,
+            "longitude": 126.3501528
+        },
+        {
+            "code": "81.71",
+            "name": "Kota Ambon",
+            "slug": "kota-ambon",
+            "province_code": "81",
+            "latitude": -3.7109498,
+            "longitude": 128.2593418
+        },
+        {
+            "code": "81.72",
+            "name": "Kota Tual",
+            "slug": "kota-tual",
+            "province_code": "81",
+            "latitude": -5.5905178,
+            "longitude": 132.0040935
+        },
+        {
+            "code": "82.01",
+            "name": "Kabupaten Halmahera Barat",
+            "slug": "kabupaten-halmahera-barat",
+            "province_code": "82",
+            "latitude": 1.3631055,
+            "longitude": 127.5737958
+        },
+        {
+            "code": "82.02",
+            "name": "Kabupaten Halmahera Tengah",
+            "slug": "kabupaten-halmahera-tengah",
+            "province_code": "82",
+            "latitude": 0.3888811,
+            "longitude": 128.5832237
+        },
+        {
+            "code": "82.03",
+            "name": "Kabupaten Halmahera Utara",
+            "slug": "kabupaten-halmahera-utara",
+            "province_code": "82",
+            "latitude": 1.6178705,
+            "longitude": 127.8584679
+        },
+        {
+            "code": "82.04",
+            "name": "Kabupaten Halmahera Selatan",
+            "slug": "kabupaten-halmahera-selatan",
+            "province_code": "82",
+            "latitude": -1.53437,
+            "longitude": 127.716559
+        },
+        {
+            "code": "82.05",
+            "name": "Kabupaten Kepulauan Sula",
+            "slug": "kabupaten-kepulauan-sula",
+            "province_code": "82",
+            "latitude": -1.8625438,
+            "longitude": 125.8306468
+        },
+        {
+            "code": "82.06",
+            "name": "Kabupaten Halmahera Timur",
+            "slug": "kabupaten-halmahera-timur",
+            "province_code": "82",
+            "latitude": 1.0027852,
+            "longitude": 128.2487936
+        },
+        {
+            "code": "82.07",
+            "name": "Kabupaten Pulau Morotai",
+            "slug": "kabupaten-pulau-morotai",
+            "province_code": "82",
+            "latitude": 2.3129234,
+            "longitude": 128.4418556
+        },
+        {
+            "code": "82.08",
+            "name": "Kabupaten Pulau Taliabu",
+            "slug": "kabupaten-pulau-taliabu",
+            "province_code": "82",
+            "latitude": -1.8314759,
+            "longitude": 124.8299791
+        },
+        {
+            "code": "82.71",
+            "name": "Kota Ternate",
+            "slug": "kota-ternate",
+            "province_code": "82",
+            "latitude": 0.835846,
+            "longitude": 127.355265
+        },
+        {
+            "code": "82.72",
+            "name": "Kota Tidore Kepulauan",
+            "slug": "kota-tidore-kepulauan",
+            "province_code": "82",
+            "latitude": 0.7512837,
+            "longitude": 127.4128561
+        },
+        {
+            "code": "91.03",
+            "name": "Kabupaten Jayapura",
+            "slug": "kabupaten-jayapura",
+            "province_code": "91",
+            "latitude": -2.5387539,
+            "longitude": 140.7037389
+        },
+        {
+            "code": "91.05",
+            "name": "Kabupaten Kepulauan Yapen",
+            "slug": "kabupaten-kepulauan-yapen",
+            "province_code": "91",
+            "latitude": -1.7558371,
+            "longitude": 136.3664523
+        },
+        {
+            "code": "91.06",
+            "name": "Kabupaten Biak Numfor",
+            "slug": "kabupaten-biak-numfor",
+            "province_code": "91",
+            "latitude": -0.9426031,
+            "longitude": 135.9414193
+        },
+        {
+            "code": "91.1",
+            "name": "Kabupaten Sarmi",
+            "slug": "kabupaten-sarmi",
+            "province_code": "91",
+            "latitude": -1.8546889,
+            "longitude": 138.7492642
+        },
+        {
+            "code": "91.11",
+            "name": "Kabupaten Keerom",
+            "slug": "kabupaten-keerom",
+            "province_code": "91",
+            "latitude": -3.3335922,
+            "longitude": 140.6726625
+        },
+        {
+            "code": "91.15",
+            "name": "Kabupaten Waropen",
+            "slug": "kabupaten-waropen",
+            "province_code": "91",
+            "latitude": -2.7187965,
+            "longitude": 136.6504111
+        },
+        {
+            "code": "91.19",
+            "name": "Kabupaten Supiori",
+            "slug": "kabupaten-supiori",
+            "province_code": "91",
+            "latitude": -0.7535972,
+            "longitude": 135.6349645
+        },
+        {
+            "code": "91.2",
+            "name": "Kabupaten Mamberamo Raya",
+            "slug": "kabupaten-mamberamo-raya",
+            "province_code": "91",
+            "latitude": -2.3957005,
+            "longitude": 137.8168835
+        },
+        {
+            "code": "91.71",
+            "name": "Kota Jayapura",
+            "slug": "kota-jayapura",
+            "province_code": "91",
+            "latitude": -2.5914875,
+            "longitude": 140.6351901
+        },
+        {
+            "code": "92.02",
+            "name": "Kabupaten Manokwari",
+            "slug": "kabupaten-manokwari",
+            "province_code": "92",
+            "latitude": -0.8614456,
+            "longitude": 134.0767324
+        },
+        {
+            "code": "92.03",
+            "name": "Kabupaten Fak Fak",
+            "slug": "kabupaten-fak-fak",
+            "province_code": "92",
+            "latitude": -2.9298174,
+            "longitude": 132.2961612
+        },
+        {
+            "code": "92.06",
+            "name": "Kabupaten Teluk Bintuni",
+            "slug": "kabupaten-teluk-bintuni",
+            "province_code": "92",
+            "latitude": -2.1138854,
+            "longitude": 133.5287755
+        },
+        {
+            "code": "92.07",
+            "name": "Kabupaten Teluk Wondama",
+            "slug": "kabupaten-teluk-wondama",
+            "province_code": "92",
+            "latitude": -2.6325251,
+            "longitude": 134.5661466
+        },
+        {
+            "code": "92.08",
+            "name": "Kabupaten Kaimana",
+            "slug": "kabupaten-kaimana",
+            "province_code": "92",
+            "latitude": -3.5158359,
+            "longitude": 134.3165746
+        },
+        {
+            "code": "92.11",
+            "name": "Kabupaten Manokwari Selatan",
+            "slug": "kabupaten-manokwari-selatan",
+            "province_code": "92",
+            "latitude": -1.5250221,
+            "longitude": 134.0710293
+        },
+        {
+            "code": "92.12",
+            "name": "Kabupaten Pegunungan Arfak",
+            "slug": "kabupaten-pegunungan-arfak",
+            "province_code": "92",
+            "latitude": -1.2611918,
+            "longitude": 133.6492059
+        },
+        {
+            "code": "93.01",
+            "name": "Kabupaten Merauke",
+            "slug": "kabupaten-merauke",
+            "province_code": "93",
+            "latitude": -7.7925193,
+            "longitude": 140.0183252
+        },
+        {
+            "code": "93.02",
+            "name": "Kabupaten Boven Digoel",
+            "slug": "kabupaten-boven-digoel",
+            "province_code": "93",
+            "latitude": -6.1058244,
+            "longitude": 140.3130821
+        },
+        {
+            "code": "93.03",
+            "name": "Kabupaten Mappi",
+            "slug": "kabupaten-mappi",
+            "province_code": "93",
+            "latitude": -6.3295533,
+            "longitude": 139.2877312
+        },
+        {
+            "code": "93.04",
+            "name": "Kabupaten Asmat",
+            "slug": "kabupaten-asmat",
+            "province_code": "93",
+            "latitude": -5.5314487,
+            "longitude": 138.7896921
+        },
+        {
+            "code": "94.01",
+            "name": "Kabupaten Nabire",
+            "slug": "kabupaten-nabire",
+            "province_code": "94",
+            "latitude": -3.360285,
+            "longitude": 135.5023653
+        },
+        {
+            "code": "94.02",
+            "name": "Kabupaten Puncak Jaya",
+            "slug": "kabupaten-puncak-jaya",
+            "province_code": "94",
+            "latitude": -4.0786047,
+            "longitude": 137.1586126
+        },
+        {
+            "code": "94.03",
+            "name": "Kabupaten Paniai",
+            "slug": "kabupaten-paniai",
+            "province_code": "94",
+            "latitude": -3.7426381,
+            "longitude": 136.3778066
+        },
+        {
+            "code": "94.04",
+            "name": "Kabupaten Mimika",
+            "slug": "kabupaten-mimika",
+            "province_code": "94",
+            "latitude": -4.5875259,
+            "longitude": 136.9477964
+        },
+        {
+            "code": "94.05",
+            "name": "Kabupaten Puncak",
+            "slug": "kabupaten-puncak",
+            "province_code": "94",
+            "latitude": -3.6256501,
+            "longitude": 137.4892467
+        },
+        {
+            "code": "94.06",
+            "name": "Kabupaten Dogiyai",
+            "slug": "kabupaten-dogiyai",
+            "province_code": "94",
+            "latitude": -4.004751,
+            "longitude": 135.7166964
+        },
+        {
+            "code": "94.07",
+            "name": "Kabupaten Intan Jaya",
+            "slug": "kabupaten-intan-jaya",
+            "province_code": "94",
+            "latitude": -3.5229883,
+            "longitude": 136.7184661
+        },
+        {
+            "code": "94.08",
+            "name": "Kabupaten Deiyai",
+            "slug": "kabupaten-deiyai",
+            "province_code": "94",
+            "latitude": -4.1879386,
+            "longitude": 136.4453126
+        },
+        {
+            "code": "95.01",
+            "name": "Kabupaten Jayawijaya",
+            "slug": "kabupaten-jayawijaya",
+            "province_code": "95",
+            "latitude": -4.1152787,
+            "longitude": 138.9650306
+        },
+        {
+            "code": "95.02",
+            "name": "Kabupaten Pegunungan Bintang",
+            "slug": "kabupaten-pegunungan-bintang",
+            "province_code": "95",
+            "latitude": -4.4754921,
+            "longitude": 140.5576777
+        },
+        {
+            "code": "95.03",
+            "name": "Kabupaten Yahukimo",
+            "slug": "kabupaten-yahukimo",
+            "province_code": "95",
+            "latitude": -4.3739458,
+            "longitude": 139.4648162
+        },
+        {
+            "code": "95.04",
+            "name": "Kabupaten Tolikara",
+            "slug": "kabupaten-tolikara",
+            "province_code": "95",
+            "latitude": -3.4496601,
+            "longitude": 138.3491294
+        },
+        {
+            "code": "95.05",
+            "name": "Kabupaten Mamberamo Tengah",
+            "slug": "kabupaten-mamberamo-tengah",
+            "province_code": "95",
+            "latitude": -3.5335459,
+            "longitude": 139.0177409
+        },
+        {
+            "code": "95.06",
+            "name": "Kabupaten Yalimo",
+            "slug": "kabupaten-yalimo",
+            "province_code": "95",
+            "latitude": -3.7353308,
+            "longitude": 139.5505815
+        },
+        {
+            "code": "95.07",
+            "name": "Kabupaten Lanny Jaya",
+            "slug": "kabupaten-lanny-jaya",
+            "province_code": "95",
+            "latitude": -3.9977349,
+            "longitude": 138.3731165
+        },
+        {
+            "code": "95.08",
+            "name": "Kabupaten Nduga",
+            "slug": "kabupaten-nduga",
+            "province_code": "95",
+            "latitude": -4.4431202,
+            "longitude": 138.2248381
+        },
+        {
+            "code": "96.01",
+            "name": "Kabupaten Sorong",
+            "slug": "kabupaten-sorong",
+            "province_code": "96",
+            "latitude": -0.8634105,
+            "longitude": 131.2544805
+        },
+        {
+            "code": "96.04",
+            "name": "Kabupaten Sorong Selatan",
+            "slug": "kabupaten-sorong-selatan",
+            "province_code": "96",
+            "latitude": -1.643052,
+            "longitude": 132.2549526
+        },
+        {
+            "code": "96.05",
+            "name": "Kabupaten Raja Ampat",
+            "slug": "kabupaten-raja-ampat",
+            "province_code": "96",
+            "latitude": -0.7125553,
+            "longitude": 130.3034473
+        },
+        {
+            "code": "96.09",
+            "name": "Kabupaten Tambrauw",
+            "slug": "kabupaten-tambrauw",
+            "province_code": "96",
+            "latitude": -0.8501283,
+            "longitude": 132.7243581
+        },
+        {
+            "code": "96.1",
+            "name": "Kabupaten Maybrat",
+            "slug": "kabupaten-maybrat",
+            "province_code": "96",
+            "latitude": -1.4039436,
+            "longitude": 132.5871495
+        },
+        {
+            "code": "96.71",
+            "name": "Kota Sorong",
+            "slug": "kota-sorong",
+            "province_code": "96",
+            "latitude": -0.8216405,
+            "longitude": 131.2362604
+        }
+    ]
+}

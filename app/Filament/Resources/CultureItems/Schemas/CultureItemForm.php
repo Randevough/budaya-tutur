@@ -3,6 +3,8 @@
 namespace App\Filament\Resources\CultureItems\Schemas;
 
 use App\Models\CultureItem;
+use App\Models\Regency;
+use Filament\Actions\Action;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
@@ -29,17 +31,33 @@ class CultureItemForm
                             ->placeholder('Contoh: Tradisi Lisan Pasola')
                             ->required()
                             ->live(onBlur: true)
-                            ->afterStateUpdated(fn ($state, callable $set) => $set('slug', Str::slug($state))),
+                            ->afterStateUpdated(function (string $operation, ?string $state, callable $set) {
+                                if ($operation === 'create' && filled($state)) {
+                                    $set('slug', Str::slug($state));
+                                }
+                            }),
 
                         TextInput::make('slug')
                             ->label('Slug URL')
-                            ->helperText('Digunakan untuk tautan publik (/arsip/slug). Otomatis terisi dari judul.')
+                            ->helperText('Digunakan untuk tautan publik (/arsip/slug). Otomatis terisi saat membuat baru.')
                             ->required()
-                            ->unique(CultureItem::class, 'slug', ignoreRecord: true),
+                            ->unique(CultureItem::class, 'slug', ignoreRecord: true)
+                            ->suffixAction(
+                                Action::make('generateSlug')
+                                    ->icon(Heroicon::OutlinedArrowPath)
+                                    ->tooltip('Hasilkan ulang slug dari judul')
+                                    ->action(function (callable $get, callable $set) {
+                                        $title = $get('title');
+                                        if (filled($title)) {
+                                            $set('slug', Str::slug($title));
+                                        }
+                                    })
+                            ),
 
                         Select::make('regency_id')
                             ->label('Kabupaten / Kota Asal')
                             ->relationship('regency', 'name')
+                            ->getOptionLabelFromRecordUsing(fn (Regency $record) => "{$record->name} ({$record->province?->name})")
                             ->searchable()
                             ->preload()
                             ->required()

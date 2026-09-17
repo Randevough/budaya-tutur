@@ -2,8 +2,12 @@
 
 namespace App\Filament\Resources\Provinces\Schemas;
 
+use App\Models\Province;
+use Filament\Actions\Action;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
+use Filament\Support\Icons\Heroicon;
+use Illuminate\Support\Str;
 
 class ProvinceForm
 {
@@ -12,12 +16,30 @@ class ProvinceForm
         return $schema
             ->components([
                 TextInput::make('name')
+                    ->label('Nama Provinsi')
                     ->required()
                     ->live(onBlur: true)
-                    ->afterStateUpdated(fn ($state, callable $set) => $set('slug', \Illuminate\Support\Str::slug($state))),
+                    ->afterStateUpdated(function (string $operation, ?string $state, callable $set) {
+                        if ($operation === 'create' && filled($state)) {
+                            $set('slug', Str::slug($state));
+                        }
+                    }),
+
                 TextInput::make('slug')
+                    ->label('Slug URL')
                     ->required()
-                    ->unique(\App\Models\Province::class, 'slug', ignoreRecord: true),
+                    ->unique(Province::class, 'slug', ignoreRecord: true)
+                    ->suffixAction(
+                        Action::make('generateSlug')
+                            ->icon(Heroicon::OutlinedArrowPath)
+                            ->tooltip('Hasilkan ulang slug dari nama')
+                            ->action(function (callable $get, callable $set) {
+                                $name = $get('name');
+                                if (filled($name)) {
+                                    $set('slug', Str::slug($name));
+                                }
+                            })
+                    ),
             ]);
     }
 }

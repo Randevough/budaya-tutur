@@ -57,4 +57,22 @@ class AdminPanelTest extends TestCase
         $response = $this->actingAs($admin)->get('/admin/contact-messages');
         $response->assertStatus(200);
     }
+
+    public function test_indonesia_wilayah_seeder_populates_38_provinces_and_514_regencies(): void
+    {
+        $this->seed(\Database\Seeders\IndonesiaWilayahSeeder::class);
+
+        $this->assertDatabaseCount('provinces', 38);
+        $this->assertDatabaseCount('regencies', 514);
+
+        // Verify centroids are non-null and valid coordinates
+        $alor = \App\Models\Regency::where('slug', 'kabupaten-alor')->first();
+        $this->assertNotNull($alor);
+        $this->assertEquals('Nusa Tenggara Timur', $alor->province->name);
+        $this->assertNotNull($alor->latitude);
+        $this->assertNotNull($alor->longitude);
+        $this->assertNotEquals(0.0, $alor->latitude);
+        $this->assertNotEquals(0.0, $alor->longitude);
+    }
 }
+

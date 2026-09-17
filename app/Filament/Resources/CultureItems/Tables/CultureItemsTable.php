@@ -48,9 +48,11 @@ class CultureItemsTable
 
                 TextColumn::make('is_published')
                     ->label('Status')
-                    ->formatStateUsing(fn (bool $state): string => $state ? 'Terbit' : 'Draf')
-                    ->badge()
-                    ->color(fn (bool $state): string => $state ? 'success' : 'gray')
+                    ->html()
+                    ->formatStateUsing(fn (bool $state): string => $state
+                        ? '<span class="bt-status-pill published"><span class="bt-dot"></span>Terbit</span>'
+                        : '<span class="bt-status-pill draft"><span class="bt-dot"></span>Draf</span>'
+                    )
                     ->sortable(),
 
                 TextColumn::make('created_at')

@@ -32,22 +32,22 @@ class StatsOverview extends BaseWidget
             Stat::make('Arsip Budaya Tutur', (string) $totalItems)
                 ->description("{$publishedItems} terbit publik" . ($draftItems > 0 ? ", {$draftItems} draf" : ''))
                 ->descriptionIcon(Heroicon::OutlinedArchiveBox)
-                ->color('success'),
+                ->color('gray'),
 
             Stat::make('Wilayah Terekam', "{$regenciesWithContent} / {$totalRegencies}")
                 ->description('Kabupaten/Kota aktif di peta')
                 ->descriptionIcon(Heroicon::OutlinedMapPin)
-                ->color('info'),
+                ->color('gray'),
 
             Stat::make('Cakupan Provinsi', (string) $provincesCount)
                 ->description('Provinsi induk terdaftar')
                 ->descriptionIcon(Heroicon::OutlinedMap)
-                ->color('primary'),
+                ->color('gray'),
 
             Stat::make('Pesan Kontak', (string) $totalMessages)
                 ->description($unsentMessages > 0 ? "{$unsentMessages} tersimpan di database (SMTP offline)" : 'Semua pesan terkirim via email')
                 ->descriptionIcon(Heroicon::OutlinedEnvelope)
-                ->color($unsentMessages > 0 ? 'warning' : 'success'),
+                ->color($unsentMessages > 0 ? 'warning' : 'gray'),
         ];
     }
 }

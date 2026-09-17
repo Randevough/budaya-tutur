@@ -25,7 +25,10 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
-        // 2. Provinces
+        // 2. Master Geographic Data (38 Provinces & 514 Regencies with Centroids)
+        $this->call(IndonesiaWilayahSeeder::class);
+
+        // 3. Provinces References
         $ntt = Province::firstOrCreate(
             ['slug' => 'nusa-tenggara-timur'],
             ['name' => 'Nusa Tenggara Timur']
