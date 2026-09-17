@@ -35,7 +35,7 @@
 
             <!-- Contact Form Card -->
             <div class="border border-linen-300 bg-linen-50 p-8 sm:p-12 shadow-sm">
-                <form action="{{ route('contact.store') }}" method="POST" class="space-y-8">
+                <form action="{{ route('kontak.store') }}" method="POST" class="space-y-8">
                     @csrf
 
                     <!-- Silent Honeypot Field -->

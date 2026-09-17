@@ -13,12 +13,26 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use UnitEnum;
 
 class ProvinceResource extends Resource
 {
     protected static ?string $model = Province::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedMap;
+
+    protected static UnitEnum|string|null $navigationGroup = 'Wilayah & Geografis';
+
+    protected static ?int $navigationSort = 2;
+
+    protected static ?string $modelLabel = 'Provinsi';
+
+    protected static ?string $pluralModelLabel = 'Provinsi';
+
+    public static function getNavigationBadge(): ?string
+    {
+        return (string) Province::count();
+    }
 
     public static function form(Schema $schema): Schema
     {

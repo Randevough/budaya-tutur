@@ -280,10 +280,10 @@
                 Kerja merawat sastra tutur nusantara terlalu luas untuk dikerjakan sendiri. Kami mengundang pegiat budaya lokal, peneliti bahasa, komunitas pemuda adat, dan siapa saja untuk mengabarkan tuturan berharga dari kampung halaman Anda.
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 text-xs uppercase tracking-[0.2em]">
-                <a href="{{ route('contact') }}" class="w-full sm:w-auto px-8 py-4 bg-obsidian-950 text-ink-100 font-semibold hover:bg-obsidian-850 transition-colors duration-300 shadow-md">
+                <a href="{{ route('kontak') }}" class="w-full sm:w-auto px-8 py-4 bg-obsidian-950 text-ink-100 font-semibold hover:bg-obsidian-850 transition-colors duration-300 shadow-md">
                     Hubungi Tim Kurasi
                 </a>
-                <a href="{{ route('galleries.index') }}" class="w-full sm:w-auto px-8 py-4 border border-ink-900/30 text-ink-900 hover:border-ink-950 hover:bg-linen-100 transition-colors duration-300">
+                <a href="{{ route('arsip.index') }}" class="w-full sm:w-auto px-8 py-4 border border-ink-900/30 text-ink-900 hover:border-ink-950 hover:bg-linen-100 transition-colors duration-300">
                     Jelajahi Arsip Saat Ini
                 </a>
             </div>

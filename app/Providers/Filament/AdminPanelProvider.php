@@ -29,8 +29,40 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login(\App\Filament\Pages\Auth\Login::class)
             ->darkMode(false)
+            ->brandName('Budaya Tutur Voices')
+            ->favicon(asset('favicon.ico'))
+            ->sidebarCollapsibleOnDesktop()
+            ->navigationGroups([
+                \Filament\Navigation\NavigationGroup::make('Pengarsipan Tutur'),
+                \Filament\Navigation\NavigationGroup::make('Wilayah & Geografis'),
+                \Filament\Navigation\NavigationGroup::make('Komunikasi'),
+            ])
+            ->navigationItems([
+                \Filament\Navigation\NavigationItem::make('Lihat Website Publik')
+                    ->url('/', shouldOpenInNewTab: true)
+                    ->icon(\Filament\Support\Icons\Heroicon::OutlinedArrowTopRightOnSquare)
+                    ->sort(99),
+            ])
+            ->font('Plus Jakarta Sans')
             ->colors([
-                'primary' => Color::Zinc,
+                'primary' => [
+                    50 => '#faf9f8',
+                    100 => '#f5f3f0', // linen-100
+                    200 => '#eae6e1', // linen-200
+                    300 => '#d7d0c7', // linen-300
+                    400 => '#8a7f73', // ink-500
+                    500 => '#3a3530', // obsidian-700
+                    600 => '#121110', // main solid action button (Deep Peat Obsidian)
+                    700 => '#0c0b0a', // button hover state (Deepest Obsidian)
+                    800 => '#000000',
+                    900 => '#000000',
+                    950 => '#000000',
+                ],
+                'gray' => Color::Stone,
+                'success' => Color::Emerald,
+                'warning' => Color::Amber,
+                'danger' => Color::Rose,
+                'info' => Color::Sky,
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')
@@ -40,7 +72,8 @@ class AdminPanelProvider extends PanelProvider
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
             ->widgets([
                 AccountWidget::class,
-                FilamentInfoWidget::class,
+                \App\Filament\Widgets\StatsOverview::class,
+                \App\Filament\Widgets\LatestCultureItemsWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,

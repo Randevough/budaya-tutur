@@ -33,4 +33,28 @@ class AdminPanelTest extends TestCase
         $response = $this->actingAs($admin)->get('/admin/culture-items');
         $response->assertStatus(200);
     }
+
+    public function test_authenticated_admin_can_access_provinces_resource(): void
+    {
+        $admin = User::factory()->create();
+
+        $response = $this->actingAs($admin)->get('/admin/provinces');
+        $response->assertStatus(200);
+    }
+
+    public function test_authenticated_admin_can_access_regencies_resource(): void
+    {
+        $admin = User::factory()->create();
+
+        $response = $this->actingAs($admin)->get('/admin/regencies');
+        $response->assertStatus(200);
+    }
+
+    public function test_authenticated_admin_can_access_contact_messages_resource(): void
+    {
+        $admin = User::factory()->create();
+
+        $response = $this->actingAs($admin)->get('/admin/contact-messages');
+        $response->assertStatus(200);
+    }
 }

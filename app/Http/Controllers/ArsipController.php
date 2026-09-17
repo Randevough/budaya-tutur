@@ -4,11 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\CultureItem;
 use App\Models\Province;
-use App\Models\Regency;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
-class GalleryController extends Controller
+class ArsipController extends Controller
 {
     public function index(Request $request): View
     {
@@ -43,7 +42,7 @@ class GalleryController extends Controller
         // Filters data
         $provinces = Province::whereHas('regencies.cultureItems', fn ($q) => $q->where('is_published', true))->get();
 
-        return view('galleries.index', compact('items', 'provinces'));
+        return view('arsip.index', compact('items', 'provinces'));
     }
 
     public function show(string $slug): View
@@ -67,6 +66,6 @@ class GalleryController extends Controller
             ->take(3)
             ->get();
 
-        return view('galleries.show', compact('item', 'relatedItems'));
+        return view('arsip.show', compact('item', 'relatedItems'));
     }
 }

@@ -22,7 +22,7 @@
     <!-- Filter & Search Toolbar [DARK COMPACT: Obsidian #161413] -->
     <section class="bg-obsidian-850/95 border-b border-obsidian-700 sticky top-20 z-30 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-8 py-4 sm:py-5">
-            <form id="archive-filter-form" action="{{ route('galleries.index') }}" method="GET" class="grid grid-cols-1 sm:grid-cols-12 gap-3 sm:gap-4 items-center">
+            <form id="archive-filter-form" action="{{ route('arsip.index') }}" method="GET" class="grid grid-cols-1 sm:grid-cols-12 gap-3 sm:gap-4 items-center">
                 <!-- Search Keyword -->
                 <div class="sm:col-span-8 relative flex items-center">
                     <div class="absolute left-3.5 text-ink-500 pointer-events-none">
@@ -66,7 +66,7 @@
                         </div>
                     </div>
 
-                    <a href="{{ route('galleries.index') }}" 
+                    <a href="{{ route('arsip.index') }}" 
                        id="filter-reset-btn"
                        class="shrink-0 px-4 py-3 border border-obsidian-700 hover:border-ink-100 text-[11px] uppercase tracking-wider text-ink-400 hover:text-ink-100 hover:bg-obsidian-800 transition-colors {{ request()->hasAny(['q', 'province']) ? '' : 'hidden' }}"
                        title="Atur Ulang Pencarian">
@@ -104,7 +104,7 @@
                     @forelse($items as $item)
                         <article class="group bg-linen-50 border border-linen-300 hover:border-ink-800 transition-all duration-300 flex flex-col shadow-sm">
                             <!-- Thumbnail Wrapper -->
-                            <a href="{{ route('galleries.show', $item->slug) }}" class="relative block aspect-[16/10] overflow-hidden bg-linen-200">
+                            <a href="{{ route('arsip.show', $item->slug) }}" class="relative block aspect-[16/10] overflow-hidden bg-linen-200">
                                 @if($item->thumbnail_url)
                                     <img src="{{ $item->thumbnail_url }}" 
                                          alt="{{ $item->title }}"
@@ -131,7 +131,7 @@
                                 </div>
 
                                 <h2 class="font-serif text-lg sm:text-xl font-bold text-ink-900 mb-3 group-hover:text-ink-700 transition-colors leading-snug">
-                                    <a href="{{ route('galleries.show', $item->slug) }}">
+                                    <a href="{{ route('arsip.show', $item->slug) }}">
                                         {{ $item->title }}
                                     </a>
                                 </h2>
@@ -151,7 +151,7 @@
                             <p class="font-serif text-lg text-ink-900 font-medium">Tidak ada rekaman yang sesuai dengan penyaringan.</p>
                             <p class="text-xs text-ink-500 font-light">Coba cari dengan kata kunci lain atau ubah pilihan filter wilayah.</p>
                             <div class="pt-4">
-                                <a href="{{ route('galleries.index') }}" class="inline-block px-6 py-2.5 border border-ink-900 text-xs uppercase tracking-[0.2em] text-ink-900 hover:bg-ink-900 hover:text-linen-100 transition-colors font-medium">
+                                <a href="{{ route('arsip.index') }}" class="inline-block px-6 py-2.5 border border-ink-900 text-xs uppercase tracking-[0.2em] text-ink-900 hover:bg-ink-900 hover:text-linen-100 transition-colors font-medium">
                                     Lihat Semua Rekaman
                                 </a>
                             </div>

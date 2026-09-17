@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Regencies\Pages;
 use App\Filament\Resources\Regencies\RegencyResource;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
+use Filament\Support\Icons\Heroicon;
 
 class ListRegencies extends ListRecords
 {
@@ -13,7 +14,9 @@ class ListRegencies extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            CreateAction::make(),
+            CreateAction::make()
+                ->label('Tambah Kab / Kota')
+                ->icon(Heroicon::OutlinedPlus),
         ];
     }
 }

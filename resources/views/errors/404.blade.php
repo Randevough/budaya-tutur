@@ -23,7 +23,7 @@
                class="w-full sm:w-auto px-8 py-3.5 bg-ink-100 text-obsidian-950 text-xs uppercase tracking-[0.2em] font-semibold hover:bg-linen-200 transition-colors">
                 Kembali ke Beranda
             </a>
-            <a href="{{ route('galleries.index') }}" 
+            <a href="{{ route('arsip.index') }}" 
                class="w-full sm:w-auto px-8 py-3.5 border border-obsidian-600 hover:border-ink-100 text-xs uppercase tracking-[0.2em] text-ink-100 hover:bg-obsidian-850 transition-colors">
                 Jelajahi Arsip
             </a>

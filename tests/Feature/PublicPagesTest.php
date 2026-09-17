@@ -56,28 +56,35 @@ class PublicPagesTest extends TestCase
         $response->assertSee('culture-map');
     }
 
-    public function test_galleries_catalog_page_displays_items_and_filters(): void
+    public function test_arsip_catalog_page_displays_items_and_filters(): void
     {
-        $response = $this->get('/galleries');
+        $response = $this->get('/arsip');
 
         $response->assertStatus(200);
         $response->assertSee('Arsip Suara Nusantara');
         $response->assertSee('Tutur Lisan Lego-Lego');
 
         // Test search filter
-        $searchResponse = $this->get('/galleries?q=Lego-Lego');
+        $searchResponse = $this->get('/arsip?q=Lego-Lego');
         $searchResponse->assertStatus(200);
         $searchResponse->assertSee('Tutur Lisan Lego-Lego');
 
         // Test filter with no match
-        $emptyResponse = $this->get('/galleries?q=NonExistentWord');
+        $emptyResponse = $this->get('/arsip?q=NonExistentWord');
         $emptyResponse->assertStatus(200);
         $emptyResponse->assertSee('Tidak ada rekaman');
     }
 
+    public function test_legacy_paths_return_404(): void
+    {
+        $this->get('/galleries')->assertStatus(404);
+        $this->get('/galleries/' . $this->cultureItem->slug)->assertStatus(404);
+        $this->get('/contact')->assertStatus(404);
+    }
+
     public function test_culture_item_detail_page_loads_with_lite_embed(): void
     {
-        $response = $this->get('/galleries/' . $this->cultureItem->slug);
+        $response = $this->get('/arsip/' . $this->cultureItem->slug);
 
         $response->assertStatus(200);
         $response->assertSee($this->cultureItem->title);
@@ -85,9 +92,18 @@ class PublicPagesTest extends TestCase
         $response->assertSee('Kabupaten Alor');
     }
 
+    public function test_contact_page_renders_successfully(): void
+    {
+        $response = $this->get('/kontak');
+
+        $response->assertStatus(200);
+        $response->assertSee('Hubungi Pengelola');
+        $response->assertSee('Ruang Sambung');
+    }
+
     public function test_contact_form_saves_to_database_and_catches_mail(): void
     {
-        $response = $this->post('/contact', [
+        $response = $this->post('/kontak', [
             'name' => 'Maria Rambu',
             'email' => 'maria@example.com',
             'subject' => 'Usulan Kidung Sumba',
@@ -106,7 +122,7 @@ class PublicPagesTest extends TestCase
 
     public function test_contact_form_honeypot_ignores_spambots(): void
     {
-        $response = $this->post('/contact', [
+        $response = $this->post('/kontak', [
             'name' => 'Spambot',
             'email' => 'bot@spam.com',
             'message' => 'Buy cheap viagra now',
@@ -121,21 +137,21 @@ class PublicPagesTest extends TestCase
 
     public function test_invalid_culture_item_slug_renders_editorial_404_page(): void
     {
-        $response = $this->get('/galleries/invalid-non-existent-slug');
+        $response = $this->get('/arsip/invalid-non-existent-slug');
 
         $response->assertStatus(404);
         $response->assertSee('Suara yang Dicari Telah Senyap');
         $response->assertSee('Galat 404');
     }
 
-    public function test_galleries_catalog_filters_by_province(): void
+    public function test_arsip_catalog_filters_by_province(): void
     {
-        $response = $this->get('/galleries?province=nusa-tenggara-timur');
+        $response = $this->get('/arsip?province=nusa-tenggara-timur');
 
         $response->assertStatus(200);
         $response->assertSee('Tutur Lisan Lego-Lego');
 
-        $responseEmpty = $this->get('/galleries?province=non-existent-province');
+        $responseEmpty = $this->get('/arsip?province=non-existent-province');
         $responseEmpty->assertStatus(200);
         $responseEmpty->assertSee('Tidak ada rekaman yang sesuai');
     }
@@ -150,7 +166,7 @@ class PublicPagesTest extends TestCase
         $home->assertSee('"@type": "Organization"', false);
 
         // 2. Detail page checks
-        $detail = $this->get('/galleries/' . $this->cultureItem->slug);
+        $detail = $this->get('/arsip/' . $this->cultureItem->slug);
         $detail->assertStatus(200);
         $detail->assertSee('twitter:card', false);
         $detail->assertSee('og:title', false);

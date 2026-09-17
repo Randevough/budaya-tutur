@@ -85,15 +85,15 @@
                 <a href="{{ route('about') }}" class="text-ink-300 hover:text-ink-100 transition-colors {{ request()->routeIs('about') ? 'text-ink-100 font-medium border-b border-ink-100 pb-1' : '' }}">
                     Tentang
                 </a>
-                <a href="{{ route('galleries.index') }}" class="text-ink-300 hover:text-ink-100 transition-colors {{ request()->routeIs('galleries.*') ? 'text-ink-100 font-medium border-b border-ink-100 pb-1' : '' }}">
+                <a href="{{ route('arsip.index') }}" class="text-ink-300 hover:text-ink-100 transition-colors {{ request()->routeIs('arsip.*') ? 'text-ink-100 font-medium border-b border-ink-100 pb-1' : '' }}">
                     Arsip Suara
                 </a>
             </nav>
 
             <!-- CTA: Contact -->
             <div class="hidden md:flex items-center space-x-4">
-                <a href="{{ route('contact') }}" class="px-5 py-2.5 border border-obsidian-600 hover:border-ink-100 text-xs tracking-[0.18em] uppercase text-ink-100 hover:bg-ink-100 hover:text-obsidian-950 transition-all duration-300 font-medium {{ request()->routeIs('contact') ? 'border-ink-100 bg-obsidian-800' : '' }}">
-                    Contact
+                <a href="{{ route('kontak') }}" class="px-5 py-2.5 border border-obsidian-600 hover:border-ink-100 text-xs tracking-[0.18em] uppercase text-ink-100 hover:bg-ink-100 hover:text-obsidian-950 transition-all duration-300 font-medium {{ request()->routeIs('kontak*') ? 'border-ink-100 bg-obsidian-800' : '' }}">
+                    Kontak
                 </a>
             </div>
 
@@ -110,10 +110,10 @@
         <div id="mobile-menu-panel" class="hidden md:hidden border-b border-obsidian-700 bg-obsidian-950 px-6 py-8 space-y-5">
             <a href="{{ route('home') }}" class="block text-sm uppercase tracking-[0.2em] text-ink-200 hover:text-ink-100">Beranda</a>
             <a href="{{ route('about') }}" class="block text-sm uppercase tracking-[0.2em] {{ request()->routeIs('about') ? 'text-ink-100 font-medium' : 'text-ink-200' }} hover:text-ink-100">Tentang</a>
-            <a href="{{ route('galleries.index') }}" class="block text-sm uppercase tracking-[0.2em] text-ink-200 hover:text-ink-100">Arsip Suara</a>
+            <a href="{{ route('arsip.index') }}" class="block text-sm uppercase tracking-[0.2em] text-ink-200 hover:text-ink-100">Arsip Suara</a>
             <div class="pt-4 border-t border-obsidian-700">
-                <a href="{{ route('contact') }}" class="block text-center py-3 bg-ink-100 text-obsidian-950 text-xs uppercase tracking-[0.2em] font-semibold">
-                    Contact / Hubungi Kami
+                <a href="{{ route('kontak') }}" class="block text-center py-3 bg-ink-100 text-obsidian-950 text-xs uppercase tracking-[0.2em] font-semibold">
+                    Hubungi Kami (Kontak)
                 </a>
             </div>
         </div>
@@ -163,9 +163,9 @@
                     <ul class="space-y-2.5 text-xs uppercase tracking-[0.18em] text-ink-400">
                         <li><a href="{{ route('home') }}" class="hover:text-ink-100 transition-colors inline-block hover:translate-x-0.5 duration-200">Beranda</a></li>
                         <li><a href="{{ route('about') }}" class="hover:text-ink-100 transition-colors inline-block hover:translate-x-0.5 duration-200 {{ request()->routeIs('about') ? 'text-ink-100 font-medium' : '' }}">Tentang</a></li>
-                        <li><a href="{{ route('galleries.index') }}" class="hover:text-ink-100 transition-colors inline-block hover:translate-x-0.5 duration-200">Arsip Suara</a></li>
+                        <li><a href="{{ route('arsip.index') }}" class="hover:text-ink-100 transition-colors inline-block hover:translate-x-0.5 duration-200">Arsip Suara</a></li>
                         <li><a href="{{ route('home') }}#peta" class="hover:text-ink-100 transition-colors inline-block hover:translate-x-0.5 duration-200">Peta Sebaran</a></li>
-                        <li><a href="{{ route('contact') }}" class="hover:text-ink-100 transition-colors inline-block hover:translate-x-0.5 duration-200">Contact</a></li>
+                        <li><a href="{{ route('kontak') }}" class="hover:text-ink-100 transition-colors inline-block hover:translate-x-0.5 duration-200">Kontak</a></li>
                     </ul>
                 </div>
 
@@ -178,7 +178,7 @@
                         Setiap rekaman didokumentasikan bersama tetua dan masyarakat penutur. Hak kepemilikan adat atas sastra lisan tetap melekat pada komunitas adat aslinya.
                     </p>
                     <div class="pt-2 flex flex-col sm:flex-row gap-3">
-                        <a href="{{ route('contact') }}" class="inline-block px-4 py-2 border border-obsidian-700 hover:border-ink-100 text-[11px] uppercase tracking-[0.15em] text-ink-300 hover:text-ink-100 transition-colors text-center">
+                        <a href="{{ route('kontak') }}" class="inline-block px-4 py-2 border border-obsidian-700 hover:border-ink-100 text-[11px] uppercase tracking-[0.15em] text-ink-300 hover:text-ink-100 transition-colors text-center">
                             Usulkan Rekaman
                         </a>
                         <a href="{{ url('/admin') }}" class="inline-block px-4 py-2 border border-transparent hover:border-obsidian-800 text-[11px] uppercase tracking-[0.15em] text-ink-500 hover:text-ink-300 transition-colors text-center">

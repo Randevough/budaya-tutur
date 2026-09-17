@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\ArsipController;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 |
 | Clean, direct routes for public visitors.
-| Monolithic Blade + Tailwind architecture.
+| Monolithic Blade + Tailwind architecture with consistent Indonesian URIs.
 |
 */
 
@@ -22,12 +22,12 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::view('/tentang', 'about')->name('about');
 
 // Archive Listing (Filterable Directory)
-Route::get('/arsip', [GalleryController::class, 'index'])->name('galleries.index');
-Route::get('/galleries', [GalleryController::class, 'index']);
+Route::get('/arsip', [ArsipController::class, 'index'])->name('arsip.index');
 
 // Culture Item Detail (Lite YouTube Embed, Story & Transcription)
-Route::get('/galleries/{slug}', [GalleryController::class, 'show'])->name('galleries.show');
+Route::get('/arsip/{slug}', [ArsipController::class, 'show'])->name('arsip.show');
 
 // Contact Form (DB-First Fallback + SMTP)
-Route::get('/contact', [ContactController::class, 'index'])->name('contact');
-Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+Route::get('/kontak', [ContactController::class, 'index'])->name('kontak');
+Route::post('/kontak', [ContactController::class, 'store'])->name('kontak.store');
+

@@ -22,7 +22,7 @@
 
             <!-- Action CTAs -->
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 text-xs uppercase tracking-[0.2em]">
-                <a href="{{ route('galleries.index') }}" class="w-full sm:w-auto px-8 py-4 bg-ink-100 text-obsidian-950 font-semibold hover:bg-linen-200 transition-colors duration-300">
+                <a href="{{ route('arsip.index') }}" class="w-full sm:w-auto px-8 py-4 bg-ink-100 text-obsidian-950 font-semibold hover:bg-linen-200 transition-colors duration-300">
                     Jelajahi Arsip Suara
                 </a>
                 <a href="#peta" class="w-full sm:w-auto px-8 py-4 border border-obsidian-700 text-ink-200 hover:text-ink-100 hover:border-obsidian-500 transition-colors duration-300">
@@ -86,7 +86,7 @@
                         Rekaman Pilihan
                     </h2>
                 </div>
-                <a href="{{ route('galleries.index') }}" class="text-xs uppercase tracking-[0.2em] text-ink-300 hover:text-ink-100 inline-flex items-center group transition-colors font-medium">
+                <a href="{{ route('arsip.index') }}" class="text-xs uppercase tracking-[0.2em] text-ink-300 hover:text-ink-100 inline-flex items-center group transition-colors font-medium">
                     Lihat Seluruh Katalog
                     <span class="ml-2 group-hover:translate-x-1 transition-transform">&rarr;</span>
                 </a>
@@ -97,7 +97,7 @@
                 @forelse($featuredItems as $item)
                     <article class="group bg-obsidian-850 border border-obsidian-700 hover:border-ink-200 transition-all duration-300 flex flex-col shadow-lg">
                         <!-- Thumbnail Wrapper with Grayscale Filter -->
-                        <a href="{{ route('galleries.show', $item->slug) }}" class="relative block aspect-[16/10] overflow-hidden bg-obsidian-950">
+                        <a href="{{ route('arsip.show', $item->slug) }}" class="relative block aspect-[16/10] overflow-hidden bg-obsidian-950">
                             @if($item->thumbnail_url)
                                 <img src="{{ $item->thumbnail_url }}" 
                                      alt="{{ $item->title }}"
@@ -127,7 +127,7 @@
 
                             <!-- Title -->
                             <h3 class="font-serif text-lg sm:text-xl font-bold text-ink-100 mb-3 group-hover:text-ink-200 transition-colors leading-snug">
-                                <a href="{{ route('galleries.show', $item->slug) }}">
+                                <a href="{{ route('arsip.show', $item->slug) }}">
                                     {{ $item->title }}
                                 </a>
                             </h3>
@@ -166,7 +166,7 @@
                 Budaya Tutur Voices hadir sebagai ruang simpan digital independen. Kami memprioritaskan tuturan lisan dari komunitas yang belum banyak terdokumentasi, menyajikannya secara khidmat tanpa komersialisasi.
             </p>
             <div class="pt-6">
-                <a href="{{ route('contact') }}" class="inline-block px-8 py-3.5 border border-ink-900 text-xs uppercase tracking-[0.2em] text-ink-900 hover:bg-ink-900 hover:text-linen-100 transition-all duration-300 font-medium">
+                <a href="{{ route('kontak') }}" class="inline-block px-8 py-3.5 border border-ink-900 text-xs uppercase tracking-[0.2em] text-ink-900 hover:bg-ink-900 hover:text-linen-100 transition-all duration-300 font-medium">
                     Hubungi Kami / Usulkan Rekaman
                 </a>
             </div>
@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         let itemsHtml = '<ul style="list-style: none; padding: 0; margin: 8px 0 0 0;">';
         regency.culture_items.forEach(function (item) {
-            const url = "{{ url('/galleries') }}/" + item.slug;
+            const url = "{{ url('/arsip') }}/" + item.slug;
             itemsHtml += `
                 <li style="margin-bottom: 6px; padding-bottom: 6px; border-bottom: 1px solid #e3ddd3;">
                     <a href="${url}" style="color: #181615; text-decoration: none; font-size: 12px; font-weight: 600; display: block;">
@@ -233,7 +233,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         if (regency.province && regency.province.slug) {
-            const provinceUrl = "{{ route('galleries.index') }}?province=" + regency.province.slug;
+            const provinceUrl = "{{ route('arsip.index') }}?province=" + regency.province.slug;
             itemsHtml += `
                 <li style="margin-top: 10px; padding-top: 6px; border-top: 1px dashed #d0c8bb; text-align: right;">
                     <a href="${provinceUrl}" style="color: #5c554e; text-decoration: none; font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600;">

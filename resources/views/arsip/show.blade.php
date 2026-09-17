@@ -32,7 +32,7 @@
         <!-- Top Utility Bar: Back to Archive & Region (Restored) -->
         <div class="max-w-5xl mx-auto px-4 sm:px-8 w-full flex-shrink-0">
             <div class="flex items-center justify-between text-xs uppercase tracking-[0.2em] text-ink-400">
-                <a href="{{ route('galleries.index') }}" class="inline-flex items-center space-x-2 text-[11px] uppercase tracking-[0.2em] text-ink-400 hover:text-ink-100 transition-colors group">
+                <a href="{{ route('arsip.index') }}" class="inline-flex items-center space-x-2 text-[11px] uppercase tracking-[0.2em] text-ink-400 hover:text-ink-100 transition-colors group">
                     <span class="transition-transform duration-200 group-hover:-translate-x-1">&larr;</span>
                     <span>Kembali ke Katalog</span>
                 </a>
@@ -211,7 +211,7 @@
                         </h3>
                     </div>
 
-                    <a href="{{ route('galleries.index', ['province' => $item->regency->province->slug]) }}" class="hidden sm:inline-flex items-center space-x-1.5 text-xs uppercase tracking-[0.18em] text-ink-600 hover:text-ink-950 font-medium transition-colors">
+                    <a href="{{ route('arsip.index', ['province' => $item->regency->province->slug]) }}" class="hidden sm:inline-flex items-center space-x-1.5 text-xs uppercase tracking-[0.18em] text-ink-600 hover:text-ink-950 font-medium transition-colors">
                         <span>Lihat Wilayah Ini</span>
                         <span>&rarr;</span>
                     </a>
@@ -221,7 +221,7 @@
                     @foreach($relatedItems as $related)
                         <article class="group border border-linen-300 bg-linen-50 hover:border-ink-800 transition-all duration-300 flex flex-col shadow-sm hover:shadow-md hover:-translate-y-1.5">
                             <!-- Thumbnail Preview with Grayscale-to-Color Transition -->
-                            <a href="{{ route('galleries.show', $related->slug) }}" class="relative block aspect-[16/10] overflow-hidden bg-linen-200">
+                            <a href="{{ route('arsip.show', $related->slug) }}" class="relative block aspect-[16/10] overflow-hidden bg-linen-200">
                                 @if($related->thumbnail_url)
                                     <img src="{{ $related->thumbnail_url }}" 
                                          alt="{{ $related->title }}"
@@ -247,7 +247,7 @@
                                 </span>
 
                                 <h4 class="font-serif text-base font-bold text-ink-900 mb-2 group-hover:text-ink-700 transition-colors leading-snug">
-                                    <a href="{{ route('galleries.show', $related->slug) }}">
+                                    <a href="{{ route('arsip.show', $related->slug) }}">
                                         {{ $related->title }}
                                     </a>
                                 </h4>

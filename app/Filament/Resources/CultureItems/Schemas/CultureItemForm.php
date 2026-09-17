@@ -2,12 +2,16 @@
 
 namespace App\Filament\Resources\CultureItems\Schemas;
 
+use App\Models\CultureItem;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Toggle;
+use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
+use Filament\Support\Icons\Heroicon;
+use Illuminate\Support\Str;
 
 class CultureItemForm
 {
@@ -15,43 +19,75 @@ class CultureItemForm
     {
         return $schema
             ->components([
-                Select::make('regency_id')
-                    ->label('Kabupaten / Kota Asal')
-                    ->relationship('regency', 'name')
-                    ->searchable()
-                    ->preload()
-                    ->required(),
-                TextInput::make('title')
-                    ->label('Judul Budaya Tutur')
-                    ->required()
-                    ->live(onBlur: true)
-                    ->afterStateUpdated(fn ($state, callable $set) => $set('slug', \Illuminate\Support\Str::slug($state))),
-                TextInput::make('slug')
-                    ->required()
-                    ->unique(\App\Models\CultureItem::class, 'slug', ignoreRecord: true),
-                Textarea::make('excerpt')
-                    ->label('Ringkasan Singkat')
-                    ->rows(3)
-                    ->helperText('Ringkasan 1-2 kalimat untuk pratinjau kartu arsip')
-                    ->columnSpanFull(),
-                Textarea::make('description')
-                    ->label('Deskripsi & Narasi Tutur')
-                    ->rows(8)
-                    ->required()
-                    ->helperText('Naskah tuturan, konteks kultural, atau transkripsi lisan')
-                    ->columnSpanFull(),
-                TextInput::make('youtube_id')
-                    ->label('YouTube Video ID')
-                    ->helperText('Contoh: dQw4w9WgXcQ (11 karakter ID video YouTube untuk lite-embed)')
-                    ->required(),
-                FileUpload::make('cover_image_path')
-                    ->label('Foto Sampul Kurasi (Opsional)')
-                    ->directory('covers')
-                    ->image()
-                    ->helperText('Biarkan kosong jika ingin otomatis memakai thumbnail YouTube beresolusi tinggi'),
-                Toggle::make('is_published')
-                    ->label('Status Publikasi')
-                    ->default(true),
+                Section::make('Identitas & Asal Wilayah')
+                    ->description('Informasi judul arsip dan asal wilayah administratif di nusantara')
+                    ->icon(Heroicon::OutlinedDocumentText)
+                    ->columns(2)
+                    ->schema([
+                        TextInput::make('title')
+                            ->label('Judul Budaya Tutur')
+                            ->placeholder('Contoh: Tradisi Lisan Pasola')
+                            ->required()
+                            ->live(onBlur: true)
+                            ->afterStateUpdated(fn ($state, callable $set) => $set('slug', Str::slug($state))),
+
+                        TextInput::make('slug')
+                            ->label('Slug URL')
+                            ->helperText('Digunakan untuk tautan publik (/arsip/slug). Otomatis terisi dari judul.')
+                            ->required()
+                            ->unique(CultureItem::class, 'slug', ignoreRecord: true),
+
+                        Select::make('regency_id')
+                            ->label('Kabupaten / Kota Asal')
+                            ->relationship('regency', 'name')
+                            ->searchable()
+                            ->preload()
+                            ->required()
+                            ->helperText('Pilih kabupaten/kota tempat tuturan ini berasal untuk penempatan titik peta')
+                            ->columnSpanFull(),
+                    ]),
+
+                Section::make('Naskah & Narasi Tuturan')
+                    ->description('Transkripsi tuturan lisan, konteks filosofis, dan intisari rekaman')
+                    ->icon(Heroicon::OutlinedBookOpen)
+                    ->schema([
+                        Textarea::make('excerpt')
+                            ->label('Ringkasan Singkat (Kutipan Kurasi)')
+                            ->rows(3)
+                            ->helperText('Ringkasan 1-2 kalimat untuk pratinjau kartu katalog arsip')
+                            ->columnSpanFull(),
+
+                        Textarea::make('description')
+                            ->label('Deskripsi & Naskah Tutur Lengkap')
+                            ->rows(10)
+                            ->required()
+                            ->helperText('Transkripsi lisan, konteks kultural, makna filosofis, atau latar belakang tuturan')
+                            ->columnSpanFull(),
+                    ]),
+
+                Section::make('Media Suara & Status Publikasi')
+                    ->description('Pengaturan embed audio/video YouTube dan foto kurasi')
+                    ->icon(Heroicon::OutlinedPlayCircle)
+                    ->columns(2)
+                    ->schema([
+                        TextInput::make('youtube_id')
+                            ->label('YouTube Video ID')
+                            ->placeholder('Contoh: dQw4w9WgXcQ')
+                            ->helperText('Masukkan 11 karakter ID video YouTube (misal: dQw4w9WgXcQ dari https://youtu.be/dQw4w9WgXcQ)')
+                            ->required(),
+
+                        Toggle::make('is_published')
+                            ->label('Terbitkan ke Publik')
+                            ->helperText('Jika aktif, arsip ini langsung tampil di beranda, peta, dan katalog')
+                            ->default(true),
+
+                        FileUpload::make('cover_image_path')
+                            ->label('Foto Sampul Kurasi (Opsional)')
+                            ->directory('covers')
+                            ->image()
+                            ->helperText('Biarkan kosong untuk otomatis memakai thumbnail resolusi tinggi YouTube')
+                            ->columnSpanFull(),
+                    ]),
             ]);
     }
 }

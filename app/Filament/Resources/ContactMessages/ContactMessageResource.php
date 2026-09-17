@@ -13,12 +13,42 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use UnitEnum;
 
 class ContactMessageResource extends Resource
 {
     protected static ?string $model = ContactMessage::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedEnvelope;
+
+    protected static UnitEnum|string|null $navigationGroup = 'Komunikasi';
+
+    protected static ?int $navigationSort = 4;
+
+    protected static ?string $modelLabel = 'Pesan Masuk';
+
+    protected static ?string $pluralModelLabel = 'Pesan Masuk';
+
+    public static function canCreate(): bool
+    {
+        return false;
+    }
+
+    public static function getNavigationBadge(): ?string
+    {
+        $unsent = ContactMessage::where('is_sent_via_smtp', false)->count();
+        if ($unsent > 0) {
+            return "{$unsent} DB";
+        }
+
+        $total = ContactMessage::count();
+        return $total > 0 ? (string) $total : null;
+    }
+
+    public static function getNavigationBadgeColor(): ?string
+    {
+        return ContactMessage::where('is_sent_via_smtp', false)->exists() ? 'warning' : 'gray';
+    }
 
     public static function form(Schema $schema): Schema
     {
