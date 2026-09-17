@@ -6,7 +6,6 @@ use App\Models\ContactMessage;
 use App\Models\CultureItem;
 use App\Models\Province;
 use App\Models\Regency;
-use Filament\Support\Icons\Heroicon;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
 
@@ -31,22 +30,18 @@ class StatsOverview extends BaseWidget
         return [
             Stat::make('Arsip Budaya Tutur', (string) $totalItems)
                 ->description("{$publishedItems} terbit publik" . ($draftItems > 0 ? ", {$draftItems} draf" : ''))
-                ->descriptionIcon(Heroicon::OutlinedArchiveBox)
                 ->color('gray'),
 
             Stat::make('Wilayah Terekam', "{$regenciesWithContent} / {$totalRegencies}")
                 ->description('Kabupaten/Kota aktif di peta')
-                ->descriptionIcon(Heroicon::OutlinedMapPin)
                 ->color('gray'),
 
             Stat::make('Cakupan Provinsi', (string) $provincesCount)
                 ->description('Provinsi induk terdaftar')
-                ->descriptionIcon(Heroicon::OutlinedMap)
                 ->color('gray'),
 
             Stat::make('Pesan Kontak', (string) $totalMessages)
-                ->description($unsentMessages > 0 ? "{$unsentMessages} tersimpan di database (SMTP offline)" : 'Semua pesan terkirim via email')
-                ->descriptionIcon(Heroicon::OutlinedEnvelope)
+                ->description($unsentMessages > 0 ? "{$unsentMessages} pesan di database" : 'Semua pesan terkirim')
                 ->color($unsentMessages > 0 ? 'warning' : 'gray'),
         ];
     }

@@ -185,6 +185,76 @@
         align-items: center;
         gap: 0.75rem;
         flex-shrink: 0;
+        flex-wrap: wrap;
+    }
+
+    /* Dashboard Donation Quick Control */
+    .bt-donation-quick-ctrl {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        background-color: #f7f5f2;
+        border: 1px solid #e5e0d8;
+        padding: 0.25rem 0.625rem 0.25rem 0.35rem;
+        border-radius: 0.5rem;
+    }
+
+    .bt-donation-toggle-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        padding: 0.25rem 0.55rem;
+        border-radius: 0.375rem;
+        font-size: 0.75rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.15s ease;
+        border: 1px solid transparent;
+        line-height: 1.2;
+    }
+
+    .bt-donation-toggle-btn.is-active {
+        background-color: #ffffff;
+        color: #171513;
+        border-color: #d1cbbf;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    }
+
+    .bt-donation-toggle-btn.is-active .bt-donation-status-dot {
+        background-color: #16a34a;
+        box-shadow: 0 0 0 2px rgba(22, 163, 74, 0.2);
+    }
+
+    .bt-donation-toggle-btn.is-inactive {
+        background-color: #eeeae4;
+        color: #78716c;
+        border-color: #ded8ce;
+    }
+
+    .bt-donation-toggle-btn.is-inactive .bt-donation-status-dot {
+        background-color: #a8a29e;
+    }
+
+    .bt-donation-status-dot {
+        width: 0.45rem;
+        height: 0.45rem;
+        border-radius: 9999px;
+        flex-shrink: 0;
+        transition: background-color 0.2s ease;
+    }
+
+    .bt-donation-manage-link {
+        font-size: 0.725rem;
+        font-weight: 600;
+        color: #797166;
+        text-decoration: none;
+        padding: 0 0.25rem;
+        transition: color 0.15s ease;
+    }
+
+    .bt-donation-manage-link:hover {
+        color: #1a1816;
+        text-decoration: underline;
     }
 
     /* Table Toolbar Segmented Tabs: Inside Table Card Toolbar (1-Row with Filter & Search) */
@@ -321,11 +391,33 @@
         background-color: #f7f5f2 !important;
     }
 
-    .fi-section {
+    .fi-section.fi-contained,
+    .fi-section:not(.fi-wi-stats-overview .fi-section):not(.fi-section:not(.fi-contained)) {
         background-color: #ffffff !important;
         border: 1px solid #e5e0d8 !important;
         border-radius: 0.875rem !important;
         box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 4px 14px 0 rgba(0, 0, 0, 0.02) !important;
+    }
+
+    .fi-wi-stats-overview,
+    .fi-wi-stats-overview .fi-section,
+    .fi-section:not(.fi-contained) {
+        background-color: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    .fi-wi-stats-overview-stat {
+        background-color: #ffffff !important;
+        border: 1px solid #e5e0d8 !important;
+        border-radius: 0.875rem !important;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03) !important;
+    }
+
+    .fi-sidebar-header-logo-ctn {
+        display: flex !important;
+        align-items: center !important;
+        overflow: hidden !important;
     }
 
     /* Form Input Fields Contrast & Focus */
