@@ -74,5 +74,29 @@ class AdminPanelTest extends TestCase
         $this->assertNotEquals(0.0, $alor->latitude);
         $this->assertNotEquals(0.0, $alor->longitude);
     }
+
+    public function test_authenticated_admin_can_access_culture_items_create_page(): void
+    {
+        $admin = User::factory()->create();
+
+        $response = $this->actingAs($admin)->get('/admin/culture-items/create');
+        $response->assertStatus(200);
+        $response->assertSee('Identitas Budaya Tutur');
+        $response->assertSee('Naskah &amp; Narasi Tuturan', false);
+        $response->assertSee('Status Publikasi');
+    }
+
+    public function test_culture_item_form_extracts_youtube_id_correctly(): void
+    {
+        $expected = 'dQw4w9WgXcQ';
+
+        $this->assertEquals($expected, \App\Filament\Resources\CultureItems\Schemas\CultureItemForm::extractYoutubeId('dQw4w9WgXcQ'));
+        $this->assertEquals($expected, \App\Filament\Resources\CultureItems\Schemas\CultureItemForm::extractYoutubeId('https://www.youtube.com/watch?v=dQw4w9WgXcQ'));
+        $this->assertEquals($expected, \App\Filament\Resources\CultureItems\Schemas\CultureItemForm::extractYoutubeId('https://youtu.be/dQw4w9WgXcQ'));
+        $this->assertEquals($expected, \App\Filament\Resources\CultureItems\Schemas\CultureItemForm::extractYoutubeId('https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=42s'));
+        $this->assertEquals($expected, \App\Filament\Resources\CultureItems\Schemas\CultureItemForm::extractYoutubeId('https://youtube.com/shorts/dQw4w9WgXcQ?feature=share'));
+        $this->assertEquals($expected, \App\Filament\Resources\CultureItems\Schemas\CultureItemForm::extractYoutubeId('https://www.youtube.com/embed/dQw4w9WgXcQ'));
+        $this->assertNull(\App\Filament\Resources\CultureItems\Schemas\CultureItemForm::extractYoutubeId(''));
+    }
 }
 
