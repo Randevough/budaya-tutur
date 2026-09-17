@@ -39,6 +39,7 @@ class AdminPanelProvider extends PanelProvider
                 \Filament\Navigation\NavigationGroup::make('Pengarsipan Tutur'),
                 \Filament\Navigation\NavigationGroup::make('Wilayah & Geografis'),
                 \Filament\Navigation\NavigationGroup::make('Komunikasi'),
+                \Filament\Navigation\NavigationGroup::make('Pengaturan'),
             ])
             ->navigationItems([
                 \Filament\Navigation\NavigationItem::make('Lihat Website')

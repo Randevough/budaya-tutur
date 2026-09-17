@@ -88,6 +88,11 @@
                 <a href="{{ route('arsip.index') }}" class="text-ink-300 hover:text-ink-100 transition-colors {{ request()->routeIs('arsip.*') ? 'text-ink-100 font-medium border-b border-ink-100 pb-1' : '' }}">
                     Arsip Suara
                 </a>
+                @if(\App\Models\SiteSetting::current()->is_donation_active)
+                    <a href="{{ route('donasi') }}" class="text-ink-300 hover:text-ink-100 transition-colors {{ request()->routeIs('donasi*') ? 'text-ink-100 font-medium border-b border-ink-100 pb-1' : '' }}">
+                        Donasi
+                    </a>
+                @endif
             </nav>
 
             <!-- CTA: Contact -->
@@ -111,6 +116,9 @@
             <a href="{{ route('home') }}" class="block text-sm uppercase tracking-[0.2em] text-ink-200 hover:text-ink-100">Beranda</a>
             <a href="{{ route('about') }}" class="block text-sm uppercase tracking-[0.2em] {{ request()->routeIs('about') ? 'text-ink-100 font-medium' : 'text-ink-200' }} hover:text-ink-100">Tentang</a>
             <a href="{{ route('arsip.index') }}" class="block text-sm uppercase tracking-[0.2em] text-ink-200 hover:text-ink-100">Arsip Suara</a>
+            @if(\App\Models\SiteSetting::current()->is_donation_active)
+                <a href="{{ route('donasi') }}" class="block text-sm uppercase tracking-[0.2em] {{ request()->routeIs('donasi*') ? 'text-ink-100 font-medium' : 'text-ink-200' }} hover:text-ink-100">Donasi</a>
+            @endif
             <div class="pt-4 border-t border-obsidian-700">
                 <a href="{{ route('kontak') }}" class="block text-center py-3 bg-ink-100 text-obsidian-950 text-xs uppercase tracking-[0.2em] font-semibold">
                     Hubungi Kami (Kontak)
@@ -164,7 +172,10 @@
                         <li><a href="{{ route('home') }}" class="hover:text-ink-100 transition-colors inline-block hover:translate-x-0.5 duration-200">Beranda</a></li>
                         <li><a href="{{ route('about') }}" class="hover:text-ink-100 transition-colors inline-block hover:translate-x-0.5 duration-200 {{ request()->routeIs('about') ? 'text-ink-100 font-medium' : '' }}">Tentang</a></li>
                         <li><a href="{{ route('arsip.index') }}" class="hover:text-ink-100 transition-colors inline-block hover:translate-x-0.5 duration-200">Arsip Suara</a></li>
-                        <li><a href="{{ route('kontak') }}" class="hover:text-ink-100 transition-colors inline-block hover:translate-x-0.5 duration-200">Kontak</a></li>
+                        @if(\App\Models\SiteSetting::current()->is_donation_active)
+                            <li><a href="{{ route('donasi') }}" class="hover:text-ink-100 transition-colors inline-block hover:translate-x-0.5 duration-200 {{ request()->routeIs('donasi*') ? 'text-ink-100 font-medium' : '' }}">Donasi</a></li>
+                        @endif
+                        <li><a href="{{ route('kontak') }}" class="hover:text-ink-100 transition-colors inline-block hover:translate-x-0.5 duration-200 {{ request()->routeIs('kontak*') ? 'text-ink-100 font-medium' : '' }}">Kontak</a></li>
                     </ul>
                 </div>
 

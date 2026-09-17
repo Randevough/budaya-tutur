@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ArsipController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\DonationController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,4 +31,7 @@ Route::get('/arsip/{slug}', [ArsipController::class, 'show'])->name('arsip.show'
 // Contact Form (DB-First Fallback + SMTP)
 Route::get('/kontak', [ContactController::class, 'index'])->name('kontak');
 Route::post('/kontak', [ContactController::class, 'store'])->name('kontak.store');
+
+// Donation Page (Editorial Support & Archive Preservation)
+Route::get('/donasi', [DonationController::class, 'index'])->name('donasi');
 
