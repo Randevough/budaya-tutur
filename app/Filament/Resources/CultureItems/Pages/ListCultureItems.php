@@ -44,7 +44,8 @@ class ListCultureItems extends ListRecords
     {
         return [
             'all' => Tab::make('Semua')
-                ->badge(CultureItem::count()),
+                ->badge(CultureItem::count())
+                ->badgeColor('gray'),
             'published' => Tab::make('Terbit')
                 ->modifyQueryUsing(fn (Builder $query) => $query->where('is_published', true))
                 ->badge(CultureItem::where('is_published', true)->count())

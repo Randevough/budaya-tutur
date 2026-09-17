@@ -187,15 +187,25 @@
         flex-shrink: 0;
     }
 
-    /* Table Toolbar Segmented Tabs: 1-Row with Filter & Search */
+    /* Table Toolbar Segmented Tabs: Inside Table Card Toolbar (1-Row with Filter & Search) */
     @media (min-width: 768px) {
-        .fi-resource-list-records-page .fi-page-content {
+        .fi-resource-list-records-page .fi-page-content,
+        .fi-resource-list-records-page .fi-sc.fi-grid {
             position: relative !important;
+            gap: 0 !important;
+            row-gap: 0 !important;
+        }
+
+        .fi-resource-list-records-page [wire\:key$="content.resourceTabs"] {
+            height: 0 !important;
+            min-height: 0 !important;
+            margin: 0 !important;
+            padding: 0 !important;
         }
 
         .bt-table-tabs {
             position: absolute !important;
-            top: 0.625rem !important;
+            top: 0.875rem !important;
             left: 1.25rem !important;
             z-index: 10 !important;
             margin: 0 !important;
@@ -204,7 +214,7 @@
 
         .bt-table-tabs .fi-tabs:not(.fi-contained) {
             margin: 0 !important;
-            padding: 0.1875rem !important;
+            padding: 0.2rem !important;
             background-color: #f7f6f4 !important;
             border: 1px solid #e5e2dc !important;
             box-shadow: none !important;
@@ -213,7 +223,7 @@
         }
 
         .bt-table-tabs .fi-tabs-item {
-            padding: 0.25rem 0.65rem !important;
+            padding: 0.25rem 0.7rem !important;
             border-radius: 0.45rem !important;
             font-size: 0.8125rem !important;
             font-weight: 500 !important;
@@ -237,9 +247,17 @@
         }
 
         .fi-resource-list-records-page .fi-ta-header-toolbar {
-            min-height: 3.75rem !important;
+            min-height: 4rem !important;
+            padding-top: 0.875rem !important;
+            padding-bottom: 0.875rem !important;
             padding-left: 1.25rem !important;
             padding-right: 1.25rem !important;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .bt-table-tabs {
+            margin-bottom: 0.75rem !important;
         }
     }
 
@@ -250,7 +268,12 @@
         margin-top: 0.25rem !important;
     }
 
+    .fi-resource-list-records-page .fi-page-header-main-ctn {
+        gap: 0.875rem !important;
+    }
+
     .fi-resource-list-records-page .fi-header {
-        margin-bottom: 1.5rem !important;
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
     }
 </style>
