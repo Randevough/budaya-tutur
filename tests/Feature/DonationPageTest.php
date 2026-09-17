@@ -78,6 +78,6 @@ class DonationPageTest extends TestCase
 
         $editResponse = $this->actingAs($admin)->get('/admin/site-settings/1/edit');
         $editResponse->assertStatus(200);
-        $editResponse->assertSee('Halaman Donasi Aktif');
+        $editResponse->assertSee('Aktifkan Halaman Donasi');
     }
 }

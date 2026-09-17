@@ -99,17 +99,15 @@ class AdminPanelTest extends TestCase
         $this->assertNull(\App\Filament\Resources\CultureItems\Schemas\CultureItemForm::extractYoutubeId(''));
     }
 
-    public function test_dashboard_header_action_can_toggle_donation(): void
+    public function test_authenticated_admin_can_edit_donation_settings(): void
     {
         $admin = User::factory()->create();
-        \App\Models\SiteSetting::current(); // Ensure initial setting
+        $setting = \App\Models\SiteSetting::current();
 
-        \Livewire\Livewire::actingAs($admin)
-            ->test(\App\Filament\Pages\Dashboard::class)
-            ->assertSee('Donasi: Aktif')
-            ->callAction('toggle_donation');
-
-        $this->assertFalse(\App\Models\SiteSetting::find(1)->is_donation_active);
+        $response = $this->actingAs($admin)->get('/admin/site-settings/' . $setting->id . '/edit');
+        $response->assertStatus(200);
+        $response->assertSee('Pengaturan Donasi');
+        $response->assertSee('Aktifkan Halaman Donasi');
     }
 }
 

@@ -9,6 +9,21 @@ class EditSiteSetting extends EditRecord
 {
     protected static string $resource = SiteSettingResource::class;
 
+    public function getTitle(): string
+    {
+        return 'Pengaturan Donasi';
+    }
+
+    public function getBreadcrumbs(): array
+    {
+        return [];
+    }
+
+    public function getSubheading(): ?string
+    {
+        return 'Kelola status publikasi, rekening donasi, QRIS, dan kontak konfirmasi.';
+    }
+
     protected function getHeaderActions(): array
     {
         return [];

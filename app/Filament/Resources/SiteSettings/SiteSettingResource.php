@@ -23,9 +23,9 @@ class SiteSettingResource extends Resource
 
     protected static ?int $navigationSort = 5;
 
-    protected static ?string $modelLabel = 'Pengaturan Donasi & Situs';
+    protected static ?string $modelLabel = 'Pengaturan Donasi';
 
-    protected static ?string $pluralModelLabel = 'Pengaturan Donasi & Situs';
+    protected static ?string $pluralModelLabel = 'Pengaturan Donasi';
 
     protected static ?string $navigationLabel = 'Pengaturan Donasi';
 
