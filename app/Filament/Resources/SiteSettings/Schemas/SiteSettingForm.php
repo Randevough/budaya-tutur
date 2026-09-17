@@ -5,7 +5,7 @@ namespace App\Filament\Resources\SiteSettings\Schemas;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Filament\Schemas\Components\Grid;
+use Filament\Schemas\Components\Fieldset;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
@@ -20,10 +20,11 @@ class SiteSettingForm
                     ->schema([
                         Toggle::make('is_donation_active')
                             ->label('Aktifkan Halaman Donasi')
-                            ->helperText('Tampilkan halaman /donasi di situs publik.')
+                            ->helperText('Tampilkan rute dan navigasi /donasi di situs publik.')
                             ->default(true),
 
-                        Grid::make(['default' => 1, 'md' => 3])
+                        Fieldset::make('Rekening Transfer Bank')
+                            ->columns(['default' => 1, 'md' => 3])
                             ->schema([
                                 TextInput::make('bank_name')
                                     ->label('Nama Bank')
@@ -42,16 +43,19 @@ class SiteSettingForm
                                     ->maxLength(150),
                             ]),
 
-                        Grid::make(['default' => 1, 'md' => 2])
+                        Fieldset::make('QRIS & Kontak Konfirmasi')
+                            ->columns(['default' => 1, 'md' => 2])
                             ->schema([
                                 TextInput::make('contact_whatsapp')
                                     ->label('Nomor WhatsApp')
                                     ->placeholder('628xxxxxxxxxx')
+                                    ->helperText('Nomor admin untuk konfirmasi sukarela donatur via WhatsApp.')
                                     ->maxLength(20),
 
                                 FileUpload::make('qris_image')
                                     ->label('Gambar QRIS')
                                     ->image()
+                                    ->imagePreviewHeight('150')
                                     ->directory('settings')
                                     ->disk('public')
                                     ->visibility('public'),

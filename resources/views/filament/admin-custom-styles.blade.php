@@ -321,6 +321,32 @@
         border-color: #a89f91 !important;
     }
 
+    .fi-fo-file-upload .filepond--root {
+        max-height: 180px !important;
+    }
+
+    .fi-fo-file-upload .filepond--image-preview-wrapper {
+        max-height: 160px !important;
+    }
+
+    /* Fieldset Styling in Editorial Monochrome */
+    .fi-fieldset {
+        border: 1px solid #e7e2d8 !important;
+        border-radius: 0.75rem !important;
+        padding: 1.25rem 1.25rem 1.5rem !important;
+        margin-top: 0.75rem !important;
+        background-color: #faf9f7 !important;
+    }
+
+    .fi-fieldset > legend {
+        font-size: 0.8125rem !important;
+        font-weight: 600 !important;
+        color: #24211e !important;
+        letter-spacing: -0.01em !important;
+        padding: 0 0.5rem !important;
+        background-color: transparent !important;
+    }
+
     /* 4. Section Header Single Crisp Line */
     .fi-section-header {
         display: flex !important;
