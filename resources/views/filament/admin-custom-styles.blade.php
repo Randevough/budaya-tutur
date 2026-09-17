@@ -308,14 +308,21 @@
         border-color: #a89f91 !important;
     }
 
-    /* 4. Section Header Icon Badge & Balance */
+    /* 4. Section Header Single Crisp Line */
     .fi-section-header {
         display: flex !important;
         align-items: center !important;
         gap: 0.875rem !important;
         padding-bottom: 0.875rem !important;
-        border-bottom: 1px solid #f2ede6 !important;
+        border-bottom: 1px solid #dcd6cb !important;
         margin-bottom: 1.25rem !important;
+    }
+
+    .fi-section-content-ctn,
+    .fi-section.fi-contained > .fi-section-content-ctn,
+    .fi-section.fi-divided > :not([hidden]) ~ :not([hidden]) {
+        border-top: none !important;
+        border-top-width: 0 !important;
     }
 
     .fi-section-header > .fi-icon {

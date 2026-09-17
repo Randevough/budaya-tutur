@@ -17,23 +17,13 @@ class SiteSettingForm
             ->columns(['default' => 1, 'lg' => 2])
             ->components([
                 Group::make([
-                    Section::make('Status & Kontak')
+                    Section::make('Status & Rekening Bank')
                         ->schema([
                             Toggle::make('is_donation_active')
                                 ->label('Aktifkan Halaman Donasi')
                                 ->helperText('Tampilkan halaman /donasi di situs publik.')
                                 ->default(true),
 
-                            TextInput::make('contact_whatsapp')
-                                ->label('Nomor WhatsApp')
-                                ->placeholder('628xxxxxxxxxx')
-                                ->maxLength(20),
-                        ]),
-                ]),
-
-                Group::make([
-                    Section::make('Rekening & QRIS')
-                        ->schema([
                             TextInput::make('bank_name')
                                 ->label('Nama Bank')
                                 ->placeholder('Contoh: BCA, Mandiri')
@@ -49,6 +39,16 @@ class SiteSettingForm
                                 ->label('Atas Nama')
                                 ->required()
                                 ->maxLength(150),
+                        ]),
+                ]),
+
+                Group::make([
+                    Section::make('QRIS & Kontak WhatsApp')
+                        ->schema([
+                            TextInput::make('contact_whatsapp')
+                                ->label('Nomor WhatsApp')
+                                ->placeholder('628xxxxxxxxxx')
+                                ->maxLength(20),
 
                             FileUpload::make('qris_image')
                                 ->label('Gambar QRIS')
