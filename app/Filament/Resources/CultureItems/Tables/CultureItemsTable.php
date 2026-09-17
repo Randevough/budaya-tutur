@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\CultureItems\Tables;
 
+use App\Filament\Resources\CultureItems\CultureItemResource;
 use App\Models\CultureItem;
 use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
@@ -13,6 +14,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Filters\TernaryFilter;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
 
 class CultureItemsTable
@@ -20,25 +22,32 @@ class CultureItemsTable
     public static function configure(Table $table): Table
     {
         return $table
+            ->modifyQueryUsing(fn (Builder $query) => $query->with(['regency.province']))
+            ->searchPlaceholder('Cari tuturan...')
             ->columns([
                 ImageColumn::make('cover_image_path')
                     ->label('Sampul')
                     ->defaultImageUrl(fn (CultureItem $record): ?string => $record->youtube_id ? "https://img.youtube.com/vi/{$record->youtube_id}/mqdefault.jpg" : null)
-                    ->square(),
+                    ->width(68)
+                    ->height(38)
+                    ->extraImgAttributes([
+                        'class' => 'rounded-md object-cover border border-stone-200/90 shadow-2xs',
+                    ]),
 
                 TextColumn::make('title')
                     ->label('Judul Budaya Tutur')
                     ->searchable()
                     ->sortable()
                     ->weight('bold')
-                    ->description(fn (CultureItem $record): ?string => $record->excerpt ? Str::limit($record->excerpt, 45) : null),
+                    ->description(fn (CultureItem $record): ?string => $record->excerpt ? Str::limit($record->excerpt, 50) : null)
+                    ->url(fn (CultureItem $record): string => CultureItemResource::getUrl('edit', ['record' => $record])),
 
                 TextColumn::make('regency.name')
-                    ->label('Kabupaten / Kota')
+                    ->label('Wilayah Asal')
                     ->searchable()
                     ->sortable()
-                    ->badge()
-                    ->color('gray'),
+                    ->weight('medium')
+                    ->description(fn (CultureItem $record): ?string => $record->regency?->province?->name),
 
                 TextColumn::make('youtube_id')
                     ->label('YouTube ID')
@@ -80,15 +89,15 @@ class CultureItemsTable
                     ->falseLabel('Hanya Draf'),
             ])
             ->recordActions([
+                EditAction::make()
+                    ->label('Edit'),
+
                 Action::make('preview')
                     ->label('Lihat di Web')
                     ->icon(Heroicon::OutlinedArrowTopRightOnSquare)
                     ->color('gray')
                     ->url(fn (CultureItem $record): string => route('arsip.show', $record->slug))
                     ->openUrlInNewTab(),
-
-                EditAction::make()
-                    ->label('Ubah'),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
