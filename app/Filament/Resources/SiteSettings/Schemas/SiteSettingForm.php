@@ -48,14 +48,14 @@ class SiteSettingForm
                             ->schema([
                                 TextInput::make('contact_whatsapp')
                                     ->label('Nomor WhatsApp')
-                                    ->placeholder('628xxxxxxxxxx')
-                                    ->helperText('Nomor admin untuk konfirmasi sukarela donatur via WhatsApp.')
-                                    ->maxLength(20),
+                                    ->placeholder('0812... atau 62812...')
+                                    ->helperText('Bisa diawali 08... atau 62... (otomatis dinormalisasi).')
+                                    ->dehydrateStateUsing(fn (?string $state) => \App\Models\SiteSetting::normalizeWhatsApp($state))
+                                    ->maxLength(25),
 
                                 FileUpload::make('qris_image')
-                                    ->label('Gambar QRIS')
+                                    ->label('Gambar Barcode QRIS')
                                     ->image()
-                                    ->imagePreviewHeight('150')
                                     ->directory('settings')
                                     ->disk('public')
                                     ->visibility('public'),

@@ -172,7 +172,7 @@
                     </div>
 
                     @php
-                        $waNumber = preg_replace('/[^0-9]/', '', $settings->contact_whatsapp ?? '6281234567890');
+                        $waNumber = \App\Models\SiteSetting::normalizeWhatsApp($settings->contact_whatsapp ?? '6281234567890');
                         $waMessage = rawurlencode("Halo Budaya Tutur Voices, saya ingin mengonfirmasi donasi pengarsipan.");
                     @endphp
 

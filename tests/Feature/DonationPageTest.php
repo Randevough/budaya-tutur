@@ -80,4 +80,13 @@ class DonationPageTest extends TestCase
         $editResponse->assertStatus(200);
         $editResponse->assertSee('Aktifkan Halaman Donasi');
     }
+
+    public function test_whatsapp_number_normalization(): void
+    {
+        $this->assertEquals('6281234567890', SiteSetting::normalizeWhatsApp('081234567890'));
+        $this->assertEquals('6281234567890', SiteSetting::normalizeWhatsApp('6281234567890'));
+        $this->assertEquals('6281234567890', SiteSetting::normalizeWhatsApp('+62 812-3456-7890'));
+        $this->assertEquals('6281234567890', SiteSetting::normalizeWhatsApp('0812-3456-7890'));
+        $this->assertEquals('', SiteSetting::normalizeWhatsApp(''));
+    }
 }

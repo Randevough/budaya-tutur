@@ -321,14 +321,6 @@
         border-color: #a89f91 !important;
     }
 
-    .fi-fo-file-upload .filepond--root {
-        max-height: 180px !important;
-    }
-
-    .fi-fo-file-upload .filepond--image-preview-wrapper {
-        max-height: 160px !important;
-    }
-
     /* Fieldset Styling in Editorial Monochrome */
     .fi-fieldset {
         border: 1px solid #e7e2d8 !important;

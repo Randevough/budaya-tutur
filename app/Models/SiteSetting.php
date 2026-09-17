@@ -25,6 +25,26 @@ class SiteSetting extends Model
         'is_donation_active' => 'boolean',
     ];
 
+    public static function normalizeWhatsApp(?string $number): string
+    {
+        if (blank($number)) {
+            return '';
+        }
+
+        $digits = preg_replace('/\D+/', '', $number);
+
+        if (str_starts_with($digits, '0')) {
+            $digits = '62' . substr($digits, 1);
+        }
+
+        return $digits;
+    }
+
+    public function setContactWhatsappAttribute($value): void
+    {
+        $this->attributes['contact_whatsapp'] = self::normalizeWhatsApp($value);
+    }
+
     public static function current(): self
     {
         try {
