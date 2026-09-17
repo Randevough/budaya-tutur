@@ -12,9 +12,9 @@ class AboutPageTest extends TestCase
 
         $response->assertStatus(200);
         $response->assertSee('Menjaga Tutur');
-        $response->assertSee('Visi & Misi Kami', false);
-        $response->assertSee('Filosofi Lambang Budaya Tutur');
-        $response->assertSee('Etika & Protokol Pengarsipan', false);
+        $response->assertSee('Visi & Misi', false);
+        $response->assertDontSee('Filosofi Lambang Budaya Tutur');
+        $response->assertDontSee('Etika & Protokol Pengarsipan', false);
         $response->assertSee('Punya Rekaman atau Mengetahui Penutur di Daerah Anda?');
     }
 }

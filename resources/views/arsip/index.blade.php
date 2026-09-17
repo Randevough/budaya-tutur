@@ -4,16 +4,20 @@
 @section('meta_description', 'Jelajahi seluruh kumpulan rekaman suara, nyanyian adat, mantra, dan tuturan lisan nusantara.')
 
 @section('content')
-    <!-- Header Banner [DARK: Obsidian #121110] -->
-    <header class="bg-obsidian-900 border-b border-obsidian-700 py-16 sm:py-20 text-ink-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+    <!-- Header Banner [DARK: Obsidian #121110 with Ambient Spotlight] -->
+    <header class="relative bg-obsidian-900 border-b border-obsidian-700 py-16 sm:py-24 text-ink-100 overflow-hidden">
+        <!-- Subtle Gallery Ambient Spotlight -->
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_65%_at_50%_35%,_#221e1a_0%,_#171513_38%,_#121110_72%,_#080807_100%)] pointer-events-none"></div>
+        <div class="absolute top-[35%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] sm:w-[950px] h-[340px] bg-[radial-gradient(ellipse_at_center,_rgba(244,240,234,0.06)_0%,_rgba(180,165,150,0.03)_45%,_transparent_70%)] blur-[70px] pointer-events-none"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-8">
             <span class="text-[11px] uppercase tracking-[0.3em] text-ink-400 block mb-3 font-medium">
                 Katalog Digital
             </span>
-            <h1 class="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-ink-100 uppercase mb-4">
+            <h1 class="font-serif text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-ink-100 uppercase mb-4 leading-[1.15]">
                 Arsip Suara Nusantara
             </h1>
-            <p class="text-ink-300 text-sm sm:text-base font-light max-w-2xl leading-relaxed">
+            <p class="text-ink-300 text-sm sm:text-base md:text-lg font-light max-w-2xl leading-relaxed">
                 Koleksi bunyi, kidung, dan cerita lisan yang dihimpun dari berbagai penjuru tanah adat. Telusuri berdasarkan wilayah administratif atau ragam tutur secara langsung.
             </p>
         </div>
@@ -21,37 +25,38 @@
 
     <!-- Filter & Search Toolbar [DARK COMPACT: Obsidian #161413] -->
     <section class="bg-obsidian-850/95 border-b border-obsidian-700 sticky top-20 z-30 backdrop-blur-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-8 py-4 sm:py-5">
-            <form id="archive-filter-form" action="{{ route('arsip.index') }}" method="GET" class="grid grid-cols-1 sm:grid-cols-12 gap-3 sm:gap-4 items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 py-3 sm:py-3.5">
+            <form id="archive-filter-form" action="{{ route('arsip.index') }}" method="GET" class="grid grid-cols-1 sm:grid-cols-12 gap-2.5 sm:gap-3 items-center">
                 <!-- Search Keyword -->
                 <div class="sm:col-span-8 relative flex items-center">
-                    <div class="absolute left-3.5 text-ink-500 pointer-events-none">
+                    <div class="absolute left-3.5 text-ink-400 pointer-events-none">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <circle cx="11" cy="11" r="8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M21 21l-4.35-4.35" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="11" cy="11" r="8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M21 21l-4.35-4.35" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </div>
                     <input type="text" 
-                           id="search-input"
+                           id="search-input" 
                            name="q" 
                            value="{{ request('q') }}" 
-                           autocomplete="off"
+                           autocomplete="off" 
                            placeholder="Ketik judul, daerah, provinsi, atau kata kunci..." 
-                           class="w-full bg-obsidian-900 border border-obsidian-700 focus:border-ink-100 text-ink-100 text-xs pl-10 pr-10 py-3 tracking-wide placeholder-ink-500 focus:outline-none transition-colors">
+                           class="w-full bg-obsidian-900 border border-obsidian-700 hover:border-obsidian-600 focus:border-ink-200 focus:bg-obsidian-950 text-ink-100 text-xs sm:text-sm pl-10 pr-11 py-2.5 sm:py-3 tracking-normal placeholder-ink-400 focus:outline-none transition-all duration-200 shadow-inner">
                     <button type="button" 
                             id="search-clear-btn" 
-                            class="absolute right-3.5 text-ink-500 hover:text-ink-100 text-base leading-none transition-colors {{ request('q') ? '' : 'hidden' }}"
+                            class="absolute right-2 sm:right-2.5 w-8 h-8 flex items-center justify-center rounded-full text-ink-400 hover:text-ink-100 hover:bg-obsidian-800 transition-all {{ request('q') ? '' : 'hidden' }}" 
                             aria-label="Bersihkan pencarian">
-                        &times;
+                        <svg class="w-4 h-4 sm:w-4.5 sm:h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
                     </button>
                 </div>
 
                 <!-- Province Filter & Reset -->
-                <div class="sm:col-span-4 flex items-center space-x-3">
-                    <div class="relative w-full">
-                        <select id="province-select" 
-                                name="province" 
-                                class="w-full appearance-none bg-obsidian-900 border border-obsidian-700 focus:border-ink-100 text-ink-100 text-xs pl-4 pr-9 py-3 tracking-wide focus:outline-none transition-colors cursor-pointer">
+                <div class="sm:col-span-4 flex items-center space-x-2.5">
+                    <div class="relative w-full" id="province-dropdown-wrapper">
+                        <!-- Hidden native select for standard form submit & query string binding -->
+                        <select id="province-select" name="province" class="sr-only">
                             <option value="">Semua Wilayah Provinsi</option>
                             @foreach($provinces as $prov)
                                 <option value="{{ $prov->slug }}" {{ request('province') === $prov->slug ? 'selected' : '' }}>
@@ -59,16 +64,62 @@
                                 </option>
                             @endforeach
                         </select>
-                        <div class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-ink-500">
-                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/>
+
+                        <!-- Custom Dropdown Trigger Button -->
+                        <button type="button" 
+                                id="province-dropdown-btn" 
+                                aria-haspopup="listbox" 
+                                aria-expanded="false" 
+                                class="w-full flex items-center justify-between bg-obsidian-900 border border-obsidian-700 hover:border-obsidian-600 focus:border-ink-200 focus:bg-obsidian-950 text-ink-100 text-xs sm:text-sm pl-3.5 sm:pl-4 pr-3 py-2.5 sm:py-3 tracking-normal focus:outline-none transition-all duration-200 text-left shadow-inner cursor-pointer">
+                            <span id="province-dropdown-label" class="truncate font-light">
+                                @php
+                                    $selectedProv = $provinces->firstWhere('slug', request('province'));
+                                @endphp
+                                {{ $selectedProv ? $selectedProv->name : 'Semua Wilayah Provinsi' }}
+                            </span>
+                            <svg id="province-dropdown-icon" class="w-3.5 h-3.5 text-ink-400 shrink-0 ml-2 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                             </svg>
+                        </button>
+
+                        <!-- Custom Dropdown Menu -->
+                        <div id="province-dropdown-menu" 
+                             role="listbox" 
+                             class="hidden absolute left-0 right-0 top-full mt-1.5 bg-obsidian-900 border border-obsidian-700 shadow-2xl z-50 max-h-60 overflow-y-auto divide-y divide-obsidian-800/80">
+                            <div class="py-1">
+                                <button type="button" 
+                                        role="option" 
+                                        data-value="" 
+                                        class="province-item w-full flex items-center justify-between text-left px-3.5 sm:px-4 py-2.5 text-xs sm:text-sm text-ink-200 hover:bg-obsidian-800 hover:text-ink-50 transition-colors cursor-pointer {{ !request('province') ? 'bg-obsidian-800/90 text-ink-100 font-medium' : 'font-light' }}">
+                                    <span>Semua Wilayah Provinsi</span>
+                                    <span class="province-check {{ !request('province') ? '' : 'hidden' }}">
+                                        <svg class="w-3.5 h-3.5 text-ink-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                        </svg>
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="py-1">
+                                @foreach($provinces as $prov)
+                                    <button type="button" 
+                                            role="option" 
+                                            data-value="{{ $prov->slug }}" 
+                                            class="province-item w-full flex items-center justify-between text-left px-3.5 sm:px-4 py-2.5 text-xs sm:text-sm text-ink-200 hover:bg-obsidian-800 hover:text-ink-50 transition-colors cursor-pointer {{ request('province') === $prov->slug ? 'bg-obsidian-800/90 text-ink-100 font-medium' : 'font-light' }}">
+                                        <span>{{ $prov->name }}</span>
+                                        <span class="province-check {{ request('province') === $prov->slug ? '' : 'hidden' }}">
+                                            <svg class="w-3.5 h-3.5 text-ink-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                            </svg>
+                                        </span>
+                                    </button>
+                                @endforeach
+                            </div>
                         </div>
                     </div>
 
                     <a href="{{ route('arsip.index') }}" 
-                       id="filter-reset-btn"
-                       class="shrink-0 px-4 py-3 border border-obsidian-700 hover:border-ink-100 text-[11px] uppercase tracking-wider text-ink-400 hover:text-ink-100 hover:bg-obsidian-800 transition-colors {{ request()->hasAny(['q', 'province']) ? '' : 'hidden' }}"
+                       id="filter-reset-btn" 
+                       class="shrink-0 px-4 py-2.5 sm:py-3 border border-obsidian-700 hover:border-ink-100 text-xs uppercase tracking-wider text-ink-300 hover:text-ink-100 hover:bg-obsidian-800 transition-colors font-medium {{ request()->hasAny(['q', 'province']) ? '' : 'hidden' }}" 
                        title="Atur Ulang Pencarian">
                         Reset
                     </a>
@@ -82,7 +133,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-8">
             <!-- Results Counter & Live Indicator -->
             <div class="flex items-center justify-between mb-8">
-                <div id="results-counter" class="text-xs uppercase tracking-[0.2em] text-ink-500 font-medium">
+                <div id="results-counter" class="text-xs sm:text-sm uppercase tracking-[0.18em] text-ink-500 font-medium">
                     Menampilkan {{ $items->total() }} rekaman tutur
                     @if(request('q')) untuk &ldquo;{{ request('q') }}&rdquo; @endif
                     @if(request('province')) &bull; {{ $provinces->firstWhere('slug', request('province'))->name ?? request('province') }} @endif
@@ -102,9 +153,9 @@
                 <!-- Grid of Cards (Linen Mount) -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
                     @forelse($items as $item)
-                        <article class="group bg-linen-50 border border-linen-300 hover:border-ink-800 transition-all duration-300 flex flex-col shadow-sm">
+                        <a href="{{ route('arsip.show', $item->slug) }}" class="group bg-linen-50 border border-linen-300 hover:border-ink-800 transition-all duration-300 flex flex-col shadow-sm cursor-pointer focus:outline-none focus:ring-1 focus:ring-ink-800">
                             <!-- Thumbnail Wrapper -->
-                            <a href="{{ route('arsip.show', $item->slug) }}" class="relative block aspect-[16/10] overflow-hidden bg-linen-200">
+                            <div class="relative block aspect-[16/10] overflow-hidden bg-linen-200">
                                 @if($item->thumbnail_url)
                                     <img src="{{ $item->thumbnail_url }}" 
                                          alt="{{ $item->title }}"
@@ -122,7 +173,7 @@
                                         <path d="M8 5v14l11-7z"/>
                                     </svg>
                                 </div>
-                            </a>
+                            </div>
 
                             <!-- Card Details -->
                             <div class="p-6 sm:p-8 flex flex-col flex-grow">
@@ -131,9 +182,7 @@
                                 </div>
 
                                 <h2 class="font-serif text-lg sm:text-xl font-bold text-ink-900 mb-3 group-hover:text-ink-700 transition-colors leading-snug">
-                                    <a href="{{ route('arsip.show', $item->slug) }}">
-                                        {{ $item->title }}
-                                    </a>
+                                    {{ $item->title }}
                                 </h2>
 
                                 <p class="text-ink-600 text-xs sm:text-sm leading-relaxed mb-6 font-light line-clamp-3">
@@ -145,13 +194,17 @@
                                     <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
                                 </div>
                             </div>
-                        </article>
+                        </a>
                     @empty
-                        <div class="col-span-1 md:col-span-2 lg:col-span-3 text-center py-20 border border-dashed border-linen-400 p-8 space-y-4">
-                            <p class="font-serif text-lg text-ink-900 font-medium">Tidak ada rekaman yang sesuai dengan penyaringan.</p>
-                            <p class="text-xs text-ink-500 font-light">Coba cari dengan kata kunci lain atau ubah pilihan filter wilayah.</p>
+                        <div class="col-span-1 md:col-span-2 lg:col-span-3 text-center py-20 border border-dashed border-linen-400 p-8 sm:p-12 w-full space-y-4">
+                            <h3 class="font-serif text-xl sm:text-2xl font-bold text-ink-900 uppercase tracking-tight">
+                                Tidak ada rekaman yang sesuai dengan penyaringan.
+                            </h3>
+                            <p class="text-sm sm:text-base text-ink-600 font-light max-w-lg mx-auto leading-relaxed">
+                                Coba cari dengan kata kunci lain atau ubah pilihan filter wilayah.
+                            </p>
                             <div class="pt-4">
-                                <a href="{{ route('arsip.index') }}" class="inline-block px-6 py-2.5 border border-ink-900 text-xs uppercase tracking-[0.2em] text-ink-900 hover:bg-ink-900 hover:text-linen-100 transition-colors font-medium">
+                                <a href="{{ route('arsip.index') }}" class="inline-block px-7 py-3 border border-ink-900 text-xs sm:text-sm uppercase tracking-[0.2em] text-ink-900 hover:bg-ink-900 hover:text-linen-100 transition-colors font-medium">
                                     Lihat Semua Rekaman
                                 </a>
                             </div>
@@ -180,10 +233,79 @@ document.addEventListener('DOMContentLoaded', () => {
     const spinnerEl = document.getElementById('search-spinner');
     const gridContainer = document.getElementById('archive-grid-container');
 
+    // Custom dropdown elements
+    const dropdownWrapper = document.getElementById('province-dropdown-wrapper');
+    const dropdownBtn = document.getElementById('province-dropdown-btn');
+    const dropdownMenu = document.getElementById('province-dropdown-menu');
+    const dropdownLabel = document.getElementById('province-dropdown-label');
+    const dropdownIcon = document.getElementById('province-dropdown-icon');
+    const dropdownItems = document.querySelectorAll('.province-item');
+
     if (!form || !searchInput || !provinceSelect || !gridContainer) return;
 
     let debounceTimer = null;
     let abortController = null;
+
+    const toggleDropdown = (show = null) => {
+        if (!dropdownMenu) return;
+        const isHidden = dropdownMenu.classList.contains('hidden');
+        const shouldShow = show !== null ? show : isHidden;
+        if (shouldShow) {
+            dropdownMenu.classList.remove('hidden');
+            if (dropdownIcon) dropdownIcon.classList.add('rotate-180');
+            if (dropdownBtn) dropdownBtn.setAttribute('aria-expanded', 'true');
+        } else {
+            dropdownMenu.classList.add('hidden');
+            if (dropdownIcon) dropdownIcon.classList.remove('rotate-180');
+            if (dropdownBtn) dropdownBtn.setAttribute('aria-expanded', 'false');
+        }
+    };
+
+    if (dropdownBtn && dropdownMenu) {
+        dropdownBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            toggleDropdown();
+        });
+
+        dropdownItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                const val = item.getAttribute('data-value');
+                const text = item.querySelector('span:first-child').textContent.trim();
+
+                provinceSelect.value = val;
+                if (dropdownLabel) dropdownLabel.textContent = text;
+
+                dropdownItems.forEach(i => {
+                    const isSelected = i === item;
+                    i.classList.toggle('bg-obsidian-800/90', isSelected);
+                    i.classList.toggle('text-ink-100', isSelected);
+                    i.classList.toggle('font-medium', isSelected);
+                    i.classList.toggle('font-light', !isSelected);
+                    const check = i.querySelector('.province-check');
+                    if (check) check.classList.toggle('hidden', !isSelected);
+                });
+
+                toggleDropdown(false);
+                performSearch();
+            });
+        });
+
+        // Close on click outside
+        document.addEventListener('click', (e) => {
+            if (dropdownWrapper && !dropdownWrapper.contains(e.target)) {
+                toggleDropdown(false);
+            }
+        });
+
+        // Close on Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !dropdownMenu.classList.contains('hidden')) {
+                toggleDropdown(false);
+            }
+        });
+    }
 
     const performSearch = (targetUrl = null) => {
         if (abortController) {
@@ -264,7 +386,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 300);
     });
 
-    // Instant filter on province selection
+    // Instant filter on province selection (if changed programmatically)
     provinceSelect.addEventListener('change', () => {
         performSearch();
     });
@@ -285,6 +407,16 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             searchInput.value = '';
             provinceSelect.value = '';
+            if (dropdownLabel) dropdownLabel.textContent = 'Semua Wilayah Provinsi';
+            dropdownItems.forEach(i => {
+                const isDefault = i.getAttribute('data-value') === '';
+                i.classList.toggle('bg-obsidian-800/90', isDefault);
+                i.classList.toggle('text-ink-100', isDefault);
+                i.classList.toggle('font-medium', isDefault);
+                i.classList.toggle('font-light', !isDefault);
+                const check = i.querySelector('.province-check');
+                if (check) check.classList.toggle('hidden', !isDefault);
+            });
             performSearch(resetBtn.getAttribute('href'));
         });
     }

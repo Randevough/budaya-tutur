@@ -95,9 +95,9 @@
             <!-- Cards Grid (Mounted on Peat Obsidian Surface) -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
                 @forelse($featuredItems as $item)
-                    <article class="group bg-obsidian-850 border border-obsidian-700 hover:border-ink-200 transition-all duration-300 flex flex-col shadow-lg">
+                    <a href="{{ route('arsip.show', $item->slug) }}" class="group bg-obsidian-850 border border-obsidian-700 hover:border-ink-200 transition-all duration-300 flex flex-col shadow-lg cursor-pointer focus:outline-none focus:ring-1 focus:ring-ink-200">
                         <!-- Thumbnail Wrapper with Grayscale Filter -->
-                        <a href="{{ route('arsip.show', $item->slug) }}" class="relative block aspect-[16/10] overflow-hidden bg-obsidian-950">
+                        <div class="relative block aspect-[16/10] overflow-hidden bg-obsidian-950">
                             @if($item->thumbnail_url)
                                 <img src="{{ $item->thumbnail_url }}" 
                                      alt="{{ $item->title }}"
@@ -116,7 +116,7 @@
                                     <path d="M8 5v14l11-7z"/>
                                 </svg>
                             </div>
-                        </a>
+                        </div>
 
                         <!-- Card Body -->
                         <div class="p-6 sm:p-8 flex flex-col flex-grow">
@@ -127,9 +127,7 @@
 
                             <!-- Title -->
                             <h3 class="font-serif text-lg sm:text-xl font-bold text-ink-100 mb-3 group-hover:text-ink-200 transition-colors leading-snug">
-                                <a href="{{ route('arsip.show', $item->slug) }}">
-                                    {{ $item->title }}
-                                </a>
+                                {{ $item->title }}
                             </h3>
 
                             <!-- Excerpt -->
@@ -143,7 +141,7 @@
                                 <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
                             </div>
                         </div>
-                    </article>
+                    </a>
                 @empty
                     <div class="col-span-3 text-center py-16 border border-dashed border-obsidian-700 text-ink-400 text-sm">
                         Belum ada arsip yang dipublikasikan.

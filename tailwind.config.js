@@ -27,8 +27,10 @@ export default {
         },
         // Option A: Ink & Bone Typography
         ink: {
+          950: '#0c0b0a', // deepest pitch ink
           900: '#181615', // deep peat ink (primary text on light)
           800: '#2e2a27', // dark headings
+          700: '#3e3934', // rich dark charcoal
           600: '#5c554e', // secondary body text on light
           500: '#7a736a', // muted metadata on light
           400: '#968e85', // muted metadata on dark

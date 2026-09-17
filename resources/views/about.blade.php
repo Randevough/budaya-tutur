@@ -26,15 +26,14 @@
     <section class="py-20 sm:py-28 bg-linen-100 text-ink-900 border-b border-linen-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-                <!-- Left Column: Sticky Section Marker -->
+                <!-- Left Column: Section Marker -->
                 <div class="lg:col-span-4 space-y-4">
                     <span class="text-[11px] uppercase tracking-[0.3em] text-ink-500 block font-medium">
-                        01 / Latar Belakang
+                        Latar Belakang
                     </span>
-                    <h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold uppercase tracking-tight text-ink-950">
+                    <h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold uppercase tracking-tight text-ink-900">
                         Ketika Suara Terancam Senyap
                     </h2>
-                    <div class="w-12 h-px bg-ink-900/40 mt-4"></div>
                 </div>
 
                 <!-- Right Column: Narrative Body -->
@@ -54,236 +53,176 @@
     </section>
 
     <!-- 3. VISI & MISI [DARK: Obsidian #0C0B0A Charcoal] -->
-    <section class="py-20 sm:py-28 bg-obsidian-950 text-ink-100 border-b border-obsidian-800 relative">
+    <section class="py-14 sm:py-20 bg-obsidian-950 text-ink-100 border-b border-obsidian-800 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-8">
             <!-- Header -->
-            <div class="max-w-3xl mb-16">
+            <div class="max-w-3xl mb-8 sm:mb-10">
                 <span class="text-[11px] uppercase tracking-[0.3em] text-ink-400 block mb-2 font-medium">
-                    02 / Arah & Komitmen
+                    Arah & Komitmen
                 </span>
                 <h2 class="font-serif text-2xl sm:text-4xl font-bold uppercase tracking-tight text-ink-100">
-                    Visi & Misi Kami
+                    Visi & Misi
                 </h2>
             </div>
 
-            <!-- Vision Panel -->
-            <div class="mb-14 p-8 sm:p-12 border border-obsidian-800 bg-obsidian-900/60 backdrop-blur-sm">
-                <span class="text-[10px] uppercase tracking-[0.3em] text-ink-400 block mb-3 font-medium">
-                    Visi Utama
-                </span>
-                <p class="font-serif text-xl sm:text-2xl md:text-3xl text-ink-100 leading-snug font-normal">
-                    "Menjadi rumah arsip digital terbuka paling tepercaya dan bermartabat bagi suara, sastra tutur, dan bahasa lisan nusantara untuk generasi mendatang."
-                </p>
-            </div>
+            <!-- Monumental Vision Plaque -->
+            <div class="relative mb-10 sm:mb-12 p-6 sm:p-10 md:p-12 border border-obsidian-700/80 bg-obsidian-900/80 backdrop-blur-sm overflow-hidden shadow-2xl">
+                <!-- Large Ambient Quote Mark Motif -->
+                <span class="absolute -top-4 -left-2 sm:top-2 sm:left-4 font-serif text-8xl sm:text-9xl text-obsidian-700/30 select-none pointer-events-none leading-none -z-0">“</span>
+                
+                <!-- Subtle Radial PEAT Glow -->
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[220px] bg-[radial-gradient(ellipse_at_center,_rgba(244,240,234,0.04)_0%,_transparent_70%)] blur-[50px] pointer-events-none"></div>
 
-            <!-- Mission Grid (4 Columns) -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-                <!-- Mission 1 -->
-                <div class="p-6 border border-obsidian-800/80 bg-obsidian-900/30 flex flex-col justify-between">
-                    <div>
-                        <span class="font-serif text-2xl text-ink-400 block mb-4">I.</span>
-                        <h3 class="font-serif text-lg font-bold text-ink-100 uppercase tracking-wide mb-3">
-                            Perekaman Otentik
-                        </h3>
-                        <p class="text-xs sm:text-sm text-ink-300 font-light leading-relaxed">
-                            Mendokumentasikan tuturan langsung dari penutur asli di komunitas asalnya dengan kualitas tata suara akustik beresolusi tinggi.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Mission 2 -->
-                <div class="p-6 border border-obsidian-800/80 bg-obsidian-900/30 flex flex-col justify-between">
-                    <div>
-                        <span class="font-serif text-2xl text-ink-400 block mb-4">II.</span>
-                        <h3 class="font-serif text-lg font-bold text-ink-100 uppercase tracking-wide mb-3">
-                            Etika & Integritas
-                        </h3>
-                        <p class="text-xs sm:text-sm text-ink-300 font-light leading-relaxed">
-                            Menjunjung tinggi hak kepemilikan adat, konsen komunal, serta menjaga batas antara tuturan yang boleh dibuka publik dan tuturan sakral.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Mission 3 -->
-                <div class="p-6 border border-obsidian-800/80 bg-obsidian-900/30 flex flex-col justify-between">
-                    <div>
-                        <span class="font-serif text-2xl text-ink-400 block mb-4">III.</span>
-                        <h3 class="font-serif text-lg font-bold text-ink-100 uppercase tracking-wide mb-3">
-                            Akses Terbuka Nirlaba
-                        </h3>
-                        <p class="text-xs sm:text-sm text-ink-300 font-light leading-relaxed">
-                            Menyediakan repositori digital bebas biaya untuk tujuan edukasi, penelitian linguistik, dan pemajuan kebudayaan nasional.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Mission 4 -->
-                <div class="p-6 border border-obsidian-800/80 bg-obsidian-900/30 flex flex-col justify-between">
-                    <div>
-                        <span class="font-serif text-2xl text-ink-400 block mb-4">IV.</span>
-                        <h3 class="font-serif text-lg font-bold text-ink-100 uppercase tracking-wide mb-3">
-                            Penghubung Generasi
-                        </h3>
-                        <p class="text-xs sm:text-sm text-ink-300 font-light leading-relaxed">
-                            Menjembatani rekaman masa lampau ke medium digital modern agar tetap relevan, mudah dipahami, dan menginspirasi kaum muda.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. BRAND ASSET & FILOSOFI LOGO [LIGHT: Unbleached Linen #F8F5F0] -->
-    <section class="py-20 sm:py-28 bg-linen-100 text-ink-900 border-b border-linen-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-8">
-            <div class="max-w-3xl mb-16">
-                <span class="text-[11px] uppercase tracking-[0.3em] text-ink-500 block mb-2 font-medium">
-                    03 / Identitas Visual
-                </span>
-                <h2 class="font-serif text-2xl sm:text-4xl font-bold uppercase tracking-tight text-ink-950">
-                    Filosofi Lambang Budaya Tutur
-                </h2>
-                <p class="text-ink-600 text-xs sm:text-sm leading-relaxed font-light mt-3">
-                    Lambang visual Budaya Tutur dirancang dengan prinsip kesederhanaan purba dan presisi akustik. Menggabungkan unsur lingkaran adat dan visualisasi frekuensi gelombang suara manusia.
-                </p>
-            </div>
-
-            <!-- Emblem Showcase Container -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <!-- Visual Box (Large Emblem Presentation) -->
-                <div class="lg:col-span-5 flex flex-col items-center justify-center p-12 sm:p-16 border border-linen-300 bg-linen-50 shadow-sm">
-                    <div class="w-36 h-36 sm:w-44 sm:h-44 rounded-full border border-ink-900/20 bg-obsidian-950 flex items-center justify-center text-ink-100 shadow-md">
-                        <svg class="w-20 h-20 sm:w-24 sm:h-24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Lambang Budaya Tutur">
-                            <circle cx="12" cy="12" r="10" stroke-dasharray="2 3" stroke-opacity="0.5" />
-                            <path d="M12 7v10" />
-                            <path d="M8 9.5v5" />
-                            <path d="M16 9.5v5" />
-                            <path d="M4 11v2" />
-                            <path d="M20 11v2" />
-                        </svg>
-                    </div>
-                    <span class="font-serif text-sm tracking-[0.25em] uppercase text-ink-800 font-semibold mt-6 block text-center">
-                        The Resonant Circle
+                <div class="relative z-10">
+                    <span class="text-[10px] sm:text-[11px] uppercase tracking-[0.3em] text-ink-400 block mb-4 font-medium">
+                        Visi Utama
                     </span>
-                    <span class="text-[10px] tracking-[0.2em] uppercase text-ink-500 mt-1 block text-center">
-                        Arsip Akustik Nusantara
-                    </span>
-                </div>
 
-                <!-- Meaning Pillars (3 Tenets) -->
-                <div class="lg:col-span-7 space-y-8">
-                    <!-- Tenet 1 -->
-                    <div class="border-b border-linen-300 pb-6">
-                        <div class="flex items-start space-x-4">
-                            <span class="font-serif text-xl text-ink-400 font-bold">A.</span>
-                            <div>
-                                <h3 class="font-serif text-base sm:text-lg font-bold uppercase text-ink-950 tracking-wide mb-1.5">
-                                    Lingkaran Komunal (Kans Tutur Melingkar)
-                                </h3>
-                                <p class="text-xs sm:text-sm text-ink-600 font-light leading-relaxed">
-                                    Garis luar berbentuk lingkaran putus-putus melambangkan tradisi duduk melingkar di balai adat atau serambi bambu. Tidak ada hierarki dalam mendengarkan tuturan lisan; semua warga berkumpul dalam satu ruang kesadaran yang sama.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    <p class="font-serif text-xl sm:text-2xl md:text-3xl text-ink-100 leading-relaxed font-normal max-w-4xl mb-6">
+                        "Menjadi rumah arsip digital terbuka paling tepercaya dan bermartabat bagi suara, sastra tutur, dan bahasa lisan nusantara untuk generasi mendatang."
+                    </p>
 
-                    <!-- Tenet 2 -->
-                    <div class="border-b border-linen-300 pb-6">
-                        <div class="flex items-start space-x-4">
-                            <span class="font-serif text-xl text-ink-400 font-bold">B.</span>
-                            <div>
-                                <h3 class="font-serif text-base sm:text-lg font-bold uppercase text-ink-950 tracking-wide mb-1.5">
-                                    Gelombang Resonansi Suara
-                                </h3>
-                                <p class="text-xs sm:text-sm text-ink-600 font-light leading-relaxed">
-                                    Lima palang vertikal yang simetris merepresentasikan spektrum frekuensi tuturan manusia yang bergetar. Tiap tinggi garis menandai dinamika nada dari bisikan sakral hingga lantunan kidung yang melintasi bukit dan lautan.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Tenet 3 -->
-                    <div>
-                        <div class="flex items-start space-x-4">
-                            <span class="font-serif text-xl text-ink-400 font-bold">C.</span>
-                            <div>
-                                <h3 class="font-serif text-base sm:text-lg font-bold uppercase text-ink-950 tracking-wide mb-1.5">
-                                    Sumbu Tegak Tradisi
-                                </h3>
-                                <p class="text-xs sm:text-sm text-ink-600 font-light leading-relaxed">
-                                    Garis poros di tengah yang tertinggi menandai jembatan tegak lurus antargenerasi: menghubungkan kebijaksanaan masa lampau para leluhur dengan masa kini dan masa depan keturunannya.
-                                </p>
-                            </div>
-                        </div>
+                    <div class="pt-5 border-t border-obsidian-800 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-[10px] uppercase tracking-[0.25em] text-ink-400 font-light">
+                        <span>Pilar Pengarsipan Nusantara</span>
+                        <span>Nirlaba &bull; Bebas Akses &bull; Hak Adat Terlindungi</span>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- 5. ETIKA & PRINSIP PENGARSIPAN [DARK: Obsidian #121110 Velvet] -->
-    <section class="py-20 sm:py-28 bg-obsidian-900 text-ink-100 border-b border-obsidian-700">
-        <div class="max-w-7xl mx-auto px-4 sm:px-8">
-            <div class="max-w-3xl mb-16">
-                <span class="text-[11px] uppercase tracking-[0.3em] text-ink-400 block mb-2 font-medium">
-                    04 / Prinsip Dasar
+            <!-- Archival Index Register (2x2 Grid) -->
+            <div class="mb-2">
+                <span class="text-[10px] uppercase tracking-[0.3em] text-ink-400 block mb-5 font-medium">
+                    Pilar Kerja Pengarsipan
                 </span>
-                <h2 class="font-serif text-2xl sm:text-4xl font-bold uppercase tracking-tight text-ink-100">
-                    Etika & Protokol Pengarsipan
-                </h2>
-                <p class="text-ink-300 text-xs sm:text-sm leading-relaxed font-light mt-3">
-                    Pengarsipan bukan proses perampasan pengetahuan adat. Setiap tahap kerja kami berpegang pada protokol budaya yang ketat dan etika kemanusiaan.
-                </p>
-            </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+                    <!-- Pillar 1 -->
+                    <div class="p-6 sm:p-8 border border-obsidian-700/80 bg-obsidian-900/50 hover:bg-obsidian-900/90 transition-all duration-300 flex flex-col justify-between group">
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <div class="flex items-center space-x-3">
+                                    <span class="w-8 h-8 rounded border border-obsidian-600 bg-obsidian-850 flex items-center justify-center font-serif text-xs font-bold text-ink-200">
+                                        I
+                                    </span>
+                                    <span class="text-[11px] uppercase tracking-[0.2em] text-ink-400 font-medium">
+                                        Metode & Akustik
+                                    </span>
+                                </div>
+                                <svg class="w-4 h-4 text-ink-500/50 group-hover:text-ink-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M12 3v18M8 8v8M16 6v12M4 11v2M20 10v4" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-serif text-lg font-bold text-ink-100 uppercase tracking-wide mb-2.5">
+                                Perekaman Otentik
+                            </h3>
+                            <p class="text-xs sm:text-sm text-ink-300 font-light leading-relaxed">
+                                Merekam tuturan langsung dari penutur asli di komunitas asalnya. Kami merawat kejernihan akustik tuturan, dari nada suara, tarikan napas, sampai hening di antara bait.
+                            </p>
+                        </div>
+                    </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-8 border border-obsidian-700 bg-obsidian-850">
-                    <h3 class="font-serif text-lg font-bold uppercase text-ink-100 tracking-wide mb-3">
-                        Persetujuan Komunal
-                    </h3>
-                    <p class="text-xs sm:text-sm text-ink-300 font-light leading-relaxed">
-                        Kami hanya merekam dan mengunggah materi yang telah disetujui secara sadar oleh penutur dan pemangku adat setempat. Hak moral cerita tetap menjadi milik sah komunitas adat asal.
-                    </p>
-                </div>
+                    <!-- Pillar 2 -->
+                    <div class="p-6 sm:p-8 border border-obsidian-700/80 bg-obsidian-900/50 hover:bg-obsidian-900/90 transition-all duration-300 flex flex-col justify-between group">
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <div class="flex items-center space-x-3">
+                                    <span class="w-8 h-8 rounded border border-obsidian-600 bg-obsidian-850 flex items-center justify-center font-serif text-xs font-bold text-ink-200">
+                                        II
+                                    </span>
+                                    <span class="text-[11px] uppercase tracking-[0.2em] text-ink-400 font-medium">
+                                        Etika & Hak Adat
+                                    </span>
+                                </div>
+                                <svg class="w-4 h-4 text-ink-500/50 group-hover:text-ink-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-serif text-lg font-bold text-ink-100 uppercase tracking-wide mb-2.5">
+                                Etika & Konsen Komunal
+                            </h3>
+                            <p class="text-xs sm:text-sm text-ink-300 font-light leading-relaxed">
+                                Hanya merekam tuturan yang diizinkan oleh tetua dan pemangku adat. Hak moral cerita tetap milik komunitas asal. Tuturan sakral atau bertabu waktu tidak kami sebarluaskan.
+                            </p>
+                        </div>
+                    </div>
 
-                <div class="p-8 border border-obsidian-700 bg-obsidian-850">
-                    <h3 class="font-serif text-lg font-bold uppercase text-ink-100 tracking-wide mb-3">
-                        Perlindungan Kesakralan
-                    </h3>
-                    <p class="text-xs sm:text-sm text-ink-300 font-light leading-relaxed">
-                        Sebagian tuturan nusantara memiliki pantangan musim, waktu, atau syarat inisiasi. Tuturan yang bersifat tertutup atau tabu tidak akan dipublikasikan secara umum.
-                    </p>
-                </div>
+                    <!-- Pillar 3 -->
+                    <div class="p-6 sm:p-8 border border-obsidian-700/80 bg-obsidian-900/50 hover:bg-obsidian-900/90 transition-all duration-300 flex flex-col justify-between group">
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <div class="flex items-center space-x-3">
+                                    <span class="w-8 h-8 rounded border border-obsidian-600 bg-obsidian-850 flex items-center justify-center font-serif text-xs font-bold text-ink-200">
+                                        III
+                                    </span>
+                                    <span class="text-[11px] uppercase tracking-[0.2em] text-ink-400 font-medium">
+                                        Akses & Riset
+                                    </span>
+                                </div>
+                                <svg class="w-4 h-4 text-ink-500/50 group-hover:text-ink-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <circle cx="12" cy="12" r="9"/>
+                                    <path d="M3.6 9h16.8M3.6 15h16.8M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-serif text-lg font-bold text-ink-100 uppercase tracking-wide mb-2.5">
+                                Akses Terbuka Nirlaba
+                            </h3>
+                            <p class="text-xs sm:text-sm text-ink-300 font-light leading-relaxed">
+                                Menyediakan repositori digital bebas biaya untuk pembelajaran, riset linguistik, dan pendengaran publik. Tanpa pungutan biaya dan bebas komersialisasi.
+                            </p>
+                        </div>
+                    </div>
 
-                <div class="p-8 border border-obsidian-700 bg-obsidian-850">
-                    <h3 class="font-serif text-lg font-bold uppercase text-ink-100 tracking-wide mb-3">
-                        Bebas Komersial
-                    </h3>
-                    <p class="text-xs sm:text-sm text-ink-300 font-light leading-relaxed">
-                        Seluruh rekaman dan arsip ini tidak diperjualbelikan untuk kepentingan komersial manapun. Pengarsipan ini sepenuhnya berstatus nirlaba demi ilmu pengetahuan publik.
-                    </p>
+                    <!-- Pillar 4 -->
+                    <div class="p-6 sm:p-8 border border-obsidian-700/80 bg-obsidian-900/50 hover:bg-obsidian-900/90 transition-all duration-300 flex flex-col justify-between group">
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <div class="flex items-center space-x-3">
+                                    <span class="w-8 h-8 rounded border border-obsidian-600 bg-obsidian-850 flex items-center justify-center font-serif text-xs font-bold text-ink-200">
+                                        IV
+                                    </span>
+                                    <span class="text-[11px] uppercase tracking-[0.2em] text-ink-400 font-medium">
+                                        Regenerasi & Edukasi
+                                    </span>
+                                </div>
+                                <svg class="w-4 h-4 text-ink-500/50 group-hover:text-ink-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-serif text-lg font-bold text-ink-100 uppercase tracking-wide mb-2.5">
+                                Penghubung Generasi
+                            </h3>
+                            <p class="text-xs sm:text-sm text-ink-300 font-light leading-relaxed">
+                                Menjembatani tuturan masa lampau ke medium digital yang mudah dipahami kaum muda. Menjaga agar bahasa ibu dan kidung leluhur tetap berbunyi di telinga zaman.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 6. AJAKAN KOLABORASI & CTA [LIGHT: Unbleached Linen Warm Peel] -->
-    <section class="py-20 sm:py-28 bg-linen-200 text-ink-950">
-        <div class="max-w-4xl mx-auto px-4 sm:px-8 text-center">
+    <!-- 4. AJAKAN KOLABORASI & CTA -->
+    <section class="py-14 sm:py-20 bg-linen-200 text-ink-900 border-b border-linen-300">
+        <div class="max-w-3xl mx-auto px-4 sm:px-8 text-center">
             <span class="text-[11px] uppercase tracking-[0.3em] text-ink-600 block mb-3 font-semibold">
                 Keterlibatan Bersama
             </span>
-            <h2 class="font-serif text-2xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight leading-tight mb-6">
+            
+            <h2 class="font-serif text-2xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight leading-tight text-ink-900 mb-4">
                 Punya Rekaman atau Mengetahui Penutur di Daerah Anda?
             </h2>
-            <p class="text-ink-700 text-xs sm:text-sm md:text-base font-light leading-relaxed max-w-2xl mx-auto mb-10">
-                Kerja merawat sastra tutur nusantara terlalu luas untuk dikerjakan sendiri. Kami mengundang pegiat budaya lokal, peneliti bahasa, komunitas pemuda adat, dan siapa saja untuk mengabarkan tuturan berharga dari kampung halaman Anda.
+            
+            <p class="text-ink-700 text-sm sm:text-base font-light leading-relaxed max-w-2xl mx-auto mb-8">
+                Kerja merawat sastra tutur nusantara terlalu luas untuk dipikul sendiri. Kami menyambut pegiat budaya, peneliti bahasa, pemuda adat, atau siapa pun yang ingin mengabarkan rekaman tuturan berharga dari kampung halamannya.
             </p>
+            
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 text-xs uppercase tracking-[0.2em]">
-                <a href="{{ route('kontak') }}" class="w-full sm:w-auto px-8 py-4 bg-obsidian-950 text-ink-100 font-semibold hover:bg-obsidian-850 transition-colors duration-300 shadow-md">
+                <a href="{{ route('kontak') }}" class="w-full sm:w-auto px-9 py-4 bg-obsidian-950 text-ink-100 font-semibold hover:bg-obsidian-850 transition-colors duration-300 shadow-md">
                     Hubungi Tim Kurasi
                 </a>
-                <a href="{{ route('arsip.index') }}" class="w-full sm:w-auto px-8 py-4 border border-ink-900/30 text-ink-900 hover:border-ink-950 hover:bg-linen-100 transition-colors duration-300">
+                <a href="{{ route('arsip.index') }}" class="w-full sm:w-auto px-9 py-4 border border-ink-900/40 text-ink-900 hover:border-ink-950 hover:bg-linen-100 transition-colors duration-300 font-medium">
                     Jelajahi Arsip Saat Ini
                 </a>
             </div>

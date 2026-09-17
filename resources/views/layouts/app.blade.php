@@ -164,24 +164,57 @@
                         <li><a href="{{ route('home') }}" class="hover:text-ink-100 transition-colors inline-block hover:translate-x-0.5 duration-200">Beranda</a></li>
                         <li><a href="{{ route('about') }}" class="hover:text-ink-100 transition-colors inline-block hover:translate-x-0.5 duration-200 {{ request()->routeIs('about') ? 'text-ink-100 font-medium' : '' }}">Tentang</a></li>
                         <li><a href="{{ route('arsip.index') }}" class="hover:text-ink-100 transition-colors inline-block hover:translate-x-0.5 duration-200">Arsip Suara</a></li>
-                        <li><a href="{{ route('home') }}#peta" class="hover:text-ink-100 transition-colors inline-block hover:translate-x-0.5 duration-200">Peta Sebaran</a></li>
                         <li><a href="{{ route('kontak') }}" class="hover:text-ink-100 transition-colors inline-block hover:translate-x-0.5 duration-200">Kontak</a></li>
                     </ul>
                 </div>
 
-                <!-- Col 3 (4 cols): Etika & Pengarsipan -->
+                <!-- Col 3 (4 cols): Terhubung / Media Sosial -->
                 <div class="md:col-span-4 space-y-4">
                     <h4 class="font-serif text-xs uppercase tracking-[0.25em] text-ink-100 font-semibold">
-                        Etika Pengarsipan
+                        Terhubung
                     </h4>
-                    <p class="text-xs text-ink-500 leading-relaxed font-light">
-                        Setiap rekaman didokumentasikan bersama tetua dan masyarakat penutur. Hak kepemilikan adat atas sastra lisan tetap melekat pada komunitas adat aslinya.
-                    </p>
-                    <div class="pt-2 flex flex-col sm:flex-row gap-3">
-                        <a href="{{ route('kontak') }}" class="inline-block px-4 py-2 border border-obsidian-700 hover:border-ink-100 text-[11px] uppercase tracking-[0.15em] text-ink-300 hover:text-ink-100 transition-colors text-center">
-                            Usulkan Rekaman
-                        </a>
-                        <a href="{{ url('/admin') }}" class="inline-block px-4 py-2 border border-transparent hover:border-obsidian-800 text-[11px] uppercase tracking-[0.15em] text-ink-500 hover:text-ink-300 transition-colors text-center">
+                    <ul class="space-y-3 text-xs tracking-wider text-ink-300">
+                        <li>
+                            <a href="https://youtube.com/@budayatutur" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center space-x-2 hover:text-ink-100 transition-colors">
+                                <svg class="w-4 h-4 text-ink-400 group-hover:text-ink-100 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+                                    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+                                </svg>
+                                <span>YouTube</span>
+                                <svg class="w-3.5 h-3.5 text-ink-500 group-hover:text-ink-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"/>
+                                    <polyline points="7 7 17 7 17 17"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:kontak@budayatutur.id" class="group inline-flex items-center space-x-2 hover:text-ink-100 transition-colors">
+                                <svg class="w-4 h-4 text-ink-400 group-hover:text-ink-100 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                                <span>Email</span>
+                                <svg class="w-3.5 h-3.5 text-ink-500 group-hover:text-ink-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"/>
+                                    <polyline points="7 7 17 7 17 17"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center space-x-2 hover:text-ink-100 transition-colors">
+                                <svg class="w-4 h-4 text-ink-400 group-hover:text-ink-100 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                                </svg>
+                                <span>WhatsApp</span>
+                                <svg class="w-3.5 h-3.5 text-ink-500 group-hover:text-ink-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"/>
+                                    <polyline points="7 7 17 7 17 17"/>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="pt-2">
+                        <a href="{{ url('/admin') }}" class="inline-block text-[11px] uppercase tracking-[0.15em] text-ink-500 hover:text-ink-300 transition-colors">
                             Portal Pengelola &rarr;
                         </a>
                     </div>
@@ -192,11 +225,6 @@
             <div class="pt-8 border-t border-obsidian-800/60 flex flex-col sm:flex-row items-center justify-between text-[11px] text-ink-500 tracking-widest uppercase font-light gap-4">
                 <div>
                     &copy; <span id="copyright-year">{{ date('Y') }}</span> Budaya Tutur Voices. Dirawat untuk pengetahuan bersama.
-                </div>
-                <div class="flex items-center space-x-4 text-[10px] text-ink-500 tracking-[0.2em]">
-                    <span>Non-komersial</span>
-                    <span>&bull;</span>
-                    <span>Bebas Akses</span>
                 </div>
             </div>
         </div>
