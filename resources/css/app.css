@@ -52,10 +52,113 @@
   background: #423c37;
 }
 
-/* Native Dark Map Tiles */
-.leaflet-tile-pane {
-  filter: contrast(105%) brightness(95%);
+/* Archival Warm Linen Map Tiles */
+#culture-map .leaflet-tile-pane {
+  filter: contrast(108%) brightness(98%) sepia(16%) hue-rotate(355deg);
 }
+
+/* Custom Archival Zoom Controls */
+#culture-map .leaflet-control-zoom {
+  border: 1px solid #e3ddd3 !important;
+  box-shadow: 0 4px 14px rgba(24, 22, 21, 0.08) !important;
+  border-radius: 2px !important;
+  overflow: hidden;
+}
+#culture-map .leaflet-control-zoom a {
+  background-color: rgba(253, 251, 247, 0.95) !important;
+  color: #181615 !important;
+  border-bottom: 1px solid #e3ddd3 !important;
+  width: 32px !important;
+  height: 32px !important;
+  line-height: 30px !important;
+  font-family: system-ui, -apple-system, sans-serif !important;
+  font-size: 15px !important;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+#culture-map .leaflet-control-zoom a:hover {
+  background-color: #181615 !important;
+  color: #f8f5f0 !important;
+}
+
+/* Sound-Wave Pulsing Marker */
+@keyframes soundWaveRipple {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.8);
+    opacity: 0;
+  }
+}
+
+.custom-sound-marker {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 44x44px invisible tap target buffer for WCAG accessibility */
+.custom-sound-marker::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 44px;
+  height: 44px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.custom-sound-marker .marker-pulse-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  margin-top: -9px;
+  margin-left: -9px;
+  border-radius: 50%;
+  background-color: rgba(24, 22, 21, 0.22);
+  animation: soundWaveRipple 3s cubic-bezier(0.2, 0.8, 0.4, 1) infinite;
+  pointer-events: none;
+}
+
+.custom-sound-marker.is-active .marker-pulse-ring {
+  background-color: rgba(24, 22, 21, 0.55);
+  animation-duration: 1.6s;
+}
+
+.custom-sound-marker .marker-core {
+  position: relative;
+  z-index: 2;
+  border-radius: 50%;
+  background-color: #181615;
+  border: 2px solid #f8f5f0;
+  box-shadow: 0 2px 8px rgba(24, 22, 21, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f8f5f0;
+  font-family: 'Aktiv Grotesk Condensed', 'Plus Jakarta Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  transition: transform 0.25s cubic-bezier(0.2, 0, 0, 1), background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.custom-sound-marker:hover .marker-core,
+.custom-sound-marker.is-active .marker-core {
+  transform: scale(1.25);
+  background-color: #0c0b0a;
+  border-color: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
 .leaflet-popup-content-wrapper, .leaflet-popup-tip {
   background-color: #161413 !important;
   color: #f4f0ea !important;

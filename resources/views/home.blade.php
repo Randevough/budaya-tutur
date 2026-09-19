@@ -36,37 +36,70 @@
     <section id="peta" class="py-24 sm:py-32 bg-linen-100 text-ink-900 border-b border-linen-300 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-8">
             <!-- Section Header -->
-            <div class="max-w-3xl mb-12">
+            <div class="max-w-3xl mb-10">
                 <span class="text-xs uppercase tracking-[0.25em] text-ink-600 block mb-2 font-medium">
-                    Kartografi Suara
+                    Bentang Wilayah Tutur
                 </span>
                 <h2 class="font-serif text-2xl sm:text-4xl font-bold uppercase tracking-tight text-ink-900 mb-4">
                     Peta Sebaran Budaya Tutur
                 </h2>
                 <p class="text-ink-600 text-xs sm:text-sm leading-relaxed font-light">
-                    Satu penanda mewakili titik pusat kabupaten atau kota yang menyimpan rekaman budaya tutur. Klik pada penanda untuk melihat daftar tuturan yang tercatat di wilayah tersebut.
+                    Tiap titik merekam tuturan lisan dari tanah asalnya. Ketuk penanda atau pilih wilayah untuk membuka naskah dan rekaman yang tersimpan.
                 </p>
             </div>
 
             <!-- Leaflet Map Container (Archival Plate Frame) -->
             <div class="border border-linen-300 bg-linen-200 relative overflow-hidden shadow-xl">
-                <div id="culture-map" class="w-full h-[540px] z-10"></div>
-                
+                <div id="culture-map" class="w-full h-[540px] sm:h-[600px] z-10"></div>
+
                 <!-- Map Controls Overlay -->
                 <div class="absolute top-4 right-4 z-20">
-                    <button id="reset-map-btn" type="button" class="bg-linen-50/95 backdrop-blur-md border border-linen-300 px-3 py-2 text-xs tracking-wider text-ink-700 hover:text-ink-950 hover:border-ink-600 uppercase transition-all flex items-center space-x-2 focus:outline-none shadow-md">
+                    <button id="reset-map-btn" type="button" class="bg-linen-50/95 backdrop-blur-md border border-linen-300 px-3.5 py-2 text-xs tracking-wider text-ink-700 hover:text-ink-950 hover:border-ink-600 uppercase transition-all flex items-center space-x-2 focus:outline-none shadow-md">
                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                         </svg>
-                        <span>Pusatkan Peta</span>
+                        <span>Pusatkan Nusantara</span>
                     </button>
                 </div>
 
                 <!-- Map Legend Overlay -->
-                <div class="absolute bottom-4 left-4 z-20 bg-linen-50/95 backdrop-blur-md border border-linen-300 px-4 py-3 text-xs tracking-wider text-ink-800 uppercase shadow-md">
-                    <div class="flex items-center space-x-2.5">
-                        <span class="w-3 h-3 rounded-full bg-ink-900 border-2 border-linen-100 inline-block shadow-sm"></span>
-                        <span>Titik Pusat Kabupaten Berkoleksi</span>
+                <div class="absolute bottom-4 left-4 z-20 bg-linen-50/95 backdrop-blur-md border border-linen-300 px-3.5 py-2 text-xs tracking-wider text-ink-800 uppercase shadow-md flex items-center space-x-2 pointer-events-none">
+                    <span class="w-2.5 h-2.5 rounded-full bg-ink-900 border border-linen-100 inline-block shadow-sm"></span>
+                    <span>Wilayah Berpenutur</span>
+                </div>
+
+                <!-- Archival Sliding Drawer (Side-docked on desktop, bottom-sheet on mobile) -->
+                <div id="map-drawer" class="absolute z-30 transition-all duration-300 ease-out inset-x-0 bottom-0 max-h-[85%] sm:max-h-full sm:inset-y-0 sm:left-auto sm:right-0 sm:w-96 w-full bg-obsidian-900/95 backdrop-blur-md text-ink-100 border-t sm:border-t-0 sm:border-l border-obsidian-700 shadow-2xl flex flex-col pointer-events-auto translate-y-full sm:translate-y-0 sm:translate-x-full">
+                    <!-- Drawer Header -->
+                    <div class="p-5 sm:p-6 border-b border-obsidian-700 flex items-start justify-between">
+                        <div>
+                            <span id="drawer-province" class="text-[10px] uppercase tracking-[0.22em] text-ink-400 block font-medium">
+                                Wilayah
+                            </span>
+                            <h3 id="drawer-regency" class="font-serif text-xl sm:text-2xl font-bold text-ink-100 mt-1 leading-snug">
+                                Nama Wilayah
+                            </h3>
+                            <div id="drawer-count" class="text-xs text-ink-400 mt-1.5 font-light">
+                                0 tuturan terekam di tanah ini
+                            </div>
+                        </div>
+                        <button id="drawer-close-btn" type="button" class="text-ink-400 hover:text-ink-100 p-1.5 border border-transparent hover:border-obsidian-700 transition-colors focus:outline-none" aria-label="Tutup Panel">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Drawer Items List (Scrollable) -->
+                    <div id="drawer-items-list" class="flex-1 overflow-y-auto p-5 sm:p-6 space-y-3 scrollbar-thin scrollbar-thumb-obsidian-700">
+                        <!-- Populated by JavaScript -->
+                    </div>
+
+                    <!-- Drawer Footer Link -->
+                    <div class="p-4 sm:p-5 border-t border-obsidian-700 bg-obsidian-950/60 mt-auto">
+                        <a id="drawer-province-link" href="#" class="text-xs uppercase tracking-[0.18em] text-ink-300 hover:text-ink-100 inline-flex items-center justify-between w-full font-medium group transition-colors">
+                            <span id="drawer-province-link-text">Buka Seluruh Arsip Provinsi &rarr;</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -192,25 +225,81 @@ document.addEventListener('DOMContentLoaded', function () {
         maxZoom: 16
     }).addTo(map);
 
-    const monoIcon = L.divIcon({
-        className: 'custom-mono-marker',
-        html: `
-            <div style="
-                width: 14px;
-                height: 14px;
-                background-color: #181615;
-                border: 2px solid #f8f5f0;
-                border-radius: 50%;
-                box-shadow: 0 0 10px rgba(24, 22, 21, 0.4);
-                cursor: pointer;
-            "></div>
-        `,
-        iconSize: [14, 14],
-        iconAnchor: [7, 7],
-        popupAnchor: [0, -10]
-    });
-
     const bounds = [];
+    const markerMap = {};
+    const pillMap = {};
+    let activeMarker = null;
+
+    // Drawer Elements
+    const drawer = document.getElementById('map-drawer');
+    const drawerProvince = document.getElementById('drawer-province');
+    const drawerRegency = document.getElementById('drawer-regency');
+    const drawerCount = document.getElementById('drawer-count');
+    const drawerItemsList = document.getElementById('drawer-items-list');
+    const drawerProvinceLink = document.getElementById('drawer-province-link');
+    const drawerProvinceLinkText = document.getElementById('drawer-province-link-text');
+    const drawerCloseBtn = document.getElementById('drawer-close-btn');
+    const resetBtn = document.getElementById('reset-map-btn');
+
+    function openDrawer(regency, markerEl) {
+        if (!drawer) return;
+
+        drawerProvince.textContent = regency.province ? regency.province.name : 'Wilayah';
+        drawerRegency.textContent = regency.name;
+        drawerCount.textContent = `${regency.culture_items.length} tuturan terekam di tanah ini:`;
+
+        let listHtml = '';
+        regency.culture_items.forEach(function (item) {
+            const url = "{{ url('/arsip') }}/" + item.slug;
+            const category = item.category || 'Budaya Tutur';
+            listHtml += `
+                <a href="${url}" class="group block p-4 bg-obsidian-850 border border-obsidian-700 hover:border-ink-200 transition-all duration-200 shadow-sm focus:outline-none focus:border-ink-100">
+                    <div class="flex items-center justify-between mb-1.5">
+                        <span class="text-[10px] uppercase tracking-[0.2em] text-ink-400 font-medium">${category}</span>
+                        <span class="text-ink-400 group-hover:text-ink-100 group-hover:translate-x-1 transition-transform text-xs font-serif">&rarr;</span>
+                    </div>
+                    <h4 class="font-serif text-base sm:text-lg font-bold text-ink-100 group-hover:text-ink-200 leading-snug">
+                        ${item.title}
+                    </h4>
+                    <div class="mt-2.5 text-[11px] text-ink-400 flex items-center space-x-1.5">
+                        <svg class="w-3.5 h-3.5 text-ink-400 group-hover:text-ink-200 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                        <span class="group-hover:text-ink-200 transition-colors">Buka naskah dan rekaman</span>
+                    </div>
+                </a>
+            `;
+        });
+        drawerItemsList.innerHTML = listHtml;
+
+        if (regency.province && regency.province.slug) {
+            drawerProvinceLink.href = "{{ route('arsip.index') }}?province=" + regency.province.slug;
+            drawerProvinceLinkText.innerHTML = `Buka Seluruh Arsip ${regency.province.name} &rarr;`;
+            drawerProvinceLink.parentElement.style.display = 'block';
+        } else {
+            drawerProvinceLink.parentElement.style.display = 'none';
+        }
+
+        // Open Drawer Animation Classes
+        drawer.classList.remove('translate-y-full', 'sm:translate-x-full');
+        drawer.classList.add('translate-y-0', 'sm:translate-x-0');
+
+        // Toggle active marker styling
+        document.querySelectorAll('.custom-sound-marker').forEach(m => m.classList.remove('is-active'));
+        if (markerEl) {
+            markerEl.classList.add('is-active');
+        }
+    }
+
+    function closeDrawer() {
+        if (!drawer) return;
+
+        drawer.classList.add('translate-y-full', 'sm:translate-x-full');
+        drawer.classList.remove('translate-y-0', 'sm:translate-x-0');
+
+        document.querySelectorAll('.custom-sound-marker').forEach(m => m.classList.remove('is-active'));
+        activeMarker = null;
+    }
 
     regenciesData.forEach(function (regency) {
         if (!regency.latitude || !regency.longitude) return;
@@ -218,64 +307,69 @@ document.addEventListener('DOMContentLoaded', function () {
         const latLng = [parseFloat(regency.latitude), parseFloat(regency.longitude)];
         bounds.push(latLng);
 
-        let itemsHtml = '<ul style="list-style: none; padding: 0; margin: 8px 0 0 0;">';
-        regency.culture_items.forEach(function (item) {
-            const url = "{{ url('/arsip') }}/" + item.slug;
-            itemsHtml += `
-                <li style="margin-bottom: 6px; padding-bottom: 6px; border-bottom: 1px solid #e3ddd3;">
-                    <a href="${url}" style="color: #181615; text-decoration: none; font-size: 12px; font-weight: 600; display: block;">
-                        &rarr; ${item.title}
-                    </a>
-                </li>
-            `;
-        });
+        const itemCount = regency.culture_items.length;
+        const isMultiple = itemCount > 1;
+        const coreSize = isMultiple ? 22 : 16;
+        const anchor = coreSize / 2;
 
-        if (regency.province && regency.province.slug) {
-            const provinceUrl = "{{ route('arsip.index') }}?province=" + regency.province.slug;
-            itemsHtml += `
-                <li style="margin-top: 10px; padding-top: 6px; border-top: 1px dashed #d0c8bb; text-align: right;">
-                    <a href="${provinceUrl}" style="color: #5c554e; text-decoration: none; font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600;">
-                        Lihat Seluruh ${regency.province.name} &rarr;
-                    </a>
-                </li>
-            `;
-        }
-
-        itemsHtml += '</ul>';
-
-        const popupContent = `
-            <div style="font-family: 'Aktiv Grotesk Condensed', sans-serif; min-width: 200px; color: #181615;">
-                <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: #7a736a;">
-                    ${regency.province ? regency.province.name : 'Wilayah'}
+        const markerHtml = `
+            <div class="custom-sound-marker" data-regency-id="${regency.id}">
+                <div class="marker-pulse-ring"></div>
+                <div class="marker-core" style="width: ${coreSize}px; height: ${coreSize}px;">
+                    ${isMultiple ? `<span>${itemCount}</span>` : ''}
                 </div>
-                <div style="font-family: 'Mencken Std Head', serif; font-size: 14px; font-weight: bold; color: #181615; margin-top: 2px;">
-                    ${regency.name}
-                </div>
-                <div style="font-size: 11px; color: #5c554e; margin-top: 4px; font-weight: 300;">
-                    ${regency.culture_items.length} rekaman tersimpan:
-                </div>
-                ${itemsHtml}
             </div>
         `;
 
-        L.marker(latLng, { icon: monoIcon })
-            .addTo(map)
-            .bindPopup(popupContent);
+        const icon = L.divIcon({
+            className: 'sound-marker-wrapper',
+            html: markerHtml,
+            iconSize: [coreSize, coreSize],
+            iconAnchor: [anchor, anchor]
+        });
+
+        const marker = L.marker(latLng, { icon: icon }).addTo(map);
+        markerMap[regency.id] = { marker, regency, latLng };
+
+        marker.on('click', function (e) {
+            if (e.originalEvent) {
+                e.originalEvent.stopPropagation();
+            }
+            activeMarker = marker;
+            const markerEl = marker._icon ? marker._icon.querySelector('.custom-sound-marker') : null;
+            const currentZoom = map.getZoom();
+            map.flyTo(latLng, Math.max(currentZoom, 7), { duration: 0.8 });
+            openDrawer(regency, markerEl);
+        });
     });
 
-    if (bounds.length > 0) {
-        map.fitBounds(bounds, { padding: [50, 50], maxZoom: 7 });
+    if (drawerCloseBtn) {
+        drawerCloseBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            closeDrawer();
+        });
     }
 
-    const resetBtn = document.getElementById('reset-map-btn');
     if (resetBtn) {
         resetBtn.addEventListener('click', function () {
+            closeDrawer();
             if (bounds.length > 0) {
-                map.fitBounds(bounds, { padding: [50, 50], maxZoom: 7 });
+                map.fitBounds(bounds, { padding: [40, 40], maxZoom: 7 });
             } else {
                 map.setView([-2.5, 118.0], 5);
             }
         });
+    }
+
+    // Close drawer when clicking outside markers or drawer
+    map.on('click', function (e) {
+        if (e.originalEvent && !e.originalEvent.target.closest('#map-drawer') && !e.originalEvent.target.closest('.custom-sound-marker')) {
+            closeDrawer();
+        }
+    });
+
+    if (bounds.length > 0) {
+        map.fitBounds(bounds, { padding: [50, 50], maxZoom: 7 });
     }
 });
 </script>
