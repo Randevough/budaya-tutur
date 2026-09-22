@@ -14,10 +14,10 @@
                 Manifesto & Identitas
             </span>
             <h1 class="font-serif text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-ink-100 leading-[1.15] uppercase mb-4 sm:mb-6">
-                Menjaga Tutur,<br class="hidden sm:inline"> Merawat Ingatan Kolektif.
+                Menjaga Tutur,<br class="hidden sm:inline"> Merawat Ingatan Kolektif
             </h1>
             <p class="text-ink-300 text-sm sm:text-base md:text-lg max-w-2xl font-light leading-relaxed">
-                Budaya Tutur Voices adalah inisiatif pengarsipan digital mandiri yang didedikasikan untuk merekam, menyelamatkan, dan membuka akses terhadap sastra lisan, kidung ritual, mitos asal-usul, dan suara penutur asli dari berbagai pelosok kepulauan nusantara.
+                Budaya Tutur Voices adalah inisiatif pengarsipan digital mandiri yang didedikasikan untuk merekam, menyelamatkan, dan membuka akses terhadap sastra lisan, kidung ritual, mitos asal-usul, dan suara penutur asli dari berbagai pelosok kepulauan nusantara
             </p>
         </div>
     </section>
@@ -39,13 +39,13 @@
                 <!-- Right Column: Narrative Body -->
                 <div class="lg:col-span-8 space-y-6 text-sm sm:text-base text-ink-700 font-light leading-relaxed">
                     <p>
-                        Sebagian besar pengetahuan leluhur di nusantara tidak diwariskan lewat lembaran kertas, melainkan melalui getaran suara: nyanyian panen para ibu di ladang, mantra penyembuhan tetua adat saat senja, kidung pelaut membaca navigasi bintang, hingga cerita pengantar tidur berima yang sarat filosofi hidup.
+                        Sebagian besar pengetahuan leluhur di nusantara tidak diwariskan lewat lembaran kertas, melainkan melalui getaran suara: nyanyian panen para ibu di ladang, mantra penyembuhan tetua adat saat senja, kidung pelaut membaca navigasi bintang, hingga cerita pengantar tidur berima yang sarat filosofi hidup
                     </p>
                     <p>
-                        Namun, arus modernisasi yang tergesa-gesa serta berkurangnya penutur generasi tua membuat ribuan tradisi lisan ini berada di ambang kepunahan. Ketika seorang penutur adat berpulang tanpa dokumentasi yang memadai, satu perpustakaan pengetahuan lisan ikut terkubur bersama kepergiannya.
+                        Namun, arus modernisasi yang tergesa-gesa serta berkurangnya penutur generasi tua membuat ribuan tradisi lisan ini berada di ambang kepunahan. Ketika seorang penutur adat berpulang tanpa dokumentasi yang memadai, satu perpustakaan pengetahuan lisan ikut terkubur bersama kepergiannya
                     </p>
                     <p>
-                        Kami hadir bukan sekadar untuk mencatat kata demi kata, melainkan menangkap nuansa asli tuturan: timbre suara, desah napas, intonasi emosional, dan hening di antara kalimat yang merupakan jiwa dari sastra tutur nusantara.
+                        Kami hadir bukan sekadar untuk mencatat kata demi kata, melainkan menangkap nuansa asli tuturan: timbre suara, desah napas, intonasi emosional, dan hening di antara kalimat yang merupakan jiwa dari sastra tutur nusantara
                     </p>
                 </div>
             </div>
@@ -79,7 +79,7 @@
                     </span>
 
                     <p class="font-serif text-xl sm:text-2xl md:text-3xl text-ink-100 leading-relaxed font-normal max-w-4xl mb-6">
-                        "Menjadi rumah arsip digital terbuka paling tepercaya dan bermartabat bagi suara, sastra tutur, dan bahasa lisan nusantara untuk generasi mendatang."
+                        "Menjadi rumah arsip digital terbuka paling tepercaya dan bermartabat bagi suara, sastra tutur, dan bahasa lisan nusantara untuk generasi mendatang"
                     </p>
 
                     <div class="pt-5 border-t border-obsidian-800 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs uppercase tracking-[0.2em] text-ink-400 font-light">
@@ -116,7 +116,7 @@
                                 Perekaman Otentik
                             </h3>
                             <p class="text-xs sm:text-sm text-ink-300 font-light leading-relaxed">
-                                Merekam tuturan langsung dari penutur asli di komunitas asalnya. Kami merawat kejernihan akustik tuturan, dari nada suara, tarikan napas, sampai hening di antara bait.
+                                Merekam tuturan langsung dari penutur asli di komunitas asalnya. Kami merawat kejernihan akustik tuturan, dari nada suara, tarikan napas, sampai hening di antara bait
                             </p>
                         </div>
                     </div>
@@ -141,7 +141,7 @@
                                 Etika & Konsen Komunal
                             </h3>
                             <p class="text-xs sm:text-sm text-ink-300 font-light leading-relaxed">
-                                Hanya merekam tuturan yang diizinkan oleh tetua dan pemangku adat. Hak moral cerita tetap milik komunitas asal. Tuturan sakral atau bertabu waktu tidak kami sebarluaskan.
+                                Hanya merekam tuturan yang diizinkan oleh tetua dan pemangku adat. Hak moral cerita tetap milik komunitas asal. Tuturan sakral atau bertabu waktu tidak kami sebarluaskan
                             </p>
                         </div>
                     </div>
@@ -167,7 +167,7 @@
                                 Akses Terbuka Nirlaba
                             </h3>
                             <p class="text-xs sm:text-sm text-ink-300 font-light leading-relaxed">
-                                Menyediakan repositori digital bebas biaya untuk pembelajaran, riset linguistik, dan pendengaran publik. Tanpa pungutan biaya dan bebas komersialisasi.
+                                Menyediakan repositori digital bebas biaya untuk pembelajaran, riset linguistik, dan pendengaran publik. Tanpa pungutan biaya dan bebas komersialisasi
                             </p>
                         </div>
                     </div>
@@ -194,7 +194,7 @@
                                 Penghubung Generasi
                             </h3>
                             <p class="text-xs sm:text-sm text-ink-300 font-light leading-relaxed">
-                                Menjembatani tuturan masa lampau ke medium digital yang mudah dipahami kaum muda. Menjaga agar bahasa ibu dan kidung leluhur tetap berbunyi di telinga zaman.
+                                Menjembatani tuturan masa lampau ke medium digital yang mudah dipahami kaum muda. Menjaga agar bahasa ibu dan kidung leluhur tetap berbunyi di telinga zaman
                             </p>
                         </div>
                     </div>
@@ -215,7 +215,7 @@
             </h2>
             
             <p class="text-ink-700 text-sm sm:text-base font-light leading-relaxed max-w-2xl mx-auto mb-8">
-                Kerja merawat sastra tutur nusantara terlalu luas untuk dipikul sendiri. Kami menyambut pegiat budaya, peneliti bahasa, pemuda adat, atau siapa pun yang ingin mengabarkan rekaman tuturan berharga dari kampung halamannya.
+                Kerja merawat sastra tutur nusantara terlalu luas untuk dipikul sendiri. Kami menyambut pegiat budaya, peneliti bahasa, pemuda adat, atau siapa pun yang ingin mengabarkan rekaman tuturan berharga dari kampung halamannya
             </p>
             
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 text-xs uppercase tracking-[0.2em]">

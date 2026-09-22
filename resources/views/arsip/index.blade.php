@@ -18,7 +18,7 @@
                 Arsip Suara Nusantara
             </h1>
             <p class="text-ink-300 text-sm sm:text-base md:text-lg font-light max-w-2xl leading-relaxed">
-                Koleksi bunyi, kidung, dan cerita lisan yang dihimpun dari berbagai penjuru tanah adat. Telusuri berdasarkan wilayah administratif atau ragam tutur secara langsung.
+                Koleksi bunyi, kidung, dan cerita lisan yang dihimpun dari berbagai penjuru tanah adat. Telusuri berdasarkan wilayah administratif atau ragam tutur secara langsung
             </p>
         </div>
     </header>
@@ -203,10 +203,10 @@
                     @empty
                         <div class="col-span-1 md:col-span-2 lg:col-span-3 text-center py-20 border border-dashed border-linen-400 p-8 sm:p-12 w-full space-y-4">
                             <h3 class="font-serif text-xl sm:text-2xl font-bold text-ink-900 uppercase tracking-tight">
-                                Tidak ada rekaman yang sesuai dengan penyaringan.
+                                Tidak ada rekaman yang sesuai dengan penyaringan
                             </h3>
                             <p class="text-sm sm:text-base text-ink-600 font-light max-w-lg mx-auto leading-relaxed">
-                                Coba cari dengan kata kunci lain atau ubah pilihan filter wilayah.
+                                Coba cari dengan kata kunci lain atau ubah pilihan filter wilayah
                             </p>
                             <div class="pt-4">
                                 <a href="{{ route('arsip.index') }}" class="inline-block px-7 py-3 border border-ink-900 text-xs sm:text-sm uppercase tracking-[0.2em] text-ink-900 hover:bg-ink-900 hover:text-linen-100 transition-colors font-medium">

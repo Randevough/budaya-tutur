@@ -15,10 +15,10 @@
                 Dukungan & Donasi
             </span>
             <h1 class="font-serif text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-ink-100 leading-[1.15] uppercase mb-6">
-                Dukung Pengarsipan<br class="hidden sm:inline"> Budaya Tutur.
+                Dukung Pengarsipan<br class="hidden sm:inline"> Budaya Tutur
             </h1>
             <p class="text-ink-300 text-sm sm:text-base md:text-lg max-w-2xl font-light leading-relaxed">
-                Budaya Tutur adalah proyek pengarsipan mandiri dan nirlaba. Donasi Anda membantu biaya rekaman lapangan dan pemeliharaan server agar arsip ini tetap bebas diakses.
+                Budaya Tutur adalah proyek pengarsipan mandiri dan nirlaba. Donasi Anda membantu biaya rekaman lapangan dan pemeliharaan server agar arsip ini tetap bebas diakses
             </p>
         </div>
     </section>
@@ -35,7 +35,7 @@
                     Rekening Bank & QRIS
                 </h2>
                 <p class="text-ink-600 text-xs sm:text-sm font-light leading-relaxed">
-                    Salurkan dukungan secara langsung tanpa perantara potongan platform. Kami menerima transfer bank domestik maupun pemindaian QRIS dari aplikasi perbankan atau dompet digital apa saja.
+                    Salurkan dukungan secara langsung tanpa perantara potongan platform. Kami menerima transfer bank domestik maupun pemindaian QRIS dari aplikasi perbankan atau dompet digital apa saja
                 </p>
             </div>
 
@@ -95,7 +95,7 @@
                     </div>
 
                     <div class="pt-6 mt-6 border-t border-linen-300 text-xs text-ink-600 font-light leading-relaxed">
-                        Terima kasih atas kepedulian Anda terhadap kelestarian sastra tutur nusantara.
+                        Terima kasih atas kepedulian Anda terhadap kelestarian sastra tutur nusantara
                     </div>
                 </div>
 
@@ -137,7 +137,7 @@
                         </div>
 
                         <p class="text-xs text-ink-600 font-light max-w-xs mx-auto mb-6">
-                            Pindai melalui BCA Mobile, Livin by Mandiri, BRImo, GoPay, OVO, atau aplikasi pembayaran lainnya.
+                            Pindai melalui BCA Mobile, Livin by Mandiri, BRImo, GoPay, OVO, atau aplikasi pembayaran lainnya
                         </p>
                     </div>
 
@@ -167,7 +167,7 @@
                             Konfirmasi Sukarela
                         </h3>
                         <p class="text-ink-600 text-xs sm:text-sm font-light leading-relaxed">
-                            Konfirmasi donasi bersifat sukarela. Jika Anda ingin mengirimkan bukti transfer atau menyapa tim pengelola, silakan hubungi kami melalui WhatsApp.
+                            Konfirmasi donasi bersifat sukarela. Jika Anda ingin mengirimkan bukti transfer atau menyapa tim pengelola, silakan hubungi kami melalui WhatsApp
                         </p>
                     </div>
 
@@ -191,7 +191,7 @@
                     </div>
 
                     <div class="pt-6 border-t border-linen-300 text-xs text-ink-600 font-light leading-relaxed max-w-lg mx-auto">
-                        Budaya Tutur beroperasi secara nirlaba. Seluruh rekaman suara tetap menjadi milik moral para penutur dan komunitas asalnya.
+                        Budaya Tutur beroperasi secara nirlaba. Seluruh rekaman suara tetap menjadi milik moral para penutur dan komunitas asalnya
                     </div>
                 </div>
             </div>

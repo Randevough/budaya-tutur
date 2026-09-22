@@ -113,7 +113,7 @@
                             Catatan Perlindungan Tradisi
                         </span>
                         <p class="leading-relaxed font-light">
-                            Materi tutur ini didokumentasikan untuk pelestarian pengetahuan dan penelitian budaya. Hak kepemilikan adat atas cerita, sastra lisan, dan kidung tetap berada pada masyarakat penutur aslinya.
+                            Materi tutur ini didokumentasikan untuk pelestarian pengetahuan dan penelitian budaya. Hak kepemilikan adat atas cerita, sastra lisan, dan kidung tetap berada pada masyarakat penutur aslinya
                         </p>
                     </div>
                 </div>
