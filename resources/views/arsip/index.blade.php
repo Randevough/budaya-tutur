@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Katalog Arsip Suara & Tradisi Lisan — Budaya Tutur Voices')
+@section('title', 'Katalog Arsip Suara & Tradisi Lisan — Budaya Tutur')
 @section('meta_description', 'Jelajahi seluruh kumpulan rekaman suara, nyanyian adat, mantra, dan tuturan lisan nusantara.')
 
 @section('content')

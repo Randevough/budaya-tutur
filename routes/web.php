@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes - Budaya Tutur Voices
+| Web Routes - Budaya Tutur
 |--------------------------------------------------------------------------
 |
 | Clean, direct routes for public visitors.

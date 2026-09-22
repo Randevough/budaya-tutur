@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Dukungan & Donasi Pengarsipan | Budaya Tutur Voices')
+@section('title', 'Dukungan & Donasi Pengarsipan | Budaya Tutur')
 @section('meta_description', 'Dukung inisiatif pengarsipan mandiri suara dan sastra lisan nusantara.')
 
 @section('content')
@@ -121,7 +121,7 @@
                             @if(!empty($settings->qris_image))
                                 <img
                                     src="{{ asset('storage/' . $settings->qris_image) }}"
-                                    alt="Barcode QRIS Budaya Tutur Voices"
+                                    alt="Barcode QRIS Budaya Tutur"
                                     class="w-48 h-48 sm:w-52 sm:h-52 object-contain"
                                 />
                             @else
@@ -173,7 +173,7 @@
 
                     @php
                         $waNumber = \App\Models\SiteSetting::normalizeWhatsApp($settings->contact_whatsapp ?? '6281234567890');
-                        $waMessage = rawurlencode("Halo Budaya Tutur Voices, saya ingin mengonfirmasi donasi pengarsipan.");
+                        $waMessage = rawurlencode("Halo Budaya Tutur, saya ingin mengonfirmasi donasi pengarsipan.");
                     @endphp
 
                     <div>

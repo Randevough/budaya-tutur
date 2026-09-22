@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    Automated Deployment Packager for Budaya Tutur Voices (Hostinger Shared Hosting)
+    Automated Deployment Packager for Budaya Tutur (Hostinger Shared Hosting)
 .DESCRIPTION
     1. Runs Vite asset compilation (npm run build)
     2. Packages clean production files into build-preview.zip
@@ -8,7 +8,7 @@
 #>
 
 Write-Host "=================================================" -ForegroundColor Cyan
-Write-Host "  Budaya Tutur Voices - Production Build Packager" -ForegroundColor Cyan
+Write-Host "  Budaya Tutur - Production Build Packager" -ForegroundColor Cyan
 Write-Host "=================================================" -ForegroundColor Cyan
 
 # 1. Compile production assets with Vite

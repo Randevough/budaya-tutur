@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Narahubung & Kontribusi Rekaman — Budaya Tutur Voices')
-@section('meta_description', 'Kirimkan pesan, usulan rekaman tutur, atau pertanyaan pengarsipan kepada tim kurasi Budaya Tutur Voices.')
+@section('title', 'Narahubung & Kontribusi Rekaman — Budaya Tutur')
+@section('meta_description', 'Kirimkan pesan, usulan rekaman tutur, atau pertanyaan pengarsipan kepada tim kurasi Budaya Tutur.')
 
 @section('content')
     <!-- Header [DARK: Obsidian #121110 with Ambient Spotlight] -->

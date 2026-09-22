@@ -46,7 +46,7 @@ class ContactController extends Controller
             $toEmail = config('mail.from.address');
 
             Mail::raw(
-                "Pesan baru dari situs Budaya Tutur Voices:\n\n" .
+                "Pesan baru dari situs Budaya Tutur:\n\n" .
                 "Nama: {$contactMessage->name}\n" .
                 "Email: {$contactMessage->email}\n" .
                 "Subjek: {$contactMessage->subject}\n\n" .

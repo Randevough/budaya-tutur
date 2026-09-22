@@ -162,7 +162,7 @@ class PublicPagesTest extends TestCase
         $home = $this->get('/');
         $home->assertStatus(200);
         $home->assertSee('<link rel="canonical"', false);
-        $home->assertSee('Budaya Tutur Voices', false);
+        $home->assertSee('Budaya Tutur', false);
         $home->assertSee('"@type": "Organization"', false);
 
         // 2. Detail page checks

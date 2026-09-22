@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@section('title', $item->title . ' — Budaya Tutur Voices')
+@section('title', $item->title . ' : Budaya Tutur')
 @section('meta_description', Str::limit(strip_tags($item->excerpt ?? $item->description), 160))
-@section('og_title', $item->title . ' — ' . $item->regency->name)
+@section('og_title', $item->title . ' : ' . $item->regency->name)
 @section('og_description', Str::limit(strip_tags($item->excerpt ?? $item->description), 160))
 @section('og_image', $item->thumbnail_url)
 
@@ -314,7 +314,7 @@ document.addEventListener('DOMContentLoaded', function () {
         shareTrigger.addEventListener('click', function (e) {
             e.preventDefault();
             const shareData = {
-                title: @json($item->title . ' — Budaya Tutur Voices'),
+                title: @json($item->title . ' — Budaya Tutur'),
                 text: @json(Str::limit(strip_tags($item->excerpt ?? $item->description), 120)),
                 url: window.location.href
             };

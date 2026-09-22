@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Budaya Tutur Voices — Arsip Suara & Cerita Lisan Nusantara')
+@section('title', 'Budaya Tutur — Arsip Suara & Cerita Lisan Nusantara')
 
 @section('content')
     <!-- 1. HERO SECTION [DARK: Obsidian #121110 Velvet] -->
@@ -227,7 +227,7 @@
                 &ldquo;Batu dan naskah bisa lapuk, tetapi bunyi yang dirawat dalam ingatan lisan akan melintasi masa dan terus menuturkan asal-usul kita.&rdquo;
             </blockquote>
             <p class="text-ink-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto font-light">
-                Budaya Tutur Voices hadir sebagai ruang simpan digital independen. Kami memprioritaskan tuturan lisan dari komunitas yang belum banyak terdokumentasi, menyajikannya secara khidmat tanpa komersialisasi
+                Budaya Tutur hadir sebagai ruang simpan digital independen. Kami memprioritaskan tuturan lisan dari komunitas yang belum banyak terdokumentasi, menyajikannya secara khidmat tanpa komersialisasi.
             </p>
             <div class="pt-2 sm:pt-3">
                 <a href="{{ route('kontak') }}" class="inline-block px-8 py-3.5 border border-ink-900 text-xs uppercase tracking-[0.2em] text-ink-900 hover:bg-ink-900 hover:text-linen-100 transition-all duration-300 font-medium">

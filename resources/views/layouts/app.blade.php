@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title', 'Budaya Tutur Voices — Arsip Suara & Cerita Lisan Nusantara')</title>
+    <title>@yield('title', 'Budaya Tutur — Arsip Suara & Cerita Lisan Nusantara')</title>
     <meta name="description" content="@yield('meta_description', 'Arsip digital budaya tutur, suara, dan cerita lisan nusantara. Menjaga yang terucap sebelum senyap.')">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="{{ url()->current() }}">
 
     <!-- OpenGraph / Social Metadata -->
-    <meta property="og:site_name" content="Budaya Tutur Voices">
-    <meta property="og:title" content="@yield('og_title', 'Budaya Tutur Voices — Arsip Suara & Cerita Lisan Nusantara')">
+    <meta property="og:site_name" content="Budaya Tutur">
+    <meta property="og:title" content="@yield('og_title', 'Budaya Tutur — Arsip Suara & Cerita Lisan Nusantara')">
     <meta property="og:description" content="@yield('og_description', 'Arsip digital budaya tutur, suara, dan cerita lisan nusantara.')">
     <meta property="og:type" content="@yield('og_type', 'website')">
     <meta property="og:url" content="{{ url()->current() }}">
@@ -20,7 +20,7 @@
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="@yield('og_title', 'Budaya Tutur Voices — Arsip Suara & Cerita Lisan Nusantara')">
+    <meta name="twitter:title" content="@yield('og_title', 'Budaya Tutur — Arsip Suara & Cerita Lisan Nusantara')">
     <meta name="twitter:description" content="@yield('og_description', 'Arsip digital budaya tutur, suara, dan cerita lisan nusantara.')">
     <meta name="twitter:image" content="@yield('og_image', asset('images/og-default.jpg'))">
 
@@ -29,7 +29,7 @@
     {
         "@context": "https://schema.org",
         "@type": "Organization",
-        "name": "Budaya Tutur Voices",
+        "name": "Budaya Tutur",
         "url": "{{ url('/') }}",
         "description": "Inisiatif pengarsipan digital mandiri untuk merekam, merawat, dan mempublikasikan suara dan sastra tutur lisan nusantara."
     }
@@ -182,7 +182,7 @@
             <!-- Main 3-Column Asymmetric Grid (2 cols on mobile, 12 cols on desktop) -->
             <div class="grid grid-cols-2 md:grid-cols-12 gap-x-6 sm:gap-x-8 gap-y-10 md:gap-12 lg:gap-16 text-sm mb-12 sm:mb-16">
                 <!-- Col 1 (5 cols on desktop, full width on mobile): Brand & Mission -->
-                <div class="col-span-2 md:col-span-5 space-y-4">
+                <div class="col-span-2 md:col-span-5 space-y-3.5">
                     <div class="flex items-center space-x-3.5">
                         <div class="w-9 h-9 rounded-full border border-obsidian-700 bg-obsidian-850 flex items-center justify-center text-ink-100 shrink-0">
                             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -198,8 +198,8 @@
                             Budaya Tutur
                         </span>
                     </div>
-                    <p class="text-ink-400 text-xs sm:text-sm leading-relaxed max-w-md font-light">
-                        Inisiatif pengarsipan digital mandiri untuk merekam, merawat, dan mempublikasikan suara, tuturan lisan, nyanyian ritual, dan kidung adat dari berbagai pelosok kepulauan nusantara.
+                    <p class="text-ink-300 text-sm sm:text-base leading-relaxed max-w-sm font-light">
+                        Inisiatif pengarsipan mandiri untuk merekam, merawat, dan membuka akses sastra tutur serta kidung adat kepulauan nusantara.
                     </p>
                 </div>
 
@@ -275,7 +275,7 @@
             <!-- Bottom Strip -->
             <div class="pt-8 border-t border-obsidian-800/60 flex flex-col sm:flex-row items-center justify-between text-xs text-ink-400 tracking-wider uppercase font-light gap-4">
                 <div>
-                    &copy; <span id="copyright-year">{{ date('Y') }}</span> Budaya Tutur Voices. Dirawat untuk pengetahuan bersama.
+                    &copy; <span id="copyright-year">{{ date('Y') }}</span> Budaya Tutur. Dirawat untuk pengetahuan bersama.
                 </div>
             </div>
         </div>
