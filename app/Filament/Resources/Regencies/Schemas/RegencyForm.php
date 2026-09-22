@@ -61,12 +61,6 @@ class RegencyForm
                                             $set('province_id', $prov->id);
                                         }
                                     }
-
-                                    Notification::make()
-                                        ->title('Koordinat Terisi Otomatis')
-                                        ->body("{$match['name']}: Lat {$match['latitude']}, Lng {$match['longitude']}")
-                                        ->success()
-                                        ->send();
                                 }
                             })
                             ->suffixAction(

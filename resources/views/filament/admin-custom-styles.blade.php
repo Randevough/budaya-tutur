@@ -1,3 +1,7 @@
+<!-- Leaflet CSS and JS for Admin Panel Map Picker -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
 <style>
     /* Table Header 1-Row Layout: Heading on left, Search on top-right */
     @media (min-width: 640px) {
@@ -432,4 +436,236 @@
         color: #797166 !important;
         line-height: 1.35 !important;
     }
+
+    /* Map Picker Container & Leaflet Styling (Editorial Monochrome) */
+    .bt-admin-map-container {
+        width: 100% !important;
+        height: 380px !important;
+        min-height: 350px !important;
+        border-radius: 0.625rem !important;
+        border: 1px solid #dcd7ce !important;
+        background-color: #f7f6f4 !important;
+        position: relative !important;
+        z-index: 0 !important;
+        overflow: hidden !important;
+    }
+
+    .bt-admin-map-container .leaflet-control-zoom {
+        border: 1px solid #dcd7ce !important;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+        border-radius: 6px !important;
+        overflow: hidden !important;
+    }
+
+    .bt-admin-map-container .leaflet-control-zoom a {
+        background-color: #fdfbf7 !important;
+        color: #181615 !important;
+        border-bottom: 1px solid #e5dfd5 !important;
+    }
+
+    .bt-admin-map-container .leaflet-control-zoom a:hover {
+        background-color: #f0ebe1 !important;
+        color: #000000 !important;
+    }
+
+    .bt-admin-map-container .leaflet-control-attribution,
+    .leaflet-control-attribution {
+        display: none !important;
+    }
 </style>
+
+<script>
+window.regencyMapPicker = function() {
+    return {
+        map: null,
+        marker: null,
+        displayLat: null,
+        displayLng: null,
+
+        parseCoord(val) {
+            if (val === null || val === undefined || val === '') return null;
+            if (typeof val === 'number') return isNaN(val) ? null : val;
+            const normalized = String(val).trim().replace(',', '.');
+            const num = parseFloat(normalized);
+            return isNaN(num) ? null : num;
+        },
+
+        init() {
+            this.ensureLeaflet(() => {
+                this.$nextTick(() => {
+                    this.mountMap();
+                });
+            });
+        },
+
+        ensureLeaflet(callback) {
+            if (window.L && typeof window.L.map === 'function') {
+                callback();
+                return;
+            }
+
+            const checkInterval = setInterval(() => {
+                if (window.L && typeof window.L.map === 'function') {
+                    clearInterval(checkInterval);
+                    callback();
+                }
+            }, 50);
+
+            // Fallback timeout to prevent waiting indefinitely
+            setTimeout(() => {
+                clearInterval(checkInterval);
+                if (window.L && typeof window.L.map === 'function') {
+                    callback();
+                }
+            }, 5000);
+        },
+
+        mountMap() {
+            const container = this.$refs.mapBox;
+            if (!container || !window.L) return;
+
+            // Safe cleanup if re-mounting or container already bound
+            if (this.map) {
+                this.map.remove();
+                this.map = null;
+                this.marker = null;
+            } else if (container._leaflet_id) {
+                delete container._leaflet_id;
+            }
+
+            // Read initial coordinates from Livewire
+            const curLat = this.parseCoord(this.$wire.get('data.latitude'));
+            const curLng = this.parseCoord(this.$wire.get('data.longitude'));
+            const hasCoords = curLat !== null && curLng !== null && (curLat !== 0 || curLng !== 0);
+
+            const initialCenter = hasCoords ? [curLat, curLng] : [-2.5489, 118.0149];
+            const initialZoom = hasCoords ? 10 : 5;
+
+            if (hasCoords) {
+                this.displayLat = Math.round(curLat * 10000000) / 10000000;
+                this.displayLng = Math.round(curLng * 10000000) / 10000000;
+            }
+
+            // Create Leaflet Map Instance (No watermark / attribution)
+            this.map = L.map(container, {
+                zoomControl: true,
+                scrollWheelZoom: true,
+                attributionControl: false
+            }).setView(initialCenter, initialZoom);
+
+            // Add OpenStreetMap tile layer
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 18,
+                attribution: ''
+            }).addTo(this.map);
+
+            // Place initial marker if coordinates exist
+            if (hasCoords) {
+                this.placeMarker(curLat, curLng);
+            }
+
+            // Map click listener -> update coordinates
+            this.map.on('click', (e) => {
+                this.applyNewCoordinates(e.latlng.lat, e.latlng.lng);
+            });
+
+            // Force map layout computation so tiles load immediately
+            [100, 300, 600, 1000].forEach((delay) => {
+                setTimeout(() => {
+                    if (this.map) this.map.invalidateSize();
+                }, delay);
+            });
+
+            window.addEventListener('resize', () => {
+                if (this.map) this.map.invalidateSize();
+            });
+
+            if (window.ResizeObserver) {
+                const ro = new ResizeObserver(() => {
+                    if (this.map) this.map.invalidateSize();
+                });
+                ro.observe(container);
+            }
+
+            // Watch external coordinate changes (e.g. from typing name in form or detection)
+            this.$watch('$wire.data.latitude', (val) => {
+                this.handleExternalSync(val, this.$wire.get('data.longitude'));
+            });
+
+            this.$watch('$wire.data.longitude', (val) => {
+                this.handleExternalSync(this.$wire.get('data.latitude'), val);
+            });
+        },
+
+        getPinIcon() {
+            return L.divIcon({
+                className: 'bt-map-picker-pin',
+                html: '<div style="position: relative; width: 28px; height: 36px; display: flex; align-items: center; justify-content: center;"><svg style="width: 28px; height: 36px; filter: drop-shadow(0 2px 5px rgba(0,0,0,0.35));" viewBox="0 0 24 32" fill="none"><path d="M12 0C5.373 0 0 5.373 0 12c0 9 12 20 12 20s12-11 12-20c0-6.627-5.373-12-12-12z" fill="#181615"/><circle cx="12" cy="11" r="4.5" fill="#f4f0ea"/></svg></div>',
+                iconSize: [28, 36],
+                iconAnchor: [14, 36]
+            });
+        },
+
+        placeMarker(lat, lng) {
+            if (this.marker) {
+                this.marker.setLatLng([lat, lng]);
+                return;
+            }
+
+            this.marker = L.marker([lat, lng], { 
+                draggable: true,
+                icon: this.getPinIcon()
+            }).addTo(this.map);
+
+            this.marker.on('dragend', (e) => {
+                const pos = e.target.getLatLng();
+                this.applyNewCoordinates(pos.lat, pos.lng, false);
+            });
+        },
+
+        applyNewCoordinates(lat, lng, pan = true) {
+            const roundedLat = Math.round(lat * 10000000) / 10000000;
+            const roundedLng = Math.round(lng * 10000000) / 10000000;
+
+            this.displayLat = roundedLat;
+            this.displayLng = roundedLng;
+
+            this.placeMarker(roundedLat, roundedLng);
+
+            if (pan && this.map) {
+                this.map.panTo([roundedLat, roundedLng]);
+            }
+
+            this.$wire.set('data.latitude', roundedLat);
+            this.$wire.set('data.longitude', roundedLng);
+        },
+
+        handleExternalSync(newLat, newLng) {
+            const lat = this.parseCoord(newLat);
+            const lng = this.parseCoord(newLng);
+
+            if (lat === null || lng === null || (lat === 0 && lng === 0)) {
+                return;
+            }
+
+            if (lat === this.displayLat && lng === this.displayLng) {
+                return;
+            }
+
+            this.displayLat = lat;
+            this.displayLng = lng;
+            this.placeMarker(lat, lng);
+
+            if (this.map) {
+                this.map.flyTo([lat, lng], 10, { duration: 1.2 });
+            }
+        },
+
+        resetView() {
+            if (this.map) {
+                this.map.flyTo([-2.5489, 118.0149], 5, { duration: 1 });
+            }
+        }
+    };
+};
+</script>

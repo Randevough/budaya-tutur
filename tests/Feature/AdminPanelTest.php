@@ -50,6 +50,16 @@ class AdminPanelTest extends TestCase
         $response->assertStatus(200);
     }
 
+    public function test_authenticated_admin_can_access_regencies_create_page(): void
+    {
+        $admin = User::factory()->create();
+
+        $response = $this->actingAs($admin)->get('/admin/regencies/create');
+        $response->assertStatus(200);
+        $response->assertSee('Titik Peta & Koordinat Centroid');
+        $response->assertSee('regency-map-picker-box');
+    }
+
     public function test_authenticated_admin_can_access_contact_messages_resource(): void
     {
         $admin = User::factory()->create();
