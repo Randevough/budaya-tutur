@@ -2,10 +2,8 @@
 
 namespace App\Filament\Resources\ContactMessages;
 
-use App\Filament\Resources\ContactMessages\Pages\CreateContactMessage;
-use App\Filament\Resources\ContactMessages\Pages\EditContactMessage;
 use App\Filament\Resources\ContactMessages\Pages\ListContactMessages;
-use App\Filament\Resources\ContactMessages\Schemas\ContactMessageForm;
+use App\Filament\Resources\ContactMessages\Schemas\ContactMessageInfolist;
 use App\Filament\Resources\ContactMessages\Tables\ContactMessagesTable;
 use App\Models\ContactMessage;
 use BackedEnum;
@@ -13,6 +11,7 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
 use UnitEnum;
 
 class ContactMessageResource extends Resource
@@ -30,6 +29,11 @@ class ContactMessageResource extends Resource
     protected static ?string $pluralModelLabel = 'Pesan Masuk';
 
     public static function canCreate(): bool
+    {
+        return false;
+    }
+
+    public static function canEdit(Model $record): bool
     {
         return false;
     }
@@ -56,7 +60,12 @@ class ContactMessageResource extends Resource
 
     public static function form(Schema $schema): Schema
     {
-        return ContactMessageForm::configure($schema);
+        return ContactMessageInfolist::configure($schema);
+    }
+
+    public static function infolist(Schema $schema): Schema
+    {
+        return ContactMessageInfolist::configure($schema);
     }
 
     public static function table(Table $table): Table
@@ -75,8 +84,6 @@ class ContactMessageResource extends Resource
     {
         return [
             'index' => ListContactMessages::route('/'),
-            'create' => CreateContactMessage::route('/create'),
-            'edit' => EditContactMessage::route('/{record}/edit'),
         ];
     }
 }

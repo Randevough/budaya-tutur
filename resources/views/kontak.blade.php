@@ -57,10 +57,14 @@
                             <input type="text" 
                                    name="name" 
                                    id="name" 
+                                   maxlength="100"
                                    required 
                                    value="{{ old('name') }}"
                                    placeholder="Nama penutur / pengusul..."
                                    class="w-full bg-linen-100 border border-linen-300 focus:border-ink-900 text-ink-900 text-base sm:text-sm px-4 py-3 sm:py-3.5 tracking-normal placeholder-ink-400 focus:outline-none focus:ring-1 focus:ring-ink-900 transition-colors @error('name') border-red-500 @enderror">
+                            <p id="name-warning" class="hidden text-xs text-amber-700 font-medium tracking-wide">
+                                Batas maksimal 100 karakter telah tercapai.
+                            </p>
                             @error('name')
                                 <span class="text-xs text-red-600 font-medium tracking-wide">{{ $message }}</span>
                             @enderror
@@ -74,10 +78,14 @@
                             <input type="email" 
                                    name="email" 
                                    id="email" 
+                                   maxlength="100"
                                    required 
                                    value="{{ old('email') }}"
                                    placeholder="alamat@surel.com"
                                    class="w-full bg-linen-100 border border-linen-300 focus:border-ink-900 text-ink-900 text-base sm:text-sm px-4 py-3 sm:py-3.5 tracking-normal placeholder-ink-400 focus:outline-none focus:ring-1 focus:ring-ink-900 transition-colors @error('email') border-red-500 @enderror">
+                            <p id="email-warning" class="hidden text-xs text-amber-700 font-medium tracking-wide">
+                                Batas maksimal 100 karakter telah tercapai.
+                            </p>
                             @error('email')
                                 <span class="text-xs text-red-600 font-medium tracking-wide">{{ $message }}</span>
                             @enderror
@@ -92,9 +100,13 @@
                         <input type="text" 
                                name="subject" 
                                id="subject" 
+                               maxlength="200"
                                value="{{ old('subject') }}"
                                placeholder="Contoh: Usulan Dokumentasi Tradisi Tutur Desa..."
                                class="w-full bg-linen-100 border border-linen-300 focus:border-ink-900 text-ink-900 text-base sm:text-sm px-4 py-3 sm:py-3.5 tracking-normal placeholder-ink-400 focus:outline-none focus:ring-1 focus:ring-ink-900 transition-colors @error('subject') border-red-500 @enderror">
+                        <p id="subject-warning" class="hidden text-xs text-amber-700 font-medium tracking-wide">
+                            Batas maksimal 200 karakter telah tercapai.
+                        </p>
                         @error('subject')
                             <span class="text-xs text-red-600 font-medium tracking-wide">{{ $message }}</span>
                         @enderror
@@ -108,9 +120,13 @@
                         <textarea name="message" 
                                   id="message" 
                                   rows="6" 
+                                  maxlength="1000"
                                   required 
                                   placeholder="Ceritakan tentang materi tutur, riwayat penutur, atau maksud pesan Anda secara ringkas..."
                                   class="w-full bg-linen-100 border border-linen-300 focus:border-ink-900 text-ink-900 text-base sm:text-sm px-4 py-3 sm:py-3.5 tracking-normal placeholder-ink-400 focus:outline-none focus:ring-1 focus:ring-ink-900 transition-colors @error('message') border-red-500 @enderror">{{ old('message') }}</textarea>
+                        <p id="message-warning" class="hidden text-xs text-amber-700 font-medium tracking-wide">
+                            Batas maksimal 1.000 karakter telah tercapai.
+                        </p>
                         @error('message')
                             <span class="text-xs text-red-600 font-medium tracking-wide">{{ $message }}</span>
                         @enderror
@@ -127,3 +143,36 @@
         </div>
     </section>
 @endsection
+
+@push('scripts')
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const fields = [
+            { inputId: 'name', warningId: 'name-warning', max: 100 },
+            { inputId: 'email', warningId: 'email-warning', max: 100 },
+            { inputId: 'subject', warningId: 'subject-warning', max: 200 },
+            { inputId: 'message', warningId: 'message-warning', max: 1000 },
+        ];
+
+        fields.forEach(({ inputId, warningId, max }) => {
+            const input = document.getElementById(inputId);
+            const warning = document.getElementById(warningId);
+            if (input && warning) {
+                const checkLimit = () => {
+                    if (input.value.length >= max) {
+                        warning.classList.remove('hidden');
+                        input.classList.add('border-amber-600');
+                    } else {
+                        warning.classList.add('hidden');
+                        input.classList.remove('border-amber-600');
+                    }
+                };
+
+                input.addEventListener('input', checkLimit);
+                input.addEventListener('paste', () => setTimeout(checkLimit, 10));
+                checkLimit();
+            }
+        });
+    });
+</script>
+@endpush

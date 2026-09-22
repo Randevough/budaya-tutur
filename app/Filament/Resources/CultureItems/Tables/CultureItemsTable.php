@@ -28,8 +28,8 @@ class CultureItemsTable
                 ImageColumn::make('cover_image_path')
                     ->label('Sampul')
                     ->defaultImageUrl(fn (CultureItem $record): ?string => $record->youtube_id ? "https://img.youtube.com/vi/{$record->youtube_id}/mqdefault.jpg" : null)
-                    ->width(68)
-                    ->height(38)
+                    ->imageWidth(68)
+                    ->imageHeight(38)
                     ->extraImgAttributes([
                         'class' => 'rounded-md object-cover border border-stone-200/90 shadow-2xs',
                     ]),

@@ -49,7 +49,10 @@ class CultureItem extends Model
     public function getThumbnailUrlAttribute(): string
     {
         if ($this->cover_image_path && Storage::disk('public')->exists($this->cover_image_path)) {
-            return Storage::disk('public')->url($this->cover_image_path);
+            /** @var \Illuminate\Filesystem\FilesystemAdapter $disk */
+            $disk = Storage::disk('public');
+
+            return $disk->url($this->cover_image_path);
         }
 
         if ($this->youtube_id) {

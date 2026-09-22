@@ -30,7 +30,9 @@ Route::get('/arsip/{slug}', [ArsipController::class, 'show'])->name('arsip.show'
 
 // Contact Form (DB-First Fallback + SMTP)
 Route::get('/kontak', [ContactController::class, 'index'])->name('kontak');
-Route::post('/kontak', [ContactController::class, 'store'])->name('kontak.store');
+Route::post('/kontak', [ContactController::class, 'store'])
+    ->middleware('throttle:10,1')
+    ->name('kontak.store');
 
 // Donation Page (Editorial Support & Archive Preservation)
 Route::get('/donasi', [DonationController::class, 'index'])->name('donasi');

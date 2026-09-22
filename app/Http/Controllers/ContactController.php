@@ -24,26 +24,38 @@ class ContactController extends Controller
             return back()->with('success', 'Pesan Anda telah berhasil dikirimkan.');
         }
 
-        // 2. Standard validation
+        // 2. Standard validation with anti-abuse max character caps
         $validated = $request->validate([
-            'name' => 'required|string|max:150',
-            'email' => 'required|email|max:150',
+            'name' => 'required|string|max:100',
+            'email' => 'required|email|max:100',
             'subject' => 'nullable|string|max:200',
-            'message' => 'required|string|max:3000',
+            'message' => 'required|string|max:1000',
+        ], [
+            'name.max' => 'Nama lengkap maksimal 100 karakter.',
+            'email.max' => 'Alamat email maksimal 100 karakter.',
+            'subject.max' => 'Subjek maksimal 200 karakter.',
+            'message.max' => 'Isi pesan maksimal 1.000 karakter.',
         ]);
 
-        // 3. Safety net: save to database FIRST
+        // 3. Security Sanitization (Defense-in-depth against XSS & CRLF Email Header Injection)
+        $cleanName = trim(preg_replace('/[\r\n\t]+/', ' ', strip_tags($validated['name'])));
+        $cleanEmail = trim(filter_var($validated['email'], FILTER_SANITIZE_EMAIL));
+        $rawSubject = $validated['subject'] ?? 'Pesan Narahubung Budaya Tutur';
+        $cleanSubject = trim(preg_replace('/[\r\n\t]+/', ' ', strip_tags($rawSubject))) ?: 'Pesan Narahubung Budaya Tutur';
+        $cleanMessage = trim(strip_tags($validated['message']));
+
+        // 4. Safety net: save sanitized data to database FIRST
         $contactMessage = ContactMessage::create([
-            'name' => $validated['name'],
-            'email' => $validated['email'],
-            'subject' => $validated['subject'] ?? 'Pesan Narahubung Budaya Tutur',
-            'message' => $validated['message'],
+            'name' => $cleanName,
+            'email' => $cleanEmail,
+            'subject' => $cleanSubject,
+            'message' => $cleanMessage,
             'is_sent_via_smtp' => false,
         ]);
 
         // 4. Attempt SMTP email transmission in try/catch block
         try {
-            $toEmail = config('mail.from.address');
+            $toEmail = env('CONTACT_NOTIFICATION_EMAIL', config('mail.from.address'));
 
             Mail::raw(
                 "Pesan baru dari situs Budaya Tutur:\n\n" .

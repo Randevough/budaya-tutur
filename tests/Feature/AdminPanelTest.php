@@ -56,6 +56,10 @@ class AdminPanelTest extends TestCase
 
         $response = $this->actingAs($admin)->get('/admin/contact-messages');
         $response->assertStatus(200);
+        $response->assertDontSee('Buat Pesan Masuk');
+
+        $createResponse = $this->actingAs($admin)->get('/admin/contact-messages/create');
+        $createResponse->assertStatus(404);
     }
 
     public function test_indonesia_wilayah_seeder_populates_38_provinces_and_514_regencies(): void

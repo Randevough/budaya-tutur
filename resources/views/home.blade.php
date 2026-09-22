@@ -4,7 +4,7 @@
 
 @section('content')
     <!-- 1. HERO SECTION [DARK: Obsidian #121110 Velvet] -->
-    <section class="relative bg-obsidian-900 border-b border-obsidian-700 min-h-0 sm:min-h-[calc(100vh-5rem)] sm:min-h-[calc(100dvh-5rem)] py-14 sm:py-20 md:py-24 flex flex-col justify-center overflow-hidden">
+    <section class="relative bg-obsidian-900 border-b border-obsidian-700 min-h-0 sm:min-h-[calc(100dvh-5rem)] py-14 sm:py-20 md:py-24 flex flex-col justify-center overflow-hidden">
         <!-- Subtle Gallery Ambient Spotlight (Subtle smoky bone aura and warm peat vignette) -->
         <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_65%_at_50%_38%,_#221e1a_0%,_#171513_38%,_#121110_72%,_#080807_100%)] pointer-events-none"></div>
         <div class="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] sm:w-[900px] h-[320px] sm:h-[420px] bg-[radial-gradient(ellipse_at_center,_rgba(244,240,234,0.06)_0%,_rgba(180,165,150,0.03)_45%,_transparent_70%)] blur-[70px] pointer-events-none"></div>

@@ -177,6 +177,18 @@ class PublicPagesTest extends TestCase
         ]);
     }
 
+    public function test_contact_form_rejects_messages_exceeding_max_characters(): void
+    {
+        $response = $this->post('/kontak', [
+            'name' => 'Maria Rambu',
+            'email' => 'maria@example.com',
+            'subject' => 'Usulan Kidung Sumba',
+            'message' => str_repeat('A', 1001),
+        ]);
+
+        $response->assertSessionHasErrors(['message']);
+    }
+
     public function test_contact_form_honeypot_ignores_spambots(): void
     {
         $response = $this->post('/kontak', [
@@ -189,6 +201,25 @@ class PublicPagesTest extends TestCase
         $response->assertRedirect();
         $this->assertDatabaseMissing('contact_messages', [
             'name' => 'Spambot',
+        ]);
+    }
+
+    public function test_contact_form_sanitizes_xss_and_header_injection(): void
+    {
+        $response = $this->post('/kontak', [
+            'name' => "John Doe\r\nBcc: evil@example.com<script>alert('xss')</script>",
+            'email' => 'john@example.com',
+            'subject' => "Subjek Rekaman\r\nTo: hacked@example.com<b>Bold</b>",
+            'message' => "Halo tim budaya tutur <script>alert('pwned')</script> <iframe src='malicious.com'></iframe>",
+        ]);
+
+        $response->assertRedirect();
+        $response->assertSessionHas('success');
+
+        $this->assertDatabaseHas('contact_messages', [
+            'name' => "John Doe Bcc: evil@example.comalert('xss')",
+            'subject' => 'Subjek Rekaman To: hacked@example.comBold',
+            'message' => "Halo tim budaya tutur alert('pwned')",
         ]);
     }
 

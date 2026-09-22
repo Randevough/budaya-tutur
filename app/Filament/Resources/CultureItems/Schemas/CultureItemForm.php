@@ -6,8 +6,8 @@ use App\Models\CultureItem;
 use App\Models\Regency;
 use Filament\Actions\Action;
 use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Select;
+use Filament\Infolists\Components\TextEntry;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Toggle;
@@ -113,9 +113,10 @@ class CultureItemForm
                                 })
                                 ->dehydrateStateUsing(fn (?string $state) => CultureItemForm::extractYoutubeId($state)),
 
-                            Placeholder::make('youtube_preview')
+                            TextEntry::make('youtube_preview')
                                 ->hiddenLabel()
-                                ->content(function (callable $get): ?Htmlable {
+                                ->html()
+                                ->state(function (callable $get): ?Htmlable {
                                     $raw = $get('youtube_id');
                                     $id = CultureItemForm::extractYoutubeId($raw);
 
@@ -147,7 +148,8 @@ class CultureItemForm
                                 ->label('Foto Sampul Kurasi (Opsional)')
                                 ->directory('covers')
                                 ->image()
-                                ->imageCropAspectRatio('16:9')
+                                ->imageAspectRatio('16:9')
+                                ->automaticallyCropImagesToAspectRatio()
                                 ->helperText('Opsional. Kosongkan untuk memakai thumbnail YouTube.')
                                 ->columnSpanFull(),
                         ]),

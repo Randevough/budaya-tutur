@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\ContactMessages\Tables;
 
+use App\Models\ContactMessage;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\ViewAction;
@@ -16,34 +17,40 @@ class ContactMessagesTable
     {
         return $table
             ->defaultSort('created_at', 'desc')
+            ->recordAction('view')
             ->columns([
                 TextColumn::make('name')
                     ->label('Nama Pengirim')
                     ->searchable()
-                    ->weight('bold'),
+                    ->sortable()
+                    ->weight('bold')
+                    ->description(fn (ContactMessage $record): string => $record->email),
 
                 TextColumn::make('email')
                     ->label('Alamat Email')
                     ->searchable()
                     ->copyable()
-                    ->icon(Heroicon::OutlinedEnvelope),
+                    ->icon(Heroicon::OutlinedEnvelope)
+                    ->visibleFrom('md'),
 
                 TextColumn::make('subject')
                     ->label('Subjek Pesan')
                     ->searchable()
-                    ->limit(40)
+                    ->limit(35)
+                    ->tooltip(fn (ContactMessage $record): string => $record->subject)
                     ->color('gray'),
 
                 TextColumn::make('is_sent_via_smtp')
-                    ->label('Status Pengiriman')
-                    ->formatStateUsing(fn (bool $state): string => $state ? 'Terkirim via Email' : 'Tersimpan di DB (Fallback)')
+                    ->label('Status')
+                    ->formatStateUsing(fn (bool $state): string => $state ? 'Terkirim Email' : 'Fallback DB')
                     ->badge()
                     ->color(fn (bool $state): string => $state ? 'success' : 'warning'),
 
                 TextColumn::make('created_at')
                     ->label('Waktu Diterima')
                     ->dateTime('d M Y, H:i')
-                    ->sortable(),
+                    ->sortable()
+                    ->visibleFrom('lg'),
             ])
             ->filters([
                 TernaryFilter::make('is_sent_via_smtp')
@@ -54,7 +61,9 @@ class ContactMessagesTable
             ->recordActions([
                 ViewAction::make()
                     ->label('Baca Pesan')
-                    ->modalHeading('Rincian Pesan Kontak Masuk'),
+                    ->icon(Heroicon::OutlinedEye)
+                    ->modalHeading('Rincian Pesan Masuk')
+                    ->modalWidth('2xl'),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

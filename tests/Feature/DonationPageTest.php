@@ -81,8 +81,9 @@ class DonationPageTest extends TestCase
         $editResponse->assertSee('Aktifkan Halaman Donasi');
         $editResponse->assertSee('Awalan 08 atau 62');
         $editResponse->assertDontSee('normalisasi');
-        $editResponse->assertDontSee('dinormalisasi');
-        $this->assertEquals('/storage/test.png', \Illuminate\Support\Facades\Storage::disk('public')->url('test.png'));
+        /** @var \Illuminate\Filesystem\FilesystemAdapter $publicDisk */
+        $publicDisk = \Illuminate\Support\Facades\Storage::disk('public');
+        $this->assertEquals('/storage/test.png', $publicDisk->url('test.png'));
     }
 
     public function test_whatsapp_number_normalization(): void
