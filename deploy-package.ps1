@@ -34,8 +34,10 @@ Write-Host "`n[3/3] Packaging files into build-preview.zip..." -ForegroundColor 
 $excludePatterns = @(
     "^\.git(\\|$)",
     "^\.agents(\\|$)",
+    "^AGENTS\.md$",
     "^\.env(\..+)?$",
     "^public[\\/]hot$",
+    "^public[\\/]storage(\\|$)",
     "^database[\\/].*\.sqlite(-.+)?$",
     "^node_modules(\\|$)",
     "^tests(\\|$)",
@@ -70,6 +72,14 @@ foreach ($file in $allFiles) {
     
     if (-not $skip) {
         $entryName = $relativePath.Replace('\', '/')
+        
+        # Route files into exact Hostinger directory structure
+        if ($entryName -like "public/*") {
+            $entryName = "public_html/" + $entryName.Substring(7)
+        } else {
+            $entryName = "budaya-tutur/" + $entryName
+        }
+
         [System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile($zipArchive, $file.FullName, $entryName, [System.IO.Compression.CompressionLevel]::Optimal) | Out-Null
         $count++
     }
@@ -83,8 +93,7 @@ $sizeMb = [math]::Round($zipItem.Length / 1MB, 2)
 Write-Host "`n[SUCCESS] Package created successfully!" -ForegroundColor Green
 Write-Host "File: $outputZip ($sizeMb MB, $count files included)" -ForegroundColor Green
 Write-Host "`nDeployment Steps for Hostinger:" -ForegroundColor Cyan
-Write-Host "1. Upload 'build-preview.zip' to Hostinger File Manager inside your subdomain folder (e.g. 'preview')."
-Write-Host "2. Extract the ZIP archive."
-Write-Host "3. Ensure subdomain document root is set to 'preview/public'."
-Write-Host "4. Create .env with production credentials (refer to .env.example)."
-Write-Host "5. SSH into Hostinger and run: 'php artisan migrate --force' && 'php artisan storage:link'."
+Write-Host "1. Upload 'build-preview.zip' to the folder where 'budaya-tutur' and 'public_html' are located."
+Write-Host "2. Extract the ZIP archive (it will automatically update 'budaya-tutur/' and 'public_html/')."
+Write-Host "3. Delete 'build-preview.zip' after extraction."
+Write-Host "4. Open Hostinger Terminal or SSH and run: 'cd budaya-tutur && php artisan optimize:clear'."
