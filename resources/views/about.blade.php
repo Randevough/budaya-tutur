@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Tentang — Budaya Tutur')
+@section('title', 'Tentang | Budaya Tutur')
 
 @section('content')
     <!-- 1. EDITORIAL HERO SECTION [DARK: Obsidian #121110 Velvet] -->

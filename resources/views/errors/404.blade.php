@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Halaman Tidak Ditemukan — Budaya Tutur')
+@section('title', 'Halaman Tidak Ditemukan | Budaya Tutur')
 @section('meta_description', 'Halaman atau rekaman tutur lisan yang Anda cari tidak dapat ditemukan atau telah dipindahkan.')
 
 @section('content')

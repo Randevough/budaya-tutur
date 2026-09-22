@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $item->title . ' : Budaya Tutur')
+@section('title', $item->title . ' | Budaya Tutur')
 @section('meta_description', Str::limit(strip_tags($item->excerpt ?? $item->description), 160))
 @section('og_title', $item->title . ' : ' . $item->regency->name)
 @section('og_description', Str::limit(strip_tags($item->excerpt ?? $item->description), 160))
@@ -181,7 +181,7 @@
                                     </button>
 
                                     <!-- 3. Quick WhatsApp Share Button (44px min tap target) -->
-                                    <a href="https://api.whatsapp.com/send?text={{ urlencode($item->title . ' — ' . url()->current()) }}" 
+                                    <a href="https://api.whatsapp.com/send?text={{ urlencode($item->title . ' | ' . url()->current()) }}" 
                                        target="_blank" 
                                        rel="noopener noreferrer" 
                                        class="inline-flex items-center justify-center space-x-1.5 px-3.5 py-2.5 min-h-[44px] border border-linen-300 hover:border-ink-900 bg-white hover:bg-linen-100 text-ink-800 rounded text-xs font-sans font-medium transition-colors shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-ink-900"
@@ -224,7 +224,7 @@
                     @foreach($relatedItems as $related)
                         <article class="group border border-linen-300 bg-linen-50 hover:border-ink-800 transition-all duration-300 flex flex-col shadow-sm hover:shadow-md hover:-translate-y-1.5">
                             <!-- Thumbnail Preview with Grayscale-to-Color Transition -->
-                            <a href="{{ route('arsip.show', $related->slug) }}" class="relative block aspect-[16/10] overflow-hidden bg-linen-200">
+                            <a href="{{ route('arsip.show', $related->slug) }}" class="relative block aspect-video overflow-hidden bg-linen-200">
                                 @if($related->thumbnail_url)
                                     <img src="{{ $related->thumbnail_url }}" 
                                          alt="{{ $related->title }}"
@@ -314,7 +314,7 @@ document.addEventListener('DOMContentLoaded', function () {
         shareTrigger.addEventListener('click', function (e) {
             e.preventDefault();
             const shareData = {
-                title: @json($item->title . ' — Budaya Tutur'),
+                title: @json($item->title . ' | Budaya Tutur'),
                 text: @json(Str::limit(strip_tags($item->excerpt ?? $item->description), 120)),
                 url: window.location.href
             };

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Narahubung & Kontribusi Rekaman — Budaya Tutur')
+@section('title', 'Narahubung & Kontribusi Rekaman | Budaya Tutur')
 @section('meta_description', 'Kirimkan pesan, usulan rekaman tutur, atau pertanyaan pengarsipan kepada tim kurasi Budaya Tutur.')
 
 @section('content')

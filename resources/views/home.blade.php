@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Budaya Tutur — Arsip Suara & Cerita Lisan Nusantara')
+@section('title', 'Budaya Tutur | Arsip Suara & Cerita Lisan Nusantara')
 
 @section('content')
     <!-- 1. HERO SECTION [DARK: Obsidian #121110 Velvet] -->
@@ -159,12 +159,13 @@
                 @forelse($featuredItems as $item)
                     <a href="{{ route('arsip.show', $item->slug) }}" class="group bg-obsidian-850 hover:bg-obsidian-800 border border-obsidian-700 transition-all duration-300 ease-out flex flex-col shadow-lg hover:shadow-2xl hover:shadow-black/90 hover:-translate-y-1.5 cursor-pointer focus:outline-none focus:ring-1 focus:ring-ink-200">
                         <!-- Thumbnail Wrapper with Grayscale Filter (Reveals Color on Hover) -->
-                        <div class="relative block aspect-[16/10] overflow-hidden bg-obsidian-950">
+                        <div class="relative block aspect-video overflow-hidden bg-obsidian-950">
                             @if($item->thumbnail_url)
                                 <img src="{{ $item->thumbnail_url }}" 
                                      alt="{{ $item->title }}"
                                      class="w-full h-full object-cover grayscale contrast-110 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700 ease-out"
-                                     loading="lazy">
+                                     loading="lazy"
+                                     onerror="this.src='https://img.youtube.com/vi/{{ $item->youtube_id }}/hqdefault.jpg'">
                             @else
                                 <div class="w-full h-full flex items-center justify-center bg-obsidian-950 text-ink-500 text-xs uppercase tracking-widest">
                                     Rekaman Suara
