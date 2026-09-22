@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Vite;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -26,6 +27,11 @@ class AppServiceProvider extends ServiceProvider
             if (file_exists($hotFile) && !in_array(request()->getHost(), ['localhost', '127.0.0.1'])) {
                 @unlink($hotFile);
             }
+        }
+
+        // Auto-detect build directory when extracted into public_html with nested public/build
+        if (!file_exists(public_path('build/manifest.json')) && file_exists(public_path('public/build/manifest.json'))) {
+            Vite::useBuildDirectory('public/build');
         }
     }
 }
