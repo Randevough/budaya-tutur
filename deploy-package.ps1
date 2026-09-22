@@ -44,16 +44,30 @@ $excludePatterns = @(
     "^\.phpunit",
     "^build-preview\.zip$",
     "^deploy\.zip$",
-    "^storage\\logs\\.*\.log$",
-    "^storage\\framework\\cache\\data\\.*",
-    "^storage\\framework\\sessions\\.*",
-    "^storage\\framework\\views\\.*"
+    "^storage[\\/]logs[\\/].*\.log$",
+    "^storage[\\/]framework[\\/]cache[\\/]data[\\/].+",
+    "^storage[\\/]framework[\\/]sessions[\\/][a-zA-Z0-9_-]+$",
+    "^storage[\\/]framework[\\/]views[\\/].*\.php$"
 )
 
 Add-Type -AssemblyName System.IO.Compression
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 
 $zipArchive = [System.IO.Compression.ZipFile]::Open($outputZip, [System.IO.Compression.ZipArchiveMode]::Create)
+
+# Explicitly ensure critical Laravel storage and cache directories exist in the archive
+$essentialDirs = @(
+    "budaya-tutur/storage/app/public/",
+    "budaya-tutur/storage/framework/cache/data/",
+    "budaya-tutur/storage/framework/sessions/",
+    "budaya-tutur/storage/framework/views/",
+    "budaya-tutur/storage/logs/",
+    "budaya-tutur/bootstrap/cache/",
+    "public_html/"
+)
+foreach ($dir in $essentialDirs) {
+    $zipArchive.CreateEntry($dir) | Out-Null
+}
 
 $allFiles = Get-ChildItem -Path $PSScriptRoot -Recurse -File
 
