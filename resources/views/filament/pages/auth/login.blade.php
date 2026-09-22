@@ -9,7 +9,7 @@
             background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0 L40 20 L20 40 L0 20 Z' fill='none' stroke='%232c2825' stroke-width='0.75' stroke-opacity='0.045'/%3E%3Cpath d='M20 6 L34 20 L20 34 L6 20 Z' fill='none' stroke='%232c2825' stroke-width='0.5' stroke-opacity='0.03'/%3E%3Ccircle cx='20' cy='20' r='1.5' fill='%232c2825' fill-opacity='0.04'/%3E%3C/svg%3E") !important;
             background-repeat: repeat !important;
             color: #181615 !important;
-            font-family: 'Aktiv Grotesk Condensed', 'Plus Jakarta Sans', system-ui, sans-serif !important;
+            font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
         }
 
         /* Archival Paper Form Container */
@@ -196,7 +196,7 @@
             background-color: #0c0b0a !important;
             color: #fdfbf7 !important;
             border: 1px solid #0c0b0a !important;
-            font-family: 'Aktiv Grotesk Condensed', 'Plus Jakarta Sans', system-ui, sans-serif !important;
+            font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
             font-size: 0.8125rem !important;
             font-weight: 600 !important;
             letter-spacing: 0.18em !important;
@@ -241,7 +241,7 @@
                 </div>
             </a>
 
-            <h1 class="font-serif text-2xl sm:text-3xl font-bold tracking-[0.16em] uppercase text-[#181615] leading-tight" style="font-family: 'Mencken Std Head', 'Cinzel', Georgia, serif;">
+            <h1 class="font-serif text-2xl sm:text-3xl font-bold tracking-[0.16em] uppercase text-[#181615] leading-tight" style="font-family: 'Cinzel', Georgia, serif;">
                 Budaya Tutur
             </h1>
         </div>

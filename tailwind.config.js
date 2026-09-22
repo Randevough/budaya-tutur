@@ -40,7 +40,7 @@ export default {
         }
       },
       fontFamily: {
-        serif: ['"Mencken Std Head"', '"Mencken Std"', '"Cinzel"', '"Playfair Display"', 'Georgia', 'serif'],
+        serif: ['"Cinzel"', '"Playfair Display"', 'Georgia', 'Cambria', 'serif'],
         sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
       },
     },

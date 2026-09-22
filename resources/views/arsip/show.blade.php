@@ -46,8 +46,8 @@
         <!-- Center Stage: Title + Media Player unified as ONE vertically centered composite unit -->
         <div class="flex-1 min-h-0 flex flex-col items-center justify-center max-w-5xl mx-auto px-4 sm:px-8 w-full">
             <div class="w-full flex flex-col items-center my-auto">
-                <!-- Proportional Editorial Title in Mencken Std Head, snug directly above player -->
-                <h1 class="font-serif text-lg sm:text-2xl md:text-3xl font-bold tracking-[0.03em] uppercase text-ink-100 text-center leading-snug max-w-3xl mx-auto mb-4 sm:mb-5 flex-shrink-0" style="font-family: 'Mencken Std Head', 'Cinzel', Georgia, serif;">
+                <!-- Proportional Editorial Title in Cinzel, snug directly above player -->
+                <h1 class="font-serif text-lg sm:text-2xl md:text-3xl font-bold tracking-[0.03em] uppercase text-ink-100 text-center leading-snug max-w-3xl mx-auto mb-4 sm:mb-5 flex-shrink-0" style="font-family: 'Cinzel', Georgia, serif;">
                     {{ $item->title }}
                 </h1>
 
