@@ -28,9 +28,9 @@
 
 @section('content')
     <!-- 1. FULL VIEWPORT THEATER HERO [DARK: Responsive Proportional Layout] -->
-    <header class="h-auto min-h-0 lg:h-[calc(100vh-5rem)] lg:max-h-[calc(100vh-5rem)] flex flex-col pt-6 sm:pt-8 pb-8 lg:pb-8 bg-obsidian-900 text-ink-100 border-b border-obsidian-700 relative overflow-hidden">
-        <!-- Top Utility Bar: Back to Archive & Region (Restored) -->
-        <div class="max-w-5xl mx-auto px-4 sm:px-8 w-full flex-shrink-0 mb-4 lg:mb-0">
+    <header class="h-auto min-h-0 lg:h-[calc(100vh-5rem)] lg:max-h-[calc(100vh-5rem)] flex flex-col pt-4 sm:pt-6 pb-6 lg:pb-6 bg-obsidian-900 text-ink-100 border-b border-obsidian-700 relative overflow-hidden">
+        <!-- Top Utility Bar: Back to Archive & Region -->
+        <div class="max-w-6xl mx-auto px-4 sm:px-8 w-full flex-shrink-0 mb-3 sm:mb-4 lg:mb-2">
             <div class="flex items-center justify-between text-xs uppercase tracking-[0.2em] text-ink-400">
                 <a href="{{ route('arsip.index') }}" class="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.2em] text-ink-400 hover:text-ink-100 transition-colors group min-h-[44px]">
                     <span class="transition-transform duration-200 group-hover:-translate-x-1">&larr;</span>
@@ -38,21 +38,22 @@
                 </a>
 
                 <div class="text-xs uppercase tracking-[0.2em] text-ink-400 font-medium">
-                    {{ $item->regency->name }} &bull; {{ $item->regency->province->name }}
+                    {{ $item->regency->name }}, {{ $item->regency->province->name }}
                 </div>
             </div>
         </div>
 
         <!-- Center Stage: Title + Media Player unified as ONE vertically centered composite unit -->
-        <div class="flex-1 min-h-0 flex flex-col items-center justify-center max-w-5xl mx-auto px-4 sm:px-8 w-full">
+        <div class="flex-1 min-h-0 flex flex-col items-center justify-center max-w-6xl mx-auto px-4 sm:px-8 w-full">
             <div class="w-full flex flex-col items-center my-auto">
                 <!-- Proportional Editorial Title in Cinzel, snug directly above player -->
-                <h1 class="font-serif text-lg sm:text-2xl md:text-3xl font-bold tracking-[0.03em] uppercase text-ink-100 text-center leading-snug max-w-3xl mx-auto mb-4 sm:mb-5 flex-shrink-0" style="font-family: 'Cinzel', Georgia, serif;">
+                <h1 class="font-serif text-lg sm:text-2xl lg:text-3xl font-bold tracking-[0.03em] uppercase text-ink-100 text-center leading-snug max-w-4xl mx-auto mb-3 sm:mb-4 flex-shrink-0" style="font-family: 'Cinzel', Georgia, serif;">
                     {{ $item->title }}
                 </h1>
 
-                <!-- YouTube Lite Media Theater Container (Snug to Title) -->
-                <div class="w-full aspect-video max-w-xl sm:max-w-2xl lg:max-w-3xl max-h-[290px] sm:max-h-[330px] md:max-h-[350px] mx-auto border border-obsidian-700 bg-black overflow-hidden shadow-2xl relative flex items-center justify-center">
+                <!-- YouTube Lite Media Theater Container (Enlarged & Responsive, max 100vh safe) -->
+                <div class="w-full aspect-video mx-auto border border-obsidian-700 bg-black overflow-hidden shadow-2xl relative flex items-center justify-center"
+                     style="max-height: min(520px, calc(100vh - 14.5rem)); max-width: min(100%, calc((100vh - 14.5rem) * 16 / 9), 58rem);">
                     <div id="lite-player-container" 
                          role="button"
                          tabindex="0"
@@ -72,8 +73,8 @@
 
                         <!-- Custom Play Button Overlay -->
                         <div id="lite-player-button" class="absolute z-10 flex flex-col items-center justify-center space-y-2 pointer-events-none">
-                            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border border-ink-100/40 bg-ink-100/15 backdrop-blur-md flex items-center justify-center text-ink-100 group-hover:scale-110 group-hover:bg-ink-100 group-hover:text-obsidian-950 transition-all duration-300 shadow-2xl">
-                                <svg class="w-5 h-5 translate-x-0.5" fill="currentColor" viewBox="0 0 24 24">
+                            <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-full border border-ink-100/40 bg-ink-100/15 backdrop-blur-md flex items-center justify-center text-ink-100 group-hover:scale-110 group-hover:bg-ink-100 group-hover:text-obsidian-950 transition-all duration-300 shadow-2xl">
+                                <svg class="w-5 h-5 sm:w-6 sm:h-6 translate-x-0.5" fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M8 5v14l11-7z"/>
                                 </svg>
                             </div>
@@ -147,49 +148,71 @@
                                 </span>
                             </div>
 
-                            <!-- Integrated Share Action Row: Bagikan, Salin Link, WhatsApp -->
+                            <!-- Integrated Share Action Row: Bagikan (icon+text), Salin Link (icon-only + notification), WhatsApp (icon-only) -->
                             <div class="pt-5 border-t border-linen-300">
                                 <span class="text-xs uppercase tracking-[0.2em] text-ink-600 block mb-3 font-semibold">
                                     Bagikan Ingatan Ini
                                 </span>
                                 
-                                <div class="flex flex-wrap items-center gap-2">
-                                    <!-- 1. Native OS Web Share API Button (44px min tap target) -->
+                                <div class="flex items-center gap-2">
+                                    <!-- 1. Native OS Web Share API Button (icon + text, motion on hover) -->
                                     <button type="button" 
                                             id="share-trigger-btn"
-                                            class="inline-flex items-center justify-center space-x-1.5 px-3.5 py-2.5 min-h-[44px] bg-obsidian-950 hover:bg-obsidian-800 text-white rounded text-xs font-sans font-medium transition-colors cursor-pointer shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-ink-900">
-                                        <svg class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                            class="group flex-1 inline-flex items-center justify-center space-x-2 px-3.5 py-2.5 min-h-[44px] bg-obsidian-950 hover:bg-obsidian-850 active:bg-black text-white rounded text-xs font-sans font-medium transition-all duration-200 ease-out hover:-translate-y-0.5 active:translate-y-0 hover:shadow-md cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-ink-900"
+                                            aria-label="Bagikan arsip ini">
+                                        <svg class="w-3.5 h-3.5 text-white shrink-0 transition-transform duration-300 ease-out group-hover:scale-110 group-hover:rotate-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                             <circle cx="18" cy="5" r="3"></circle>
                                             <circle cx="6" cy="12" r="3"></circle>
                                             <circle cx="18" cy="19" r="3"></circle>
                                             <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
                                             <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
                                         </svg>
-                                        <span>Bagikan</span>
+                                        <span class="tracking-wide group-hover:tracking-wider transition-all duration-200">Bagikan</span>
                                     </button>
 
-                                    <!-- 2. Quick Copy Link Button (44px min tap target) -->
-                                    <button type="button" 
-                                            id="copy-link-btn"
-                                            data-url="{{ url()->current() }}"
-                                            class="inline-flex items-center justify-center space-x-1.5 px-3.5 py-2.5 min-h-[44px] border border-linen-300 hover:border-ink-900 bg-white hover:bg-linen-100 text-ink-800 rounded text-xs font-sans font-medium transition-colors cursor-pointer shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-ink-900"
-                                            title="Salin tautan ke clipboard">
-                                        <svg class="w-3.5 h-3.5 text-ink-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                                        </svg>
-                                        <span id="copy-text">Salin Link</span>
-                                    </button>
+                                    <!-- 2. Quick Copy Link Button (Icon only with floating toast feedback) -->
+                                    <div class="relative shrink-0">
+                                        <button type="button" 
+                                                id="copy-link-btn"
+                                                data-url="{{ url()->current() }}"
+                                                class="group w-11 h-11 min-w-[44px] min-h-[44px] inline-flex items-center justify-center border border-linen-300 hover:border-ink-900 bg-white hover:bg-linen-100 text-ink-800 rounded transition-all duration-200 ease-out hover:-translate-y-0.5 active:translate-y-0 hover:shadow-sm cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-ink-900"
+                                                aria-label="Salin tautan arsip"
+                                                title="Salin tautan">
+                                            <!-- Normal Copy Icon -->
+                                            <svg id="copy-icon-default" class="w-4 h-4 text-ink-700 transition-transform duration-200 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                            </svg>
+                                            <!-- Success Checkmark Icon -->
+                                            <svg id="copy-icon-success" class="w-4 h-4 text-emerald-600 hidden transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M5 13l4 4L19 7" />
+                                            </svg>
+                                        </button>
 
-                                    <!-- 3. Quick WhatsApp Share Button (44px min tap target) -->
+                                        <!-- Notification Tooltip Pill ("Link tersalin!") with explicit width and above-button positioning -->
+                                        <div id="copy-toast" 
+                                             role="status" 
+                                             aria-live="polite" 
+                                             style="bottom: calc(100% + 10px); width: max-content; min-width: 115px;"
+                                             class="absolute left-1/2 -translate-x-1/2 z-30 pointer-events-none opacity-0 scale-95 transition-all duration-200 ease-out px-3 py-1.5 bg-obsidian-950 text-white text-[11px] font-medium rounded shadow-xl whitespace-nowrap flex items-center justify-center space-x-1.5 border border-obsidian-700">
+                                            <svg class="w-3.5 h-3.5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                                            </svg>
+                                            <span class="whitespace-nowrap leading-none font-medium text-white">Link tersalin!</span>
+                                            <!-- Downward arrow caret -->
+                                            <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-obsidian-950 rotate-45 border-r border-b border-obsidian-700"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 3. Quick WhatsApp Share Button (Icon only) -->
                                     <a href="https://api.whatsapp.com/send?text={{ urlencode($item->title . ' | ' . url()->current()) }}" 
                                        target="_blank" 
                                        rel="noopener noreferrer" 
-                                       class="inline-flex items-center justify-center space-x-1.5 px-3.5 py-2.5 min-h-[44px] border border-linen-300 hover:border-ink-900 bg-white hover:bg-linen-100 text-ink-800 rounded text-xs font-sans font-medium transition-colors shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-ink-900"
+                                       class="group w-11 h-11 min-w-[44px] min-h-[44px] inline-flex items-center justify-center border border-linen-300 hover:border-ink-900 bg-white hover:bg-linen-100 text-ink-800 rounded transition-all duration-200 ease-out hover:-translate-y-0.5 active:translate-y-0 hover:shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-ink-900 shrink-0"
+                                       aria-label="Bagikan ke WhatsApp"
                                        title="Bagikan ke WhatsApp">
-                                        <svg class="w-3.5 h-3.5 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                        <svg class="w-4 h-4 text-[#25D366] transition-transform duration-200 group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                             <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.586 1.761.88 2.79.88 3.18 0 5.767-2.587 5.767-5.766.001-3.181-2.585-5.766-5.766-5.766zm9.969 5.766c0 5.503-4.469 9.969-9.969 9.969-1.745 0-3.385-.453-4.82-1.246l-5.211 1.339 1.362-4.973c-.908-1.508-1.428-3.266-1.428-5.089 0-5.502 4.469-9.969 9.969-9.969 5.503 0 9.969 4.467 9.969 9.969z"/>
                                         </svg>
-                                        <span>WhatsApp</span>
                                     </a>
                                 </div>
                             </div>
@@ -308,7 +331,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // Native Web Share API + Quick Copy Action
     const shareTrigger = document.getElementById('share-trigger-btn');
     const copyBtn = document.getElementById('copy-link-btn');
-    const copyText = document.getElementById('copy-text');
+    const copyIconDefault = document.getElementById('copy-icon-default');
+    const copyIconSuccess = document.getElementById('copy-icon-success');
+    const copyToast = document.getElementById('copy-toast');
+    let toastTimeout = null;
 
     if (shareTrigger) {
         shareTrigger.addEventListener('click', function (e) {
@@ -331,22 +357,61 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Copy Link Action with Feedback State
-    if (copyBtn && copyText) {
+    // Copy Link Action with Tooltip/Notification Feedback
+    if (copyBtn) {
+        const showSuccessFeedback = () => {
+            if (copyIconDefault && copyIconSuccess) {
+                copyIconDefault.classList.add('hidden');
+                copyIconSuccess.classList.remove('hidden');
+            }
+            if (copyToast) {
+                copyToast.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+                copyToast.classList.add('opacity-100', 'scale-100');
+            }
+            copyBtn.classList.add('border-ink-900', 'bg-linen-100');
+
+            if (toastTimeout) clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                if (copyIconDefault && copyIconSuccess) {
+                    copyIconDefault.classList.remove('hidden');
+                    copyIconSuccess.classList.add('hidden');
+                }
+                if (copyToast) {
+                    copyToast.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+                    copyToast.classList.remove('opacity-100', 'scale-100');
+                }
+                copyBtn.classList.remove('border-ink-900', 'bg-linen-100');
+            }, 2200);
+        };
+
+        const copyText = (text) => {
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text).then(showSuccessFeedback).catch(() => {
+                    fallbackCopy(text);
+                });
+            } else {
+                fallbackCopy(text);
+            }
+        };
+
+        const fallbackCopy = (text) => {
+            try {
+                const tempInput = document.createElement('input');
+                tempInput.value = text;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempInput);
+                showSuccessFeedback();
+            } catch (err) {
+                console.error('Copy failed:', err);
+            }
+        };
+
         copyBtn.addEventListener('click', function (e) {
             e.preventDefault();
             const url = this.getAttribute('data-url') || window.location.href;
-            navigator.clipboard.writeText(url).then(() => {
-                const original = copyText.textContent;
-                copyText.textContent = 'Tersalin!';
-                copyBtn.classList.add('border-ink-900', 'bg-linen-200');
-                setTimeout(() => {
-                    copyText.textContent = original;
-                    copyBtn.classList.remove('border-ink-900', 'bg-linen-200');
-                }, 2000);
-            }).catch(err => {
-                console.error('Failed to copy URL:', err);
-            });
+            copyText(url);
         });
     }
 });
