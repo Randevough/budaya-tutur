@@ -75,6 +75,63 @@ class PublicPagesTest extends TestCase
         $emptyResponse->assertSee('Tidak ada rekaman');
     }
 
+    public function test_arsip_catalog_page_responsive_pagination_and_card_elements(): void
+    {
+        // Desktop default per_page should be 9
+        $desktopResponse = $this->get('/arsip');
+        $desktopResponse->assertStatus(200);
+        $desktopResponse->assertViewHas('items', function ($items) {
+            return $items->perPage() === 9;
+        });
+
+        // Mobile user agent default per_page should be 6
+        $mobileResponse = $this->withHeaders([
+            'User-Agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148',
+        ])->get('/arsip');
+        $mobileResponse->assertStatus(200);
+        $mobileResponse->assertViewHas('items', function ($items) {
+            return $items->perPage() === 6;
+        });
+
+        // Explicit per_page parameter (e.g. 6 on mobile, 9 on desktop)
+        $explicitResponse = $this->get('/arsip?per_page=6');
+        $explicitResponse->assertStatus(200);
+        $explicitResponse->assertViewHas('items', function ($items) {
+            return $items->perPage() === 6;
+        });
+
+        // Assert card elements: aspect-video, optically centered play button, custom SVG arrow, and skeleton grid
+        $desktopResponse->assertSee('aspect-video', false);
+        $desktopResponse->assertSee('<polygon points="9,6 18,12 9,18"/>', false);
+        $desktopResponse->assertSee('id="archive-skeleton-grid"', false);
+    }
+
+    public function test_arsip_catalog_renders_centered_numeric_editorial_pagination(): void
+    {
+        // Create enough items to exceed desktop per_page (9)
+        for ($i = 1; $i <= 10; $i++) {
+            CultureItem::create([
+                'regency_id' => $this->regency->id,
+                'title' => "Arsip Uji {$i}",
+                'slug' => "arsip-uji-{$i}",
+                'category' => 'Tuturan Adat',
+                'excerpt' => 'Ringkasan rekaman tutur...',
+                'description' => 'Deskripsi rekaman tutur...',
+                'youtube_id' => 'dQw4w9WgXcQ',
+                'is_published' => true,
+            ]);
+        }
+
+        $response = $this->get('/arsip?per_page=9');
+        $response->assertStatus(200);
+
+        // Assert custom centered pagination navigation
+        $response->assertSee('Navigasi Halaman Arsip', false);
+        $response->assertSee('aria-current="page"', false);
+        $response->assertSee('Menuju halaman 2', false);
+        $response->assertSee('Selanjutnya', false);
+    }
+
     public function test_legacy_paths_return_404(): void
     {
         $this->get('/galleries')->assertStatus(404);
@@ -153,7 +210,7 @@ class PublicPagesTest extends TestCase
 
         $responseEmpty = $this->get('/arsip?province=non-existent-province');
         $responseEmpty->assertStatus(200);
-        $responseEmpty->assertSee('Tidak ada rekaman yang sesuai');
+        $responseEmpty->assertSee('Tidak ada rekaman yang cocok');
     }
 
     public function test_pages_render_seo_social_meta_and_json_ld_schema(): void

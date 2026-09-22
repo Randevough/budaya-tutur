@@ -37,7 +37,14 @@ class ArsipController extends Controller
             });
         }
 
-        $items = $query->latest()->paginate(12)->withQueryString();
+        // Dynamic responsive pagination: 6 on mobile, 9 on desktop by default
+        $isMobile = (bool) preg_match('/Mobile|Android|iPhone/i', $request->userAgent() ?? '');
+        $defaultPerPage = $isMobile ? 6 : 9;
+        $perPage = in_array((int) $request->input('per_page'), [6, 9, 12], true)
+            ? (int) $request->input('per_page')
+            : $defaultPerPage;
+
+        $items = $query->latest()->paginate($perPage)->withQueryString();
 
         // Filters data
         $provinces = Province::whereHas('regencies.cultureItems', fn ($q) => $q->where('is_published', true))->get();

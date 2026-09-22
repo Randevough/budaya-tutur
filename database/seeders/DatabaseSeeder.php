@@ -249,5 +249,69 @@ class DatabaseSeeder extends Seeder
                 'is_published' => true,
             ]
         );
+
+        $sumbaBarat = Regency::where('slug', 'kabupaten-sumba-barat')->first();
+        if ($sumbaBarat) {
+            CultureItem::firstOrCreate(
+                ['slug' => 'kidung-sakral-wulla-poddu-sumba'],
+                [
+                    'regency_id' => $sumbaBarat->id,
+                    'title' => 'Kidung Sakral Wulla Poddu',
+                    'category' => 'Kidung Ritual & Mantra',
+                    'excerpt' => 'Kidung dan doa sakral dalam bulan pembersihan adat Wulla Poddu masyarakat penganut Marapu di Sumba Barat.',
+                    'description' => "Wulla Poddu adalah bulan suci penuh pantangan dalam kalender adat Marapu di pedalaman Sumba Barat.\n\nPara Rato (tetua adat) melantunkan kidung-kidung kuno dalam bahasa adat Haharu Malai Katoda Lindiwatu untuk mengucap syukur, memohon kesuburan tanah, dan menyucikan batin kampung.",
+                    'youtube_id' => 'dQw4w9WgXcQ',
+                    'is_published' => true,
+                ]
+            );
+        }
+
+        $tanahDatar = Regency::where('slug', 'kabupaten-tanah-datar')->first();
+        if ($tanahDatar) {
+            CultureItem::firstOrCreate(
+                ['slug' => 'kaba-cindua-mato-minangkabau'],
+                [
+                    'regency_id' => $tanahDatar->id,
+                    'title' => 'Kaba Cindua Mato & Pasambahan',
+                    'category' => 'Sastra Lisan Minangkabau',
+                    'excerpt' => 'Tradisi tutur bakaba dan seni pasambahan adat Minangkabau yang menuturkan filosofi alam takambang jadi guru.',
+                    'description' => "Bakaba adalah seni bertutur cerita lisan berirama (kaba) yang diiringi gesekan rabab atau petikan saluang.\n\nKisah Cindua Mato menyimpan petuah kepemimpinan, adat bersandi syarak, dan nilai-nilai luhur budi pekerti masyarakat Minang.",
+                    'youtube_id' => 'dQw4w9WgXcQ',
+                    'is_published' => true,
+                ]
+            );
+        }
+
+        $gianyar = Regency::where('slug', 'kabupaten-gianyar')->first();
+        if ($gianyar) {
+            CultureItem::firstOrCreate(
+                ['slug' => 'mabebasan-pupuh-ginada-bali'],
+                [
+                    'regency_id' => $gianyar->id,
+                    'title' => 'Mabebasan & Pupuh Ginada',
+                    'category' => 'Tembang & Sastra Lisan Adat',
+                    'excerpt' => 'Pelantunan bait-bait pupuh dan kidung lontar kuno dalam tradisi Mabebasan masyarakat adat Gianyar.',
+                    'description' => "Tradisi Mabebasan memadukan seni vokal pelantunan naskah lontar (pembacaan sekar alit atau sekar agung) dengan penafsiran makna filosofis secara lisan.\n\nDiwariskan di wantilan dan balai banjar untuk menjaga kesadaran dharma dan etika kehidupan.",
+                    'youtube_id' => 'dQw4w9WgXcQ',
+                    'is_published' => true,
+                ]
+            );
+        }
+
+        $banjar = Regency::where('slug', 'kabupaten-banjar')->first();
+        if ($banjar) {
+            CultureItem::firstOrCreate(
+                ['slug' => 'tutur-madihin-banjar'],
+                [
+                    'regency_id' => $banjar->id,
+                    'title' => 'Tutur Madihin Banjar',
+                    'category' => 'Puisi Lisan & Petuah Adat',
+                    'excerpt' => 'Sastra tutur berpantun khas suku Banjar yang dilantunkan spontan dengan iringan ritmis terbang madihin.',
+                    'description' => "Madihin berasal dari kata madah yang berarti puji-pujian. Dituturkan oleh pemadihinan dengan kelihaian merangkai pantun sindiran halus, nasehat moral, dan humor bermakna.\n\nMenjadi perekat sosial dan wahana transmisi nilai-nilai kearifan sungai masyarakat Banjar.",
+                    'youtube_id' => 'dQw4w9WgXcQ',
+                    'is_published' => true,
+                ]
+            );
+        }
     }
 }

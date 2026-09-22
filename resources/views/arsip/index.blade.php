@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Katalog Arsip Suara & Tradisi Lisan — Budaya Tutur')
-@section('meta_description', 'Jelajahi seluruh kumpulan rekaman suara, nyanyian adat, mantra, dan tuturan lisan nusantara.')
+@section('title', 'Katalog Arsip Suara Nusantara | Budaya Tutur')
+@section('meta_description', 'Kumpulan rekaman suara, kidung, dan cerita lisan langsung dari penutur di berbagai daerah nusantara.')
 
 @section('content')
     <!-- Header Banner [DARK: Obsidian #121110 with Ambient Spotlight] -->
@@ -18,7 +18,7 @@
                 Arsip Suara Nusantara
             </h1>
             <p class="text-ink-300 text-sm sm:text-base md:text-lg font-light max-w-2xl leading-relaxed">
-                Koleksi bunyi, kidung, dan cerita lisan yang dihimpun dari berbagai penjuru tanah adat. Telusuri berdasarkan wilayah administratif atau ragam tutur secara langsung
+                Rekaman audio, kidung, dan cerita lisan langsung dari penutur di berbagai daerah. Cari lewat kata kunci atau saring berdasarkan provinsi.
             </p>
         </div>
     </header>
@@ -27,6 +27,7 @@
     <section class="bg-obsidian-850/95 border-b border-obsidian-700 sticky top-20 z-30 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-8 py-2.5 sm:py-3.5">
             <form id="archive-filter-form" action="{{ route('arsip.index') }}" method="GET" class="grid grid-cols-1 sm:grid-cols-12 gap-2.5 sm:gap-3 items-center">
+                <input type="hidden" name="per_page" id="per_page_input" value="{{ $items->perPage() }}">
                 <!-- Search Keyword -->
                 <div class="sm:col-span-8 relative flex items-center">
                     <div class="absolute left-3.5 text-ink-400 pointer-events-none">
@@ -153,14 +154,40 @@
                 </div>
             </div>
 
+            <!-- Skeleton Loading Grid (shown during AJAX fetch) -->
+            <div id="archive-skeleton-grid" class="hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+                    @for($i = 0; $i < ($items->perPage() ?: 9); $i++)
+                        <div class="bg-linen-50 border border-linen-300 flex flex-col shadow-sm animate-pulse pointer-events-none" aria-hidden="true">
+                            <div class="aspect-video bg-linen-200 relative overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-linen-100/40 to-transparent -translate-x-full animate-[shimmer_1.5s_infinite]"></div>
+                                <div class="absolute bottom-3.5 right-3.5 w-10 h-10 rounded-full bg-linen-300/80"></div>
+                            </div>
+                            <div class="p-6 sm:p-8 flex flex-col flex-grow">
+                                <div class="h-3 w-1/2 bg-linen-200 mb-3"></div>
+                                <div class="h-5 w-4/5 bg-linen-300 mb-4"></div>
+                                <div class="space-y-2 mb-6">
+                                    <div class="h-3 w-full bg-linen-200"></div>
+                                    <div class="h-3 w-5/6 bg-linen-200"></div>
+                                </div>
+                                <div class="mt-auto pt-4 border-t border-linen-300 flex items-center justify-between">
+                                    <div class="h-3 w-28 bg-linen-200"></div>
+                                    <div class="h-3.5 w-3.5 bg-linen-200"></div>
+                                </div>
+                            </div>
+                        </div>
+                    @endfor
+                </div>
+            </div>
+
             <!-- Grid Container with Smooth Transition -->
             <div id="archive-grid-container" class="transition-opacity duration-200">
                 <!-- Grid of Cards (Linen Mount) -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
                     @forelse($items as $item)
                         <a href="{{ route('arsip.show', $item->slug) }}" class="group bg-linen-50 border border-linen-300 hover:border-ink-800 transition-all duration-300 flex flex-col shadow-sm cursor-pointer focus:outline-none focus:ring-1 focus:ring-ink-800">
-                            <!-- Thumbnail Wrapper -->
-                            <div class="relative block aspect-[16/10] overflow-hidden bg-linen-200">
+                            <!-- Thumbnail Wrapper (16:9 standard video aspect) -->
+                            <div class="relative block aspect-video overflow-hidden bg-linen-200">
                                 @if($item->thumbnail_url)
                                     <img src="{{ $item->thumbnail_url }}" 
                                          alt="{{ $item->title }}"
@@ -173,9 +200,10 @@
                                 @endif
                                 <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950/80 via-transparent to-transparent"></div>
 
-                                <div class="absolute bottom-4 right-4 w-9 h-9 rounded-full bg-obsidian-950/70 border border-ink-100/30 flex items-center justify-center text-ink-100 group-hover:bg-ink-900 group-hover:text-linen-100 transition-colors duration-300">
-                                    <svg class="w-4 h-4 translate-x-0.5" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M8 5v14l11-7z"/>
+                                <!-- Optically Center-Aligned Play Button -->
+                                <div class="absolute bottom-3.5 right-3.5 w-10 h-10 rounded-full bg-obsidian-950/75 backdrop-blur-sm border border-linen-100/30 flex items-center justify-center text-ink-100 group-hover:bg-ink-900 group-hover:text-linen-100 group-hover:scale-105 transition-all duration-300 shadow-md">
+                                    <svg class="w-4 h-4 text-ink-100" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                        <polygon points="9,6 18,12 9,18"/>
                                     </svg>
                                 </div>
                             </div>
@@ -196,17 +224,19 @@
 
                                 <div class="mt-auto pt-4 border-t border-linen-300 flex items-center justify-between text-xs uppercase tracking-[0.2em] text-ink-700 font-medium">
                                     <span class="group-hover:text-ink-900 transition-colors">Dengar Rekaman</span>
-                                    <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+                                    <svg class="w-4 h-4 text-ink-700 group-hover:text-ink-950 transform group-hover:translate-x-1.5 transition-all duration-200" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+                                    </svg>
                                 </div>
                             </div>
                         </a>
                     @empty
                         <div class="col-span-1 md:col-span-2 lg:col-span-3 text-center py-20 border border-dashed border-linen-400 p-8 sm:p-12 w-full space-y-4">
                             <h3 class="font-serif text-xl sm:text-2xl font-bold text-ink-900 uppercase tracking-tight">
-                                Tidak ada rekaman yang sesuai dengan penyaringan
+                                Tidak ada rekaman yang cocok
                             </h3>
                             <p class="text-sm sm:text-base text-ink-600 font-light max-w-lg mx-auto leading-relaxed">
-                                Coba cari dengan kata kunci lain atau ubah pilihan filter wilayah
+                                Coba cari dengan kata kunci lain atau kosongkan pilihan filter wilayah.
                             </p>
                             <div class="pt-4">
                                 <a href="{{ route('arsip.index') }}" class="inline-block px-7 py-3 border border-ink-900 text-xs sm:text-sm uppercase tracking-[0.2em] text-ink-900 hover:bg-ink-900 hover:text-linen-100 transition-colors font-medium">
@@ -217,9 +247,9 @@
                     @endforelse
                 </div>
 
-                <!-- Pagination Links (Responsive scroll wrapper) -->
-                <div class="mt-14 sm:mt-16 overflow-x-auto max-w-full pb-2">
-                    {{ $items->links() }}
+                <!-- Pagination Links (Centered Editorial Monochrome) -->
+                <div class="mt-14 sm:mt-16 flex items-center justify-center max-w-full pb-2">
+                    {{ $items->links('vendor.pagination.editorial') }}
                 </div>
             </div>
         </div>
@@ -237,6 +267,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const counterEl = document.getElementById('results-counter');
     const spinnerEl = document.getElementById('search-spinner');
     const gridContainer = document.getElementById('archive-grid-container');
+    const skeletonGrid = document.getElementById('archive-skeleton-grid');
+    const perPageInput = document.getElementById('per_page_input');
+
+    const getResponsivePerPage = () => window.innerWidth < 768 ? 6 : 9;
+
+    const syncPerPage = () => {
+        if (perPageInput) {
+            perPageInput.value = getResponsivePerPage();
+        }
+    };
 
     // Custom dropdown elements
     const dropdownWrapper = document.getElementById('province-dropdown-wrapper');
@@ -355,7 +395,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         abortController = new AbortController();
 
-        const url = targetUrl || `${form.getAttribute('action')}?${new URLSearchParams(new FormData(form)).toString()}`;
+        const targetPerPage = getResponsivePerPage();
+        syncPerPage();
+
+        let url;
+        if (targetUrl) {
+            const parsedUrl = new URL(targetUrl, window.location.origin);
+            // Always enforce per_page to match current viewport
+            parsedUrl.searchParams.set('per_page', targetPerPage);
+            url = parsedUrl.toString();
+        } else {
+            const formData = new FormData(form);
+            formData.set('per_page', targetPerPage);
+            url = `${form.getAttribute('action')}?${new URLSearchParams(formData).toString()}`;
+        }
 
         // Toggle reset button & clear button visibility
         const qVal = searchInput.value.trim();
@@ -367,9 +420,10 @@ document.addEventListener('DOMContentLoaded', () => {
             resetBtn.classList.toggle('hidden', !qVal && !provVal);
         }
 
-        // Loading state
+        // Loading state with Skeleton UI
         if (spinnerEl) spinnerEl.classList.remove('hidden');
-        gridContainer.classList.add('opacity-40', 'pointer-events-none');
+        if (skeletonGrid) skeletonGrid.classList.remove('hidden');
+        if (gridContainer) gridContainer.classList.add('hidden');
 
         fetch(url, {
             headers: { 'X-Requested-With': 'XMLHttpRequest' },
@@ -406,7 +460,8 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .finally(() => {
             if (spinnerEl) spinnerEl.classList.add('hidden');
-            gridContainer.classList.remove('opacity-40', 'pointer-events-none');
+            if (skeletonGrid) skeletonGrid.classList.add('hidden');
+            if (gridContainer) gridContainer.classList.remove('hidden');
         });
     };
 
@@ -471,6 +526,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initial pagination link binding
     bindPaginationLinks();
+
+    // Client viewport check: ensure cards count strictly matches active viewport width (6 mobile, 9 desktop)
+    const currentPerPageParam = new URLSearchParams(window.location.search).get('per_page');
+    const targetPerPage = getResponsivePerPage();
+    if (currentPerPageParam && parseInt(currentPerPageParam) !== targetPerPage) {
+        syncPerPage();
+        performSearch();
+    } else if (!currentPerPageParam && {{ $items->perPage() }} !== targetPerPage) {
+        syncPerPage();
+        performSearch();
+    }
 });
 </script>
 @endpush
