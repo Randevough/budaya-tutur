@@ -3,15 +3,15 @@
 @section('title', 'Budaya Tutur Voices — Arsip Suara & Cerita Lisan Nusantara')
 
 @section('content')
-    <!-- 1. HERO SECTION [DARK: Obsidian #121110 Velvet] (Exact Full Viewport 100vh/100dvh) -->
-    <section class="relative bg-obsidian-900 border-b border-obsidian-700 min-h-[calc(100vh-5rem)] min-h-[calc(100dvh-5rem)] py-12 sm:py-16 flex flex-col justify-center overflow-hidden">
+    <!-- 1. HERO SECTION [DARK: Obsidian #121110 Velvet] -->
+    <section class="relative bg-obsidian-900 border-b border-obsidian-700 min-h-0 sm:min-h-[calc(100vh-5rem)] sm:min-h-[calc(100dvh-5rem)] py-14 sm:py-20 md:py-24 flex flex-col justify-center overflow-hidden">
         <!-- Subtle Gallery Ambient Spotlight (Subtle smoky bone aura and warm peat vignette) -->
         <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_65%_at_50%_38%,_#221e1a_0%,_#171513_38%,_#121110_72%,_#080807_100%)] pointer-events-none"></div>
         <div class="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] sm:w-[900px] h-[320px] sm:h-[420px] bg-[radial-gradient(ellipse_at_center,_rgba(244,240,234,0.06)_0%,_rgba(180,165,150,0.03)_45%,_transparent_70%)] blur-[70px] pointer-events-none"></div>
         
         <div class="relative max-w-5xl mx-auto px-4 sm:px-8 text-center flex-grow flex flex-col justify-center my-auto">
             <!-- Monumental Editorial Heading -->
-            <h1 class="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-ink-100 leading-[1.1] uppercase mb-6 sm:mb-8">
+            <h1 class="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-ink-100 leading-[1.15] uppercase mb-6 sm:mb-8">
                 Menjaga yang Terucap<br class="hidden sm:inline"> Sebelum Senyap
             </h1>
 
@@ -20,12 +20,12 @@
                 Rekaman suara, nyanyian adat, mantra, dan tuturan lisan dari tetua di berbagai penjuru kepulauan. Kami merawat tuturan ini agar tetap terdengar oleh generasi berikutnya.
             </p>
 
-            <!-- Action CTAs -->
+            <!-- Action CTAs (Touch-friendly 44px min targets) -->
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 text-xs uppercase tracking-[0.2em]">
-                <a href="{{ route('arsip.index') }}" class="w-full sm:w-auto px-8 py-4 bg-ink-100 text-obsidian-950 font-semibold hover:bg-linen-200 transition-colors duration-300">
+                <a href="{{ route('arsip.index') }}" class="w-full sm:w-auto min-h-[48px] px-8 py-4 bg-ink-100 text-obsidian-950 font-semibold hover:bg-linen-200 transition-colors duration-300 flex items-center justify-center">
                     Jelajahi Arsip Suara
                 </a>
-                <a href="#peta" class="w-full sm:w-auto px-8 py-4 border border-obsidian-700 text-ink-200 hover:text-ink-100 hover:border-obsidian-500 transition-colors duration-300">
+                <a href="#peta" class="w-full sm:w-auto min-h-[48px] px-8 py-4 border border-obsidian-700 text-ink-200 hover:text-ink-100 hover:border-obsidian-500 transition-colors duration-300 flex items-center justify-center">
                     Lihat Peta Wilayah
                 </a>
             </div>
@@ -33,10 +33,10 @@
     </section>
 
     <!-- 2. INTERACTIVE CENTROID MAP [LIGHT: Unbleached Linen #F8F5F0] -->
-    <section id="peta" class="py-24 sm:py-32 bg-linen-100 text-ink-900 border-b border-linen-300 relative">
+    <section id="peta" class="py-16 sm:py-24 md:py-32 bg-linen-100 text-ink-900 border-b border-linen-300 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-8">
             <!-- Section Header -->
-            <div class="max-w-3xl mb-10">
+            <div class="max-w-3xl mb-8 sm:mb-10">
                 <span class="text-xs uppercase tracking-[0.25em] text-ink-600 block mb-2 font-medium">
                     Bentang Wilayah Tutur
                 </span>
@@ -50,26 +50,35 @@
 
             <!-- Leaflet Map Container (Archival Plate Frame) -->
             <div class="border border-linen-300 bg-linen-200 relative overflow-hidden shadow-xl">
-                <div id="culture-map" class="w-full h-[540px] sm:h-[600px] z-10"></div>
+                <div id="culture-map" class="w-full h-[420px] sm:h-[520px] md:h-[600px] z-10"></div>
 
                 <!-- Map Controls Overlay -->
                 <div class="absolute top-4 right-4 z-20">
-                    <button id="reset-map-btn" type="button" class="bg-linen-50/95 backdrop-blur-md border border-linen-300 px-3.5 py-2 text-xs tracking-wider text-ink-700 hover:text-ink-950 hover:border-ink-600 uppercase transition-all flex items-center space-x-2 focus:outline-none shadow-md">
-                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <button id="reset-map-btn" 
+                            type="button" 
+                            class="bg-linen-50/95 backdrop-blur-md border border-linen-300 px-3 sm:px-3.5 py-2 min-h-[40px] text-xs tracking-wider text-ink-700 hover:text-ink-950 hover:border-ink-600 uppercase transition-all flex items-center space-x-2 focus:outline-none focus-visible:ring-1 focus-visible:ring-ink-900 shadow-md cursor-pointer"
+                            aria-label="Pusatkan peta ke nusantara">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                         </svg>
-                        <span>Pusatkan Nusantara</span>
+                        <span class="hidden sm:inline">Pusatkan Nusantara</span>
+                        <span class="sm:hidden">Pusatkan</span>
                     </button>
                 </div>
 
                 <!-- Map Legend Overlay -->
-                <div class="absolute bottom-4 left-4 z-20 bg-linen-50/95 backdrop-blur-md border border-linen-300 px-3.5 py-2 text-xs tracking-wider text-ink-800 uppercase shadow-md flex items-center space-x-2 pointer-events-none">
+                <div class="absolute bottom-4 left-4 z-20 bg-linen-50/95 backdrop-blur-md border border-linen-300 px-3 py-1.5 sm:px-3.5 sm:py-2 text-[11px] sm:text-xs tracking-wider text-ink-800 uppercase shadow-md flex items-center space-x-2 pointer-events-none">
                     <span class="w-2.5 h-2.5 rounded-full bg-ink-900 border border-linen-100 inline-block shadow-sm"></span>
                     <span>Wilayah Berpenutur</span>
                 </div>
 
                 <!-- Archival Sliding Drawer (Side-docked on desktop, bottom-sheet on mobile) -->
-                <div id="map-drawer" class="absolute z-30 transition-all duration-300 ease-out inset-x-0 bottom-0 max-h-[85%] sm:max-h-full sm:inset-y-0 sm:left-auto sm:right-0 sm:w-96 w-full bg-obsidian-900/95 backdrop-blur-md text-ink-100 border-t sm:border-t-0 sm:border-l border-obsidian-700 shadow-2xl flex flex-col pointer-events-auto translate-y-full sm:translate-y-0 sm:translate-x-full">
+                <div id="map-drawer" 
+                     class="absolute z-30 transition-all duration-300 ease-out inset-x-0 bottom-0 max-h-[85%] sm:max-h-full sm:inset-y-0 sm:left-auto sm:right-0 sm:w-96 w-full bg-obsidian-900/98 backdrop-blur-md text-ink-100 border-t sm:border-t-0 sm:border-l border-obsidian-700 shadow-2xl flex flex-col pointer-events-auto translate-y-full sm:translate-y-0 sm:translate-x-full pb-safe">
+                    
+                    <!-- Mobile drag handle indicator -->
+                    <div class="w-10 h-1 bg-obsidian-700 rounded-full mx-auto mt-2.5 mb-1 sm:hidden" aria-hidden="true"></div>
+
                     <!-- Drawer Header -->
                     <div class="p-5 sm:p-6 border-b border-obsidian-700 flex items-start justify-between">
                         <div>
@@ -83,8 +92,11 @@
                                 0 tuturan terekam di tanah ini
                             </div>
                         </div>
-                        <button id="drawer-close-btn" type="button" class="text-ink-400 hover:text-ink-100 p-1.5 border border-transparent hover:border-obsidian-700 transition-colors focus:outline-none" aria-label="Tutup Panel">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <button id="drawer-close-btn" 
+                                type="button" 
+                                class="text-ink-400 hover:text-ink-100 p-2 min-w-[44px] min-h-[44px] flex items-center justify-center border border-transparent hover:border-obsidian-700 transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-ink-100 cursor-pointer" 
+                                aria-label="Tutup Panel">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 18L18 6M6 6l12 12" />
                             </svg>
                         </button>
@@ -97,7 +109,7 @@
 
                     <!-- Drawer Footer Link -->
                     <div class="p-4 sm:p-5 border-t border-obsidian-700 bg-obsidian-950/60 mt-auto">
-                        <a id="drawer-province-link" href="#" class="text-xs uppercase tracking-[0.18em] text-ink-300 hover:text-ink-100 inline-flex items-center justify-between w-full font-medium group transition-colors">
+                        <a id="drawer-province-link" href="#" class="text-xs uppercase tracking-[0.18em] text-ink-300 hover:text-ink-100 inline-flex items-center justify-between w-full font-medium group transition-colors min-h-[36px]">
                             <span id="drawer-province-link-text">Buka Seluruh Arsip Provinsi &rarr;</span>
                         </a>
                     </div>
@@ -366,6 +378,22 @@ document.addEventListener('DOMContentLoaded', function () {
         if (e.originalEvent && !e.originalEvent.target.closest('#map-drawer') && !e.originalEvent.target.closest('.custom-sound-marker')) {
             closeDrawer();
         }
+    });
+
+    // Close drawer on Escape key
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+            closeDrawer();
+        }
+    });
+
+    // Invalidate map size on viewport resize and orientation change
+    let resizeTimer = null;
+    window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function () {
+            map.invalidateSize();
+        }, 150);
     });
 
     if (bounds.length > 0) {

@@ -182,3 +182,32 @@
 .leaflet-control-attribution {
   display: none !important;
 }
+
+/* Prevent automatic viewport zoom on iOS Safari when focusing form fields */
+@media screen and (max-width: 767px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="password"],
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+}
+
+/* Accessible focus visible rings */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid #f4f0ea;
+  outline-offset: 2px;
+}
+
+/* Touch Safe Area Helper */
+.pb-safe {
+  padding-bottom: max(1rem, env(safe-area-inset-bottom));
+}

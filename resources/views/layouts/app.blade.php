@@ -50,15 +50,19 @@
 </head>
 <body class="bg-obsidian-900 text-ink-100 font-sans antialiased min-h-screen flex flex-col selection:bg-ink-100 selection:text-obsidian-950">
 
+    <!-- Accessible Skip Navigation Link (WCAG 2.4.1) -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2.5 focus:bg-ink-100 focus:text-obsidian-950 focus:text-xs focus:uppercase focus:tracking-wider focus:font-semibold focus:shadow-2xl focus:outline-none focus:ring-2 focus:ring-ink-100">
+        Lewati ke konten utama
+    </a>
 
     <!-- Main Navigation Bar -->
     <header class="sticky top-0 z-50 backdrop-blur-md bg-obsidian-900/95 border-b border-obsidian-700/80 transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between">
             <!-- Brand Mark -->
-            <a href="{{ route('home') }}" class="group flex items-center space-x-3.5 focus:outline-none">
+            <a href="{{ route('home') }}" class="group flex items-center space-x-3 sm:space-x-3.5 focus:outline-none focus-visible:ring-1 focus-visible:ring-ink-100 p-1 -m-1">
                 <!-- Authentic Archival Emblem Placeholder -->
-                <div class="w-10 h-10 rounded-full border border-obsidian-700 bg-obsidian-850/90 flex items-center justify-center text-ink-100 group-hover:border-ink-200 group-hover:bg-obsidian-800 transition-all duration-300 shadow-sm">
-                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-obsidian-700 bg-obsidian-850/90 flex items-center justify-center text-ink-100 group-hover:border-ink-200 group-hover:bg-obsidian-800 transition-all duration-300 shadow-sm shrink-0">
+                    <svg class="w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <circle cx="12" cy="12" r="10" stroke-dasharray="2 3" stroke-opacity="0.5" />
                         <path d="M12 7v10" />
                         <path d="M8 9.5v5" />
@@ -67,14 +71,9 @@
                         <path d="M20 11v2" />
                     </svg>
                 </div>
-                <div class="flex flex-col justify-center">
-                    <span class="font-serif text-lg sm:text-xl font-bold tracking-[0.18em] text-ink-100 uppercase group-hover:text-ink-200 transition-colors">
-                        Budaya Tutur
-                    </span>
-                    <span class="text-xs tracking-[0.22em] uppercase text-ink-400 group-hover:text-ink-300 transition-colors">
-                        Voices of Nusantara
-                    </span>
-                </div>
+                <span class="font-serif text-lg sm:text-xl md:text-2xl font-bold tracking-[0.14em] sm:tracking-[0.18em] text-ink-100 uppercase group-hover:text-ink-200 transition-colors truncate leading-none">
+                    Budaya Tutur
+                </span>
             </a>
 
             <!-- Desktop Nav Items -->
@@ -102,33 +101,74 @@
                 </a>
             </div>
 
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-toggle" type="button" class="md:hidden text-ink-300 hover:text-ink-100 p-2.5 focus:outline-none focus:ring-1 focus:ring-ink-100" aria-label="Buka Menu Navigasi" aria-expanded="false">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <!-- Mobile Menu Button (WCAG min 44x44px tap target) -->
+            <button id="mobile-menu-toggle" 
+                    type="button" 
+                    class="md:hidden text-ink-300 hover:text-ink-100 p-3 -mr-2 min-w-[44px] min-h-[44px] flex items-center justify-center focus:outline-none focus-visible:ring-1 focus-visible:ring-ink-100 cursor-pointer" 
+                    aria-label="Buka Menu Navigasi" 
+                    aria-controls="mobile-menu-panel"
+                    aria-expanded="false">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path id="menu-icon-open" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
                     <path id="menu-icon-close" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
             </button>
         </div>
-
-        <!-- Mobile Nav Menu Panel -->
-        <div id="mobile-menu-panel" class="hidden md:hidden border-b border-obsidian-700 bg-obsidian-950 px-6 py-8 space-y-5">
-            <a href="{{ route('home') }}" class="block text-sm uppercase tracking-[0.2em] text-ink-200 hover:text-ink-100">Beranda</a>
-            <a href="{{ route('about') }}" class="block text-sm uppercase tracking-[0.2em] {{ request()->routeIs('about') ? 'text-ink-100 font-medium' : 'text-ink-200' }} hover:text-ink-100">Tentang</a>
-            <a href="{{ route('arsip.index') }}" class="block text-sm uppercase tracking-[0.2em] text-ink-200 hover:text-ink-100">Arsip Suara</a>
-            @if(\App\Models\SiteSetting::current()->is_donation_active)
-                <a href="{{ route('donasi') }}" class="block text-sm uppercase tracking-[0.2em] {{ request()->routeIs('donasi*') ? 'text-ink-100 font-medium' : 'text-ink-200' }} hover:text-ink-100">Donasi</a>
-            @endif
-            <div class="pt-4 border-t border-obsidian-700">
-                <a href="{{ route('kontak') }}" class="block text-center py-3 bg-ink-100 text-obsidian-950 text-xs uppercase tracking-[0.2em] font-semibold">
-                    Hubungi Kami (Kontak)
-                </a>
-            </div>
-        </div>
     </header>
 
+    <!-- Mobile Nav Menu Overlay Drawer (Solid 100% opaque, zero layout shift, zero bleed-through) -->
+    <div id="mobile-menu-panel" 
+         class="hidden md:hidden fixed inset-x-0 top-20 bottom-0 z-50 overflow-y-auto overscroll-contain pb-safe border-t border-obsidian-800 transition-all duration-200 ease-out opacity-0 -translate-y-2"
+         style="background-color: #0c0b0a;">
+        <!-- Subtle Ambient Nocturnal Velvet Spotlight (Glow Depth) -->
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_90%_60%_at_50%_25%,_#1f1b17_0%,_#141211_40%,_#0c0b0a_100%)] pointer-events-none"></div>
+        <div class="absolute top-[18%] left-1/2 -translate-x-1/2 w-[340px] sm:w-[480px] h-[240px] bg-[radial-gradient(ellipse_at_center,_rgba(244,240,234,0.06)_0%,_transparent_70%)] blur-[50px] pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-md mx-auto px-6 pt-6 pb-8 flex flex-col justify-between min-h-full">
+            <!-- Navigation Links (Clean, No Sub-descriptions) -->
+            <nav class="space-y-2">
+                <a href="{{ route('home') }}" class="block py-3.5 px-4 rounded text-base sm:text-lg font-serif tracking-[0.14em] uppercase transition-colors {{ request()->routeIs('home') ? 'text-ink-100 bg-obsidian-800 border border-obsidian-700/80 font-semibold shadow-sm' : 'text-ink-300 hover:text-ink-100 hover:bg-obsidian-900 border border-transparent' }}">
+                    Beranda
+                </a>
+                <a href="{{ route('about') }}" class="block py-3.5 px-4 rounded text-base sm:text-lg font-serif tracking-[0.14em] uppercase transition-colors {{ request()->routeIs('about') ? 'text-ink-100 bg-obsidian-800 border border-obsidian-700/80 font-semibold shadow-sm' : 'text-ink-300 hover:text-ink-100 hover:bg-obsidian-900 border border-transparent' }}">
+                    Tentang
+                </a>
+                <a href="{{ route('arsip.index') }}" class="block py-3.5 px-4 rounded text-base sm:text-lg font-serif tracking-[0.14em] uppercase transition-colors {{ request()->routeIs('arsip.*') ? 'text-ink-100 bg-obsidian-800 border border-obsidian-700/80 font-semibold shadow-sm' : 'text-ink-300 hover:text-ink-100 hover:bg-obsidian-900 border border-transparent' }}">
+                    Arsip Suara
+                </a>
+                @if(\App\Models\SiteSetting::current()->is_donation_active)
+                    <a href="{{ route('donasi') }}" class="block py-3.5 px-4 rounded text-base sm:text-lg font-serif tracking-[0.14em] uppercase transition-colors {{ request()->routeIs('donasi*') ? 'text-ink-100 bg-obsidian-800 border border-obsidian-700/80 font-semibold shadow-sm' : 'text-ink-300 hover:text-ink-100 hover:bg-obsidian-900 border border-transparent' }}">
+                        Donasi
+                    </a>
+                @endif
+            </nav>
+
+            <!-- Bottom Action & Quick Archival Channels (Grouped with Tagline Preamble) -->
+            <div class="mt-auto pt-6 border-t border-obsidian-800 space-y-4">
+                <div class="text-center">
+                    <span class="text-[10px] sm:text-[11px] tracking-[0.22em] uppercase text-ink-400 font-light block">
+                        Dokumentasi Digital Sastra Lisan Nusantara
+                    </span>
+                </div>
+
+                <a href="{{ route('kontak') }}" class="flex items-center justify-center w-full min-h-[48px] py-3.5 px-6 bg-ink-100 text-obsidian-950 text-xs uppercase tracking-[0.2em] font-semibold hover:bg-linen-200 transition-colors shadow-lg">
+                    Hubungi Kami
+                </a>
+
+                <!-- Quick Channels -->
+                <div class="flex items-center justify-center space-x-6 text-[11px] uppercase tracking-[0.18em] text-ink-400 pt-0.5">
+                    <a href="https://youtube.com/@budayatutur" target="_blank" rel="noopener noreferrer" class="hover:text-ink-100 transition-colors">YouTube</a>
+                    <span class="text-obsidian-600">&bull;</span>
+                    <a href="mailto:kontak@budayatutur.id" class="hover:text-ink-100 transition-colors">Email</a>
+                    <span class="text-obsidian-600">&bull;</span>
+                    <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="hover:text-ink-100 transition-colors">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Main Content Area -->
-    <main class="flex-grow">
+    <main id="main-content" class="flex-grow">
         @yield('content')
     </main>
 
@@ -249,29 +289,47 @@
         document.addEventListener('DOMContentLoaded', () => {
             const toggle = document.getElementById('mobile-menu-toggle');
             const panel = document.getElementById('mobile-menu-panel');
+            const header = document.querySelector('header');
             const iconOpen = document.getElementById('menu-icon-open');
             const iconClose = document.getElementById('menu-icon-close');
 
             if (toggle && panel) {
-                const closeMenu = () => {
-                    panel.classList.add('hidden');
-                    iconOpen.classList.remove('hidden');
-                    iconClose.classList.add('hidden');
+                let closeTimeout = null;
+
+                const closeMenu = (returnFocus = true) => {
+                    clearTimeout(closeTimeout);
+                    panel.classList.remove('opacity-100', 'translate-y-0');
+                    panel.classList.add('opacity-0', '-translate-y-2');
+                    if (iconOpen) iconOpen.classList.remove('hidden');
+                    if (iconClose) iconClose.classList.add('hidden');
                     toggle.setAttribute('aria-expanded', 'false');
+                    if (header) header.style.backgroundColor = '';
+
+                    closeTimeout = setTimeout(() => {
+                        panel.classList.add('hidden');
+                    }, 200);
+
+                    if (returnFocus) toggle.focus();
                 };
 
                 const openMenu = () => {
+                    clearTimeout(closeTimeout);
                     panel.classList.remove('hidden');
-                    iconOpen.classList.add('hidden');
-                    iconClose.classList.remove('hidden');
+                    requestAnimationFrame(() => {
+                        panel.classList.remove('opacity-0', '-translate-y-2');
+                        panel.classList.add('opacity-100', 'translate-y-0');
+                    });
+                    if (iconOpen) iconOpen.classList.add('hidden');
+                    if (iconClose) iconClose.classList.remove('hidden');
                     toggle.setAttribute('aria-expanded', 'true');
+                    if (header) header.style.backgroundColor = '#0c0b0a';
                 };
 
                 toggle.addEventListener('click', (e) => {
                     e.stopPropagation();
-                    const isOpen = !panel.classList.contains('hidden');
+                    const isOpen = toggle.getAttribute('aria-expanded') === 'true';
                     if (isOpen) {
-                        closeMenu();
+                        closeMenu(false);
                     } else {
                         openMenu();
                     }
@@ -279,16 +337,16 @@
 
                 // Dismiss on Escape key
                 document.addEventListener('keydown', (e) => {
-                    if (e.key === 'Escape' && !panel.classList.contains('hidden')) {
-                        closeMenu();
+                    if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+                        closeMenu(true);
                     }
                 });
 
-                // Dismiss on click outside
-                document.addEventListener('click', (e) => {
-                    if (!panel.classList.contains('hidden') && !panel.contains(e.target) && !toggle.contains(e.target)) {
-                        closeMenu();
-                    }
+                // Close menu when clicking any link inside panel
+                panel.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        closeMenu(false);
+                    });
                 });
             }
 

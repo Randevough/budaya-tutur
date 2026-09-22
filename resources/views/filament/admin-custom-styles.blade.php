@@ -89,8 +89,8 @@
 
 
 
-    /* Table Toolbar Segmented Tabs: Inside Table Card Toolbar (1-Row with Filter & Search) */
-    @media (min-width: 768px) {
+    /* Table Toolbar Segmented Tabs: Inside Table Card Toolbar on Large Screens (1-Row with Filter & Search) */
+    @media (min-width: 1200px) {
         .fi-resource-list-records-page .fi-page-content,
         .fi-resource-list-records-page .fi-sc.fi-grid {
             position: relative !important;
@@ -114,40 +114,6 @@
             width: auto !important;
         }
 
-        .bt-table-tabs .fi-tabs:not(.fi-contained) {
-            margin: 0 !important;
-            padding: 0.2rem !important;
-            background-color: #f7f6f4 !important;
-            border: 1px solid #e5e2dc !important;
-            box-shadow: none !important;
-            border-radius: 0.625rem !important;
-            --tw-ring-shadow: 0 0 #0000 !important;
-        }
-
-        .bt-table-tabs .fi-tabs-item {
-            padding: 0.25rem 0.7rem !important;
-            border-radius: 0.45rem !important;
-            font-size: 0.8125rem !important;
-            font-weight: 500 !important;
-            color: #57534e !important;
-            transition: all 0.15s ease !important;
-        }
-
-        .bt-table-tabs .fi-tabs-item.fi-active {
-            background-color: #ffffff !important;
-            color: #1c1917 !important;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
-            font-weight: 600 !important;
-        }
-
-        .bt-table-tabs .fi-tabs-item .fi-badge {
-            font-size: 0.7rem !important;
-            padding: 0.1rem 0.4rem !important;
-            border-radius: 9999px !important;
-            background-color: #eae6e0 !important;
-            color: #44403c !important;
-        }
-
         .fi-resource-list-records-page .fi-ta-header-toolbar {
             min-height: 4rem !important;
             padding-top: 0.875rem !important;
@@ -157,9 +123,84 @@
         }
     }
 
-    @media (max-width: 767px) {
+    /* Tabs Styling (Applied across all viewports) */
+    .bt-table-tabs .fi-tabs:not(.fi-contained) {
+        margin: 0 !important;
+        padding: 0.2rem !important;
+        background-color: #f7f6f4 !important;
+        border: 1px solid #e5e2dc !important;
+        box-shadow: none !important;
+        border-radius: 0.625rem !important;
+        --tw-ring-shadow: 0 0 #0000 !important;
+    }
+
+    .bt-table-tabs .fi-tabs-item {
+        padding: 0.25rem 0.7rem !important;
+        border-radius: 0.45rem !important;
+        font-size: 0.8125rem !important;
+        font-weight: 500 !important;
+        color: #57534e !important;
+        transition: all 0.15s ease !important;
+    }
+
+    .bt-table-tabs .fi-tabs-item.fi-active {
+        background-color: #ffffff !important;
+        color: #1c1917 !important;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+        font-weight: 600 !important;
+    }
+
+    .bt-table-tabs .fi-tabs-item .fi-badge {
+        font-size: 0.7rem !important;
+        padding: 0.1rem 0.4rem !important;
+        border-radius: 9999px !important;
+        background-color: #eae6e0 !important;
+        color: #44403c !important;
+    }
+
+    /* Relative Tabs on Tablets & Mobile (< 1200px) to prevent collision with search toolbar */
+    @media (max-width: 1199px) {
         .bt-table-tabs {
+            position: relative !important;
             margin-bottom: 0.75rem !important;
+            width: 100% !important;
+            overflow-x: auto !important;
+            -webkit-overflow-scrolling: touch !important;
+        }
+    }
+
+    /* Clean Mobile Table Header & Search (< 640px) */
+    @media (max-width: 639px) {
+        .fi-ta-header-ctn {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: stretch !important;
+            gap: 0.75rem !important;
+            padding: 0.875rem 1rem !important;
+        }
+
+        .fi-ta-header-ctn > .fi-ta-header {
+            padding-bottom: 0 !important;
+        }
+
+        .fi-ta-header-ctn > .fi-ta-header-toolbar {
+            width: 100% !important;
+            margin-left: 0 !important;
+            justify-content: space-between !important;
+            flex-wrap: wrap !important;
+            gap: 0.5rem !important;
+            padding-top: 0 !important;
+        }
+
+        .fi-ta-header-toolbar .fi-input-wrapper {
+            width: 100% !important;
+        }
+
+        /* Prevent auto zoom on iOS Safari inside admin panel */
+        .fi-input-wrapper input,
+        .fi-input-wrapper select,
+        .fi-input-wrapper textarea {
+            font-size: 16px !important;
         }
     }
 

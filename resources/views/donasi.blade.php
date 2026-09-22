@@ -64,9 +64,9 @@
                             </div>
 
                             <div class="p-4 sm:p-5 bg-linen-200/60 border border-linen-300 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                                <div>
+                                <div class="min-w-0">
                                     <span class="text-xs uppercase tracking-[0.2em] text-ink-600 block mb-1">Nomor Rekening</span>
-                                    <span id="account-number" class="font-mono text-xl sm:text-2xl font-semibold tracking-wider text-ink-950">
+                                    <span id="account-number" class="font-mono text-lg sm:text-xl md:text-2xl font-semibold tracking-wider text-ink-950 break-all block">
                                         {{ $settings->bank_account_number ?? '123-456-7890' }}
                                     </span>
                                 </div>
@@ -74,10 +74,10 @@
                                     type="button"
                                     id="copy-account-btn"
                                     onclick="copyAccountNumber()"
-                                    class="inline-flex items-center justify-center space-x-2 px-5 py-2.5 bg-obsidian-900 hover:bg-obsidian-800 text-ink-100 text-xs font-semibold uppercase tracking-[0.18em] transition-colors focus:outline-none focus:ring-2 focus:ring-obsidian-700"
+                                    class="w-full sm:w-auto min-h-[44px] inline-flex items-center justify-center space-x-2 px-5 py-2.5 bg-obsidian-900 hover:bg-obsidian-800 text-ink-100 text-xs font-semibold uppercase tracking-[0.18em] transition-colors focus:outline-none focus:ring-2 focus:ring-obsidian-700 cursor-pointer shadow-sm shrink-0"
                                     aria-label="Salin nomor rekening ke papan klip"
                                 >
-                                    <svg id="copy-icon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg id="copy-icon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                         <rect x="9" y="9" width="13" height="13" rx="2" ry="2" stroke-width="1.5"></rect>
                                         <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" stroke-width="1.5"></path>
                                     </svg>

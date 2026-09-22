@@ -34,6 +34,9 @@ Write-Host "`n[3/3] Packaging files into build-preview.zip..." -ForegroundColor 
 $excludePatterns = @(
     "^\.git(\\|$)",
     "^\.agents(\\|$)",
+    "^\.env(\..+)?$",
+    "^public[\\/]hot$",
+    "^database[\\/].*\.sqlite(-.+)?$",
     "^node_modules(\\|$)",
     "^tests(\\|$)",
     "^\.phpunit",

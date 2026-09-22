@@ -38,7 +38,7 @@
             @endif
 
             <!-- Contact Form Card -->
-            <div class="border border-linen-300 bg-linen-50 p-8 sm:p-12 shadow-sm">
+            <div class="border border-linen-300 bg-linen-50 p-6 sm:p-12 shadow-sm">
                 <form action="{{ route('kontak.store') }}" method="POST" class="space-y-8">
                     @csrf
 
@@ -60,7 +60,7 @@
                                    required 
                                    value="{{ old('name') }}"
                                    placeholder="Nama penutur / pengusul..."
-                                   class="w-full bg-linen-100 border border-linen-300 focus:border-ink-900 text-ink-900 text-sm sm:text-base px-4 py-3 sm:py-3.5 tracking-normal placeholder-ink-400 focus:outline-none transition-colors @error('name') border-red-500 @enderror">
+                                   class="w-full bg-linen-100 border border-linen-300 focus:border-ink-900 text-ink-900 text-base sm:text-sm px-4 py-3 sm:py-3.5 tracking-normal placeholder-ink-400 focus:outline-none focus:ring-1 focus:ring-ink-900 transition-colors @error('name') border-red-500 @enderror">
                             @error('name')
                                 <span class="text-xs text-red-600 font-medium tracking-wide">{{ $message }}</span>
                             @enderror
@@ -77,7 +77,7 @@
                                    required 
                                    value="{{ old('email') }}"
                                    placeholder="alamat@surel.com"
-                                   class="w-full bg-linen-100 border border-linen-300 focus:border-ink-900 text-ink-900 text-sm sm:text-base px-4 py-3 sm:py-3.5 tracking-normal placeholder-ink-400 focus:outline-none transition-colors @error('email') border-red-500 @enderror">
+                                   class="w-full bg-linen-100 border border-linen-300 focus:border-ink-900 text-ink-900 text-base sm:text-sm px-4 py-3 sm:py-3.5 tracking-normal placeholder-ink-400 focus:outline-none focus:ring-1 focus:ring-ink-900 transition-colors @error('email') border-red-500 @enderror">
                             @error('email')
                                 <span class="text-xs text-red-600 font-medium tracking-wide">{{ $message }}</span>
                             @enderror
@@ -94,7 +94,7 @@
                                id="subject" 
                                value="{{ old('subject') }}"
                                placeholder="Contoh: Usulan Dokumentasi Tradisi Tutur Desa..."
-                               class="w-full bg-linen-100 border border-linen-300 focus:border-ink-900 text-ink-900 text-sm sm:text-base px-4 py-3 sm:py-3.5 tracking-normal placeholder-ink-400 focus:outline-none transition-colors @error('subject') border-red-500 @enderror">
+                               class="w-full bg-linen-100 border border-linen-300 focus:border-ink-900 text-ink-900 text-base sm:text-sm px-4 py-3 sm:py-3.5 tracking-normal placeholder-ink-400 focus:outline-none focus:ring-1 focus:ring-ink-900 transition-colors @error('subject') border-red-500 @enderror">
                         @error('subject')
                             <span class="text-xs text-red-600 font-medium tracking-wide">{{ $message }}</span>
                         @enderror
@@ -110,15 +110,15 @@
                                   rows="6" 
                                   required 
                                   placeholder="Ceritakan tentang materi tutur, riwayat penutur, atau maksud pesan Anda secara ringkas..."
-                                  class="w-full bg-linen-100 border border-linen-300 focus:border-ink-900 text-ink-900 text-sm sm:text-base px-4 py-3 sm:py-3.5 tracking-normal placeholder-ink-400 focus:outline-none transition-colors @error('message') border-red-500 @enderror">{{ old('message') }}</textarea>
+                                  class="w-full bg-linen-100 border border-linen-300 focus:border-ink-900 text-ink-900 text-base sm:text-sm px-4 py-3 sm:py-3.5 tracking-normal placeholder-ink-400 focus:outline-none focus:ring-1 focus:ring-ink-900 transition-colors @error('message') border-red-500 @enderror">{{ old('message') }}</textarea>
                         @error('message')
                             <span class="text-xs text-red-600 font-medium tracking-wide">{{ $message }}</span>
                         @enderror
                     </div>
 
-                    <!-- Submit Button -->
+                    <!-- Submit Button (Touch-friendly min 48px height) -->
                     <div class="pt-4">
-                        <button type="submit" class="w-full sm:w-auto px-10 py-4 bg-ink-900 text-linen-100 text-xs uppercase tracking-[0.25em] font-semibold hover:bg-ink-800 transition-colors duration-300">
+                        <button type="submit" class="w-full sm:w-auto min-h-[48px] px-10 py-4 bg-ink-900 text-linen-100 text-xs uppercase tracking-[0.25em] font-semibold hover:bg-ink-800 transition-colors duration-300 flex items-center justify-center cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-ink-900">
                             Kirimkan Pesan
                         </button>
                     </div>

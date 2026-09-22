@@ -26,3 +26,4 @@ AGENTS.md
 .agents/*
 deploy.zip
 build-preview.zip
+*.zip

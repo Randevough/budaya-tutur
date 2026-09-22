@@ -20,11 +20,11 @@
 
         <div class="pt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="{{ route('home') }}" 
-               class="w-full sm:w-auto px-8 py-3.5 bg-ink-100 text-obsidian-950 text-xs uppercase tracking-[0.2em] font-semibold hover:bg-linen-200 transition-colors">
+               class="w-full sm:w-auto min-h-[48px] px-8 py-3.5 bg-ink-100 text-obsidian-950 text-xs uppercase tracking-[0.2em] font-semibold hover:bg-linen-200 transition-colors flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-ink-100">
                 Kembali ke Beranda
             </a>
             <a href="{{ route('arsip.index') }}" 
-               class="w-full sm:w-auto px-8 py-3.5 border border-obsidian-600 hover:border-ink-100 text-xs uppercase tracking-[0.2em] text-ink-100 hover:bg-obsidian-850 transition-colors">
+               class="w-full sm:w-auto min-h-[48px] px-8 py-3.5 border border-obsidian-600 hover:border-ink-100 text-xs uppercase tracking-[0.2em] text-ink-100 hover:bg-obsidian-850 transition-colors flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-ink-100">
                 Jelajahi Arsip
             </a>
         </div>

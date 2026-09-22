@@ -18,7 +18,7 @@
             border: 1px solid #e3ddd3 !important;
             box-shadow: 0 12px 32px -4px rgba(24, 22, 21, 0.07), 0 0 0 1px rgba(24, 22, 21, 0.02) !important;
             border-radius: 12px !important;
-            padding: 2.25rem 2rem !important;
+            padding: 1.5rem 1.25rem !important;
             max-width: 28rem !important;
             margin-left: auto !important;
             margin-right: auto !important;
@@ -27,6 +27,15 @@
         @media (min-width: 640px) {
             .fi-simple-main {
                 padding: 2.75rem 2.5rem !important;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .fi-simple-main input.fi-input,
+            .fi-simple-main input[type="email"],
+            .fi-simple-main input[type="password"],
+            .fi-simple-main input[type="text"] {
+                font-size: 16px !important;
             }
         }
 

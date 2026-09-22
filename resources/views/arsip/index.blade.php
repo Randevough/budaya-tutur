@@ -25,12 +25,12 @@
 
     <!-- Filter & Search Toolbar [DARK COMPACT: Obsidian #161413] -->
     <section class="bg-obsidian-850/95 border-b border-obsidian-700 sticky top-20 z-30 backdrop-blur-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-8 py-3 sm:py-3.5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 py-2.5 sm:py-3.5">
             <form id="archive-filter-form" action="{{ route('arsip.index') }}" method="GET" class="grid grid-cols-1 sm:grid-cols-12 gap-2.5 sm:gap-3 items-center">
                 <!-- Search Keyword -->
                 <div class="sm:col-span-8 relative flex items-center">
                     <div class="absolute left-3.5 text-ink-400 pointer-events-none">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <circle cx="11" cy="11" r="8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M21 21l-4.35-4.35" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
@@ -41,12 +41,13 @@
                            value="{{ request('q') }}" 
                            autocomplete="off" 
                            placeholder="Ketik judul, daerah, provinsi, atau kata kunci..." 
-                           class="w-full bg-obsidian-900 border border-obsidian-700 hover:border-obsidian-600 focus:border-ink-200 focus:bg-obsidian-950 text-ink-100 text-xs sm:text-sm pl-10 pr-11 py-2.5 sm:py-3 tracking-normal placeholder-ink-400 focus:outline-none transition-all duration-200 shadow-inner">
+                           aria-label="Cari arsip budaya tutur"
+                           class="w-full bg-obsidian-900 border border-obsidian-700 hover:border-obsidian-600 focus:border-ink-200 focus:bg-obsidian-950 text-ink-100 text-base sm:text-sm pl-10 pr-11 py-2.5 sm:py-3 tracking-normal placeholder-ink-400 focus:outline-none transition-all duration-200 shadow-inner">
                     <button type="button" 
                             id="search-clear-btn" 
-                            class="absolute right-2 sm:right-2.5 w-8 h-8 flex items-center justify-center rounded-full text-ink-400 hover:text-ink-100 hover:bg-obsidian-800 transition-all {{ request('q') ? '' : 'hidden' }}" 
+                            class="absolute right-2 sm:right-2.5 w-9 h-9 sm:w-8 sm:h-8 flex items-center justify-center rounded-full text-ink-400 hover:text-ink-100 hover:bg-obsidian-800 transition-all min-w-[36px] min-h-[36px] cursor-pointer {{ request('q') ? '' : 'hidden' }}" 
                             aria-label="Bersihkan pencarian">
-                        <svg class="w-4 h-4 sm:w-4.5 sm:h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-4 h-4 sm:w-4.5 sm:h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                         </svg>
                     </button>
@@ -56,7 +57,7 @@
                 <div class="sm:col-span-4 flex items-center space-x-2.5">
                     <div class="relative w-full" id="province-dropdown-wrapper">
                         <!-- Hidden native select for standard form submit & query string binding -->
-                        <select id="province-select" name="province" class="sr-only">
+                        <select id="province-select" name="province" class="sr-only" aria-label="Pilih Provinsi">
                             <option value="">Semua Wilayah Provinsi</option>
                             @foreach($provinces as $prov)
                                 <option value="{{ $prov->slug }}" {{ request('province') === $prov->slug ? 'selected' : '' }}>
@@ -65,19 +66,20 @@
                             @endforeach
                         </select>
 
-                        <!-- Custom Dropdown Trigger Button -->
+                        <!-- Custom Dropdown Trigger Button (min 44px height) -->
                         <button type="button" 
                                 id="province-dropdown-btn" 
                                 aria-haspopup="listbox" 
                                 aria-expanded="false" 
-                                class="w-full flex items-center justify-between bg-obsidian-900 border border-obsidian-700 hover:border-obsidian-600 focus:border-ink-200 focus:bg-obsidian-950 text-ink-100 text-xs sm:text-sm pl-3.5 sm:pl-4 pr-3 py-2.5 sm:py-3 tracking-normal focus:outline-none transition-all duration-200 text-left shadow-inner cursor-pointer">
+                                aria-label="Saring menurut wilayah provinsi"
+                                class="w-full min-h-[44px] flex items-center justify-between bg-obsidian-900 border border-obsidian-700 hover:border-obsidian-600 focus:border-ink-200 focus:bg-obsidian-950 text-ink-100 text-xs sm:text-sm pl-3.5 sm:pl-4 pr-3 py-2.5 sm:py-3 tracking-normal focus:outline-none transition-all duration-200 text-left shadow-inner cursor-pointer">
                             <span id="province-dropdown-label" class="truncate font-light">
                                 @php
                                     $selectedProv = $provinces->firstWhere('slug', request('province'));
                                 @endphp
                                 {{ $selectedProv ? $selectedProv->name : 'Semua Wilayah Provinsi' }}
                             </span>
-                            <svg id="province-dropdown-icon" class="w-3.5 h-3.5 text-ink-400 shrink-0 ml-2 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg id="province-dropdown-icon" class="w-3.5 h-3.5 text-ink-400 shrink-0 ml-2 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                             </svg>
                         </button>
@@ -85,15 +87,17 @@
                         <!-- Custom Dropdown Menu -->
                         <div id="province-dropdown-menu" 
                              role="listbox" 
+                             tabindex="-1"
                              class="hidden absolute left-0 right-0 top-full mt-1.5 bg-obsidian-900 border border-obsidian-700 shadow-2xl z-50 max-h-60 overflow-y-auto divide-y divide-obsidian-800/80">
                             <div class="py-1">
                                 <button type="button" 
                                         role="option" 
+                                        tabindex="0"
                                         data-value="" 
-                                        class="province-item w-full flex items-center justify-between text-left px-3.5 sm:px-4 py-2.5 text-xs sm:text-sm text-ink-200 hover:bg-obsidian-800 hover:text-ink-50 transition-colors cursor-pointer {{ !request('province') ? 'bg-obsidian-800/90 text-ink-100 font-medium' : 'font-light' }}">
+                                        class="province-item w-full min-h-[44px] flex items-center justify-between text-left px-3.5 sm:px-4 py-2.5 text-xs sm:text-sm text-ink-200 hover:bg-obsidian-800 hover:text-ink-50 focus:bg-obsidian-800 focus:outline-none transition-colors cursor-pointer {{ !request('province') ? 'bg-obsidian-800/90 text-ink-100 font-medium' : 'font-light' }}">
                                     <span>Semua Wilayah Provinsi</span>
                                     <span class="province-check {{ !request('province') ? '' : 'hidden' }}">
-                                        <svg class="w-3.5 h-3.5 text-ink-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-3.5 h-3.5 text-ink-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                                         </svg>
                                     </span>
@@ -103,11 +107,12 @@
                                 @foreach($provinces as $prov)
                                     <button type="button" 
                                             role="option" 
+                                            tabindex="0"
                                             data-value="{{ $prov->slug }}" 
-                                            class="province-item w-full flex items-center justify-between text-left px-3.5 sm:px-4 py-2.5 text-xs sm:text-sm text-ink-200 hover:bg-obsidian-800 hover:text-ink-50 transition-colors cursor-pointer {{ request('province') === $prov->slug ? 'bg-obsidian-800/90 text-ink-100 font-medium' : 'font-light' }}">
+                                            class="province-item w-full min-h-[44px] flex items-center justify-between text-left px-3.5 sm:px-4 py-2.5 text-xs sm:text-sm text-ink-200 hover:bg-obsidian-800 hover:text-ink-50 focus:bg-obsidian-800 focus:outline-none transition-colors cursor-pointer {{ request('province') === $prov->slug ? 'bg-obsidian-800/90 text-ink-100 font-medium' : 'font-light' }}">
                                         <span>{{ $prov->name }}</span>
                                         <span class="province-check {{ request('province') === $prov->slug ? '' : 'hidden' }}">
-                                            <svg class="w-3.5 h-3.5 text-ink-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <svg class="w-3.5 h-3.5 text-ink-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                                             </svg>
                                         </span>
@@ -119,7 +124,7 @@
 
                     <a href="{{ route('arsip.index') }}" 
                        id="filter-reset-btn" 
-                       class="shrink-0 px-4 py-2.5 sm:py-3 border border-obsidian-700 hover:border-ink-100 text-xs uppercase tracking-wider text-ink-300 hover:text-ink-100 hover:bg-obsidian-800 transition-colors font-medium {{ request()->hasAny(['q', 'province']) ? '' : 'hidden' }}" 
+                       class="shrink-0 min-h-[44px] px-4 py-2.5 sm:py-3 border border-obsidian-700 hover:border-ink-100 text-xs uppercase tracking-wider text-ink-300 hover:text-ink-100 hover:bg-obsidian-800 transition-colors font-medium flex items-center justify-center {{ request()->hasAny(['q', 'province']) ? '' : 'hidden' }}" 
                        title="Atur Ulang Pencarian">
                         Reset
                     </a>
@@ -212,8 +217,8 @@
                     @endforelse
                 </div>
 
-                <!-- Pagination Links -->
-                <div class="mt-16">
+                <!-- Pagination Links (Responsive scroll wrapper) -->
+                <div class="mt-14 sm:mt-16 overflow-x-auto max-w-full pb-2">
                     {{ $items->links() }}
                 </div>
             </div>
@@ -268,6 +273,42 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleDropdown();
         });
 
+        // Keyboard navigation for dropdown button
+        dropdownBtn.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleDropdown(true);
+                const firstOption = dropdownMenu.querySelector('.province-item');
+                if (firstOption) firstOption.focus();
+            }
+        });
+
+        // Keyboard navigation inside dropdown options
+        dropdownMenu.addEventListener('keydown', (e) => {
+            const items = Array.from(dropdownMenu.querySelectorAll('.province-item'));
+            const activeIndex = items.indexOf(document.activeElement);
+
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                const nextIndex = (activeIndex + 1) % items.length;
+                items[nextIndex].focus();
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                const prevIndex = (activeIndex - 1 + items.length) % items.length;
+                items[prevIndex].focus();
+            } else if (e.key === 'Escape') {
+                e.preventDefault();
+                toggleDropdown(false);
+                dropdownBtn.focus();
+            } else if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                if (document.activeElement && document.activeElement.classList.contains('province-item')) {
+                    document.activeElement.click();
+                    dropdownBtn.focus();
+                }
+            }
+        });
+
         dropdownItems.forEach(item => {
             item.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -303,6 +344,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && !dropdownMenu.classList.contains('hidden')) {
                 toggleDropdown(false);
+                dropdownBtn.focus();
             }
         });
     }

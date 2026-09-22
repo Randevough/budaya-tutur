@@ -66,9 +66,9 @@
             </div>
 
             <!-- Monumental Vision Plaque -->
-            <div class="relative mb-10 sm:mb-12 p-6 sm:p-10 md:p-12 border border-obsidian-700/80 bg-obsidian-900/80 backdrop-blur-sm overflow-hidden shadow-2xl">
+            <div class="relative mb-10 sm:mb-12 p-5 sm:p-10 md:p-12 border border-obsidian-700/80 bg-obsidian-900/80 backdrop-blur-sm overflow-hidden shadow-2xl">
                 <!-- Large Ambient Quote Mark Motif -->
-                <span class="absolute -top-4 -left-2 sm:top-2 sm:left-4 font-serif text-8xl sm:text-9xl text-obsidian-700/30 select-none pointer-events-none leading-none -z-0">“</span>
+                <span class="absolute -top-2 -left-1 sm:top-2 sm:left-4 font-serif text-6xl sm:text-8xl md:text-9xl text-obsidian-700/30 select-none pointer-events-none leading-none -z-0" aria-hidden="true">“</span>
                 
                 <!-- Subtle Radial PEAT Glow -->
                 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[220px] bg-[radial-gradient(ellipse_at_center,_rgba(244,240,234,0.04)_0%,_transparent_70%)] blur-[50px] pointer-events-none"></div>

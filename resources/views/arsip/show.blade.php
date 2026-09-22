@@ -27,12 +27,12 @@
 @endpush
 
 @section('content')
-    <!-- 1. FULL VIEWPORT THEATER HERO [DARK: Exactly 100vh / 100dvh Proportional Layout] -->
-    <header class="h-[calc(100vh-5rem)] sm:h-[calc(100dvh-5rem)] max-h-[calc(100vh-5rem)] flex flex-col pt-6 sm:pt-8 pb-6 sm:pb-8 bg-obsidian-900 text-ink-100 border-b border-obsidian-700 relative overflow-hidden">
+    <!-- 1. FULL VIEWPORT THEATER HERO [DARK: Responsive Proportional Layout] -->
+    <header class="h-auto min-h-0 lg:h-[calc(100vh-5rem)] lg:max-h-[calc(100vh-5rem)] flex flex-col pt-6 sm:pt-8 pb-8 lg:pb-8 bg-obsidian-900 text-ink-100 border-b border-obsidian-700 relative overflow-hidden">
         <!-- Top Utility Bar: Back to Archive & Region (Restored) -->
-        <div class="max-w-5xl mx-auto px-4 sm:px-8 w-full flex-shrink-0">
+        <div class="max-w-5xl mx-auto px-4 sm:px-8 w-full flex-shrink-0 mb-4 lg:mb-0">
             <div class="flex items-center justify-between text-xs uppercase tracking-[0.2em] text-ink-400">
-                <a href="{{ route('arsip.index') }}" class="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.2em] text-ink-400 hover:text-ink-100 transition-colors group">
+                <a href="{{ route('arsip.index') }}" class="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.2em] text-ink-400 hover:text-ink-100 transition-colors group min-h-[44px]">
                     <span class="transition-transform duration-200 group-hover:-translate-x-1">&larr;</span>
                     <span>Kembali ke Katalog</span>
                 </a>
@@ -54,7 +54,10 @@
                 <!-- YouTube Lite Media Theater Container (Snug to Title) -->
                 <div class="w-full aspect-video max-w-xl sm:max-w-2xl lg:max-w-3xl max-h-[290px] sm:max-h-[330px] md:max-h-[350px] mx-auto border border-obsidian-700 bg-black overflow-hidden shadow-2xl relative flex items-center justify-center">
                     <div id="lite-player-container" 
-                         class="relative w-full h-full bg-obsidian-950 flex items-center justify-center cursor-pointer group"
+                         role="button"
+                         tabindex="0"
+                         aria-label="Putar rekaman tuturan: {{ $item->title }}"
+                         class="relative w-full h-full bg-obsidian-950 flex items-center justify-center cursor-pointer group focus:outline-none focus-visible:ring-2 focus-visible:ring-ink-100"
                          data-youtube-id="{{ $item->youtube_id }}">
                         
                         <!-- Static Grayscale Thumbnail -->
@@ -68,7 +71,7 @@
                         <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/35 group-hover:opacity-80 transition-opacity"></div>
 
                         <!-- Custom Play Button Overlay -->
-                        <div id="lite-player-button" class="absolute z-10 flex flex-col items-center justify-center space-y-2">
+                        <div id="lite-player-button" class="absolute z-10 flex flex-col items-center justify-center space-y-2 pointer-events-none">
                             <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border border-ink-100/40 bg-ink-100/15 backdrop-blur-md flex items-center justify-center text-ink-100 group-hover:scale-110 group-hover:bg-ink-100 group-hover:text-obsidian-950 transition-all duration-300 shadow-2xl">
                                 <svg class="w-5 h-5 translate-x-0.5" fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M8 5v14l11-7z"/>
@@ -151,11 +154,11 @@
                                 </span>
                                 
                                 <div class="flex flex-wrap items-center gap-2">
-                                    <!-- 1. Native OS Web Share API Button -->
+                                    <!-- 1. Native OS Web Share API Button (44px min tap target) -->
                                     <button type="button" 
                                             id="share-trigger-btn"
-                                            class="inline-flex items-center space-x-1.5 px-3 py-2 bg-obsidian-950 hover:bg-obsidian-800 text-white rounded text-xs font-sans font-medium transition-colors cursor-pointer shadow-sm">
-                                        <svg class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            class="inline-flex items-center justify-center space-x-1.5 px-3.5 py-2.5 min-h-[44px] bg-obsidian-950 hover:bg-obsidian-800 text-white rounded text-xs font-sans font-medium transition-colors cursor-pointer shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-ink-900">
+                                        <svg class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                             <circle cx="18" cy="5" r="3"></circle>
                                             <circle cx="6" cy="12" r="3"></circle>
                                             <circle cx="18" cy="19" r="3"></circle>
@@ -165,25 +168,25 @@
                                         <span>Bagikan</span>
                                     </button>
 
-                                    <!-- 2. Quick Copy Link Button -->
+                                    <!-- 2. Quick Copy Link Button (44px min tap target) -->
                                     <button type="button" 
                                             id="copy-link-btn"
                                             data-url="{{ url()->current() }}"
-                                            class="inline-flex items-center space-x-1.5 px-3 py-2 border border-linen-300 hover:border-ink-900 bg-white hover:bg-linen-100 text-ink-800 rounded text-xs font-sans font-medium transition-colors cursor-pointer shadow-sm"
+                                            class="inline-flex items-center justify-center space-x-1.5 px-3.5 py-2.5 min-h-[44px] border border-linen-300 hover:border-ink-900 bg-white hover:bg-linen-100 text-ink-800 rounded text-xs font-sans font-medium transition-colors cursor-pointer shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-ink-900"
                                             title="Salin tautan ke clipboard">
-                                        <svg class="w-3.5 h-3.5 text-ink-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-3.5 h-3.5 text-ink-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
                                         </svg>
                                         <span id="copy-text">Salin Link</span>
                                     </button>
 
-                                    <!-- 3. Quick WhatsApp Share Button -->
+                                    <!-- 3. Quick WhatsApp Share Button (44px min tap target) -->
                                     <a href="https://api.whatsapp.com/send?text={{ urlencode($item->title . ' — ' . url()->current()) }}" 
                                        target="_blank" 
                                        rel="noopener noreferrer" 
-                                       class="inline-flex items-center space-x-1.5 px-3 py-2 border border-linen-300 hover:border-ink-900 bg-white hover:bg-linen-100 text-ink-800 rounded text-xs font-sans font-medium transition-colors shadow-sm"
+                                       class="inline-flex items-center justify-center space-x-1.5 px-3.5 py-2.5 min-h-[44px] border border-linen-300 hover:border-ink-900 bg-white hover:bg-linen-100 text-ink-800 rounded text-xs font-sans font-medium transition-colors shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-ink-900"
                                        title="Bagikan ke WhatsApp">
-                                        <svg class="w-3.5 h-3.5 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-3.5 h-3.5 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                             <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.586 1.761.88 2.79.88 3.18 0 5.767-2.587 5.767-5.766.001-3.181-2.585-5.766-5.766-5.766zm9.969 5.766c0 5.503-4.469 9.969-9.969 9.969-1.745 0-3.385-.453-4.82-1.246l-5.211 1.339 1.362-4.973c-.908-1.508-1.428-3.266-1.428-5.089 0-5.502 4.469-9.969 9.969-9.969 5.503 0 9.969 4.467 9.969 9.969z"/>
                                         </svg>
                                         <span>WhatsApp</span>
@@ -275,9 +278,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // YouTube Lite Player Loader
     const container = document.getElementById('lite-player-container');
     if (container) {
-        container.addEventListener('click', function () {
-            const youtubeId = this.getAttribute('data-youtube-id');
-            if (!youtubeId) return;
+        const playVideo = function () {
+            const youtubeId = container.getAttribute('data-youtube-id');
+            if (!youtubeId || container.querySelector('iframe')) return;
 
             const iframe = document.createElement('iframe');
             iframe.setAttribute('src', `https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3`);
@@ -286,9 +289,19 @@ document.addEventListener('DOMContentLoaded', function () {
             iframe.setAttribute('allowfullscreen', 'true');
             iframe.className = 'w-full h-full absolute inset-0';
 
-            this.innerHTML = '';
-            this.appendChild(iframe);
-            this.classList.remove('cursor-pointer');
+            container.innerHTML = '';
+            container.appendChild(iframe);
+            container.classList.remove('cursor-pointer');
+            container.removeAttribute('role');
+            container.removeAttribute('tabindex');
+        };
+
+        container.addEventListener('click', playVideo);
+        container.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                playVideo();
+            }
         });
     }
 

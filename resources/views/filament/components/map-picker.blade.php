@@ -166,7 +166,7 @@
 >
     <!-- Map Instructions & Feedback Bar -->
     <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 14px; background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; font-size: 12px; color: #374151;">
-        <div style="display: flex; align-items: center; gap: 8px;">
+        <div style="display: flex; align-items: center; gap: 8px; flex: 1 1 200px;">
             <svg style="width: 16px; height: 16px; min-width: 16px; color: #0284c7;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
@@ -174,9 +174,9 @@
             <span><strong>Petunjuk:</strong> Klik di peta atau geser pin marker untuk menentukan koordinat centroid.</span>
         </div>
 
-        <div style="display: flex; align-items: center; gap: 12px;">
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px;">
             <template x-if="displayLat !== null && displayLng !== null">
-                <span style="display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 6px; font-family: monospace; font-size: 11px; font-weight: 600; color: #065f46;">
+                <span style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 6px; font-family: monospace; font-size: 11px; font-weight: 600; color: #065f46;">
                     <span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #10b981;"></span>
                     <span x-text="`Lat: ${displayLat}, Lng: ${displayLng}`"></span>
                 </span>
@@ -188,7 +188,7 @@
             <button 
                 type="button" 
                 @click="resetView()" 
-                style="font-size: 11px; color: #6b7280; text-decoration: underline; background: none; border: none; cursor: pointer; padding: 0;"
+                style="font-size: 11px; color: #6b7280; text-decoration: underline; background: none; border: none; cursor: pointer; padding: 4px 0; min-height: 32px;"
                 onmouseover="this.style.color='#111827'"
                 onmouseout="this.style.color='#6b7280'"
             >
@@ -200,6 +200,6 @@
     <!-- Map Viewport -->
     <div 
         x-ref="mapBox" 
-        style="width: 100%; height: 380px; min-height: 380px; border-radius: 8px; border: 1px solid #d1d5db; position: relative; z-index: 0; background: #f3f4f6;"
+        class="w-full h-[280px] sm:h-[350px] md:h-[380px] min-h-[260px] rounded-lg border border-gray-300 relative z-0 bg-gray-100"
     ></div>
 </div>

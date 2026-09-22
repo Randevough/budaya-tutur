@@ -23,7 +23,7 @@ class RegencyForm
                 Section::make('Identitas Wilayah')
                     ->description('Nama wilayah administratif dan provinsi naungannya di Indonesia')
                     ->icon(Heroicon::OutlinedBuildingOffice2)
-                    ->columns(2)
+                    ->columns(['default' => 1, 'sm' => 2])
                     ->columnSpanFull()
                     ->schema([
                         Select::make('province_id')
@@ -132,7 +132,7 @@ class RegencyForm
                 Section::make('Titik Peta & Koordinat Centroid')
                     ->description('Tentukan posisi titik tengah kabupaten/kota dengan klik di peta atau geser pin')
                     ->icon(Heroicon::OutlinedMapPin)
-                    ->columns(2)
+                    ->columns(['default' => 1, 'sm' => 2])
                     ->columnSpanFull()
                     ->schema([
                         ViewField::make('map_picker')
