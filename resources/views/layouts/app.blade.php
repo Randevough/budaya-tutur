@@ -10,6 +10,10 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="{{ url()->current() }}">
 
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
+    <link rel="alternate icon" href="{{ asset('favicon.ico') }}">
+
     <!-- OpenGraph / Social Metadata -->
     <meta property="og:site_name" content="Budaya Tutur">
     <meta property="og:title" content="@yield('og_title', 'Budaya Tutur | Arsip Suara & Cerita Lisan Nusantara')">
