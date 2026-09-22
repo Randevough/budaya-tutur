@@ -179,10 +179,10 @@
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] sm:w-[900px] h-[220px] bg-[radial-gradient(ellipse_at_top,_rgba(244,240,234,0.06)_0%,_transparent_70%)] blur-[60px] pointer-events-none"></div>
 
         <div class="relative max-w-7xl mx-auto">
-            <!-- Main 3-Column Asymmetric Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-16 text-sm mb-16">
-                <!-- Col 1 (5 cols): Brand & Mission -->
-                <div class="md:col-span-5 space-y-4">
+            <!-- Main 3-Column Asymmetric Grid (2 cols on mobile, 12 cols on desktop) -->
+            <div class="grid grid-cols-2 md:grid-cols-12 gap-x-6 sm:gap-x-8 gap-y-10 md:gap-12 lg:gap-16 text-sm mb-12 sm:mb-16">
+                <!-- Col 1 (5 cols on desktop, full width on mobile): Brand & Mission -->
+                <div class="col-span-2 md:col-span-5 space-y-4">
                     <div class="flex items-center space-x-3.5">
                         <div class="w-9 h-9 rounded-full border border-obsidian-700 bg-obsidian-850 flex items-center justify-center text-ink-100 shrink-0">
                             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -203,8 +203,8 @@
                     </p>
                 </div>
 
-                <!-- Col 2 (3 cols): Navigasi -->
-                <div class="md:col-span-3 space-y-4">
+                <!-- Col 2 (3 cols on desktop, 1 col on mobile): Navigasi -->
+                <div class="col-span-1 md:col-span-3 space-y-4">
                     <h4 class="font-serif text-xs uppercase tracking-[0.25em] text-ink-100 font-semibold">
                         Navigasi
                     </h4>
@@ -219,20 +219,20 @@
                     </ul>
                 </div>
 
-                <!-- Col 3 (4 cols): Terhubung / Media Sosial -->
-                <div class="md:col-span-4 space-y-4">
+                <!-- Col 3 (4 cols on desktop, 1 col on mobile): Terhubung / Media Sosial -->
+                <div class="col-span-1 md:col-span-4 space-y-4">
                     <h4 class="font-serif text-xs uppercase tracking-[0.25em] text-ink-100 font-semibold">
                         Terhubung
                     </h4>
                     <ul class="space-y-3 text-xs tracking-wider text-ink-300">
                         <li>
                             <a href="https://youtube.com/@budayatutur" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center space-x-2 hover:text-ink-100 transition-colors">
-                                <svg class="w-4 h-4 text-ink-400 group-hover:text-ink-100 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <svg class="w-4 h-4 shrink-0 text-ink-400 group-hover:text-ink-100 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
                                     <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
                                 </svg>
                                 <span>YouTube</span>
-                                <svg class="w-3.5 h-3.5 text-ink-500 group-hover:text-ink-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <svg class="w-3.5 h-3.5 shrink-0 text-ink-500 group-hover:text-ink-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <line x1="7" y1="17" x2="17" y2="7"/>
                                     <polyline points="7 7 17 7 17 17"/>
                                 </svg>
@@ -240,12 +240,12 @@
                         </li>
                         <li>
                             <a href="mailto:kontak@budayatutur.id" class="group inline-flex items-center space-x-2 hover:text-ink-100 transition-colors">
-                                <svg class="w-4 h-4 text-ink-400 group-hover:text-ink-100 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <svg class="w-4 h-4 shrink-0 text-ink-400 group-hover:text-ink-100 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                                     <polyline points="22,6 12,13 2,6"/>
                                 </svg>
                                 <span>Email</span>
-                                <svg class="w-3.5 h-3.5 text-ink-500 group-hover:text-ink-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <svg class="w-3.5 h-3.5 shrink-0 text-ink-500 group-hover:text-ink-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <line x1="7" y1="17" x2="17" y2="7"/>
                                     <polyline points="7 7 17 7 17 17"/>
                                 </svg>
@@ -253,11 +253,11 @@
                         </li>
                         <li>
                             <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center space-x-2 hover:text-ink-100 transition-colors">
-                                <svg class="w-4 h-4 text-ink-400 group-hover:text-ink-100 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <svg class="w-4 h-4 shrink-0 text-ink-400 group-hover:text-ink-100 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
                                 </svg>
                                 <span>WhatsApp</span>
-                                <svg class="w-3.5 h-3.5 text-ink-500 group-hover:text-ink-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <svg class="w-3.5 h-3.5 shrink-0 text-ink-500 group-hover:text-ink-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <line x1="7" y1="17" x2="17" y2="7"/>
                                     <polyline points="7 7 17 7 17 17"/>
                                 </svg>

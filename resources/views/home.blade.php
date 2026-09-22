@@ -217,9 +217,9 @@
         </div>
     </section>
 
-    <!-- 4. EDITORIAL MANIFESTO [LIGHT: Warm Linen #F2ECE2] -->
-    <section id="tentang" class="py-28 sm:py-36 bg-linen-200 text-ink-900 border-b border-linen-300">
-        <div class="max-w-4xl mx-auto px-4 sm:px-8 text-center space-y-8">
+    <!-- 4. EDITORIAL MANIFESTO [LIGHT: Unbleached Linen #F8F5F0] -->
+    <section id="tentang" class="py-14 sm:py-16 md:py-20 bg-linen-100 text-ink-900 border-b border-linen-300">
+        <div class="max-w-4xl mx-auto px-4 sm:px-8 text-center space-y-5 sm:space-y-6">
             <span class="text-xs uppercase tracking-[0.25em] text-ink-600 block font-medium">
                 Catatan Pengarsipan
             </span>
@@ -229,7 +229,7 @@
             <p class="text-ink-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto font-light">
                 Budaya Tutur Voices hadir sebagai ruang simpan digital independen. Kami memprioritaskan tuturan lisan dari komunitas yang belum banyak terdokumentasi, menyajikannya secara khidmat tanpa komersialisasi
             </p>
-            <div class="pt-6">
+            <div class="pt-2 sm:pt-3">
                 <a href="{{ route('kontak') }}" class="inline-block px-8 py-3.5 border border-ink-900 text-xs uppercase tracking-[0.2em] text-ink-900 hover:bg-ink-900 hover:text-linen-100 transition-all duration-300 font-medium">
                     Hubungi Kami / Usulkan Rekaman
                 </a>
