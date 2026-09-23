@@ -254,8 +254,15 @@
         <!-- Editorial Navigation Cue -->
         <div class="mt-8 pt-6 border-t border-[#e3ddd3] text-center">
             <a href="{{ route('home') }}" class="inline-flex items-center text-xs tracking-[0.18em] uppercase text-[#7a736a] hover:text-[#181615] transition-colors font-medium group">
-                <span class="inline-block transition-transform duration-200 group-hover:-translate-x-1 mr-1.5">&larr;</span>
-                Kembali ke Beranda
+                <svg class="w-3.5 h-3.5 mr-2 transition-transform duration-200 ease-out group-hover:-translate-x-1.5 shrink-0 text-[#7a736a] group-hover:text-[#181615]" 
+                     fill="none" 
+                     viewBox="0 0 24 24" 
+                     stroke-width="2" 
+                     stroke="currentColor" 
+                     aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                </svg>
+                <span>Kembali ke Beranda</span>
             </a>
         </div>
     </div>

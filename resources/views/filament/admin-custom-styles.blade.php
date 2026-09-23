@@ -587,6 +587,14 @@
         transform: translateY(-1px) !important;
         box-shadow: 0 6px 16px -2px rgba(12, 11, 10, 0.25) !important;
     }
+
+    .fi-simple-main button[type="submit"]:disabled,
+    .fi-simple-main button[type="submit"].fi-processing,
+    .fi-simple-main .fi-btn-primary:disabled {
+        opacity: 0.8 !important;
+        cursor: wait !important;
+        transform: none !important;
+    }
 </style>
 
 <script>

@@ -28,7 +28,9 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login(\App\Filament\Pages\Auth\Login::class)
-            ->passwordReset()
+            ->passwordReset(
+                requestAction: \App\Filament\Pages\Auth\PasswordReset\RequestPasswordReset::class,
+            )
             ->darkMode(false)
             ->spa(hasPrefetching: true)
             ->brandName('Budaya Tutur')

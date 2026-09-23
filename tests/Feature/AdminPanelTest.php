@@ -135,6 +135,26 @@ class AdminPanelTest extends TestCase
     {
         $response = $this->get('/admin/password-reset/request');
         $response->assertStatus(200);
+        $response->assertSee('Kembali ke halaman masuk');
+        $response->assertSee('Lupa Kata Sandi?');
+    }
+
+    public function test_password_reset_request_submission_triggers_sent_confirmation(): void
+    {
+        $admin = User::factory()->create([
+            'email' => 'admin@budayatutur.id',
+        ]);
+
+        \Livewire\Livewire::test(\App\Filament\Pages\Auth\PasswordReset\RequestPasswordReset::class)
+            ->fillForm([
+                'email' => $admin->email,
+            ])
+            ->call('request')
+            ->assertSet('emailSent', true)
+            ->assertSet('sentEmail', $admin->email)
+            ->assertSee('Instruksi Telah Dikirim')
+            ->call('resetConfirmation')
+            ->assertSet('emailSent', false);
     }
 
     public function test_password_reset_screen_loads_with_valid_token(): void
