@@ -4,6 +4,7 @@ use App\Http\Controllers\ArsipController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,6 +40,7 @@ Route::get('/donasi', [DonationController::class, 'index'])->name('donasi');
 
 // ⚠️  TEMPORARY — DELETE IMMEDIATELY AFTER RUNNING MIGRATIONS ON HOSTINGER
 Route::get('/artisan-migrate-bt9x2w', function () {
+    abort_unless(request('key') === env('ARTISAN_WEB_KEY', 'bt9x2w-key'), 403, 'Akses tidak diizinkan.');
     Artisan::call('migrate', ['--force' => true]);
     return '<pre>' . htmlspecialchars(Artisan::output()) . '</pre>';
 });
@@ -46,6 +48,7 @@ Route::get('/artisan-migrate-bt9x2w', function () {
 
 // ⚠️  TEMPORARY — DELETE IMMEDIATELY AFTER CLEARING CACHE ON HOSTINGER
 Route::get('/artisan-cache-clear-bt9x2w', function () {
+    abort_unless(request('key') === env('ARTISAN_WEB_KEY', 'bt9x2w-key'), 403, 'Akses tidak diizinkan.');
     Artisan::call('cache:clear');
     return '<pre>Cache cleared OK</pre>';
 });

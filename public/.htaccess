@@ -3,6 +3,17 @@
         Options -MultiViews -Indexes
     </IfModule>
 
+    # Block access to hidden files and directories (e.g. .env, .git, .env.example)
+    <FilesMatch "^\.">
+        <IfModule mod_authz_core.c>
+            Require all denied
+        </IfModule>
+        <IfModule !mod_authz_core.c>
+            Order allow,deny
+            Deny from all
+        </IfModule>
+    </FilesMatch>
+
     RewriteEngine On
 
     # Handle Authorization Header

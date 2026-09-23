@@ -8,21 +8,21 @@
 
 @push('schema')
 <script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "AudioObject",
-    "name": "{{ addslashes($item->title) }}",
-    "description": "{{ addslashes(Str::limit(strip_tags($item->excerpt ?? $item->description), 200)) }}",
-    "contentUrl": "https://www.youtube.com/watch?v={{ $item->youtube_id }}",
-    "embedUrl": "https://www.youtube-nocookie.com/embed/{{ $item->youtube_id }}",
-    "thumbnailUrl": "{{ $item->thumbnail_url }}",
-    "uploadDate": "{{ $item->created_at ? $item->created_at->toIso8601String() : now()->toIso8601String() }}",
-    "inLanguage": "id",
-    "contentLocation": {
-        "@type": "Place",
-        "name": "{{ addslashes($item->regency->name) }}, {{ addslashes($item->regency->province->name) }}"
-    }
-}
+{!! json_encode([
+    '@context' => 'https://schema.org',
+    '@type' => 'AudioObject',
+    'name' => $item->title,
+    'description' => Str::limit(strip_tags($item->excerpt ?? $item->description), 200),
+    'contentUrl' => "https://www.youtube.com/watch?v={$item->youtube_id}",
+    'embedUrl' => "https://www.youtube-nocookie.com/embed/{$item->youtube_id}",
+    'thumbnailUrl' => $item->thumbnail_url,
+    'uploadDate' => $item->created_at ? $item->created_at->toIso8601String() : now()->toIso8601String(),
+    'inLanguage' => 'id',
+    'contentLocation' => [
+        '@type' => 'Place',
+        'name' => "{$item->regency->name}, {$item->regency->province->name}",
+    ],
+], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_PRETTY_PRINT) !!}
 </script>
 @endpush
 

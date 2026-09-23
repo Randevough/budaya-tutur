@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Vite;
 use Illuminate\Support\ServiceProvider;
@@ -21,9 +22,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // Enforce HTTPS scheme for all generated URLs (asset, route, url, pagination) in production
+        // Enforce strict Eloquent evaluation in local/testing (catches unfillable attributes, lazy loading)
+        Model::shouldBeStrict(! $this->app->isProduction());
+
+        // Production security hardening
         if ($this->app->environment('production')) {
             URL::forceScheme('https');
+
+            // Force debug to false in production to prevent stack trace or credential leaks
+            config(['app.debug' => false]);
         }
 
         // Safety guard: If public/hot exists on remote server (e.g. Hostinger), remove it

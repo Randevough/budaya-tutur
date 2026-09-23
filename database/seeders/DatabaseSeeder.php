@@ -15,12 +15,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // 1. Admin User
+        // 1. Admin User (Configurable via ADMIN_DEFAULT_PASSWORD)
+        $adminPassword = env('ADMIN_DEFAULT_PASSWORD');
+        if (empty($adminPassword)) {
+            $adminPassword = app()->isProduction() ? \Illuminate\Support\Str::random(24) : 'password';
+        }
+
         User::firstOrCreate(
             ['email' => 'admin@budayatutur.id'],
             [
                 'name' => 'Admin Budaya Tutur',
-                'password' => bcrypt('password'),
+                'password' => bcrypt($adminPassword),
                 'email_verified_at' => now(),
             ]
         );

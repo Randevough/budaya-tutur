@@ -148,9 +148,11 @@ class CultureItemForm
                                 ->label('Foto Sampul Kurasi (Opsional)')
                                 ->directory('covers')
                                 ->image()
+                                ->acceptedFileTypes(['image/png', 'image/jpeg', 'image/webp'])
+                                ->maxSize(3072)
                                 ->imageAspectRatio('16:9')
                                 ->automaticallyCropImagesToAspectRatio()
-                                ->helperText('Opsional. Kosongkan untuk memakai thumbnail YouTube.')
+                                ->helperText('JPG, PNG, WebP (maks. 3 MB). Kosongkan untuk memakai thumbnail YouTube.')
                                 ->columnSpanFull(),
                         ]),
                 ])->columnSpan(1),
