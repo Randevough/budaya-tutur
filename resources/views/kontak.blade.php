@@ -42,8 +42,8 @@
                 <form action="{{ route('kontak.store') }}" method="POST" class="space-y-8">
                     @csrf
 
-                    <!-- Silent Honeypot Field -->
-                    <div class="hidden" aria-hidden="true">
+                    <!-- Silent Honeypot Field (Off-screen trap for automated bots) -->
+                    <div style="position: absolute; left: -9999px; top: -9999px; opacity: 0; pointer-events: none; width: 0; height: 0; overflow: hidden;" aria-hidden="true">
                         <label for="website_url">Website URL (leave empty)</label>
                         <input type="text" name="website_url" id="website_url" tabindex="-1" autocomplete="off">
                     </div>

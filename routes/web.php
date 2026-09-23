@@ -23,16 +23,18 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 // About Page (Mission, Vision, Emblem Philosophy & Ethics)
 Route::view('/tentang', 'about')->name('about');
 
-// Archive Listing (Filterable Directory)
-Route::get('/arsip', [ArsipController::class, 'index'])->name('arsip.index');
+// Archive Listing (Filterable Directory with 60 req/min scraping defense)
+Route::get('/arsip', [ArsipController::class, 'index'])
+    ->middleware('throttle:60,1')
+    ->name('arsip.index');
 
 // Culture Item Detail (Lite YouTube Embed, Story & Transcription)
 Route::get('/arsip/{slug}', [ArsipController::class, 'show'])->name('arsip.show');
 
-// Contact Form (DB-First Fallback + SMTP)
+// Contact Form (DB-First Fallback + SMTP with 5 submissions/min anti-spam limit)
 Route::get('/kontak', [ContactController::class, 'index'])->name('kontak');
 Route::post('/kontak', [ContactController::class, 'store'])
-    ->middleware('throttle:10,1')
+    ->middleware('throttle:5,1')
     ->name('kontak.store');
 
 // Donation Page (Editorial Support & Archive Preservation)
