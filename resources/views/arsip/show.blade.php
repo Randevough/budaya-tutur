@@ -61,11 +61,15 @@
                          class="relative w-full h-full bg-obsidian-950 flex items-center justify-center cursor-pointer group focus:outline-none focus-visible:ring-2 focus-visible:ring-ink-100"
                          data-youtube-id="{{ $item->youtube_id }}">
                         
-                        <!-- Static Grayscale Thumbnail -->
+                        <!-- Static Grayscale Thumbnail (High priority LCP hero asset) -->
                         <img id="lite-player-thumb"
-                             src="{{ $item->thumbnail_url }}" 
+                             src="{{ $item->cover_url }}" 
                              alt="{{ $item->title }}"
                              class="w-full h-full object-cover grayscale contrast-110 group-hover:scale-105 transition-all duration-700 ease-out"
+                             loading="eager"
+                             fetchpriority="high"
+                             width="1280"
+                             height="720"
                              onerror="this.src='https://img.youtube.com/vi/{{ $item->youtube_id }}/hqdefault.jpg'">
                         
                         <!-- Dark Gradient Vignette -->
@@ -252,7 +256,11 @@
                                     <img src="{{ $related->thumbnail_url }}" 
                                          alt="{{ $related->title }}"
                                          class="w-full h-full object-cover grayscale contrast-110 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700 ease-out"
-                                         loading="lazy">
+                                         loading="lazy"
+                                         decoding="async"
+                                         width="640"
+                                         height="360"
+                                         onerror="this.src='https://img.youtube.com/vi/{{ $related->youtube_id }}/hqdefault.jpg'">
                                 @else
                                     <div class="w-full h-full flex items-center justify-center bg-linen-200 text-ink-500 text-xs uppercase tracking-widest">
                                         Rekaman Terkait

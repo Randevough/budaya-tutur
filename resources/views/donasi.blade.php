@@ -83,6 +83,10 @@
                                 src="{{ asset('storage/' . $settings->qris_image) }}"
                                 alt="Barcode QRIS Budaya Tutur"
                                 class="w-44 h-44 object-contain"
+                                loading="lazy"
+                                decoding="async"
+                                width="176"
+                                height="176"
                             />
                         @else
                             <div class="w-44 h-44 bg-linen-50 border border-dashed border-linen-300 flex flex-col items-center justify-center p-3 text-obsidian-950 text-center">

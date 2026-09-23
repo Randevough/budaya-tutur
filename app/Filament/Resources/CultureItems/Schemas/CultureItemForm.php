@@ -152,6 +152,9 @@ class CultureItemForm
                                 ->maxSize(3072)
                                 ->imageAspectRatio('16:9')
                                 ->automaticallyCropImagesToAspectRatio()
+                                ->imageResizeMode('cover')
+                                ->imageResizeTargetWidth('1280')
+                                ->imageResizeTargetHeight('720')
                                 ->helperText('JPG, PNG, WebP (maks. 3 MB). Kosongkan untuk memakai thumbnail YouTube.')
                                 ->columnSpanFull(),
                         ]),

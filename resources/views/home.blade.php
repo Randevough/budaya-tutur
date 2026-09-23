@@ -2,6 +2,11 @@
 
 @section('title', 'Budaya Tutur | Arsip Suara & Cerita Lisan Nusantara')
 
+@push('styles')
+    <!-- Leaflet Stylesheet (Only loaded on Home for map) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+@endpush
+
 @section('content')
     <!-- 1. HERO SECTION [DARK: Obsidian #121110 Velvet] -->
     <section class="relative bg-obsidian-900 border-b border-obsidian-700 min-h-0 sm:min-h-[calc(100dvh-5rem)] py-14 sm:py-20 md:py-24 flex flex-col justify-center overflow-hidden">
@@ -165,6 +170,9 @@
                                      alt="{{ $item->title }}"
                                      class="w-full h-full object-cover grayscale contrast-110 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700 ease-out"
                                      loading="lazy"
+                                     decoding="async"
+                                     width="640"
+                                     height="360"
                                      onerror="this.src='https://img.youtube.com/vi/{{ $item->youtube_id }}/hqdefault.jpg'">
                             @else
                                 <div class="w-full h-full flex items-center justify-center bg-obsidian-950 text-ink-500 text-xs uppercase tracking-widest">
@@ -240,6 +248,8 @@
 @endsection
 
 @push('scripts')
+<!-- Leaflet JS CDN (Only loaded on Home page) -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     const regenciesData = @json($mapRegencies);

@@ -123,4 +123,13 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Content Security Policy (CSP)
+    |--------------------------------------------------------------------------
+    */
+
+    'csp_enabled' => env('CSP_ENABLED', true),
+    'csp_report_only' => env('CSP_REPORT_ONLY', true),
+
 ];

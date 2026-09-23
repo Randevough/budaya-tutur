@@ -46,8 +46,12 @@ class ArsipController extends Controller
 
         $items = $query->latest()->paginate($perPage)->withQueryString();
 
-        // Filters data
-        $provinces = Province::whereHas('regencies.cultureItems', fn ($q) => $q->where('is_published', true))->get();
+        // Filters data (cached on file driver to avoid repeated multi-table subqueries)
+        $provinces = \Illuminate\Support\Facades\Cache::remember('published_provinces_filter', 86400, function () {
+            return Province::whereHas('regencies.cultureItems', fn ($q) => $q->where('is_published', true))
+                ->orderBy('name')
+                ->get(['id', 'name', 'slug']);
+        });
 
         return view('arsip.index', compact('items', 'provinces'));
     }
@@ -60,8 +64,10 @@ class ArsipController extends Controller
             ->firstOrFail();
 
         // Related items: Prioritize nearest proximity (exact regency first, then province)
+        // Eager load regency.province to prevent N+1 query in card views
         $relatedItems = CultureItem::published()
             ->where('id', '!=', $item->id)
+            ->with(['regency.province'])
             ->where(function ($q) use ($item) {
                 $q->where('regency_id', $item->regency_id)
                     ->orWhereHas('regency', function ($rq) use ($item) {

@@ -261,5 +261,64 @@ class PublicPagesTest extends TestCase
         $detail->assertSee('"@type": "AudioObject"', false);
         $detail->assertSee($this->cultureItem->title, false);
     }
+
+    public function test_home_and_arsip_queries_are_cached_on_subsequent_loads(): void
+    {
+        \Illuminate\Support\Facades\Cache::flush();
+
+        $this->get('/');
+        $this->assertTrue(\Illuminate\Support\Facades\Cache::has('home_map_regencies'));
+        $this->assertTrue(\Illuminate\Support\Facades\Cache::has('home_stats'));
+
+        $this->get('/arsip');
+        $this->assertTrue(\Illuminate\Support\Facades\Cache::has('published_provinces_filter'));
+    }
+
+    public function test_culture_item_updates_flush_performance_caches(): void
+    {
+        \Illuminate\Support\Facades\Cache::put('published_provinces_filter', ['test'], 3600);
+        \Illuminate\Support\Facades\Cache::put('home_map_regencies', ['test'], 3600);
+        \Illuminate\Support\Facades\Cache::put('home_stats', ['test'], 3600);
+
+        // Updating a culture item must trigger clearPerformanceCaches
+        $this->cultureItem->update(['title' => 'Updated Title']);
+
+        $this->assertFalse(\Illuminate\Support\Facades\Cache::has('published_provinces_filter'));
+        $this->assertFalse(\Illuminate\Support\Facades\Cache::has('home_map_regencies'));
+        $this->assertFalse(\Illuminate\Support\Facades\Cache::has('home_stats'));
+    }
+
+    public function test_culture_item_thumbnail_and_cover_urls(): void
+    {
+        // YouTube item returns hqdefault (~25KB) for grid thumbnails and maxresdefault for hero player
+        $this->assertEquals(
+            'https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg',
+            $this->cultureItem->thumbnail_url
+        );
+        $this->assertEquals(
+            'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg',
+            $this->cultureItem->cover_url
+        );
+    }
+
+    public function test_arsip_detail_eager_loads_related_items_without_n_plus_one(): void
+    {
+        // Create second culture item in same regency
+        CultureItem::create([
+            'regency_id' => $this->regency->id,
+            'title' => 'Tutur Tambahan',
+            'slug' => 'tutur-tambahan',
+            'category' => 'Syair',
+            'excerpt' => 'Kidung tambahan',
+            'description' => 'Isi tutur...',
+            'youtube_id' => 'dQw4w9WgXcQ',
+            'is_published' => true,
+        ]);
+
+        $response = $this->get('/arsip/' . $this->cultureItem->slug);
+        $response->assertStatus(200);
+        $response->assertSee('Tutur Tambahan');
+        $response->assertSee('Wilayah Sama');
+    }
 }
 
