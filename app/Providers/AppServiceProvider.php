@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Vite;
 use Illuminate\Support\ServiceProvider;
 
@@ -20,6 +21,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // Enforce HTTPS scheme for all generated URLs (asset, route, url, pagination) in production
+        if ($this->app->environment('production')) {
+            URL::forceScheme('https');
+        }
+
         // Safety guard: If public/hot exists on remote server (e.g. Hostinger), remove it
         // so Laravel does not attempt to load Vite dev server from local URL [::1]:5173
         if (!app()->runningInConsole()) {

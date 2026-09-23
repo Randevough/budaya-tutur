@@ -37,3 +37,17 @@ Route::post('/kontak', [ContactController::class, 'store'])
 // Donation Page (Editorial Support & Archive Preservation)
 Route::get('/donasi', [DonationController::class, 'index'])->name('donasi');
 
+// ⚠️  TEMPORARY — DELETE IMMEDIATELY AFTER RUNNING MIGRATIONS ON HOSTINGER
+Route::get('/artisan-migrate-bt9x2w', function () {
+    Artisan::call('migrate', ['--force' => true]);
+    return '<pre>' . htmlspecialchars(Artisan::output()) . '</pre>';
+});
+// ⚠️  END TEMPORARY
+
+// ⚠️  TEMPORARY — DELETE IMMEDIATELY AFTER CLEARING CACHE ON HOSTINGER
+Route::get('/artisan-cache-clear-bt9x2w', function () {
+    Artisan::call('cache:clear');
+    return '<pre>Cache cleared OK</pre>';
+});
+// ⚠️  END TEMPORARY
+
