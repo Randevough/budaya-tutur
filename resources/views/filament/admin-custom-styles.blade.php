@@ -472,6 +472,121 @@
     .leaflet-control-attribution {
         display: none !important;
     }
+
+    /* ========================================================
+       Archival Editorial Theme for Auth Pages (Login & Password Reset)
+       ======================================================== */
+    body.fi-body:has(.fi-simple-layout),
+    .fi-simple-layout {
+        background-color: #f8f5f0 !important;
+        background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0 L40 20 L20 40 L0 20 Z' fill='none' stroke='%232c2825' stroke-width='0.75' stroke-opacity='0.045'/%3E%3Cpath d='M20 6 L34 20 L20 34 L6 20 Z' fill='none' stroke='%232c2825' stroke-width='0.5' stroke-opacity='0.03'/%3E%3Ccircle cx='20' cy='20' r='1.5' fill='%232c2825' fill-opacity='0.04'/%3E%3C/svg%3E") !important;
+        background-repeat: repeat !important;
+        color: #181615 !important;
+        font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
+    }
+
+    .fi-simple-main {
+        background-color: #fdfbf7 !important;
+        border: 1px solid #e3ddd3 !important;
+        box-shadow: 0 12px 32px -4px rgba(24, 22, 21, 0.07), 0 0 0 1px rgba(24, 22, 21, 0.02) !important;
+        border-radius: 12px !important;
+        padding: 1.5rem 1.25rem !important;
+        max-width: 28rem !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    @media (min-width: 640px) {
+        .fi-simple-main {
+            padding: 2.75rem 2.5rem !important;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .fi-simple-main input.fi-input,
+        .fi-simple-main input[type="email"],
+        .fi-simple-main input[type="password"],
+        .fi-simple-main input[type="text"] {
+            font-size: 16px !important;
+        }
+    }
+
+    .fi-simple-main .fi-fo-field-wrp {
+        margin-bottom: 1.25rem !important;
+    }
+
+    .fi-simple-main label,
+    .fi-simple-main .fi-fo-field-wrp-label {
+        color: #181615 !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.06em !important;
+        font-size: 0.8125rem !important;
+        margin-bottom: 0.375rem !important;
+        display: inline-flex !important;
+        align-items: center !important;
+    }
+
+    .fi-simple-main .fi-input-wrp {
+        background-color: #ffffff !important;
+        border: 1px solid #d0c8bb !important;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04) !important;
+        border-radius: 6px !important;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+        display: flex !important;
+        align-items: center !important;
+        min-height: 44px !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+    }
+
+    .fi-simple-main .fi-input-wrp:focus-within {
+        border-color: #181615 !important;
+        box-shadow: 0 0 0 2px rgba(24, 22, 21, 0.12) !important;
+        outline: none !important;
+    }
+
+    .fi-simple-main input.fi-input,
+    .fi-simple-main input[type="email"],
+    .fi-simple-main input[type="password"],
+    .fi-simple-main input[type="text"] {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        outline: none !important;
+        color: #181615 !important;
+        font-size: 0.9375rem !important;
+        line-height: 1.5rem !important;
+        padding: 0.625rem 0.875rem !important;
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .fi-simple-main button[type="submit"],
+    .fi-simple-main .fi-btn-primary {
+        background-color: #0c0b0a !important;
+        color: #fdfbf7 !important;
+        border: 1px solid #0c0b0a !important;
+        font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
+        font-size: 0.8125rem !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.18em !important;
+        text-transform: uppercase !important;
+        border-radius: 6px !important;
+        padding-top: 0.8125rem !important;
+        padding-bottom: 0.8125rem !important;
+        width: 100% !important;
+        transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        box-shadow: 0 2px 5px rgba(12, 11, 10, 0.15) !important;
+        cursor: pointer !important;
+    }
+
+    .fi-simple-main button[type="submit"]:hover,
+    .fi-simple-main .fi-btn-primary:hover {
+        background-color: #2c2825 !important;
+        border-color: #2c2825 !important;
+        transform: translateY(-1px) !important;
+        box-shadow: 0 6px 16px -2px rgba(12, 11, 10, 0.25) !important;
+    }
 </style>
 
 <script>

@@ -123,5 +123,32 @@ class AdminPanelTest extends TestCase
         $response->assertSee('Pengaturan Donasi');
         $response->assertSee('Aktifkan Halaman Donasi');
     }
+
+    public function test_admin_login_page_renders_password_reset_link(): void
+    {
+        $response = $this->get('/admin/login');
+        $response->assertStatus(200);
+        $response->assertSee('admin/password-reset/request');
+    }
+
+    public function test_password_reset_request_page_loads_successfully(): void
+    {
+        $response = $this->get('/admin/password-reset/request');
+        $response->assertStatus(200);
+    }
+
+    public function test_password_reset_screen_loads_with_valid_token(): void
+    {
+        $admin = User::factory()->create([
+            'email' => 'admin@budayatutur.id',
+        ]);
+
+        $token = \Illuminate\Support\Facades\Password::createToken($admin);
+        $url = filament()->getResetPasswordUrl($token, $admin);
+
+        $response = $this->get($url);
+        $response->assertStatus(200);
+    }
 }
+
 
